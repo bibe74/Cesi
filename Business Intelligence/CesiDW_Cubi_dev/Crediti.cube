@@ -1,0 +1,432 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3db74cf2-0166-45d7-b5f4-bf867676d3ff" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Crediti</ID>
+  <Name>Crediti</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="14" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-16229" scrolltop="-6645" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="51858" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Crediti" left="6627" top="7400" logicalid="7" controlid="1" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Crediti" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Corso" left="20" top="7400" logicalid="8" controlid="2" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Corso" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data" left="3072" top="0" logicalid="9" controlid="3" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Data" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3927" top="9501" logicalid="10" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Crediti_PKCorso]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="23" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4227" y="9900" />
+              <point x="6627" y="9900" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5578" top="4501" logicalid="11" controlid="5" masterid="0" hint1="0" hint2="0" width="3452" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Crediti_PKDataCreazione]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="11" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="5977" y="5000" />
+              <point x="5977" y="6200" />
+              <point x="8730" y="6200" />
+              <point x="8730" y="7400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1823" top="4501" logicalid="12" controlid="6" masterid="0" hint1="0" hint2="0" width="2904" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_Corso_PKDataInizioCorso]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4327" y="5000" />
+              <point x="4327" y="6200" />
+              <point x="2123" y="6200" />
+              <point x="2123" y="7400" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-16229</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6645</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="6d2179f4-4ebb-4d08-b7fa-d66960f736d5">
+      <ID>Corso</ID>
+      <Name>Corso</Name>
+      <DimensionID>Corso</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="88eef2af-2adc-4826-b158-60ee72eb9f52">
+          <AttributeID>PK Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4ecaf09a-c93e-4431-8967-2a72ece5e3d0">
+          <AttributeID>ID Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f2e7cc86-3bc5-4bc3-b158-06e1c57ef717">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b336322f-01cc-4828-97de-5c4756d2fd72">
+          <AttributeID>Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="712b975b-8d5b-47c2-b703-0c9cc59774dc">
+          <AttributeID>Tipo Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="18793924-93ac-4afb-8a59-a8839f3ad4a4">
+          <AttributeID>Giornata</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4f5be8d2-77fd-4809-825c-a9794399c48e">
+          <AttributeID>Ora Inizio Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8a0f42f1-805d-46c1-883b-e4e5f1ac6c03">
+          <AttributeID>PK Data Inizio Corso</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="244a3e99-5618-436f-991f-c1ec7d5449fa">
+      <ID>Crediti</ID>
+      <Name>Crediti</Name>
+      <DimensionID>Crediti</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="09e4a48b-a1f1-4f59-be8d-2a3bba8bf09f">
+          <AttributeID>PK Crediti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d37e111f-16ac-47a6-be8e-9d5dbb55ee2a">
+          <AttributeID>ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f33014a3-0666-4ba4-a4c7-816e52d5efbc">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="60cca408-d48a-4a6c-a008-d4fc5d5d6e71">
+          <AttributeID>ID Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83ad7ae9-51ec-459a-b93e-0bdc72205685">
+          <AttributeID>Nome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6697dec3-e206-4aeb-b665-29b627b9e7ad">
+          <AttributeID>Cognome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="237478ef-453e-4ecf-a709-8122246abeff">
+          <AttributeID>Codice Fiscale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4bccb288-8d4a-4382-89f2-bb55346f8c31">
+          <AttributeID>Professione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="939992ed-deb3-4fee-8dbd-2023736eb989">
+          <AttributeID>Ordine</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c64a3174-c866-4cda-9dbe-e25f5c677447">
+          <AttributeID>Ente Accreditante</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="614806f5-06d7-4a91-91a3-454deb6bfdd8">
+          <AttributeID>Tipo Crediti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c2e8f7d5-b676-47f4-ab18-4474cb2659ca">
+          <AttributeID>Stato Crediti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fa1c9928-4cf5-48a7-b620-0efb4fc04d4e">
+          <AttributeID>PK Corso</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e1a4569-c7e2-49b3-a244-8ed945ecaada">
+          <AttributeID>PK Data Creazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="67dfd11a-c9b1-40c6-80c5-9ecb94598ceb">
+          <AttributeID>Anno Creazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="319d75e1-4ee8-4601-bf27-12cfff9c4b30">
+          <AttributeID>E Mail</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="855bcc78-3695-4691-a964-8840e938e829">
+          <AttributeID>Codice Materia</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0cdc9cb1-2d2b-4b48-b712-ce526c960450">
+      <ID>PK Data Creazione</ID>
+      <Name>Data Creazione</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b1321506-d197-4158-8692-0df04020b63e">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4ae5436e-36d0-4535-8531-ed5733e4b065">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c191c252-ae96-4096-a706-f8f99d90bace">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0b4f938e-17de-442c-9260-43bbc974fa5a">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0fcbbb86-da58-472c-8386-928471a01aa5">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e410e594-cff4-4e74-8cd4-86eb1c3be8e5">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="17e71f88-4bd9-4bea-b31a-bec9a1142f05">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="25864329-1142-486f-9726-4b4d8bf6af0f">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="7877b950-7a08-454d-a1b8-90bb4410435a">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="76e65991-92a2-45c7-9660-595f70ce828d">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="8225b572-21cb-4c67-b91d-e299ece85dc9">
+      <ID>Corso - PK Data Inizio Corso</ID>
+      <Name>Data Inizio Corso</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b86e9e1f-066b-46bd-95e2-5ee8729f7b2b">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="795cea2d-c090-4767-8ee7-eb94c329fcd2">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bb9f28a9-4936-4c8e-9a2e-1a3d67d5042e">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="385b1480-051d-41c4-b1fe-2d4156049ca5">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="05fe40a8-c89f-465d-beea-604875e97b0a">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9d657f0b-518d-4ea7-b8d5-87044b4e9959">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b5ea3d0d-df58-4b08-bcff-7ebc3f27392e">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aac96439-3617-4251-bd51-357e7b7edd01">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="dbf8d081-8214-4212-8601-30e689fea401">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="e27a6aee-8cb7-471a-8ed1-db849e1b2213">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="a74e219f-bc21-49b9-b9a2-70aafe2bff44">
+      <ID>Crediti</ID>
+      <Name>Crediti</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1b17fec0-0b7d-45af-b619-396b77ba272a">
+          <ID>Crediti</ID>
+          <Name>Crediti</Name>
+          <Source dwd:design-time-name="e2130479-55ab-47bb-b238-373534d4e3b8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="dc2482ed-dd66-436a-95f7-71caf23676e2">
+              <TableID>Fact_Crediti</TableID>
+              <ColumnID>Crediti</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="e0e2bbf3-e6ff-4281-b3a2-a05831d5e345">
+          <ID>Crediti Count</ID>
+          <Name>Conteggio Crediti</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="0244b156-4788-4516-8058-d23c1934abd2">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="75f2ff76-f104-42af-81fb-cdbbd1761d0c">
+              <TableID>Fact_Crediti</TableID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="ec773e83-e779-4571-b0b5-2ee5b9b7e0eb">
+          <CubeDimensionID>Crediti</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a7aa923a-20e7-4e70-a891-eac84cc7bcfb">
+              <AttributeID>PK Crediti</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f1dc9c75-2088-4d5b-974e-8d0e5f7798ba">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="76eb191e-2e88-4367-a5c8-74919f0375c2">
+                    <TableID>Fact_Crediti</TableID>
+                    <ColumnID>PKCrediti</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="bb38a10e-7d6d-4df5-b445-566493fd8c41">
+          <CubeDimensionID>Corso</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e5e719bc-097e-45fb-a528-2815e1d231ee">
+              <AttributeID>PK Corso</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="047f309f-d365-4718-b595-55ca2eeda76a">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4f3953bb-9e0c-4504-bccb-189bb3298756">
+                    <TableID>Fact_Crediti</TableID>
+                    <ColumnID>PKCorso</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="919abd39-1641-4146-8dd6-24168b62585d">
+          <CubeDimensionID>PK Data Creazione</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="abdc1ebb-f9b8-4a52-8036-e7eb79724d6c">
+              <AttributeID>PK Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8e491cf7-6c8d-4417-906c-7d33be2d6a2a">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68133c07-8de8-49bc-b212-1351f5fb67cd">
+                    <TableID>Fact_Crediti</TableID>
+                    <ColumnID>PKDataCreazione</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="6cc650c4-03c1-4124-a32b-d526b086d7f1">
+          <CubeDimensionID>Corso - PK Data Inizio Corso</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="be40a08b-66de-465e-92d5-a70e629d405d">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Corso</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Inizio Corso</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="94cbdd36-daf1-4775-8e4a-b3d3f781d679">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+</Cube>

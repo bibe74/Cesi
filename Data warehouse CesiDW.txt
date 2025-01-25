@@ -1,0 +1,59 @@
+Database di sviluppo: CesiDW_dev
+Database di produzione: CesiDW
+
+Schemi
+- Schema setup con tabelle e procedure di generazione script
+- Schema audit con tabelle e procedure di logging
+- Schema Import con eventuali tabelle di appoggio per logiche di business o elenchi fuori sistema (ad esempio Import.Budget)
+- Uno schema IN MAIUSCOLO per ciascun sistema sorgente: COMETA, MYSOLUTION
+- Schema Landing con copie delle tabelle sorgente, limitate ai soli campi necessari
+- Schema Staging con tabelle di appoggio per popolare le dimensioni
+- Data warehouse: è composto dagli schemi Dim, Fact e Bridge
+
+Schemi SORGENTE
+- Un sinonimo per ciascuna tabella sorgente: COMETA.Anagrafica, COMETA.SoggettoCommerciale, ...
+
+Schema Landing
+- Una vista per ciascuna tabella sorgente: Landing.COMETA_AnagraficaView, Landing.COMETA_SoggettoCommercialeView, ...
+Ciascuna vista conterrà, nell'ordine:
+	- I campi business key, chiave univoca di business (ad esempio id_anagrafica per Landing.COMETA_Anagrafica), in ordine logico
+	- I campi di gestione del flusso ETL, ovvero:
+	[HistoricalHashKey] [varbinary] (20) NULL,
+	[ChangeHashKey] [varbinary] (20) NULL,
+	[HistoricalHashKeyASCII] [varchar] (34) COLLATE Latin1_General_CI_AS NULL,
+	[ChangeHashKeyASCII] [varchar] (34) COLLATE Latin1_General_CI_AS NULL,
+	[InsertDatetime] [datetime] NOT NULL,
+	[UpdateDatetime] [datetime] NOT NULL,
+	[IsDeleted] [bit] NULL,
+	- I campi attributo della dimensione, in ordine di column_id
+	- I campi misura delle tabelle dei fatti, in ordine di column_id
+Tutti i campi saranno del tipo del campo di origine, fatta eccezione per i campi di tipo testo che avranno eventualmente la forzatura COLLATE DATABASE_DEFAULT
+- Una tabella per ciascuna tabella sorgente: Landing.COMETA_Anagrafica, Landing.COMETA_SoggettoCommerciale, ...
+Ciascuna tabella avrà l'indice clustered composto da UpdateDateTime + la chiave univoca di business
+Ciascuna tabella avrà un indice nonclustered univoco composto dalla chiave univoca di business
+- Una stored procedure per ciascuna tabella sorgente: Landing.usp_Merge_COMETA_Anagrafica, Landing.usp_Merge_COMETA_SoggettoCommerciale, ...
+La stored procedure utilizzerà lo statement MERGE tra la vista e la relativa tabella, collegate dalla chiave di business:
+	- in caso di NOT MATCHED, il record sorgente (vista) verrà inserito nella destinazione (tabella), con il campo IsDeleted impostato a FALSE;
+	- in caso di MATCHED AND DST.HistoricalHashKeyASCII <> SRC.HistoricalHashKeyASCII, tutti i campi non chiave di business verranno aggiornati, insieme al campo UpdateDatetime
+	- in caso di NOT MATCHED BY SOURCE, il campo IsDeleted verrà impostato a TRUE, e verrà aggiornato il campo UpdateDatetime
+La stored procedure utilizzerà la clausola OUTPUT per scrivere un record della tabella di log audit.EventLog, con il campo $action e la descrizione testuale della chiave di business
+
+Schema Staging
+- Una o più viste per ciascuna tabella da portare nel data warehouse come dimensione (schema Dim), tabella dei fatti (schema Fact) o tabella molti-a-molti (schema Bridge)
+- Una tabella "gemella" per ciascuna tabella da portare nel data warehouse
+- Viste e tabelle intermedie per la generazione della tabella "gemella"
+- I tipi dei campi saranno armonizzati (utilizzando INT, NVARCHAR, DECIMAL), specialmente quelli da utilizzare per l'integrità referenziale
+
+Schema Dim
+Tabelle delle dimensioni di analisi (nome singolare)
+- Una stored procedure per ciascuna tabella delle dimensioni: Dim.usp_Merge_Cliente
+
+Schema Fact
+Tabelle dei fatti (nome plurale)
+- Una stored procedure per ciascuna tabella dei fatti: Fact.usp_Merge_Documenti
+
+Schema Bridge
+Tabelle di relazione molti-a-molti (nome composto dalle due tabelle messe in relazione molti-a-molti)
+- Una stored procedure per ciascuna tabella di relazione molti-a-molti: Bridge.usp_Merge_UtenteCliente
+
+L'utente cesidw_reader avrà accesso in sola lettura ai soli schemi Dim, Fact, Bridge, Import e audit e verrà utilizzato per tutte le procedure di elaborazione dei cubi e per la reportistica

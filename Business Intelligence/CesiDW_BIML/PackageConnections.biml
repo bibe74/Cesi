@@ -1,0 +1,4 @@
+﻿<#@ template language="C#" tier="1" #>
+    <!--<OleDbConnection Name="CesiDW" ConnectionString="Data Source=MIRZAKHANI\SQL2014;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />-->
+    <!--<OleDbConnection Name="CesiDW" ConnectionString="Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;User Id=Alberto;Password=Turelli2021;Auto Translate=False;" />-->
+    <OleDbConnection Name="CesiDW" ConnectionString="Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="01/25/2025 08:52:54" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{454B9C8A-5733-455E-95C6-7469279C4F6A}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="ProcessFull Crediti Cube" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{490BDAD5-CF69-4437-86F6-D77F492A27C3}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="MSOLAP100" DTS:DTSID="{C7729A51-90DF-4AC2-BFCB-43316A5279CB}" DTS:ObjectName="CesiDW_Cubi_dev" DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:ConnectionString="Data Source=EPISQL2021;Provider=MSOLAP;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.DTSProcessingTask" DTS:DTSID="{CC2A031D-EAB1-4D87-9222-A2DE6F955B81}" DTS:ExecutableType="Microsoft.DTSProcessingTask" DTS:LocaleID="-1" DTS:ObjectName="ProcessFull Crediti" DTS:refId="Package\ProcessFull Crediti">
+      <DTS:ObjectData>
+        <ASProcessingData ConnectionName="CesiDW_Cubi_dev" ProcessingCommands="&lt;Batch xmlns=&quot;http://schemas.microsoft.com/analysisservices/2003/engine&quot;&gt;&#xA;&lt;ErrorConfiguration xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot; xmlns:ddl200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200&quot; xmlns:ddl200_200=&quot;http://schemas.microsoft.com/analysisservices/2010/engine/200/200&quot;&gt;&#xA;&lt;KeyErrorLimit&gt;-1&lt;/KeyErrorLimit&gt;&#xA;&lt;KeyErrorLogFile&gt;&lt;/KeyErrorLogFile&gt;&#xA;&lt;KeyErrorAction&gt;ConvertToUnknown&lt;/KeyErrorAction&gt;&#xA;&lt;KeyErrorLimitAction&gt;StopProcessing&lt;/KeyErrorLimitAction&gt;&#xA;&lt;KeyNotFound&gt;IgnoreError&lt;/KeyNotFound&gt;&#xA;&lt;KeyDuplicate&gt;IgnoreError&lt;/KeyDuplicate&gt;&#xA;&lt;NullKeyConvertedToUnknown&gt;IgnoreError&lt;/NullKeyConvertedToUnknown&gt;&#xA;&lt;NullKeyNotAllowed&gt;IgnoreError&lt;/NullKeyNotAllowed&gt;&#xA;&lt;/ErrorConfiguration&gt;&#xA;  &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;    &lt;Object&gt;&#xA;      &lt;DatabaseID&gt;CesiDW_Cubi_dev&lt;/DatabaseID&gt;&#xA;      &lt;CubeID&gt;Crediti&lt;/CubeID&gt;&#xA;    &lt;/Object&gt;&#xA;    &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;    &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;  &lt;/Process&gt;&#xA;&lt;/Batch&gt;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

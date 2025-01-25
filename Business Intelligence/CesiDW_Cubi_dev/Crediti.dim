@@ -1,0 +1,435 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ff403f30-c5bc-44b8-b48c-289985ccba16" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Crediti</ID>
+  <Name>Crediti</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6423" scrolltop="-10570" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="15266" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Crediti" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Crediti" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6423</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-10570</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2ee310f5-edb0-4bb7-b22d-08d5a0791479">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="4b3be4ff-15e9-4edb-ab74-6608b9c81c17">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="12cf62e8-ab23-41ca-8bfe-56be25cebb13">
+      <ID>PK Crediti</ID>
+      <Name>PK Crediti</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e9672ba5-f1cb-4395-ab57-adb7210b8175">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e041aaa4-db71-4dfa-af65-0ff786403dc3">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>PKCrediti</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="155bacf2-19c8-4f06-a8f3-65b159c1bb65">
+          <AttributeID>ID</AttributeID>
+          <Name>ID_</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="10161f9d-3da7-4898-b78a-d0cac94a427c">
+          <AttributeID>Is Deleted</AttributeID>
+          <Name>Is Deleted</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1f0f6584-d0d3-4fa4-8620-eafee85edab6">
+          <AttributeID>ID Corso</AttributeID>
+          <Name>ID Corso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="01c14c05-159b-44db-8032-1de1aaa59ecb">
+          <AttributeID>Nome</AttributeID>
+          <Name>Nome</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ca3a414a-2b3b-4edc-8c8e-f18736f208fc">
+          <AttributeID>Cognome</AttributeID>
+          <Name>Cognome</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dc2cec7c-14e8-45e9-b9af-30d8c6216af5">
+          <AttributeID>Codice Fiscale</AttributeID>
+          <Name>Codice Fiscale</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7ed66737-cda8-41fd-89c5-3ef646a4f21e">
+          <AttributeID>Professione</AttributeID>
+          <Name>Professione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="57b55548-8a96-48b4-83ef-3d1b4a3eb240">
+          <AttributeID>Ordine</AttributeID>
+          <Name>Ordine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6f045004-bd78-4c31-84d3-603d03408d27">
+          <AttributeID>Ente Accreditante</AttributeID>
+          <Name>Ente Accreditante</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0389d3f2-a8e4-4566-8c70-c9fdfbee7eb1">
+          <AttributeID>Tipo Crediti</AttributeID>
+          <Name>Tipo Crediti</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="48908dc6-bc8b-49d1-90f2-eabe7b176c81">
+          <AttributeID>Stato Crediti</AttributeID>
+          <Name>Stato Crediti</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="80a7b1af-7f4d-417b-a846-d716948cc33b">
+          <AttributeID>PK Corso</AttributeID>
+          <Name>PK Corso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="586f9f99-d656-4b69-8eff-61f7709f16d7">
+          <AttributeID>PK Data Creazione</AttributeID>
+          <Name>PK Data Creazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d47d184d-7f93-4b23-b4f6-1fef45bae683">
+          <AttributeID>Anno Creazione</AttributeID>
+          <Name>Anno Creazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="07dc1def-0f18-4a65-8e7f-cc5744cf8121">
+          <AttributeID>E Mail</AttributeID>
+          <Name>E Mail</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4cbc1124-61ee-439d-862c-40dbec39d77a">
+          <AttributeID>Codice Materia</AttributeID>
+          <Name>Codice Materia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b57f6137-6706-47ca-a745-ee03598919b5">
+      <ID>ID</ID>
+      <Name>ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="78635b45-edc4-4ee8-9a77-3157f0706566">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5d34afe3-8168-4853-9572-01ac80b192f7">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="00d561a2-056e-4c94-807b-f4c80f948baa">
+      <ID>Is Deleted</ID>
+      <Name>Is Deleted</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="350fd392-22be-414c-a61a-c234e8963078">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ee3fba09-1adb-4f9e-8acf-c63097230024">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>IsDeleted</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="788f5952-4eb7-4f55-826e-deb8d92a7206">
+      <ID>ID Corso</ID>
+      <Name>ID Corso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e4d9f9b0-1540-4f9e-bd08-1923ee2e1319">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec0c4fae-454b-4ea3-a0c1-b80a6baf695b">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>IDCorso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9e619a74-95e3-4cfd-86a6-036efa0a338f">
+      <ID>Nome</ID>
+      <Name>Nome</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c5f8690a-cd01-4dbf-92f7-46dacdc4b1d2">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c3a726df-82cb-4caf-9611-c1d9f40d3464">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>Nome</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d9d1ba39-9d62-4fda-afe7-e86a7f8861f3">
+      <ID>Cognome</ID>
+      <Name>Cognome</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2eda96a6-a968-4b90-b9c2-4cc05fb18dbd">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1b5d6e90-70b0-4f10-b12d-6af075fa6e1b">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>Cognome</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e8deacc0-93d2-4504-852b-cff8d622819b">
+      <ID>Codice Fiscale</ID>
+      <Name>Codice Fiscale</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="27034da5-55c2-4822-a2b8-f878a0a962a9">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="017c2450-0081-40d5-b21d-9ebe80c1e36c">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>CodiceFiscale</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9afd37a4-afc4-4296-9b40-e9804e124507">
+      <ID>Professione</ID>
+      <Name>Professione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="db294edd-4600-42c9-a0b4-d1f20efe6dac">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bd772826-8a00-4849-9eec-93149cc52e90">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>Professione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="77690a8b-cb29-4b97-b6b3-9ce2246a7a31">
+      <ID>Ordine</ID>
+      <Name>Ordine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bff58970-6662-4988-a0b1-031764b3ff53">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9bf1a5ed-f3cc-47fe-bc3d-5e6f4b2a01c8">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>Ordine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b1404e55-6f87-4a1b-bf4f-d13462eff1a0">
+      <ID>Ente Accreditante</ID>
+      <Name>Ente Accreditante</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8462b588-55f2-4e00-800f-6461c7f4825e">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4cc23cca-d6d9-49bb-9a57-95ad8cfd1357">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>EnteAccreditante</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ea3e8f2d-16d8-45b2-96d3-20fccb168564">
+      <ID>Tipo Crediti</ID>
+      <Name>Tipo Crediti</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="67cbb5ed-7754-4d19-995d-6e4c5f6d07cb">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f413a60b-5e0b-4ae5-9acc-6aa5a9cb0a65">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>TipoCrediti</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7c2f8913-616d-46cc-aff7-ae2dacd1a4cd">
+      <ID>Stato Crediti</ID>
+      <Name>Stato Crediti</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d80a5eea-e9af-49eb-a0e5-0cd3ac30fe9b">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="70726186-a326-4050-88ad-bb436b8d19af">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>StatoCrediti</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9c0ec059-13dc-4dd9-abd9-ff8f530b56db">
+      <ID>PK Corso</ID>
+      <Name>PK Corso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e8611380-f1d1-41a7-b636-3bf2145d3b7a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="93b15597-9465-4641-b95d-3e9be24949be">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>PKCorso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e5db6255-8044-4799-9ac4-6f10c894b4bc">
+      <ID>PK Data Creazione</ID>
+      <Name>PK Data Creazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="736af02b-dacc-4da8-912e-f7bf1a6fc4a0">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="822c1dab-58d7-43dd-ad12-cdb03ba1deb3">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>PKDataCreazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5f2024f1-03e8-4bd2-a82e-1685686db59e">
+      <ID>Anno Creazione</ID>
+      <Name>Anno Creazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6d9019d1-5483-4476-949d-4946c57c4214">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7321d12d-3fcf-4334-9105-7191b6eae0d5">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>AnnoCreazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="baa75e9f-7de7-41db-a843-c07b49ac65c8">
+      <ID>E Mail</ID>
+      <Name>E Mail</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d423b6aa-585c-415f-befe-6b904edcf74a">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2431dce-c1b9-40a9-bac5-273bfd299a97">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>EMail</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c7224006-323e-4f95-a75e-88027071af2e">
+      <ID>Codice Materia</ID>
+      <Name>Codice Materia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="66419924-8588-4766-be01-529df4922043">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="49bc6c0f-a40e-4107-ae3c-dce63d145115">
+            <TableID>Fact_Crediti</TableID>
+            <ColumnID>CodiceMateria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

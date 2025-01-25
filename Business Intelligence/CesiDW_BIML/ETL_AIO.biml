@@ -1,0 +1,369 @@
+﻿<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+<Connections>
+    <#@ include file="PackageConnections.biml" #>
+</Connections>
+    <#
+    string metadataConnectionString_Extract = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
+    string metadataConnectionString_Transform = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
+    string metadataConnectionString_Load = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
+    DataTable tables;
+    DataTable procedures;
+	#>
+	<Packages>
+    <Package Name="01_Extract" ProtectionLevel="EncryptSensitiveWithUserKey">
+      <Tasks>
+        <Container Name="ETL_COMETA">
+			<Tasks>
+				<#
+		    tables = ExternalDataAccess.GetDataTable(
+				metadataConnectionString_Extract,
+				"SELECT O.name FROM sys.objects O INNER JOIN sys.schemas S ON S.schema_id = O.schema_id AND S.name = 'COMETA' WHERE O.type = 'P' AND O.name LIKE 'usp_Merge_%' ORDER BY O.name"
+				);
+				foreach (DataRow row in tables.Rows)
+				{
+				String ProcedureName = row[0].ToString();
+				#>
+				<ExecuteSQL Name="COMETA_<#=ProcedureName#>" ConnectionName="CesiDW">
+					<DirectInput>EXEC COMETA.<#=ProcedureName#>;</DirectInput>
+				</ExecuteSQL>
+				<#
+			}
+				#>
+			</Tasks>
+		</Container>
+        <Container Name="ETL_MYSOLUTION">
+			<Tasks>
+				<#
+		    tables = ExternalDataAccess.GetDataTable(
+				metadataConnectionString_Extract,
+				"SELECT O.name FROM sys.objects O INNER JOIN sys.schemas S ON S.schema_id = O.schema_id AND S.name = 'MYSOLUTION' WHERE O.type = 'P' AND O.name LIKE 'usp_Merge_%' ORDER BY O.name"
+				);
+				foreach (DataRow row in tables.Rows)
+				{
+				String ProcedureName = row[0].ToString();
+				#>
+				<ExecuteSQL Name="MYSOLUTION_<#=ProcedureName#>" ConnectionName="CesiDW">
+					<DirectInput>EXEC MYSOLUTION.<#=ProcedureName#>;</DirectInput>
+				</ExecuteSQL>
+				<#
+			}
+				#>
+			</Tasks>
+		</Container>
+        <Container Name="ETL_COMETAINTEGRATION">
+			<Tasks>
+				<#
+		    tables = ExternalDataAccess.GetDataTable(
+				metadataConnectionString_Extract,
+				"SELECT O.name FROM sys.objects O INNER JOIN sys.schemas S ON S.schema_id = O.schema_id AND S.name = 'COMETAINTEGRATION' WHERE O.type = 'P' AND O.name LIKE 'usp_Merge_%' ORDER BY O.name"
+				);
+				foreach (DataRow row in tables.Rows)
+				{
+				String ProcedureName = row[0].ToString();
+				#>
+				<ExecuteSQL Name="COMETAINTEGRATION_<#=ProcedureName#>" ConnectionName="CesiDW">
+					<DirectInput>EXEC COMETAINTEGRATION.<#=ProcedureName#>;</DirectInput>
+				</ExecuteSQL>
+				<#
+			}
+				#>
+			</Tasks>
+		</Container>
+        <Container Name="ETL_WEBINARS">
+			<Tasks>
+				<#
+		    tables = ExternalDataAccess.GetDataTable(
+				metadataConnectionString_Extract,
+				"SELECT O.name FROM sys.objects O INNER JOIN sys.schemas S ON S.schema_id = O.schema_id AND S.name = 'WEBINARS' WHERE O.type = 'P' AND O.name LIKE 'usp_Merge_%' ORDER BY O.name"
+				);
+				foreach (DataRow row in tables.Rows)
+				{
+				String ProcedureName = row[0].ToString();
+				#>
+				<ExecuteSQL Name="WEBINARS_<#=ProcedureName#>" ConnectionName="CesiDW">
+					<DirectInput>EXEC WEBINARS.<#=ProcedureName#>;</DirectInput>
+				</ExecuteSQL>
+				<#
+			}
+				#>
+			</Tasks>
+		</Container>
+      </Tasks>
+    </Package>
+    <Package Name="02_Setup" ProtectionLevel="EncryptSensitiveWithUserKey">
+        <Tasks>
+            <ExecuteSQL Name="Setup" ConnectionName="CesiDW">
+                <DirectInput>EXEC setup.usp_InsertDates;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_GruppoAgenti" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_GruppoAgenti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_GruppoAgenti;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_CapoArea" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_CapoArea;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_CapoArea" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_CapoArea;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_GruppoAgenti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_GruppoAgenti;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Bridge_usp_Merge_ADUserCapoArea" ConnectionName="CesiDW">
+                <DirectInput>EXEC Bridge.usp_Merge_ADUserCapoArea;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_Cliente_OLD" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear" Disabled="true">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_SoggettoCommerciale" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_SoggettoCommerciale;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_SoggettoCommerciale_Email" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_SoggettoCommerciale_Email;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_MySolutionUsers" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_MySolutionUsers;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_Customer" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Customer;</DirectInput>
+            </ExecuteSQL>
+            <!--<ExecuteSQL Name="Staging_usp_Reload_InfoAccounts" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_InfoAccounts;</DirectInput>
+            </ExecuteSQL>-->
+            <ExecuteSQL Name="Staging_usp_Reload_Cliente" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Cliente;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_Cliente" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_Cliente;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_Cliente" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_CometaCustomer" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_CometaCustomer;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_MySolutionCustomer" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_MySolutionCustomer;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_AccessiUsername" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_AccessiUsername;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_AccessiCustomer" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_AccessiCustomer;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_Cliente" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_Cliente;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_ClienteAccessi" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_ClienteAccessi;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_Articolo" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_ArticoloCategoriaMaster" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_ArticoloCategoriaMaster;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Staging_usp_Reload_Articolo" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Articolo;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_Articolo" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_Articolo;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_Utente" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Utente" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Utente;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_Utente" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_Utente;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Dim_Corso" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Corso" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Corso;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Dim_usp_Merge_Corso" ConnectionName="CesiDW">
+                <DirectInput>EXEC Dim.usp_Merge_Corso;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Fact_Accessi" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Accessi" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Accessi;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Accessi" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Accessi;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <!--<Package Name="Fact_Ordini" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Ordini" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Ordini;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Ordini" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Ordini;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>-->
+    <Package Name="Fact_Documenti" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Documenti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Documenti;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Documenti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Documenti;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Fact_Scadenze" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Scadenze" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Scadenze;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Scadenze" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Scadenze;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Fact_Budget" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Budget" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Budget;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Budget" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Budget;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Fact_Corsi" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Corsi" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Corsi;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Corsi" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Corsi;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+    <Package Name="Fact_Crediti" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+        <Tasks>
+            <ExecuteSQL Name="Staging_usp_Reload_Crediti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Staging.usp_Reload_Crediti;</DirectInput>
+            </ExecuteSQL>
+            <ExecuteSQL Name="Fact_usp_Merge_Crediti" ConnectionName="CesiDW">
+                <DirectInput>EXEC Fact.usp_Merge_Crediti;</DirectInput>
+            </ExecuteSQL>
+        </Tasks>
+    </Package>
+        <Package Name="03_Transform_and_Load" ProtectionLevel="EncryptSensitiveWithUserKey">
+            <Tasks>
+              <ExecutePackage Name="Dim_Cliente" DelayValidation="true">
+                  <ExternalProjectPackage Package="Dim_Cliente.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_GruppoAgenti.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <ExecutePackage Name="Dim_GruppoAgenti" DelayValidation="true">
+                  <ExternalProjectPackage Package="Dim_GruppoAgenti.dtsx" />
+              </ExecutePackage>
+              <ExecutePackage Name="Dim_Articolo" DelayValidation="true">
+                  <ExternalProjectPackage Package="Dim_Articolo.dtsx" />
+              </ExecutePackage>
+              <ExecutePackage Name="Dim_Utente" DelayValidation="true">
+                  <ExternalProjectPackage Package="Dim_Utente.dtsx" />
+              </ExecutePackage>
+              <ExecutePackage Name="Dim_Corso" DelayValidation="true">
+                  <ExternalProjectPackage Package="Dim_Corso.dtsx" />
+              </ExecutePackage>
+              <ExecutePackage Name="Fact_Accessi" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Accessi.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Cliente.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <!--<ExecutePackage Name="Fact_Ordini" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Ordini.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Cliente.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>-->
+              <ExecutePackage Name="Fact_Documenti" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Documenti.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Cliente.Output" />
+                      <Input OutputPathName="Dim_GruppoAgenti.Output" />
+                      <Input OutputPathName="Dim_Articolo.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <ExecutePackage Name="Fact_Scadenze" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Scadenze.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Cliente.Output" />
+                      <Input OutputPathName="Fact_Documenti.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <ExecutePackage Name="Fact_Budget" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Scadenze.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_GruppoAgenti.Output" />
+                      <Input OutputPathName="Fact_Documenti.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <ExecutePackage Name="Fact_Corsi" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Corsi.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Utente.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+              <ExecutePackage Name="Fact_Crediti" DelayValidation="true">
+                  <ExternalProjectPackage Package="Fact_Crediti.dtsx" />
+                  <PrecedenceConstraints>
+                    <Inputs>
+                      <Input OutputPathName="Dim_Corso.Output" />
+                    </Inputs>
+                  </PrecedenceConstraints>
+              </ExecutePackage>
+            </Tasks>
+        </Package>
+            <Package Name="00_ETL_master" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+                <Tasks>
+                  <ExecutePackage Name="01_Extract" DelayValidation="true">
+                      <ExternalProjectPackage Package="01_Extract.dtsx" />
+                  </ExecutePackage>
+                  <ExecutePackage Name="02_Setup" DelayValidation="true">
+                      <ExternalProjectPackage Package="02_Setup.dtsx" />
+                  </ExecutePackage>
+                  <ExecutePackage Name="03_Transform_and_Load" DelayValidation="true">
+                      <ExternalProjectPackage Package="03_Transform_and_Load.dtsx" />
+                  </ExecutePackage>
+                </Tasks>
+            </Package>
+  </Packages>
+</Biml>
+<#@template language="C#" hostspecific="true"#>
+<#@import namespace="System.Data" #>

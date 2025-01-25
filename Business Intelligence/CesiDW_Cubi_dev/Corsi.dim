@@ -1,0 +1,536 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9b35d55d-b131-477e-994f-63aae01cd9c2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Corsi</ID>
+  <Name>Corsi</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6251" scrolltop="-6166" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10186" y="16616" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Corsi" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4551" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000c711000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Corsi" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-6251</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6166</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="11e18d20-e1b1-42a1-97f4-cf3b1ec8037f">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="60dcccb3-88b6-46aa-9cdd-aad968d83cb3">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="6cca74f1-2a35-4146-be36-356c5fbf02d2">
+      <ID>PK Corsi</ID>
+      <Name>PK Corsi</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e84bcf1a-b18c-451c-980e-b93a931827b5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="412cd83f-7103-42b4-a651-037f5b70a663">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>PKCorsi</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="886b3530-f4ed-49db-a0ba-3405788826e5">
+          <AttributeID>Order Item Id</AttributeID>
+          <Name>Order Item Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="388975ab-d2b4-4a51-b9c1-c2ec9d79a263">
+          <AttributeID>Partecipant Id</AttributeID>
+          <Name>Partecipant Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="52cc5ea1-25e2-4850-910f-369b0f7c2074">
+          <AttributeID>Is Deleted</AttributeID>
+          <Name>Is Deleted</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9e646bd9-b29d-4c20-a091-d60ba5ceabe1">
+          <AttributeID>Nome Partecipante</AttributeID>
+          <Name>Nome Partecipante</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5c658330-7795-4a13-b8dd-5a0e82805b43">
+          <AttributeID>Cognome Partecipante</AttributeID>
+          <Name>Cognome Partecipante</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="979a6af9-e826-4c41-a10e-9c0cbfdd7877">
+          <AttributeID>Email Partecipante</AttributeID>
+          <Name>Email Partecipante</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="350684f2-9046-4ce1-b16b-e1a0ac1103af">
+          <AttributeID>Codice Fiscale Partecipante</AttributeID>
+          <Name>Codice Fiscale Partecipante</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9a5fedca-e5ac-4abb-9932-444019313523">
+          <AttributeID>Email Partecipante Root</AttributeID>
+          <Name>Email Partecipante Root</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="82df119f-21ee-41c3-b272-3c8bc9e6dcc7">
+          <AttributeID>Utente</AttributeID>
+          <Name>Utente</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cda30cbb-69fc-4dfb-a557-e6b2e576d3a8">
+          <AttributeID>Corso</AttributeID>
+          <Name>Corso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="91aceaa1-734e-4d5a-b3b4-c8827118e60f">
+          <AttributeID>ID Webinar</AttributeID>
+          <Name>ID Webinar</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ab4d34c2-8386-4de7-ba28-efd68c904849">
+          <AttributeID>Tipo Corso</AttributeID>
+          <Name>Tipo Corso</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ac1db503-9b0a-4f0a-a0ec-ea46bff4fb01">
+          <AttributeID>Has Date Multiple</AttributeID>
+          <Name>Has Date Multiple</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="29940d6e-793e-4288-b253-f77a76c592be">
+          <AttributeID>Descrizione Ordine</AttributeID>
+          <Name>Descrizione Ordine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c580d122-a6bb-42d0-a31c-4a99bad5142a">
+          <AttributeID>Prezzo Unitario Ordine</AttributeID>
+          <Name>Prezzo Unitario Ordine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="78293eec-4fad-4afe-9567-52f07616145f">
+          <AttributeID>Numero Ordine</AttributeID>
+          <Name>Numero Ordine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d3e36f2a-4004-422b-a9d7-1333dd7b5e53">
+          <AttributeID>Stato Ordine</AttributeID>
+          <Name>Stato Ordine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8746908e-5a90-4402-a09a-693d87f1fdb7">
+          <AttributeID>PK Data Inizio</AttributeID>
+          <Name>PK Data Inizio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="97969896-a616-4847-ad89-26234594e6c7">
+          <AttributeID>PK Utente</AttributeID>
+          <Name>PK Utente</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bdb12844-6ca2-4408-888a-01a62815e63e">
+          <AttributeID>ID Corso</AttributeID>
+          <Name>ID Corso</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="082f4c98-02ea-45e6-8208-f72d0f3eef22">
+      <ID>Order Item Id</ID>
+      <Name>Order Item Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b1bf1e26-1829-4765-8bef-ae246817de40">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0f9db158-2f57-47c9-bfb4-d2cb6b240ada">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>OrderItemId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d8d2045-85e1-46d0-bf7a-ee6409579c48">
+      <ID>Partecipant Id</ID>
+      <Name>Partecipant Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0c5249c9-6324-42cf-820d-a3c6c41a0853">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f5cf8940-70a7-46aa-9cb3-a9604a40427b">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>Partecipant_Id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8f5c894d-dc51-4d61-8507-0d5a8c729301">
+      <ID>Is Deleted</ID>
+      <Name>Is Deleted</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a88517b-4287-491f-ab46-270079292d7c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="74462441-ecb9-4a86-a8b6-d385c669626e">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>IsDeleted</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e543e920-521d-442a-b8da-13ed157bd87b">
+      <ID>Nome Partecipante</ID>
+      <Name>Nome Partecipante</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0c84e11f-26af-4230-8a0f-39d92d232f2d">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="49c019a4-e89d-4b14-98df-67cd9155ae39">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>NomePartecipante</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="891eaecb-55de-42a1-9d84-ac21870b206e">
+      <ID>Cognome Partecipante</ID>
+      <Name>Cognome Partecipante</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a3b66b5-5d72-43cb-8856-f3901b70361e">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ada4465-fd07-496c-8e36-a4e967a29f9b">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>CognomePartecipante</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1ce79d30-61d6-4183-bcc6-f9f2a4e1057a">
+      <ID>Email Partecipante</ID>
+      <Name>Email Partecipante</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="524b4af3-ae75-4e7b-85ac-c481732b0947">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ea266d89-54f6-402c-b3e6-f4a5154f012a">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>EmailPartecipante</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e06ae13f-35f1-4b26-8b35-55e9e2079d29">
+      <ID>Codice Fiscale Partecipante</ID>
+      <Name>Codice Fiscale Partecipante</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab20b950-77fb-4fd5-a94b-e281d0332b1a">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="985239d5-a945-4c58-bae2-f29352239d75">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>CodiceFiscalePartecipante</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ce4d8088-78dc-4840-bbff-8cc981ca3b91">
+      <ID>Email Partecipante Root</ID>
+      <Name>Email Partecipante Root</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d21279e6-e361-4ecb-b5d0-04c6afd122a1">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a27e16bf-cf1c-406a-a79b-a096126ec7f5">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>EmailPartecipanteRoot</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="232cbf70-3225-46c7-a23a-11e347057d07">
+      <ID>Utente</ID>
+      <Name>Utente</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="00a032e2-037d-41da-b02d-70b87529d4bf">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b7810abe-0b49-42f7-9702-7ce5fb1e7ff1">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>Utente</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c7e0cc13-1a28-4ac0-8cd5-7cf2164a4304">
+      <ID>Corso</ID>
+      <Name>Corso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="993edfb3-1677-4108-a145-cc76ec8dbfc3">
+          <DataType>WChar</DataType>
+          <DataSize>240</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a5dbd35-eebf-4c01-8fb1-167e8eaddafa">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>Corso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="be92c360-de21-42e3-ab63-2d48d83778f0">
+      <ID>ID Webinar</ID>
+      <Name>ID Webinar</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0a6307a6-1bd0-43db-a2ae-6485ebb8a0fc">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b838ca8-8457-4002-bf8c-34e3f8668bc2">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>IDWebinar</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d372cbcd-7b80-4f42-aaac-8564c4748627">
+      <ID>Tipo Corso</ID>
+      <Name>Tipo Corso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a898dd0b-d90d-4831-b644-597b54a9a4cd">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2743a053-bf31-4ce2-bdad-748edf3ea183">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>TipoCorso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dddcd165-f03d-49f5-acaf-3459b343358a">
+      <ID>Has Date Multiple</ID>
+      <Name>Has Date Multiple</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a3168444-599e-42c5-93fc-1e2aa9c4bfd1">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c04b3283-0a57-4747-a95d-b3812ddd0903">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>HasDateMultiple</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2847753c-a655-4a7b-84b9-a7ec6f340110">
+      <ID>Descrizione Ordine</ID>
+      <Name>Descrizione Ordine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="466a08f3-5065-4fc4-b3a1-a35789985571">
+          <DataType>WChar</DataType>
+          <DataSize>240</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ba434bd8-45cc-4798-bfb0-82c8524cf8ff">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>DescrizioneOrdine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a45c6095-95a6-451a-9640-94d3a176e44d">
+      <ID>Prezzo Unitario Ordine</ID>
+      <Name>Prezzo Unitario Ordine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e3c09a70-4981-40e3-b502-f503e598ee54">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8f7a6cb7-2520-476f-9fe7-c542ac7e2ef2">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>PrezzoUnitarioOrdine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ea567611-2da1-46e2-8076-b592d1807f3c">
+      <ID>Numero Ordine</ID>
+      <Name>Numero Ordine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3d8d53b7-3870-446f-8aa7-2d92960327ac">
+          <DataType>WChar</DataType>
+          <DataSize>120</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2f83dbf-8673-492a-b8ea-1dc6ef62696b">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>NumeroOrdine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1ca2acca-314a-40b1-8b85-51265a080adb">
+      <ID>Stato Ordine</ID>
+      <Name>Stato Ordine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="99a0988b-3680-4f81-85a3-940a2af82056">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="de2dc3a6-ebc2-4101-b013-000e1139b621">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>StatoOrdine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f261171d-19a0-48cf-8a5e-70a3fdbf35f3">
+      <ID>PK Data Inizio</ID>
+      <Name>PK Data Inizio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d87af8bc-242a-4fe3-843b-ddce572c79ee">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="25cf7150-ed09-4563-8d2e-bbac6b8d8e15">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>PKDataInizio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4adad19d-e788-4c31-88f2-caf763803703">
+      <ID>PK Utente</ID>
+      <Name>PK Utente</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="474a6517-2649-404a-bb18-453ce368832b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="940572af-743c-41cc-bb00-10826a08c286">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>PKUtente</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d76fce2-8be1-4dc2-93ca-6633915423ec">
+      <ID>ID Corso</ID>
+      <Name>ID Corso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e595a898-ac7b-4297-ae06-77904ae7518d">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a3e7241-bf99-4e02-856c-e644a55a291c">
+            <TableID>Fact_Corsi</TableID>
+            <ColumnID>IDCorso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,145 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e8b075dd-71f4-46df-9bff-de131a2a8920" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Documenti</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Budget</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8f32d542-bf97-4ac9-aaeb-da3137217d73">
+          <ID>Budget</ID>
+          <Name>Budget</Name>
+          <CreatedTimestamp>2021-06-30T17:41:17.64Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:08.83Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:07.593333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="0e49a069-4b77-48b4-9aa0-a9fa09712dea">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Budget</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="8933a23e-ad41-4f52-825c-01aa89a2a952">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1a091b9f-9d3d-4721-afd5-0048e5fc79fb" />
+          </ProactiveCaching>
+          <EstimatedSize>3526</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Cliente</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f857384f-0543-467a-b5c8-95dc94a5684e">
+          <ID>Cliente</ID>
+          <Name>Cliente</Name>
+          <CreatedTimestamp>2021-05-25T21:01:39.076667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:08.97Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:08.653333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a12e0aa9-3ac5-448d-88e7-46a6df65d5aa">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Dim_Cliente</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="a9f2d8a4-8b84-462f-b15f-c784d269459f">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a30564a7-9dc9-4441-bf7d-36ac51b2752a" />
+          </ProactiveCaching>
+          <EstimatedSize>2121328</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Documenti 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e766680c-d57c-45b9-9acf-5e93bb141f22">
+          <ID>Documenti</ID>
+          <Name>Documenti</Name>
+          <CreatedTimestamp>2021-05-25T21:01:39.136667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:09.126667Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:15.093333Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="31dfd18a-56c7-45ee-9cb8-f99653372f6b">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Documenti</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="3b3c06e0-4d40-49ab-8a05-1958591c6c57">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="d32ce20a-56e4-40d5-9c60-60b79c8546e6" />
+          </ProactiveCaching>
+          <EstimatedSize>10334501</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Documenti</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="624ee32e-fe31-40a4-9fe7-f6a02301931e">
+          <ID>Documenti</ID>
+          <Name>Documenti</Name>
+          <CreatedTimestamp>2021-03-23T22:53:36.58Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:09.266667Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:14.89Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="804473f3-a0a4-4a47-9667-44c28135c2da">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Documenti</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="6d97aa66-43fb-4520-9d9e-bea3607e57b8">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="05df97f4-3aa4-4da1-9cdc-cb7702dd931d" />
+          </ProactiveCaching>
+          <EstimatedSize>10719035</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Scadenze</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a7feaf71-14ae-4766-a23b-1232411a76cd">
+          <ID>Scadenze</ID>
+          <Name>Scadenze</Name>
+          <CreatedTimestamp>2021-06-27T07:12:03.303333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:09.423333Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:10.186667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="65575de8-4c19-47c7-a372-fd90e68d162f">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Scadenze</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="618a4e1e-be13-4656-96af-939612873e42">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7b953de8-f4b9-4594-941d-2117cc6b12be" />
+          </ProactiveCaching>
+          <EstimatedSize>1581896</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

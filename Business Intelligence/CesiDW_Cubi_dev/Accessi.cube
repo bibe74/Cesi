@@ -1,0 +1,1140 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4e4d5fd2-aa2b-4427-b09e-09f2ca8bc676" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Accessi</ID>
+  <Name>Accessi</Name>
+  <CreatedTimestamp>2021-01-20T11:04:33.153333Z</CreatedTimestamp>
+  <LastSchemaUpdate>2022-01-15T12:52:08.33Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="34" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-13340" scrolltop="153" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="49186" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data" left="12559" top="19337" logicalid="14" controlid="1" masterid="0" hint1="0" hint2="0" width="3545" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d90d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Data" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Accessi" left="5952" top="19337" logicalid="15" controlid="2" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Accessi" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="GruppoAgenti" left="5952" top="4695" logicalid="17" controlid="4" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_GruppoAgenti" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="CapoArea" left="5952" top="12095" logicalid="18" controlid="5" masterid="0" hint1="0" hint2="0" width="4207" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006f100000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_CapoArea" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7656" top="9395" logicalid="19" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_GruppoAgenti_PKCapoArea]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8055" y="12095" />
+              <point x="8055" y="9695" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7656" top="16438" logicalid="24" controlid="11" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Accessi_PKCapoArea]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8055" y="16937" />
+              <point x="8055" y="19337" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="9859" top="21438" logicalid="26" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Accessi_PKData]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="22" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="12559" y="21837" />
+              <point x="10159" y="21837" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="ClienteAccessi" left="7879" top="-2705" logicalid="28" controlid="15" masterid="0" hint1="0" hint2="0" width="6297" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00009918000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_ClienteAccessi" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7656" top="1995" logicalid="30" controlid="17" masterid="0" hint1="0" hint2="0" width="921" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_ClienteAccessi_PKGruppoAgenti]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="15" sourceattachpoint="6" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8055" y="4695" />
+              <point x="8055" y="3495" />
+              <point x="8277" y="3495" />
+              <point x="8277" y="2295" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12927" top="1995" logicalid="31" controlid="18" masterid="0" hint1="0" hint2="0" width="1804" height="17842" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_ClienteAccessi_PKDataDisdetta]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="15" sourceattachpoint="6" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14331" y="19337" />
+              <point x="14331" y="10816" />
+              <point x="13227" y="10816" />
+              <point x="13227" y="2295" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="12377" top="1995" logicalid="32" controlid="19" masterid="0" hint1="0" hint2="0" width="1254" height="17842" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_ClienteAccessi_PKDataInizioContratto]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="15" sourceattachpoint="2" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="13231" y="19337" />
+              <point x="13231" y="10816" />
+              <point x="12677" y="10816" />
+              <point x="12677" y="2295" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="13382" top="1995" logicalid="33" controlid="20" masterid="0" hint1="0" hint2="0" width="799" height="17842" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_ClienteAccessi_PKDataFineContratto]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="15" sourceattachpoint="4" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="13781" y="19337" />
+              <point x="13781" y="10816" />
+              <point x="13777" y="10816" />
+              <point x="13777" y="2295" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-13340</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>153</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>5952</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-2705</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>2022-01-15T13:06:09.78Z</LastProcessed>
+  <State>Processed</State>
+  <Language>1040</Language>
+  <Collation>Latin1_General_CI_AS</Collation>
+  <Dimensions>
+    <Dimension dwd:design-time-name="7a367f11-11c6-42be-9316-b002f75a9a3b">
+      <ID>Capo Area</ID>
+      <Name>Capo Area</Name>
+      <DimensionID>Capo Area</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7b88e8c0-1a12-4507-bb97-f1d3b4216c66">
+          <AttributeID>PK Capo Area</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e5e66975-9184-48ca-a6e4-8cb1d9eda147">
+          <AttributeID>Capo Area</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b9aa14f4-c75e-45aa-acdc-1d7b2598a496">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="cbe07c04-8c09-4f07-8808-8781b59c8edf">
+      <ID>Cliente Accessi</ID>
+      <Name>Cliente Accessi</Name>
+      <DimensionID>Cliente Accessi</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f35b523e-0aa5-4bf8-b18e-4c14fb7876ff">
+          <AttributeID>PK Cliente Accessi</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0919be1-30c9-4106-aca4-6a14080629b3">
+          <AttributeID>Username</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8f277674-4878-486c-af31-82e9f1fbfdb0">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d628d958-a004-4b31-9d96-a0a8bc1612d8">
+          <AttributeID>ID Soggetto Commerciale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="76a2817c-fa6e-4a02-9422-ee35f6308772">
+          <AttributeID>Email</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a24db229-6045-4d12-aa5a-516bc4e1b6f2">
+          <AttributeID>ID Anagrafica Cometa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f2b8beba-bd7d-4f03-b60a-514c4938b94c">
+          <AttributeID>Has Anagrafica Cometa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="db13ab47-2ce5-4e87-aeaa-7636172c5e6c">
+          <AttributeID>Has Anagrafica Nop Commerce</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dc89c7e6-2314-4fb2-bb40-a0a6745c6c9a">
+          <AttributeID>Has Anagrafica My Solution</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="17adec97-c460-49b2-9de3-e37a4908fca7">
+          <AttributeID>Provenienza Anagrafica</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="624e79cb-a366-482b-878d-7e2020d539a0">
+          <AttributeID>Codice Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ff27c0a6-9907-431c-b45c-e5cca2873da7">
+          <AttributeID>Tipo Soggetto Commerciale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0e9a7233-0a24-43d3-9c33-6829a0452dcc">
+          <AttributeID>Ragione Sociale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="17c2071d-fe80-42b4-a5e0-92475c9e0a84">
+          <AttributeID>Codice Fiscale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e091a0b5-e003-4539-b5fc-37f7a935f185">
+          <AttributeID>Partita IVA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="75a29414-120a-4528-840c-65dc85cbe634">
+          <AttributeID>Indirizzo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="47e5b709-dff9-489c-8154-f55e9650e00a">
+          <AttributeID>CAP</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="12679df8-4570-4601-b760-a7286930dd1a">
+          <AttributeID>Localita</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6118f2bf-1c97-4b98-8a7d-bfec1ab3d55f">
+          <AttributeID>Provincia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5bcbd3bb-b208-4996-8e8b-94508c4a5537">
+          <AttributeID>Regione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8a7b6bcd-d8e4-4e0a-a036-c3f27ca8f347">
+          <AttributeID>Macroregione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="94d50a73-c1d5-4b0a-b252-453927a8f731">
+          <AttributeID>Nazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c4131f34-3e9d-4454-b150-84fdacf29e43">
+          <AttributeID>Telefono</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c214b94e-6a4f-4271-82bb-83c1794fe0df">
+          <AttributeID>Cellulare</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ba10d5a6-036d-49b7-a5ac-db813fbb3413">
+          <AttributeID>Fax</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="781954f3-b338-43b9-9395-5a32ee3af7af">
+          <AttributeID>Tipo Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c3ff9634-8d13-45fa-b7f9-4ca4b4ee4e9e">
+          <AttributeID>Agente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="846d1671-6ceb-4d0f-b21e-a4aaf753647f">
+          <AttributeID>Motivo Disdetta</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="96bdde52-5c08-4872-8479-d0cf261f3961">
+          <AttributeID>Cognome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46907e0d-9127-41d2-801c-74ff43cdfef2">
+          <AttributeID>Nome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="338d074f-c202-4658-990a-ab028b8f2544">
+          <AttributeID>Is Attivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24d3a691-eb34-48a7-8c8e-be9415cd3860">
+          <AttributeID>Is Abbonato</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9eb2ec39-526f-497f-bffc-2993bc357122">
+          <AttributeID>ID Soggetto Commerciale Migrazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a2ba32af-8ba8-4eff-b2fa-6765d04d5f0d">
+          <AttributeID>ID Soggetto Commerciale Migrazione Old</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d93e6bf9-a6d2-4649-a660-b4ae54d3f6d1">
+          <AttributeID>ID Provincia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7353bd48-ac0b-4a65-9bb0-06a449ddafaa">
+          <AttributeID>Is Cliente Formazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b1e1bcdd-27eb-418b-aac7-d93e9075895b">
+          <AttributeID>Capo Area Default</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="919e0a32-3f01-4872-b6bc-012e71da8383">
+          <AttributeID>Agente Default</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5cc70d7f-1b8b-49c3-91a8-a1c2829625e7">
+          <AttributeID>Has Role My Solution Demo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7d446dc-694a-4a1d-8ed4-e0ea4e4f55b7">
+          <AttributeID>ID My Solution</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d12506f8-ab23-47a1-bc71-a48d9cb84b44">
+          <AttributeID>PK Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24d26766-241d-40cb-a491-039ce0e92136">
+          <AttributeID>PK Gruppo Agenti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="99179675-809c-4d97-9efa-43b53e0b2ee3">
+          <AttributeID>PK Data Disdetta</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8cb142a0-05f1-405e-bf0a-ed3f9269f8d0">
+          <AttributeID>PK Data Inizio Contratto</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e8efad20-7c84-4227-8866-c02306aebdfb">
+          <AttributeID>PK Data Fine Contratto</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0295d23f-2873-4a6e-845b-44eeba6e956a">
+      <ID>Data</ID>
+      <Name>Data</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9646adb8-bae9-4ab5-b745-c596ae051391">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1fd7c10d-585a-4c98-abbc-3c8d148e0456">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eeb16830-ecea-4b42-a1db-1855f98208cd">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="900d4806-172e-4adb-87da-056dd737496e">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b6cf0689-89ae-4cb8-babd-3902d704d76b">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3c9b4af7-71c2-4425-bf54-d21eaef0dbfe">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9ae61bd3-df7a-406a-b408-6348dabfb905">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="acf1cb71-77b9-4d65-ae9c-4067ad4b7d1c">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="829efb0c-7b6e-4ec8-936d-32425aa77393">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="5e6258a5-8e55-4e39-bcfa-b422302c9cec">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="67fc561d-d301-45d2-9588-0c89e7532a31">
+      <ID>Cliente - PK Data Disdetta</ID>
+      <Name>Data Disdetta</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="457455e9-dbe2-43a9-baea-f56f431c7887">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="04627443-20cf-4843-aebf-af8f03e558e6">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2bd179c5-b802-4e04-abfd-bc56088345f7">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1eabd18-c686-4052-8c61-186d41438f9b">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6970159a-4705-4eb1-a621-2499d4292029">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="51cabf48-974f-4ba3-9337-bc1b717d2091">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2a25a89e-c0e7-46f2-8ddd-b4b3bfcb012a">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="12d8b0ae-109f-49ac-9af3-8ad1a26974cb">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="4c854ef0-1c85-4983-9230-bfcf2c024642">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="8e7dd8df-7f45-4cfa-9874-d0c90ef52897">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="c6c98b27-2df2-459c-9277-68d5bc886f2e">
+      <ID>Cliente - PK Data Fine Contratto</ID>
+      <Name>Data Fine Contratto</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a121c76c-301f-4f51-85e2-7902c43c886b">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="70fc7c85-ec72-4af0-af1d-43dacc69e243">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="68f0bfeb-c6ea-4462-8b67-7e0b1f07bc0d">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="628aac98-c8e2-43c7-bd47-8a9d1bd83b72">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="33ed7617-2add-418a-88b3-ede221a87d6a">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c114ff56-5208-4d55-9830-5e2bc61e4c26">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="75865e63-f517-4241-b2ec-6800a5b31228">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="808e5636-1be6-4972-8c99-9b846f0d4853">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="b7604846-68f3-4b11-b2a9-149ccd8f53fd">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="1db8ef02-dc53-46ab-99b3-d01ed21d33d9">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="216828eb-5285-4418-aa50-d6675df6cdd8">
+      <ID>Cliente - PK Data Inizio Contratto</ID>
+      <Name>Data Inizio Contratto</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="025c12ed-ea6c-4f53-9612-6a8f926b93e2">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="94a64a37-364c-49ab-a39d-f30af8262e01">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="10c4e6b6-d135-46d5-939b-ca11f5373ca2">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="28e78497-ba00-43d4-bb11-4bcad1bf2ca3">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="49025649-2942-4f02-8c46-35da1e887127">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c5cea5eb-9be2-4a71-8a1d-01238132dc53">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c704461f-ae55-46b1-bd0b-b3b7b4868244">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="82f2908c-ff2d-4b11-82c1-0b7eff0a8a91">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="488ceeb3-6c07-4696-b8cc-0fb430fe188a">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="b02bc59e-1884-4a97-9454-58814b1c954c">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="039d3013-5e36-4404-8978-082f8f017296">
+      <ID>Gruppo Agenti</ID>
+      <Name>Gruppo Agenti</Name>
+      <DimensionID>Gruppo Agenti</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4f38dad9-decf-4131-b39e-2f236598907c">
+          <AttributeID>PK Gruppo Agenti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3bd5d7b6-90e7-4e5c-8e65-d40016bac678">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="422bffab-9c9b-483f-87d7-c8b684e114ab">
+          <AttributeID>Gruppo Agenti - ID Gruppo Agenti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="afe99d63-5d00-480a-ba45-ab0ee8696c80">
+          <AttributeID>Gruppo Agenti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c62005f5-4851-471b-a3b4-c291e527483e">
+          <AttributeID>Capo Area</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5c918687-0af3-44d9-b425-69fb3652e9d5">
+          <AttributeID>Agente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d7d11de-8c23-46fa-82a0-7104ab35bad9">
+          <AttributeID>Subagente</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="bd706bd7-3988-4010-aa2c-5c8ab635cc3b">
+      <ID>Accessi</ID>
+      <Name>Accessi</Name>
+      <CreatedTimestamp>2021-01-20T11:04:33.2Z</CreatedTimestamp>
+      <LastSchemaUpdate>2022-01-15T12:52:08.393333Z</LastSchemaUpdate>
+      <LastProcessed>2022-01-15T13:06:08.78Z</LastProcessed>
+      <State>Processed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c0ee54f5-ffd4-46f7-b4dd-6cabfe2c1162">
+          <ID>Numero Accessi</ID>
+          <Name>Numero Accessi</Name>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="daf8203a-815e-40c5-be84-a68316969f89">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c7601717-2412-48ce-9397-ab45c407e821">
+              <TableID>Fact_Accessi</TableID>
+              <ColumnID>NumeroAccessi</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="73103f51-d843-44b8-9090-f02f46e6f7d3">
+          <ID>Numero Pagine Visitate</ID>
+          <Name>Numero Pagine Visitate</Name>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="ecc943d8-4743-4ff8-b281-7cf8bdb5b1e7">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="325b6025-1c66-43e5-9296-c9fc0ee059f0">
+              <TableID>Fact_Accessi</TableID>
+              <ColumnID>NumeroPagineVisitate</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedSize>18356499</EstimatedSize>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c73692e6-bc98-47f0-a7d1-ee66f49a2246">
+          <CubeDimensionID>Data</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute dwd:design-time-name="e016ca6e-ba3a-433d-921c-a6a641c2ec2e">
+              <AttributeID>PK Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9c74a9db-986b-4242-b013-ab5361655664">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="eada48c7-a334-47b0-ab76-f40cd92325e7">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKData</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute dwd:design-time-name="d9b5b281-e6d1-463e-bd64-976c3306c1af">
+              <AttributeID>Anno</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f848abe7-051a-49d3-9f1c-8c0e1b83a518">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="212e405c-0b43-42c3-adb6-c8e557229f8c">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Anno</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="e0f5063d-d1a9-44f5-9dc0-e3af2db65db5">
+              <AttributeID>Mese</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="00bcf143-e442-49a8-95f0-c283a40603fe">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ca3dd7a0-f87d-4f70-b6ef-83b849cc5059">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Mese</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="9521ebf7-442d-4aeb-8831-72f0c76078ab">
+              <AttributeID>Anno Mese</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="eab85df6-d1f7-4380-93b3-78b0a4a17943">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="081c6e48-5199-4f98-aa26-c2dcfc071361">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>AnnoMese</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="68ca135d-0765-4c44-b469-5f94f8c982c4">
+              <AttributeID>Settimana</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2b7b1d42-76d0-4957-a1d8-f1fabce6735b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c70aee0f-5c98-471e-a424-f4542fd07b21">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Settimana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="8cd0cf6c-1e00-4e3c-a789-6af999d79aa2">
+              <AttributeID>Anno Settimana</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="356874ce-7a06-45f9-b632-6c75ea247576">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="618c197e-725a-46bc-99ce-0cadd070fa36">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>AnnoSettimana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="f7a69123-cc1e-455c-b4d6-88a4af39a1ac">
+              <AttributeID>PK Data 1</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e77742c6-5503-4e74-abb9-c21d5a76873d">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a88a98af-73c4-45e9-a56b-d6c98ba2910c">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>PKData</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="114f7148-8329-4371-9c6c-58d58e97fe35">
+          <CubeDimensionID>Capo Area</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute dwd:design-time-name="f958d4e6-4791-4723-96d2-d5fefe1b1f67">
+              <AttributeID>PK Capo Area</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1655beec-d95c-459d-bb5b-f62ae506802c">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d69b1377-af9f-429e-891d-3905f1eafb50">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKCapoArea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute dwd:design-time-name="557d0f54-2061-4223-9e52-67913ec1909b">
+              <AttributeID>Capo Area</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bb60b761-be74-446b-8226-f3470ec8112c">
+                  <DataType>WChar</DataType>
+                  <DataSize>60</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7e43f96a-6306-474d-91d2-1048bcbec520">
+                    <TableID>Dim_CapoArea</TableID>
+                    <ColumnID>CapoArea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="388c71e6-d8d2-4d11-bc08-2dcabcd3f832">
+              <AttributeID>Is Deleted</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6a9c3e03-c8de-4496-bd5b-59ba602dbab1">
+                  <DataType>Boolean</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a4395259-6de0-4731-af78-f326c151d1f5">
+                    <TableID>Dim_CapoArea</TableID>
+                    <ColumnID>IsDeleted</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="348e1fe1-5c0c-4d46-81b4-7fd6b9e7ffcd">
+          <CubeDimensionID>Cliente Accessi</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6b7b0248-b66c-4e15-82ba-6663a3858945">
+              <AttributeID>PK Cliente Accessi</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9db93446-621c-4506-936c-ae7980e7b6c2">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c0f93aa9-9e1a-41f3-89f6-520d26556b98">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKCliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="27be9f3f-7440-4789-98db-16dc05117288">
+          <CubeDimensionID>Cliente - PK Data Disdetta</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c29af624-070a-4a82-8bb5-5bbbeabde912">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Disdetta</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="5b1a7bba-ab59-4903-b2aa-b143e6113816">
+          <CubeDimensionID>Cliente - PK Data Fine Contratto</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e984cdf4-304c-4555-a8a1-158e925a88b2">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Fine Contratto</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="e063b561-1e98-4c7a-a67e-472806c2fcda">
+          <CubeDimensionID>Cliente - PK Data Inizio Contratto</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6eba6506-b694-44ca-a4c0-6b2b67cecea5">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Inizio Contratto</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="c4781415-5939-40d5-a855-ba31493e4b95">
+          <CubeDimensionID>Gruppo Agenti</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f1b7f2e6-0b25-4f28-beea-2e0a59ab34f9">
+              <AttributeID>PK Gruppo Agenti</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Gruppo Agenti</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <ProactiveCaching dwd:design-time-name="88157abf-0c55-4b49-bee0-875a8ffdd133">
+        <SilenceInterval>-PT1S</SilenceInterval>
+        <Latency>-PT1S</Latency>
+        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+        <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="efe58fea-c6d8-4978-83ff-c20da0e04504" />
+      </ProactiveCaching>
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="82952616-3f2d-471a-bc9b-9cdc73746790">
+      <ID>Accessi 1</ID>
+      <Name>Accessi - Conteggio</Name>
+      <CreatedTimestamp>2021-01-20T11:04:33.34Z</CreatedTimestamp>
+      <LastSchemaUpdate>2022-01-15T12:52:08.486667Z</LastSchemaUpdate>
+      <LastProcessed>2022-01-15T13:06:09.763333Z</LastProcessed>
+      <State>Processed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c183a65c-1ac0-4a9f-9e17-33bb4afd6459">
+          <ID>PK Data Distinct Count</ID>
+          <Name>Numero Giorni Accesso</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="7b9f39e8-26a8-4a59-ab50-5f566ef74602">
+            <DataType>Date</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d9494143-b4ea-4304-9a62-d11b9850e7bf">
+              <TableID>Fact_Accessi</TableID>
+              <ColumnID>PKData</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedSize>17699229</EstimatedSize>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e36e143f-39c1-41ec-99fd-6307159a1f1d">
+          <CubeDimensionID>Data</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute dwd:design-time-name="9778fca2-d17d-4b76-9178-6164667f6e97">
+              <AttributeID>PK Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bb639f8a-954d-4738-a53b-d44d0be19779">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="aabe579f-363d-4729-8d36-4087415e1269">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKData</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute dwd:design-time-name="2b8fea45-10d1-46a2-af27-1a5f39a53736">
+              <AttributeID>Anno</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c8c9be65-5757-4f44-b8ac-32dc7a83a096">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fae4b683-eacb-4ce5-8261-d7d7cb4cc898">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Anno</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="85767c38-147a-4a78-a8fb-54d799cf05f8">
+              <AttributeID>Mese</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9b0ee652-6dbd-419a-a3ed-83b98e613a42">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4d75bd0b-ad98-47e9-b69d-4f0784eb97b1">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Mese</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="cc8e9771-d327-450c-aec2-2821d425ecef">
+              <AttributeID>Anno Mese</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="838649b2-3c85-4583-a741-8e709e8b4851">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="02882725-70d4-47bb-92d9-03178d4dee71">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>AnnoMese</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="9d8dace7-5f47-4680-b5ed-13ce4465c126">
+              <AttributeID>Settimana</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1c532b6e-eebe-4615-b062-0a7c936c30ea">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8705da5f-d893-4811-9fb2-78a6c6a8fda7">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>Settimana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="fedf3f30-fa43-4968-9352-c511cc3865c9">
+              <AttributeID>Anno Settimana</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1cd143ca-5b9c-4392-a7b4-a2c2d997a7a8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a32652dc-7472-48a5-82ec-0e525e3af04b">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>AnnoSettimana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="b912afed-9b08-4929-812d-bc8460913f3b">
+              <AttributeID>PK Data 1</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="29337e6d-46cd-4da2-9930-02d2511062e7">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5843dff4-8be3-4b1f-9687-a26ddedf4728">
+                    <TableID>Dim_Data</TableID>
+                    <ColumnID>PKData</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="60798452-a5fd-48f9-bad9-4f93dfa44f31">
+          <CubeDimensionID>Capo Area</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute dwd:design-time-name="30c79d53-6f9a-4b62-b836-169c21f1af83">
+              <AttributeID>PK Capo Area</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="96123bee-e0f1-4aaf-948b-05950141f292">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d10dbb47-a288-416b-99e6-ab146ace3077">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKCapoArea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute dwd:design-time-name="25d397a9-6577-44a8-addb-378daf2bdef0">
+              <AttributeID>Capo Area</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c696d10a-3097-42db-a298-8d6b929905d6">
+                  <DataType>WChar</DataType>
+                  <DataSize>60</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="96375b7d-f980-43ee-b01f-4e768acca721">
+                    <TableID>Dim_CapoArea</TableID>
+                    <ColumnID>CapoArea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute dwd:design-time-name="0422445d-e59e-4c80-a4b1-bd37e9454180">
+              <AttributeID>Is Deleted</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="dfeae4bc-d7dd-4e3b-9f2a-5a235068a567">
+                  <DataType>Boolean</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="47094cde-ebed-4e83-9be2-6cd4a8351eee">
+                    <TableID>Dim_CapoArea</TableID>
+                    <ColumnID>IsDeleted</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3e3d24da-7833-46bd-b3f1-3803f502ca27">
+          <CubeDimensionID>Cliente Accessi</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cee3100a-2297-4c67-9283-22957d991009">
+              <AttributeID>PK Cliente Accessi</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e3c8904b-64dd-4998-a79a-cb9966b304cd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d5d93327-a6f6-4f36-9940-f8962ff7cf2e">
+                    <TableID>Fact_Accessi</TableID>
+                    <ColumnID>PKCliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="05ff2a8c-24f9-4f70-bc5e-dfc65605ffeb">
+          <CubeDimensionID>Gruppo Agenti</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="815569af-7567-4ae6-8c71-29dbc6504c1e">
+              <AttributeID>PK Gruppo Agenti</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Gruppo Agenti</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="391c0e63-c9e8-4fe1-8804-4c5c2b335e5c">
+          <CubeDimensionID>Cliente - PK Data Inizio Contratto</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="334d0877-6e7e-49ea-a8fb-4eb51c93f6ba">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Inizio Contratto</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="a25eeaa1-8360-454e-be8a-daf1f648d9d6">
+          <CubeDimensionID>Cliente - PK Data Fine Contratto</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="55a5f965-db6c-46bc-9de2-73437473eb93">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Fine Contratto</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="54790c34-2b00-47b9-a744-dbe7c20bd9f5">
+          <CubeDimensionID>Cliente - PK Data Disdetta</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="30453b2b-cca7-4b15-bf9b-fb53d25d0ae2">
+              <AttributeID>PK Data</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cliente Accessi</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>PK Data Disdetta</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <ProactiveCaching dwd:design-time-name="48823cbd-d1d7-41b2-9b7f-0f10adef1c09">
+        <SilenceInterval>-PT1S</SilenceInterval>
+        <Latency>-PT1S</Latency>
+        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+        <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a0de101c-c1dc-4a3c-ac58-e3c0bb073141" />
+      </ProactiveCaching>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="6e524b7b-2ef3-468c-8ecc-2bae0c3a52df">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="34f4ca9f-5a6c-4b56-b66d-c59cee1f8f49">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>2021-01-20T11:04:33.483333Z</CreatedTimestamp>
+      <LastSchemaUpdate>2022-01-15T12:52:08.563333Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE;
+CREATE MEMBER CURRENTCUBE.[Measures].[Numero Pagine Visitate - A.P.]
+ AS (PARALLELPERIOD([Data].[Anno - Mese].[Anno], 1, [Data].[Anno - Mese].CURRENTMEMBER), [Numero Pagine Visitate]),
+FORMAT_STRING = "#,###",
+VISIBLE = 0 ,  ASSOCIATED_MEASURE_GROUP = 'Accessi'; 
+CREATE MEMBER CURRENTCUBE.[Measures].[% Delta Numero Pagine Visitate]
+ AS CASE WHEN DIVIDE([Numero Pagine Visitate], [Numero Pagine Visitate - A.P.]) &lt;&gt; 0 THEN DIVIDE([Numero Pagine Visitate], [Numero Pagine Visitate - A.P.]) - 1 END,
+FORMAT_STRING = "Percent",
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Accessi'; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Numero Giorni Accesso - A.P.]
+ AS (PARALLELPERIOD([Data].[Anno - Mese].[Anno], 1, [Data].[Anno - Mese].CURRENTMEMBER), [Numero Giorni Accesso]),
+FORMAT_STRING = "#,###",
+VISIBLE = 0 ,  ASSOCIATED_MEASURE_GROUP = 'Accessi - Conteggio'; 
+CREATE MEMBER CURRENTCUBE.[Measures].[% Delta Numero Giorni Accesso]
+ AS CASE WHEN DIVIDE([Numero Giorni Accesso], [Numero Giorni Accesso - A.P.]) &lt;&gt; 0 THEN DIVIDE([Numero Giorni Accesso], [Numero Giorni Accesso - A.P.]) - 1 END,
+FORMAT_STRING = "Percent",
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Accessi - Conteggio'; 
+</Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+  <ProactiveCaching dwd:design-time-name="284614e2-b939-4ee2-a62d-3f2f02d6a40f">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b1779281-442b-483b-a736-5e58411baf95" />
+  </ProactiveCaching>
+</Cube>

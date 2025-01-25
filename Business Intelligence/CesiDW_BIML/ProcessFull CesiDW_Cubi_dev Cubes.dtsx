@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="01/25/2025 08:52:54" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{8267909B-0DDF-4275-B516-CD05127C4D3F}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="ProcessFull CesiDW_Cubi_dev Cubes" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{98639D34-8349-4771-952D-981A56CF5214}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DTSID="{12AA17F4-A401-4175-9781-6E5430C5693C}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="ProcessFull Accessi Cube" DTS:refId="Package\ProcessFull Accessi Cube" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>ProcessFull Accessi Cube.dtsx</PackageName>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DTSID="{9B66465F-8529-49FE-BC2E-7BF1C102030D}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="ProcessFull Corsi Cube" DTS:refId="Package\ProcessFull Corsi Cube" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>ProcessFull Corsi Cube.dtsx</PackageName>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DTSID="{63C6B231-63EE-442A-8E40-35DF8510D1A9}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="ProcessFull Crediti Cube" DTS:refId="Package\ProcessFull Crediti Cube" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>ProcessFull Crediti Cube.dtsx</PackageName>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DTSID="{D36443FB-133F-42AE-B114-57B001449ED6}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="ProcessFull Documenti Cube" DTS:refId="Package\ProcessFull Documenti Cube" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>ProcessFull Documenti Cube.dtsx</PackageName>
+          <UseProjectReference>True</UseProjectReference>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{AFF0324E-FFF1-4462-A458-3B7EC238C98C}" DTS:From="Package\ProcessFull Accessi Cube" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_ProcessFull Accessi Cube_To_ProcessFull Corsi Cube" DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Accessi Cube_To_ProcessFull Corsi Cube]" DTS:To="Package\ProcessFull Corsi Cube" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{BCA9031F-FC04-4F14-90B5-B040467843B2}" DTS:From="Package\ProcessFull Corsi Cube" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_ProcessFull Corsi Cube_To_ProcessFull Crediti Cube" DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Corsi Cube_To_ProcessFull Crediti Cube]" DTS:To="Package\ProcessFull Crediti Cube" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{6B967E53-34EC-4910-8A80-BB104FCA9439}" DTS:From="Package\ProcessFull Crediti Cube" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_ProcessFull Crediti Cube_To_ProcessFull Documenti Cube" DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Crediti Cube_To_ProcessFull Documenti Cube]" DTS:To="Package\ProcessFull Documenti Cube" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>

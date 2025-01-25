@@ -1,0 +1,61 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="aa5bf710-8a7b-4b1d-a930-0a4ebf43b0ee" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Accessi</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Accessi</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="693b07ca-63a4-452a-8169-efdf72806e48">
+          <ID>Accessi</ID>
+          <Name>Accessi</Name>
+          <CreatedTimestamp>2021-01-20T11:04:33.246667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:08.44Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:08.746667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="19e58331-e4d8-4172-bfe4-4eb31ab6b974">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Accessi</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="3392d35c-e3be-4845-8113-61d4a5e54361">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1adacd45-4e5d-45c9-a49c-d5457d6c4010" />
+          </ProactiveCaching>
+          <EstimatedSize>18356499</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Accessi 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="7733a631-af52-4306-b437-bd3db828855b">
+          <ID>Accessi</ID>
+          <Name>Accessi</Name>
+          <CreatedTimestamp>2021-01-20T11:04:33.356667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-15T12:52:08.533333Z</LastSchemaUpdate>
+          <LastProcessed>2022-01-15T13:06:09.716667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="07dc5c4c-7dc5-458a-aa87-184bbc9859dc">
+            <DataSourceViewID>CesiDW</DataSourceViewID>
+            <TableID>Fact_Accessi</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="a3b5591f-ce90-45ea-8063-cf80303220f2">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a5f0cf52-0aa3-47c3-afed-9c618d20c4c0" />
+          </ProactiveCaching>
+          <EstimatedSize>17699229</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CesiDW">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="__CesiDW_30.03_Dim_Cliente.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>__CesiDW_30.03_Dim_Cliente.sql</FullPath>
+        </FileNode>
+        <FileNode Name="__CesiDW_30.03_Dim_Cliente_NEW.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>__CesiDW_30.03_Dim_Cliente_NEW.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2022-06-23.Ricostruzione Documenti e Scadenze.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>2022-06-23.Ricostruzione Documenti e Scadenze.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2022-06-24.Ricostruzione Documenti e Scadenze.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>2022-06-24.Ricostruzione Documenti e Scadenze.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2022-06-28.Ricostruzione Documenti e Scadenze.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>2022-06-28.Ricostruzione Documenti e Scadenze.sql</FullPath>
+        </FileNode>
+        <FileNode Name="2024-04-09.Migrazione_Dim_Cliente.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>2024-04-09.Migrazione_Dim_Cliente.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.00_database_creation.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.00_database_creation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.01_schemata.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.01_schemata.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.02_users.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.02_users.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.03_synonyms.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.03_synonyms.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.04_audit.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.04_audit.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_00.05_dbo_programmability.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_00.05_dbo_programmability.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_02.01_stub_Landing_source.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_02.01_stub_Landing_source.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_02.02_stub_Staging_destination.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_02.02_stub_Staging_destination.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_10.01_Import_Dates.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_10.01_Import_Dates.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_10.02_Import_lookups.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_10.02_Import_lookups.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_10.03_Import_data.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_10.03_Import_data.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_20.01_Landing_COMETA.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.01_Landing_COMETA.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_20.02_Landing_MYSOLUTION.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.02_Landing_MYSOLUTION.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_20.03_Landing_COMETAINTEGRATION.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.03_Landing_COMETAINTEGRATION.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_20.04_Landing_WEBINARS.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.04_Landing_WEBINARS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_20.99_Landing_views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.99_Landing_views.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.01_Dim_Data.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.01_Dim_Data.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.02_Dim_GruppoAgenti.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.02_Dim_GruppoAgenti.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.03_Dim_Cliente_ClienteAccessi.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.03_Dim_Cliente_ClienteAccessi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.04_Dim_Articolo.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.04_Dim_Articolo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.05_Dim_MacroTipologia.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.05_Dim_MacroTipologia.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.06_Dim_Utente.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.06_Dim_Utente.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_30.07_Dim_Corso.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_30.07_Dim_Corso.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.01_Fact_Accessi.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.01_Fact_Accessi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.03_Fact_Documenti.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.03_Fact_Documenti.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.04_Fact_Scadenze.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.04_Fact_Scadenze.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.05_Fact_Budget.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.05_Fact_Budget.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.06_Fact_Corsi.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.06_Fact_Corsi.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.07_Fact_Crediti.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.07_Fact_Crediti.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.99_Fact_views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.99_Fact_views.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_50.01_user_programmability.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_50.01_user_programmability.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_60.01_audit_views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_60.01_audit_views.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_99.01_misc.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_99.01_misc.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_99.02_query_report_2017_2018.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_99.02_query_report_2017_2018.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_99.03_query_verifica_migrazione_NOPCOMMERCE_COMETA.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_99.03_query_verifica_migrazione_NOPCOMMERCE_COMETA.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_99.99_rebuild_all.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_99.99_rebuild_all.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CesiDW_Trash">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="_CesiDW_10.02_Import_Membership.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_10.02_Import_Membership.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_CesiDW_20.02a_Landing_MYSOLUTION_full_reload.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_20.02a_Landing_MYSOLUTION_full_reload.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_CesiDW_20.03_Landing_CESI.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_20.03_Landing_CESI.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_CesiDW_30.02_Dim_Cliente_OLD.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_30.02_Dim_Cliente_OLD.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_CesiDW_40.02_Fact_Ordini.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_40.02_Fact_Ordini.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_SQLQuery99_misc.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_SQLQuery99_misc.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_usp_ReportDettaglioOrdini.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_usp_ReportDettaglioOrdini.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Script_Qlik.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Script_Qlik.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1_report_Ordini_come_Qlikview.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1_report_Ordini_come_Qlikview.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

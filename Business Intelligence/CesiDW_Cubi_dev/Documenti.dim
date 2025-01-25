@@ -1,0 +1,1455 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5b1e8fd7-a1ce-4a6d-b8bd-cc06593fde14" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Documenti</ID>
+  <Name>Documenti</Name>
+  <CreatedTimestamp>2021-03-23T22:53:36.19Z</CreatedTimestamp>
+  <LastSchemaUpdate>2022-01-15T12:52:07.44Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-5734" scrolltop="-8348" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17092" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Documenti" left="-350" top="2328" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4498" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00009211000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Documenti" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-5734</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8348</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-350</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>2328</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>2022-01-15T13:06:05.576667Z</LastProcessed>
+  <State>Processed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="65704eb9-6e9c-4185-a6c0-d35835ceb354">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="f46df874-63d3-4745-986e-6eea68b51d04">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Language>1040</Language>
+  <Collation>Latin1_General_CI_AS</Collation>
+  <UnknownMemberName>Unknown</UnknownMemberName>
+  <Attributes>
+    <Attribute dwd:design-time-name="49d901ae-9fc7-477c-93ae-bc59c25a805e">
+      <ID>PK Documenti</ID>
+      <Name>PK Documenti</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b06fa683-1bb2-47bb-877f-327fa3718c1c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c6bd15e-4389-494f-8dd8-8c403cbee6a4">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDocumenti</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6da84b9c-e072-44a3-9393-a5bd03558952">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5cb57a2d-053c-4248-8d64-5606447e8a8a">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDocumenti</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="95b8f90f-ffdf-4210-8e29-1037f1d86393">
+          <AttributeID>Is Deleted</AttributeID>
+          <Name>Is Deleted</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dd3abbcd-1274-428c-bd2a-5aa1bd976ad4">
+          <AttributeID>ID Documento Riga</AttributeID>
+          <Name>ID Documento Riga</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cd279664-ed1c-453c-a0b3-b83d970d671c">
+          <AttributeID>ID Documento</AttributeID>
+          <Name>ID Documento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3b814b51-076e-4d64-92d0-50936989eaca">
+          <AttributeID>Numero Documento</AttributeID>
+          <Name>Numero Documento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cad47e05-c11e-4d64-b70b-f3be0f167a46">
+          <AttributeID>Numero Riga</AttributeID>
+          <Name>Numero Riga</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="93e66b22-38c7-4fee-be9e-0baaf1ebe1a0">
+          <AttributeID>Profilo</AttributeID>
+          <Name>Profilo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c3e7eb41-c005-47c5-9cdf-9d3c7d7b3c4c">
+          <AttributeID>Tipo Soggetto Commerciale</AttributeID>
+          <Name>Tipo Soggetto Commerciale</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="584121f2-0b8e-44d8-baa6-7eac90339658">
+          <AttributeID>ID Libero1</AttributeID>
+          <Name>ID Libero1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="321ad12a-930c-4f0a-8196-d5f31086ab02">
+          <AttributeID>Libero1</AttributeID>
+          <Name>Libero1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cb4325dd-c545-419b-b494-8cd0e810ed80">
+          <AttributeID>ID Libero2</AttributeID>
+          <Name>ID Libero2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4a1aa98c-03be-468a-8326-b5d8b46d387d">
+          <AttributeID>Libero2</AttributeID>
+          <Name>Tipologia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a3f5329d-e833-4c7c-81cd-1b43ce53aec8">
+          <AttributeID>ID Libero3</AttributeID>
+          <Name>ID Libero3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="66e39243-4c42-4d10-b352-d0640ae16af6">
+          <AttributeID>Libero3</AttributeID>
+          <Name>Libero3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f275604d-ec46-453d-b9cd-2ba68293ff7a">
+          <AttributeID>ID Tipo Fatturazione</AttributeID>
+          <Name>ID Tipo Fatturazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="71b68f5a-99b6-4b80-bbfa-079a4b19142c">
+          <AttributeID>Tipo Fatturazione</AttributeID>
+          <Name>Tipo Fatturazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="33671222-4213-49c3-9aec-c0607967a68f">
+          <AttributeID>PK Data Documento</AttributeID>
+          <Name>PK Data Documento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4071e93f-564d-4a70-800c-26dd840c6c02">
+          <AttributeID>PK Data Fine Contratto</AttributeID>
+          <Name>PK Data Fine Contratto</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c45cbc95-4052-424b-844f-d003ca434baa">
+          <AttributeID>PK Gruppo Agenti</AttributeID>
+          <Name>PK Gruppo Agenti</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="70996278-71e5-4a0a-97f6-c55a84a4de24">
+          <AttributeID>PK Cliente</AttributeID>
+          <Name>PK Cliente</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d6d11cfb-3caa-491e-b04f-77b2c6d2c75b">
+          <AttributeID>PK Data Inizio Contratto</AttributeID>
+          <Name>PK Data Inizio Contratto</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3036ee8c-bf27-4d9f-aa93-0e6b0734deb6">
+          <AttributeID>PK Data Inizio Esercizio</AttributeID>
+          <Name>PK Data Inizio Esercizio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3566542e-62f6-4a77-baf8-fcf52044730a">
+          <AttributeID>PK Data Fine Esercizio</AttributeID>
+          <Name>PK Data Fine Esercizio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="49564665-113c-4e81-9158-f96882cf6f7b">
+          <AttributeID>Tipo Registro</AttributeID>
+          <Name>Tipo Registro</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d51c3b2d-7ee7-42b5-a109-98dd14ed43d9">
+          <AttributeID>Numero Registro</AttributeID>
+          <Name>Numero Registro</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="942dbe08-9621-488f-89a1-791beab0faad">
+          <AttributeID>Registro</AttributeID>
+          <Name>Registro</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6ee30307-92ad-4348-b146-c1a83b422215">
+          <AttributeID>Codice Esercizio</AttributeID>
+          <Name>Codice Esercizio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="16504fa0-cf44-4dee-b2fc-39d2f303f06f">
+          <AttributeID>PK Data Competenza</AttributeID>
+          <Name>PK Data Competenza</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7ecfcb59-85d7-4fb1-81a7-b86a988df657">
+          <AttributeID>PK Data Registrazione</AttributeID>
+          <Name>PK Data Registrazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="57d9bf77-87f3-4a87-ae91-c8f820e8a985">
+          <AttributeID>PK Gruppo Agenti Riga</AttributeID>
+          <Name>PK Gruppo Agenti Riga</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="68f61149-6711-4b5c-9109-0b59b5b19b5d">
+          <AttributeID>PK Cliente Fattura</AttributeID>
+          <Name>PK Cliente Fattura</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ccd1956a-9c38-4988-b2ff-61fb8d182d88">
+          <AttributeID>ID Profilo</AttributeID>
+          <Name>ID Profilo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9701f8b4-c563-4198-b251-bcfd27dcca2b">
+          <AttributeID>Tipo Soggetto Commerciale Fattura</AttributeID>
+          <Name>Tipo Soggetto Commerciale Fattura</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="34aa39a2-46cb-40e5-9828-a46fa46ed09a">
+          <AttributeID>Libero4</AttributeID>
+          <Name>Libero4</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed7ed2d0-3b25-49d0-ba2d-a5168338ef9e">
+          <AttributeID>PK Articolo</AttributeID>
+          <Name>PK Articolo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="27b07f12-81aa-4cf2-aade-086b9eeec7d6">
+          <AttributeID>Codice Condizioni Pagamento</AttributeID>
+          <Name>Codice Condizioni Pagamento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="22d3a4c1-57f9-44da-968a-9c7e754d02a0">
+          <AttributeID>Condizioni Pagamento</AttributeID>
+          <Name>Condizioni Pagamento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="69d758d9-9bdf-4f6d-9397-9f1051a82438">
+          <AttributeID>Rinnovo Automatico</AttributeID>
+          <Name>Rinnovo Automatico</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d9646d21-81db-4fad-8846-11b4c839729a">
+          <AttributeID>Note Intestazione</AttributeID>
+          <Name>Note Intestazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b74e1c57-4b0f-43ac-a160-97cc440afce3">
+          <AttributeID>Is Profilo Valido Per Statistica Fatturato</AttributeID>
+          <Name>Is Profilo Valido Per Statistica Fatturato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e6029850-3fb0-410b-9cf8-b747008c9aaf">
+          <AttributeID>Is Profilo Valido Per Statistica Fatturato Formazione</AttributeID>
+          <Name>Is Profilo Valido Per Statistica Fatturato Formazione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="48993cf7-7ca5-4581-9167-d0fce73b48b4">
+          <AttributeID>PK Capo Area</AttributeID>
+          <Name>PK Capo Area</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a8f6a2c6-6fc8-47ec-a301-b36f466a5964">
+          <AttributeID>PK Capo Area Riga</AttributeID>
+          <Name>PK Capo Area Riga</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="55a68126-8a49-4fa5-b527-63f363276499">
+          <AttributeID>PK Macro Tipologia</AttributeID>
+          <Name>PK Macro Tipologia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fd31f648-c126-4c91-a8a5-624898a26590">
+          <AttributeID>ID Profilo 1</AttributeID>
+          <Name>ID Profilo 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0a83d0b3-461d-49e6-881d-18dbf848038a">
+          <AttributeID>Progressivo</AttributeID>
+          <Name>Progressivo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b2492bce-1420-4c60-8d3e-eec77b21af47">
+          <AttributeID>Note Decisionali</AttributeID>
+          <Name>Note Decisionali</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b6e5c480-3174-4b0c-a489-961fb245b73a">
+          <AttributeID>PK Data Disdetta</AttributeID>
+          <Name>PK Data Disdetta</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c6fcb26d-bd89-4347-894c-29465513819b">
+      <ID>Is Deleted</ID>
+      <Name>Is Deleted</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2fe4dce0-8e1a-413d-a61d-fbb513cec6fb">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f27950f5-92f0-4e9b-81ed-2b5bcc900267">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IsDeleted</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e93ffbf1-2697-4638-8868-63907ba5c0c8">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4a0c4cae-3ba2-44f0-acf8-c092d53aa283">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IsDeleted</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="887059aa-46ca-40f0-8b4e-aca1337b191d">
+      <ID>ID Documento Riga</ID>
+      <Name>ID Documento Riga</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="55959326-0755-43e6-a9ae-3e79fdbeb7a8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b72e1b3-efcf-437b-817d-ab174b22eefc">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDDocumento_Riga</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8579e3b8-ecef-4164-8fda-ffe07625fd02">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e250da3e-44d0-478d-acf0-f8a77ccae0b5">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDDocumento_Riga</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="78ab232e-656e-4007-a3cb-bea34ccdb10d">
+      <ID>ID Documento</ID>
+      <Name>ID Documento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d09600ac-fef8-42e6-9765-26add82e7a72">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="01478486-672c-4ded-8b6d-68088625b1e4">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDDocumento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="d428640a-07fa-48ab-8fe2-4ade380306bf">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3c0e31d0-e193-49e9-9080-8d27004da0be">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDDocumento</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f829f7d1-bea9-4814-8a6d-767551407021">
+      <ID>Numero Documento</ID>
+      <Name>Numero Documento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0b05e8d2-852d-4ba7-8da6-bf52a7e7dc2a">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f7413874-f485-4d4d-8c19-07ab16a93068">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>NumeroDocumento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a0047280-153d-47d2-9b36-cb179fd3b0aa">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7a29796e-9a91-4edd-abaa-94cba0ee55ea">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>NumeroDocumento</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="027da12e-d096-4d43-960c-ae4ee423234f">
+      <ID>Numero Riga</ID>
+      <Name>Numero Riga</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="137958db-4d47-4880-a7bb-e6706366b95d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d7fc5471-a8d8-4708-9efe-6748e1f64ab0">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>NumeroRiga</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="426a7843-aed7-44f0-8d9c-f58a990a889f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="36883b70-dd89-4e66-901f-270e584c6b31">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>NumeroRiga</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="00d8686b-498a-4ce0-9064-09478223a095">
+      <ID>Profilo</ID>
+      <Name>Profilo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8ccdfa8d-17c0-4da8-aaa4-79db41d9d490">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2dfa9f61-1706-4c28-9f40-6ee521c6e6be">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Profilo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="d60282a4-82c7-4b18-a673-1c6a2b122de7">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="744228b5-b1fd-4394-94af-17ff270b8005">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Profilo</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="47415e80-0ce0-4248-b663-7e63ae8e851e">
+      <ID>Tipo Soggetto Commerciale</ID>
+      <Name>Tipo Soggetto Commerciale</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="606b8248-9359-4515-82bc-af3fb5cb60e0">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ae6d45c-b795-48fd-9adb-49d17d7b660d">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>TipoSoggettoCommerciale</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ace3bd9c-1b84-44a5-ac1b-523dfb4f87a9">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e2d25d48-6c1c-4184-ae18-f307000eee9c">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>TipoSoggettoCommerciale</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="522b3212-89de-4c10-a318-22e8634ea2db">
+      <ID>ID Libero1</ID>
+      <Name>ID Libero1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a79f569a-426b-4033-8aa1-ad859974b5dc">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b056c4ba-d76c-447d-99a6-b96d9d0d3142">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDLibero1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="af60bfd9-b204-447d-9eba-4702e8f97b99">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a819cf5b-cdf1-4f82-ad02-af754e1759f2">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDLibero1</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b023f716-87a1-48fd-8a8f-55b859663edf">
+      <ID>Libero1</ID>
+      <Name>Libero1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dc1b686a-3636-49a3-aecd-382928dc4b79">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="37608c43-a9b2-409c-aa4c-ad16c1ed5eaf">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Libero1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="d1b0295d-fbb0-46c6-94c8-c59db9978690">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e8776dd3-601a-4f0c-adcf-f1ef981119c7">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Libero1</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1948c549-dc11-45e9-902e-c94d2c4c26a5">
+      <ID>ID Libero2</ID>
+      <Name>ID Libero2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6267ba7d-5b84-4b5d-bee7-f131762fa55f">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b250e0cd-ac84-4d61-9c2d-a70c47a0b16b">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDLibero2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4e2c30ec-bcda-45e4-85c2-fcf19336c9a3">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2dbe8d69-6efc-4a7d-a8a6-636ae0986c93">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDLibero2</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d3e4d3a8-6d19-4151-977d-039f47e03010">
+      <ID>Libero2</ID>
+      <Name>Tipologia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="722f7b4f-4c69-4ae2-b3b2-3fe4f9aa37f0">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="679bbe36-bcd6-4131-943c-1c37f986d24b">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Libero2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c254c437-1330-4ba0-afd2-4d31e0291edd">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bcb90db0-91b1-4593-9d52-f0ee54ca8e07">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Libero2</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4fbdc448-31ab-4b5a-b745-6da97f21a017">
+      <ID>ID Libero3</ID>
+      <Name>ID Libero3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c58d5b86-821b-4f83-aa24-18ac6dfe5d63">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d84a344c-2e9e-44fa-8738-48c30434fb1e">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDLibero3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="aa13d0c6-fc63-4032-b375-17fe89ff3358">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a49c909d-707a-441b-9e29-62d215f3865b">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDLibero3</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b661679-2db8-4523-b2d6-9aa2e9306116">
+      <ID>Libero3</ID>
+      <Name>Libero3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7adb8466-f7e3-4f98-a4ba-09a57220da4b">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bfe6f222-4438-4172-9969-b78596c7fad3">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Libero3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a43774c0-352b-48df-a1f0-8abe4527df9a">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f95870e2-a353-4d82-bcd0-99333f9e8c19">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Libero3</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d6a37d69-ced7-4d2c-b5d1-4c78bdca51a3">
+      <ID>ID Tipo Fatturazione</ID>
+      <Name>ID Tipo Fatturazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="78545365-bebb-4c5f-99ea-c3a8cc61a8ed">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3313a4b8-e449-4d0d-8fbc-87066d0ce2d7">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDTipoFatturazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6e1cdec6-6463-465e-8808-679b8d679916">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6a42d177-dfda-46a8-b14e-d1036b5dcaca">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDTipoFatturazione</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1726d5e0-d171-41f0-8e2c-0d4d8c783f1d">
+      <ID>Tipo Fatturazione</ID>
+      <Name>Tipo Fatturazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="44b8ca59-e295-4853-a170-2c92710f28c1">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="269be007-9123-431d-b14d-23a5fb4fdcc4">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>TipoFatturazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="87a974db-e433-4460-bed4-cd8270a82c0f">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a0477035-fca8-4b79-8d26-93074f5db18e">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>TipoFatturazione</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="988fe6fb-0ffa-4516-b1d5-4e9c5df5e1cc">
+      <ID>PK Data Documento</ID>
+      <Name>PK Data Documento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37e91f0e-4fdd-4b79-80d7-3d78f5ae8ebf">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="da68682b-4dd5-4391-9a07-7a80e781ebdb">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataDocumento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="791bf4b0-170e-4adf-bbfb-c92807a7c4df">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a6260a91-8d55-4443-99c4-e7cc6911d1fc">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataDocumento</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2eb4661d-c5c7-4365-b792-a32d2e7db44d">
+      <ID>PK Data Fine Contratto</ID>
+      <Name>PK Data Fine Contratto</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41b201e8-dbd1-439c-bae6-0f3b4175023a">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b50d6fd4-7cf9-4629-9b4a-50c0d571fb9c">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataFineContratto</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1e9c3f80-502f-475a-9630-cc8bcf38c41f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="04c68c70-19ad-4936-b03e-bb4f3815d328">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataFineContratto</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="35896101-1d31-4ee0-ae8d-e80984b3a46a">
+      <ID>PK Gruppo Agenti</ID>
+      <Name>PK Gruppo Agenti</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="286c2d92-3254-43f8-8f15-0ad01e8f5a43">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a23ea02e-5801-4c59-93d3-09627eac74fc">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKGruppoAgenti</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="53f49cb8-868f-40fd-bb1a-c0ca472aa31a">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="694f6424-eb28-436d-8de7-626174bdb873">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKGruppoAgenti</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4a2deb80-64ee-4732-88c2-e66792c97de0">
+      <ID>PK Cliente</ID>
+      <Name>PK Cliente</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="852756a9-5fb6-4333-a483-8964e6ab0ca2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ea7930bc-8879-4e47-b8d1-82b16464b0db">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKCliente</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7833d688-8cb9-4bf0-825e-3db7d86888d9">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8055d484-b214-4c02-a5ec-ad54278ee649">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKCliente</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf3815b3-7123-4f89-9f50-d04253d452c0">
+      <ID>PK Data Inizio Contratto</ID>
+      <Name>PK Data Inizio Contratto</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b48c75e5-b153-4d65-b521-d85fc2146b70">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ae51400a-a822-4468-a9e0-5751b8577c9f">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataInizioContratto</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3dc82cf6-5a9d-4fdc-ad91-6b1ed7f53249">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="71e7fbf6-297e-4d57-94bf-85e2fc4dfab1">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataInizioContratto</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="662c9cc9-ea90-4ac1-a905-ab841d7d9d79">
+      <ID>PK Data Inizio Esercizio</ID>
+      <Name>PK Data Inizio Esercizio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b09dd8d5-b749-4673-9b3b-228836a36d4c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7881877a-98af-40bf-bca7-0390afd21acb">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataInizioEsercizio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="2699be36-7fa1-4da0-a2e8-8e834a9839c3">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5b2408b1-15fc-476f-8b69-6f718bf537e1">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataInizioEsercizio</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ffedad82-d8ab-414f-9c32-b0d28762526c">
+      <ID>PK Data Fine Esercizio</ID>
+      <Name>PK Data Fine Esercizio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab5eb315-659e-40cf-bfdf-0682fa76fecb">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5654ff21-1cd7-4509-8829-afe4c5d8a34c">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataFineEsercizio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c56f91fa-b050-4613-828e-82b35de9fbe0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d2fbec98-512b-4d29-8e56-638bc4cd0e7f">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataFineEsercizio</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a728323a-320a-47b8-9629-40c6aa856dda">
+      <ID>Tipo Registro</ID>
+      <Name>Tipo Registro</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="44f61eab-e7b3-4663-8566-38bf1fc41d01">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b50980a8-b9f9-496c-8e8f-a743172e0adf">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>TipoRegistro</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="fc49c51f-28d5-410a-8e43-a8899433681a">
+        <DataType>WChar</DataType>
+        <DataSize>2</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9781f80e-9190-4998-afb6-f92660a4319c">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>TipoRegistro</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9c620d37-f28e-43db-a302-7443daeddfbf">
+      <ID>Numero Registro</ID>
+      <Name>Numero Registro</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="023e735e-a67f-4a9f-8e24-bdd1cbcb84ae">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c31b1b4b-40ab-4e2f-b387-af96d1fbcb48">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>NumeroRegistro</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7eaa1e14-37bf-465b-80ae-b9397b855a66">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d8fa5889-9b6c-4dbf-8858-97178f2d9217">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>NumeroRegistro</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5c7189a0-f2a1-4612-bd03-df2f1391ff26">
+      <ID>Registro</ID>
+      <Name>Registro</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="913cc5f3-17c8-40b2-bd53-62b8778419b6">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="876567f0-f764-4aab-afec-be786a65390a">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Registro</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3130fa77-5cb2-455b-9ccb-e9c1ff51459a">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9bb92ba0-47cb-4c7d-914e-c73a225c5894">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Registro</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3ff0ab3e-25a4-4264-993e-146e189c17b5">
+      <ID>Codice Esercizio</ID>
+      <Name>Codice Esercizio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2cc051f0-fb62-4e82-9827-90fd266a6875">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="83d52692-17f6-4bcb-9eca-db4e4f97df95">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>CodiceEsercizio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5878a7dd-c501-41e2-8192-ea92c48f7dbb">
+        <DataType>WChar</DataType>
+        <DataSize>4</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6fd17c92-5b16-40d1-8a75-815bf6c51ce8">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>CodiceEsercizio</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cbeb1526-ac2b-4d36-ab14-cde62ae6d446">
+      <ID>PK Data Competenza</ID>
+      <Name>PK Data Competenza</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bbe23476-1853-4e22-9d7c-497a6adeefeb">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2b65d67d-dd67-47f7-9491-7c2a9054f466">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataCompetenza</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="588ef61f-cc0e-4248-9ea6-9873690eaa0a">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0e1a0b30-cd5b-44a9-8043-d76271e7ec05">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataCompetenza</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c790bc7c-dd4e-4b1c-856b-d59cf4e68526">
+      <ID>PK Data Registrazione</ID>
+      <Name>PK Data Registrazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6347041f-0b74-44ce-82b6-28b3fc3f05b3">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="304259b3-cde1-4be9-ad66-72c678956d8f">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataRegistrazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8018090a-8e91-4ca9-b11f-a3e11cabf95e">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a1befd8e-abe5-4729-855a-d1be0c247350">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKDataRegistrazione</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="78da93ac-a5a2-4e22-a3d7-4b114a51010d">
+      <ID>PK Gruppo Agenti Riga</ID>
+      <Name>PK Gruppo Agenti Riga</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29f4cb11-bcd5-43d4-975d-80d98ba87ceb">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="231f211f-69d2-4e5f-b447-894c65547e36">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKGruppoAgenti_Riga</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b69df0b1-9ba9-4991-84a4-38482c9983c8">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9bb04076-35f3-48d3-8679-565e4bffd6c5">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKGruppoAgenti_Riga</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="768dcd13-b94b-4726-9325-40e6807e8ce7">
+      <ID>PK Cliente Fattura</ID>
+      <Name>PK Cliente Fattura</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab78d0d9-e26a-4714-97ce-88eec01e53ce">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="efb1d183-f11e-4613-aff8-21b95731100d">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKClienteFattura</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="930e4f16-7aa1-4ef0-838b-b7936905839b">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2ec930d6-5998-460a-9787-32607f2eebd0">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKClienteFattura</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bb5ec4da-f5b4-40d6-9385-55a7ce856bad">
+      <ID>ID Profilo</ID>
+      <Name>ID Profilo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="845462fd-9202-44ba-9466-7221d2974cc4">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="746dc2a8-28a9-4048-86df-156800294faa">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDProfilo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="d391bf1f-1c21-42fb-9e57-c2e0b58c651d">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="93a70b61-e701-4a55-a529-64b0d4d0cf99">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDProfilo</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="be5957dc-7936-48b2-9f4d-2e94f3a93438">
+      <ID>Tipo Soggetto Commerciale Fattura</ID>
+      <Name>Tipo Soggetto Commerciale Fattura</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="98f2433d-5f32-4e4c-bf14-3ac60a91ab32">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2886086a-c3c0-458f-a6dc-1bb195e5f630">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>TipoSoggettoCommercialeFattura</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="647336c9-95d2-4508-8d06-6a7832f8031c">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d47a05b4-e9f0-40db-bbba-04e0b099909f">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>TipoSoggettoCommercialeFattura</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1c491f69-8a85-4c90-a410-6cd37efb2851">
+      <ID>Libero4</ID>
+      <Name>Libero4</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="997fc02f-998a-44e8-acbf-5aa986549159">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2f76457-3b9d-4e1a-a3de-34b034d2ec79">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Libero4</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7704bfe9-831d-47b7-a1bf-71542cca61e5">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="89ccfcae-1900-4c06-a7a1-db0dc2654523">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Libero4</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2bc79695-6da2-40a8-b70e-2c438ab26f98">
+      <ID>PK Articolo</ID>
+      <Name>PK Articolo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="57a000e6-f25d-44fa-b196-a04e567a3722">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d03f194f-c313-49ec-b0a1-a4ab755b21d0">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKArticolo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e250fc33-c9e7-4350-a535-994e76321511">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3361d48a-87c7-49c2-a2b5-c542b32c6d08">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKArticolo</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fbd63eae-dd61-472d-bb58-f5e38b840ec1">
+      <ID>Codice Condizioni Pagamento</ID>
+      <Name>Codice Condizioni Pagamento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fa91b6b3-1a56-4379-be29-28d05ca5c81a">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad6acc4f-8ef4-4819-affa-49ed7f28d3b9">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>CodiceCondizioniPagamento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="52182776-0788-4b5a-a0a9-0eeea362cc6e">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0487f677-e77f-4041-8cb2-da9871d8276a">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>CodiceCondizioniPagamento</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="98e0a9e1-e629-4bd2-9fec-1fd8dcdf63fa">
+      <ID>Condizioni Pagamento</ID>
+      <Name>Condizioni Pagamento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e834fcad-be54-4fef-a8b4-86ad57916835">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0759cd32-bb75-4638-a5ce-617f09606de5">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>CondizioniPagamento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1a592c19-f0e1-4445-9ff2-59e62f029cfd">
+        <DataType>WChar</DataType>
+        <DataSize>60</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="67158241-4b64-4a27-b81d-8761fa696cc2">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>CondizioniPagamento</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2c9bfe85-3477-44a8-a0c7-4b3db4b7a2cd">
+      <ID>Rinnovo Automatico</ID>
+      <Name>Rinnovo Automatico</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="563f2531-1583-4448-aebc-f039fdb3f66f">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f81e71d-aa7a-4bee-a369-1fd5a38ab1ce">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>RinnovoAutomatico</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a4ee38a4-09dc-4dde-9ad1-1421938beb41">
+        <DataType>WChar</DataType>
+        <DataSize>1</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c543b9a9-53a8-404f-86a8-c85f3047baff">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>RinnovoAutomatico</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="eedafad0-3db4-4538-a243-8f7b74f5e869">
+      <ID>Note Intestazione</ID>
+      <Name>Note Intestazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2b209e40-c169-4348-8738-91d4bccf2277">
+          <DataType>WChar</DataType>
+          <DataSize>1000</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="557ef7c0-b316-47f1-a811-a74635ec1b9f">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>NoteIntestazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="34ed8ea3-9eb5-4f53-b858-ab5534233e4c">
+        <DataType>WChar</DataType>
+        <DataSize>1000</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7e202633-aeb2-4824-bdcb-20e42940774a">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>NoteIntestazione</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d570c393-3a76-4134-9862-49e08878c236">
+      <ID>Is Profilo Valido Per Statistica Fatturato</ID>
+      <Name>Is Profilo Valido Per Statistica Fatturato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a3df28f-80e3-4d6b-83e7-1831a2b5aaa1">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec16e6c8-160f-4b44-80bc-32f4d3ab16fa">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IsProfiloValidoPerStatisticaFatturato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8579947c-3a52-45a2-872f-3dfa4fb780e7">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="97b13dd2-ac56-486a-80a7-c7c3646be2c7">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IsProfiloValidoPerStatisticaFatturato</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="169a463a-3274-4ea1-af8f-8ae5d741c21b">
+      <ID>Is Profilo Valido Per Statistica Fatturato Formazione</ID>
+      <Name>Is Profilo Valido Per Statistica Fatturato Formazione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="14904279-4048-4ba1-8e46-0db6915c4e58">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="131cb6af-4780-4a62-9f8c-dca98bd52bbf">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IsProfiloValidoPerStatisticaFatturatoFormazione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0e049d1f-fbbb-4e58-8ff4-9498916be0bf">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bb44ff8f-270f-4d76-9f99-6e35b7c2618b">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IsProfiloValidoPerStatisticaFatturatoFormazione</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8ffae433-3bbd-4c3f-b65b-fbab0f87b709">
+      <ID>PK Capo Area</ID>
+      <Name>PK Capo Area</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="44080da9-f2a2-479a-9109-d84ce7244932">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="aff30b31-ded3-488f-80b1-cd289e1840af">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKCapoArea</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="232a1e0f-1af5-4d31-90be-f70db5ab3873">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b4b9378b-9eaf-4506-a200-6d7dba475edd">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKCapoArea</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="45b2fa1d-f2a6-4c6b-a4f9-96f820617de9">
+      <ID>PK Capo Area Riga</ID>
+      <Name>PK Capo Area Riga</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7783b40a-50f1-4be0-828f-4d87a358868e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="367adb44-2ce7-4db3-a8a2-701d6d6343d0">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKCapoArea_Riga</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a710b5a5-4e57-49c6-9d61-e052ecf814c7">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="728128fc-2899-4641-a6f5-64d7b2fcbefd">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKCapoArea_Riga</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d8893d72-5da1-40bf-bcaf-07e073ca9a3e">
+      <ID>PK Macro Tipologia</ID>
+      <Name>PK Macro Tipologia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dff54d13-6988-4eda-a14f-f7e48583fccd">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c9a43b69-9840-456b-80a6-e948fe2fae14">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKMacroTipologia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c4b70626-74ab-4f71-8f3f-c3cfda590c4f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ce9092cb-59a1-4e95-9f96-de70af0031f4">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>PKMacroTipologia</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9b8ed30d-df6e-491c-81ab-2b7b95c7f74b">
+      <ID>ID Profilo 1</ID>
+      <Name>ID Profilo 1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="28b58602-88c2-4ccb-bbb8-2bd6bc018750">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b9d9500-47bd-42c1-9159-1294beaf283f">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>IDProfilo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="63b9ef2e-a4cd-472f-a2b6-80868b329c58">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d125f5ec-b7ae-474e-88cd-c9141d7206de">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>IDProfilo</ColumnID>
+        </Source>
+      </NameColumn>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5443513a-7e40-4738-a6fd-5298d5733099">
+      <ID>Progressivo</ID>
+      <Name>Progressivo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b9ca14f-a4eb-4ff7-ba0c-1b0ada86f8c0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="72734c45-30d9-4750-85ad-1ef5f15aafa1">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>Progressivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="14ef883d-34a3-4ee5-ad27-f8a26d7671f1">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c2289bfe-d181-4808-8c36-e4dbba50130e">
+          <TableID>Fact_Documenti</TableID>
+          <ColumnID>Progressivo</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0d1bd62f-9f58-4e2a-b4a2-d0a0e766d68d">
+      <ID>Note Decisionali</ID>
+      <Name>Note Decisionali</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="33b1610d-619f-43a1-9e7d-248dc0c37523">
+          <DataType>WChar</DataType>
+          <DataSize>1000</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="87c2a959-e9f6-4384-9b0f-f73b36eeed51">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>NoteDecisionali</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0fa53406-86d5-49db-b366-131113ef1cf3">
+      <ID>PK Data Disdetta</ID>
+      <Name>PK Data Disdetta</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="723ae5d9-c41c-44f8-922a-f524df4c4166">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c11e53a-e1cb-4fe9-b14b-092714ce638c">
+            <TableID>Fact_Documenti</TableID>
+            <ColumnID>PKDataDisdetta</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ProactiveCaching dwd:design-time-name="17cef947-b91d-49ce-93ce-52e95df0214e">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="b2c5f71a-6f51-4365-ba11-89190ab2e7b8" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
