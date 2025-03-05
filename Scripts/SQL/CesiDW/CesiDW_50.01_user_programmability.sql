@@ -1346,7 +1346,7 @@ AS (
         A.Fatturazione,
         D.Progressivo,
 		SUM(CASE WHEN D.NumeroRiga = 1 THEN D.Quote ELSE NULL END) AS Quote,
-        C.TipoCliente,
+        A.Tipo AS TipoCliente,
         D.TipoFatturazione,
         ----COALESCE(MAX(ROF.PKDataFattura), CAST('19000101' AS DATE)) AS PKDataFattura,
         D.NoteIntestazione,
@@ -1435,7 +1435,7 @@ AS (
         C.MotivoDisdetta,
         A.Fatturazione,
         D.Progressivo,
-        C.TipoCliente,
+        A.Tipo,
         D.TipoFatturazione,
         D.NoteIntestazione,
         C.Email
