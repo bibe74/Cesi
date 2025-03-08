@@ -7,13 +7,14 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=EPISQL2021;Initial Catalog=CesiDW</ConnectString>
+        <Prompt>Specify a user name and password for data source CesiDW:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>621ff57e-65a4-47ba-88ae-f9820d706c3b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="usp_ReportFatturatoGeneraleNew">
+    <DataSet Name="usp_ReportFatturatoGenerale">
       <Query>
         <DataSourceName>CesiDW</DataSourceName>
         <QueryParameters>
@@ -24,7 +25,7 @@
             <Value>=Parameters!CapoArea.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>EXEC Fact.usp_ReportFatturatoGeneraleNew @AnnoCorrente = @AnnoCorrente,
+        <CommandText>EXEC Fact.usp_ReportFatturatoGenerale @AnnoCorrente = @AnnoCorrente,
                                      @CapoArea = @CapoArea;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -49,13 +50,13 @@
           <DataField>QuoteTotaliEsercizioCorrente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ImportoTotaleEsercizioCorrente">
-          <DataField>ImportoTotaleEsercizioCorrente</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="QuoteTotaliEsercizioPrecedente">
           <DataField>QuoteTotaliEsercizioPrecedente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ImportoTotaleEsercizioCorrente">
+          <DataField>ImportoTotaleEsercizioCorrente</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ImportoTotaleEsercizioPrecedente">
           <DataField>ImportoTotaleEsercizioPrecedente</DataField>
@@ -651,7 +652,7 @@ ORDER BY CapoArea;</CommandText>
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
-            <DataSetName>usp_ReportFatturatoGeneraleNew</DataSetName>
+            <DataSetName>usp_ReportFatturatoGenerale</DataSetName>
             <Top>0.43in</Top>
             <Height>0.64in</Height>
             <Width>9in</Width>
