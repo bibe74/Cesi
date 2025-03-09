@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/9/2025 12:09:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RAMANUJAN"
+  DTS:CreatorName="a.turelli"
+  DTS:DTSID="{E2EAE821-49F9-4EFE-9AE6-802C9C9A3838}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Dim_Utente"
+  DTS:VersionGUID="{4D3F8079-D4AE-408B-A383-DE43D8B216E2}"
+  DTS:VersionMajor="0">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CesiDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0CA17F5B-486D-42F4-B5D0-0346610FFA5B}"
+      DTS:ObjectName="CesiDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim_usp_Merge_Utente"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{39DA1D6B-09A1-44F5-8A60-D3CFC316192D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_usp_Merge_Utente"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CA17F5B-486D-42F4-B5D0-0346610FFA5B}"
+          SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_Utente"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{30680801-3B18-45CB-947D-83D141D86A69}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_Utente"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CA17F5B-486D-42F4-B5D0-0346610FFA5B}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente]"
+      DTS:CreationName=""
+      DTS:DTSID="{A97918FE-99B2-4DF8-8065-91BD456392EA}"
+      DTS:From="Package\Staging_usp_Reload_Utente"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente"
+      DTS:To="Package\Dim_usp_Merge_Utente" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>

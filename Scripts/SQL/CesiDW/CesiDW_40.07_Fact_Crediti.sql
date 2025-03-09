@@ -45,7 +45,7 @@ BEGIN
     (   N'Webinars',       -- provider_name - nvarchar(60)
         N'Landing.WEBINARS_CreditoAutocertificazione',      -- full_table_name - sysname
         N'Staging.Crediti',      -- staging_table_name - sysname
-        N'Dim.Crediti',      -- datawarehouse_table_name - sysname
+        N'Fact.Crediti',      -- datawarehouse_table_name - sysname
         NULL, -- lastupdated_staging - datetime
         NULL  -- lastupdated_local - datetime
     );

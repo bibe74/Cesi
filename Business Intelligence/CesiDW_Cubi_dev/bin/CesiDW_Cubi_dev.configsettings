@@ -1,0 +1,169 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>CesiDW</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=EPISQL2021;Persist Security Info=True;User ID=cesidw_reader;Initial Catalog=CesiDW</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Articolo</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Capo Area</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Cliente Accessi</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Cliente</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Corsi</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Corso</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Crediti</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Data</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Documenti</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Gruppo Agenti</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Macro Tipologia</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Scadenze</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Utente</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Crediti Open AI</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Accessi</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Accessi</ID>
+            <Partitions>
+              <Partition>
+                <ID>Accessi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Accessi 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>Accessi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Corsi</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Corsi</ID>
+            <Partitions>
+              <Partition>
+                <ID>Corsi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Crediti</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Crediti</ID>
+            <Partitions>
+              <Partition>
+                <ID>Crediti</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Documenti</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Budget</ID>
+            <Partitions>
+              <Partition>
+                <ID>Budget</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Cliente</ID>
+            <Partitions>
+              <Partition>
+                <ID>Cliente</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Documenti 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>Documenti</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Documenti</ID>
+            <Partitions>
+              <Partition>
+                <ID>Documenti</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Scadenze</ID>
+            <Partitions>
+              <Partition>
+                <ID>Scadenze</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Crediti OpenAI</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Crediti Open AI</ID>
+            <Partitions>
+              <Partition>
+                <ID>Crediti Open AI</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

@@ -1,0 +1,503 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d71fc6ca-09a0-4d81-b9a9-ff2e26ac6363" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Crediti OpenAI</ID>
+  <Name>Crediti OpenAI</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="9" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-19880" scrolltop="-6870" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="51197" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Cliente" left="2596" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="6244" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006418000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Cliente" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="CreditiOpenAI" left="7130" top="7400" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="4286" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000be10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_CreditiOpenAI" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data" left="20" top="7400" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Data" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1976" top="4700" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="2942" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_Cliente_PKDataInizioContratto]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="8" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2375" y="7400" />
+              <point x="2375" y="6200" />
+              <point x="4618" y="6200" />
+              <point x="4618" y="5000" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3626" top="4700" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="2942" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_Cliente_PKDataFineContratto]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="14" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4025" y="7400" />
+              <point x="4025" y="6200" />
+              <point x="6268" y="6200" />
+              <point x="6268" y="5000" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="326" top="4700" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="2942" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_Cliente_PKDataDisdetta]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="2" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="725" y="7400" />
+              <point x="725" y="6200" />
+              <point x="2968" y="6200" />
+              <point x="2968" y="5000" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7519" top="4501" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="2054" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_CreditiOpenAI_PKCliente]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="19" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7918" y="5000" />
+              <point x="7918" y="6200" />
+              <point x="9273" y="6200" />
+              <point x="9273" y="7400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="4430" top="9501" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_CreditiOpenAI_PKDataScadenzaOrdine]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="27" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4730" y="9900" />
+              <point x="7130" y="9900" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-19880</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6870</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="5d1bfe6c-02f0-4ab5-825a-cf4236a1785a">
+      <ID>Cliente</ID>
+      <Name>Cliente</Name>
+      <DimensionID>Cliente</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="62e97b43-bfb2-4a65-83c1-f954da6df3c7">
+          <AttributeID>PK Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c3f019e2-3366-4d5c-bcd8-e483e55cbf03">
+          <AttributeID>Is Deleted</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed458c65-e3a1-4b40-99dd-7bacd039d9da">
+          <AttributeID>Codice Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5caa278b-1025-40e6-9810-beb1070c4db7">
+          <AttributeID>Ragione Sociale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bde035da-1184-4a4c-8bbd-e57a3ed202ba">
+          <AttributeID>Codice Fiscale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fc2c4616-e16b-4a68-9b25-ffb1d1fe79d7">
+          <AttributeID>Partita IVA</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2f87d7bc-6e06-46f4-9ee7-93ae4ad5f0c1">
+          <AttributeID>Localita</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="60b5f6f0-49e0-41b1-ad9b-70c3017ab867">
+          <AttributeID>Telefono</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d670fb55-c512-4295-a3ad-3babcbaeea3a">
+          <AttributeID>Tipo Cliente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="99208e31-cd93-40fe-a6bc-dd4d494a0728">
+          <AttributeID>Agente</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3c13bf28-4e93-4557-8483-fbaac25af8f4">
+          <AttributeID>PK Data Disdetta</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f7189e7b-02a3-42c7-b5fe-f86566390313">
+          <AttributeID>PK Data Fine Contratto</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="88a145f7-246c-4dc4-9b70-524d7e4748e6">
+          <AttributeID>PK Data Inizio Contratto</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14f846bb-e8a3-46e6-8817-3fd9bf78cf86">
+          <AttributeID>ID Anagrafica Cometa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1e50384f-2817-4fb5-ab43-432b9ced4300">
+          <AttributeID>Has Anagrafica Cometa</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e88af1d6-163a-4a07-a5aa-e33d8f649773">
+          <AttributeID>PK Gruppo Agenti</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2e4c4ee5-4e9b-4f02-8bf1-c71a81276716">
+          <AttributeID>Email</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="362d407a-f793-477c-963a-e3985b6abe5e">
+          <AttributeID>ID Soggetto Commerciale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2ba9826b-02aa-41f8-9572-4d8762a2ea17">
+          <AttributeID>Tipo Soggetto Commerciale</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c70e092d-2b6d-4309-8037-610b1392e87b">
+          <AttributeID>Indirizzo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="86a16c6c-9f67-41e0-bf3d-495c5e868838">
+          <AttributeID>CAP</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="766195f9-409f-446f-8cc2-2c8104c45f3b">
+          <AttributeID>Nazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="84383008-a1b1-48e1-8335-816ed064bed0">
+          <AttributeID>Has Anagrafica Nop Commerce</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="25727252-7144-4e2c-a2b9-8934b7c34f93">
+          <AttributeID>Has Anagrafica My Solution</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3ebd9483-7d6e-4901-946f-f7823cfe366c">
+          <AttributeID>Provenienza Anagrafica</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="350f7f73-8a84-4d7a-9190-615867af175b">
+          <AttributeID>Regione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b8e73da9-6314-4ba6-9c0e-ea7d1a63c185">
+          <AttributeID>Macroregione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="32a1339f-3ccf-4a55-b37b-6d6154a9e638">
+          <AttributeID>Cognome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de3271d1-b990-46d4-a246-4036dba17695">
+          <AttributeID>Nome</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1405977-ff90-4551-8fab-b42c32437604">
+          <AttributeID>Is Attivo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8962d03a-b6be-49a9-8eb4-51e0d0b119ed">
+          <AttributeID>Cellulare</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8b8ca6bb-d542-4f3a-a4fb-fbd846defce3">
+          <AttributeID>Fax</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="533a2a49-a3de-4423-acfa-001bb81bf396">
+          <AttributeID>Motivo Disdetta</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9199af73-7478-4058-964d-fa2317b25e46">
+          <AttributeID>Is Abbonato</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f7ae5f8e-34af-401d-a0e6-8dbb00d741c1">
+          <AttributeID>ID Soggetto Commerciale Migrazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2943d863-b694-475b-ae04-248cf6080b16">
+          <AttributeID>ID Soggetto Commerciale Migrazione Old</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6d648182-6fbb-4ca4-871d-985d52e59f75">
+          <AttributeID>Provincia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83544ab6-8c9d-4b5f-b42e-86daeab80d20">
+          <AttributeID>ID Provincia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d95f2d1a-2698-4a01-ab16-e8d65780bf7f">
+          <AttributeID>Is Cliente Formazione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="32c3a103-2405-4efb-bb1b-52df200b2dcc">
+          <AttributeID>Capo Area Default</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3dd4b173-6982-4afa-ab6f-f65067e00239">
+          <AttributeID>Agente Default</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5e8ce93a-298b-47d5-93c0-cd57c4de604b">
+          <AttributeID>Has Role My Solution Interno</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="90cb31c7-ef81-4469-bde0-4ec263b519dc">
+      <ID>Crediti Open AI</ID>
+      <Name>Crediti Open AI</Name>
+      <DimensionID>Crediti Open AI</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="50ae2ec0-968a-4792-ba55-d0ddc48ad6c1">
+          <AttributeID>PK Crediti Open AI</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eeee586c-6d2d-4369-a40a-e05c09bc540c">
+          <AttributeID>PK Data Scadenza Ordine</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="efe77fd2-f044-4641-853b-81856a11acc9">
+          <AttributeID>PK Cliente</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="60a0e23c-f75c-4291-ad82-fa048ab04a84">
+      <ID>PK Data Scadenza Ordine</ID>
+      <Name>Data Scadenza Ordine</Name>
+      <DimensionID>Data</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d99b7fe4-71a3-41da-b52d-7ac99f356e94">
+          <AttributeID>PK Data</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24d4b036-c766-41c2-9ddb-da2af1cb0e47">
+          <AttributeID>Anno</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="07ae8734-dd98-41d5-977c-0ad8d529dab6">
+          <AttributeID>Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8fd432e5-1423-4dc4-86c6-cf8fb86ba405">
+          <AttributeID>Anno Mese</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a03cb5b9-27b6-4bdb-92b7-e1fb1bfdda52">
+          <AttributeID>Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="209d0aad-b75c-4893-84c9-612d6307a357">
+          <AttributeID>Anno Settimana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="028f1e6b-bd63-4135-be9e-b7f60feefd65">
+          <AttributeID>PK Data 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5a454aa0-533c-432c-a2c3-b82ed41bf747">
+          <AttributeID>Giorno Settimana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="c259867b-d905-4b46-a239-5f48a4975a5a">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="2b5dae65-78bb-44ae-9317-7c2ae9be5cd5">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="7372d6f7-cd1f-49a2-8d4c-449a06b7837f">
+      <ID>Crediti Open AI</ID>
+      <Name>Crediti Open AI</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="07dfbbba-50f9-41ac-8fd5-d135572a0c94">
+          <ID>Crediti Acquistati</ID>
+          <Name>Crediti Acquistati</Name>
+          <Source dwd:design-time-name="fb72f784-58ab-44c1-899b-a4654d582469">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5dfaa494-7190-4c61-91cc-d0187146926d">
+              <TableID>Fact_CreditiOpenAI</TableID>
+              <ColumnID>CreditiAcquistati</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="51c6b587-8dfa-4211-af05-301cdddf7830">
+          <ID>Crediti Consumati</ID>
+          <Name>Crediti Consumati</Name>
+          <Source dwd:design-time-name="a7c7ce92-3733-41b7-82d7-dbc35149f1fe">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7e8779ef-7444-4ca0-8af5-1f3e40109ce6">
+              <TableID>Fact_CreditiOpenAI</TableID>
+              <ColumnID>CreditiConsumati</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="d581654e-a210-4ca8-bd10-885365123466">
+          <ID>Crediti Fuori Ordine</ID>
+          <Name>Crediti Fuori Ordine</Name>
+          <Source dwd:design-time-name="555c1047-f024-4015-bacc-95ac7d1e01da">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="53b95427-7198-4f1b-8153-ee88beb9c24f">
+              <TableID>Fact_CreditiOpenAI</TableID>
+              <ColumnID>CreditiFuoriOrdine</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="ed829107-71af-4934-a1d0-7538fd9aa4ca">
+          <ID>Crediti Residui</ID>
+          <Name>Crediti Residui</Name>
+          <Source dwd:design-time-name="01ba66af-a2e0-4f3a-9241-c93e8bec0d47">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3e6a0882-4991-441d-8d8f-c82825f890db">
+              <TableID>Fact_CreditiOpenAI</TableID>
+              <ColumnID>CreditiResidui</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,###</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="db074cc5-a3e3-4b7e-aa48-f3dfaf13e567">
+          <CubeDimensionID>Crediti Open AI</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7308fbae-3018-4f83-aed1-5651edbb2545">
+              <AttributeID>PK Crediti Open AI</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="43c9b1f0-2a4e-4fff-a36d-b56029adb295">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="35d6c270-a188-44b3-84dd-97a91dade94f">
+                    <TableID>Fact_CreditiOpenAI</TableID>
+                    <ColumnID>PKCreditiOpenAI</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6c081e10-03ff-490f-9dca-28f4aa6b126b">
+          <CubeDimensionID>PK Data Scadenza Ordine</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b2c4c857-60c1-42ff-9209-b4f33707b196">
+              <AttributeID>PK Data</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5740946b-d25b-4b4d-8a9d-cbdaf1de0ce0">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f765eacc-e387-42b0-95f5-e077238e0ea7">
+                    <TableID>Fact_CreditiOpenAI</TableID>
+                    <ColumnID>PKDataScadenzaOrdine</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c496bdc2-e9f6-49bd-85a8-876ddbe15ec9">
+          <CubeDimensionID>Cliente</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fb47e3f0-699a-49a2-8c6f-503b6f4fbd41">
+              <AttributeID>PK Cliente</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e0a37b58-a1a7-4c9d-8415-34d14b283da3">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0953496f-ef8c-46a3-be93-19229b17a616">
+                    <TableID>Fact_CreditiOpenAI</TableID>
+                    <ColumnID>PKCliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="5c0d2622-a55e-451d-bf69-1d3a679668a5">
+    <DataSourceViewID>CesiDW</DataSourceViewID>
+  </Source>
+</Cube>

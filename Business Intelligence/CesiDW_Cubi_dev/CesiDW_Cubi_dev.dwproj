@@ -47,6 +47,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Crediti OpenAI.cube</Name>
+      <FullPath>Crediti OpenAI.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Crediti OpenAI.partitions</Name>
+          <FullPath>Crediti OpenAI.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -72,6 +82,10 @@
     <ProjectItem>
       <Name>Corso.dim</Name>
       <FullPath>Corso.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Crediti Open AI.dim</Name>
+      <FullPath>Crediti Open AI.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Crediti.dim</Name>

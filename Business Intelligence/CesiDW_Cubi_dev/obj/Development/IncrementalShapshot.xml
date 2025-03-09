@@ -1,0 +1,187 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>CesiDW_Cubi_dev</Database>
+    <Server>EPISQL2021</Server>
+    <ConnectionString>Data Source=EPISQL2021;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>8lehZG9IAfFbLiDVriat7v+dy0c=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>CesiDW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>v+cHxeaKvTTnxdAIAjFr17XA6RU=3/9/2025 12:20:083/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>CesiDW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>aw5XcLKJ2seq1WZgeERJ1z7l3FE=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Articolo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UWu1Nhcw/fejAMLakRMzIyYd4fI=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Capo Area</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bxetA72/bb0zvkhQH9BMVhkTfFs=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Cliente Accessi</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ijXVzvkVHLkOeLfgEPfXxJuN1ww=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Cliente</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IFLXmvY7iyPh+SuJk1OQZKA8abE=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Corsi</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wrVj60tXOR8I2NHBKYvtqyXK5HE=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Corso</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>czwUSrClEZys6SYlvgxZ3Lm85HA=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Crediti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wLkpxUUeyvUoymw+YkngpmHmnVw=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Data</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>CCYOhAbm7bsf5WdjRoZDIqIZAkY=1/25/2025 12:07:483/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Documenti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Fe0/7QhhANm3U+Jn54kvC+Lj55c=1/25/2025 12:07:503/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Gruppo Agenti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>vwUtoyDm4+Y8l9RENzIoH3QvWsE=1/25/2025 12:07:503/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Macro Tipologia</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TFBwzUdE8gYdA3xnozv96THTBtA=1/25/2025 12:07:503/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Scadenze</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9n/Zvt1k1PLGrGIlQgCT6Ud6hyk=1/25/2025 12:07:503/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Utente</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ph951lktyHTgDfkK7AZQZGlagWs=3/9/2025 12:22:543/9/2025 12:20:50</TimeStamp>
+        <ID>
+          <String>Crediti Open AI</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>to+WTNb+SXCjys5yS8Y5qUPXxRI=1/25/2025 12:07:483/4/2025 7:20:19/BYndaQW6tx5/xTo5E/SFOK+XgM=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Accessi</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Id7qLXWfZEfL8W0NGRVmQcFkhto=1/25/2025 12:07:483/4/2025 7:20:19USMt1I/8xVEskO7yPzDvGdPACXA=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Corsi</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>84onbaEDxE+n8xCPvYvJEI5HvFs=1/25/2025 12:07:483/4/2025 7:20:19Hr8MoqcBlLjU5Tjnj8OnU0f0ZEg=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Crediti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>NPtIzvGep3D/vU6PL5H/x3DSq+4=1/25/2025 12:07:483/4/2025 7:20:197EME/BYbHqutAv7hFpAVGtOfMes=1/25/2025 12:07:483/4/2025 7:20:20</TimeStamp>
+        <ID>
+          <String>Documenti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>ZVEngXigXRDbFSWCDZEDPm82VLI=3/9/2025 12:23:013/9/2025 12:20:50UQJNRV/x6xTMbstViq/QusTflhA=3/9/2025 12:20:503/9/2025 12:20:50</TimeStamp>
+        <ID>
+          <String>Crediti OpenAI</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>vhVOc2oAG+3sOxzNsgfLsgrJsFQ=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+        <ID>
+          <String>Role</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>hSZufin2rTtcpmqR9TlGLrGV6ww=1/25/2025 12:07:483/4/2025 7:20:19</TimeStamp>
+      <ID>
+        <String>CesiDW_Cubi_dev</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-03-09T11:24:24.82Z</LastDeployed>
+</DeploymentSnapshot>

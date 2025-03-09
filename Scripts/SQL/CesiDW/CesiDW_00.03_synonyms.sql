@@ -56,4 +56,8 @@ IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS')
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS') AND name = 'CreditoAutocertificazione') EXEC('CREATE SYNONYM WEBINARS.CreditoAutocertificazione FOR MYSOLUTIONPRODUZIONE2.dbWebinars.dbo.CreditoAutocertificazione;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS') AND name = 'CreditoCorso') EXEC('CREATE SYNONYM WEBINARS.CreditoCorso FOR MYSOLUTIONPRODUZIONE2.dbWebinars.dbo.CreditoCorso;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS') AND name = 'CreditoTipologia') EXEC('CREATE SYNONYM WEBINARS.CreditoTipologia FOR MYSOLUTIONPRODUZIONE2.dbWebinars.dbo.CreditoTipologia;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAICausale') EXEC('CREATE SYNONYM GPT.OpenAICausale FOR dbGPT.dbo.OpenAICausale;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAICliente') EXEC('CREATE SYNONYM GPT.OpenAICliente FOR dbGPT.dbo.OpenAICliente;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAICredito') EXEC('CREATE SYNONYM GPT.OpenAICredito FOR dbGPT.dbo.OpenAICredito;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIPartita') EXEC('CREATE SYNONYM GPT.OpenAIPartita FOR dbGPT.dbo.OpenAIPartita;');
 GO

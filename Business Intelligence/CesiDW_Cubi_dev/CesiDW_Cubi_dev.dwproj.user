@@ -3,7 +3,21 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>CesiDW</Id>
+            <Name>CesiDW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIZbzqEgS9Eqw1rCUEnNxjQAAAAAOAAAAQwBlAHMAaQBEAFcAAAAQZgAAAAEAACAAAADSki45tb9/GS6SlhunpSVSQ8xP3S57ZrSDRDYQiWx/cAAAAAAOgAAAAAIAACAAAACCHrwi7QBxibQ1eacOa/PTI5PyO8Jl5OLtbQnSqO0xbSAAAABcZF2NGu9/Aayu8CGhFVhYp4lqPNDKSj9pa6QZM02DwEAAAACtS9MNQ2drt2/DeHrf7HelqhE7d6R/ntytR07OpHG/Xq2lVjmG8oO14j4uFstkQtBjZbCbjqmj9lKjy8rKwdE/</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>CesiDW</Id>
+            <Name>CesiDW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIZbzqEgS9Eqw1rCUEnNxjQAAAAAOAAAAQwBlAHMAaQBEAFcAAAAQZgAAAAEAACAAAADpu0MJOEFzj2QAEHhNMKoU5s5VRCdW1SA3cAxoBcEMrgAAAAAOgAAAAAIAACAAAABgxXHFlR+IcxQlz3+VMSwC4gVBhOo6f1inz8GNHfoJ9yAAAAC+lNilspBKl1iSuYOQ0ybQnz1bUSpgFeZrl2BnxvlKTkAAAADAMncOR6u3YRQC6uCMn7azUTd4eV8YOuo+GNlJGn++u9urkEQHG712HRd4KDr3QEk3VRf1FXpGr3usjNBlxnSV</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>EPISQL2021</TargetServer>
         <TargetDatabase>CesiDW_Cubi_dev</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

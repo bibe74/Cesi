@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/9/2025 12:09:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RAMANUJAN"
+  DTS:CreatorName="a.turelli"
+  DTS:Disabled="True"
+  DTS:DTSID="{74799848-68A4-418B-94C1-45164F11A559}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Dim_Cliente_OLD"
+  DTS:VersionGUID="{910B8CBB-E507-45ED-B106-4CC4FC174572}"
+  DTS:VersionMajor="0">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CesiDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+      DTS:ObjectName="CesiDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim_usp_Merge_Cliente"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{3DEF9790-7F88-4869-8CFD-0127A7CA574F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_usp_Merge_Cliente"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_Cliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_Cliente"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{B9CBD471-2C2B-492D-93ED-F624A3F83798}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_Cliente"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Cliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_Customer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{6C1CF437-7B2F-41F7-8E35-196CF122993A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_Customer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Customer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_MySolutionUsers"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{385E5178-4D28-47B1-B51F-1466D1CFD66E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_MySolutionUsers"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_MySolutionUsers;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_SoggettoCommerciale"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{6F0788ED-2724-4AB0-8FD5-8581C21BC63C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_SoggettoCommerciale"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_SoggettoCommerciale;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging_usp_Reload_SoggettoCommerciale_Email"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{7D50C33E-5D4E-4A1D-8AE6-41F0834DD14A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging_usp_Reload_SoggettoCommerciale_Email"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A769B16E-AA31-4627-A8CC-50BAAB0E8E98}"
+          SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_SoggettoCommerciale_Email;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Cliente_To_Dim_usp_Merge_Cliente]"
+      DTS:CreationName=""
+      DTS:DTSID="{FAD0140B-A7A2-4830-911C-48BAA27B9431}"
+      DTS:From="Package\Staging_usp_Reload_Cliente"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_Cliente_To_Dim_usp_Merge_Cliente"
+      DTS:To="Package\Dim_usp_Merge_Cliente" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Customer_To_Staging_usp_Reload_Cliente]"
+      DTS:CreationName=""
+      DTS:DTSID="{19E529BE-5AFE-4274-BA31-F3D63F6EA96C}"
+      DTS:From="Package\Staging_usp_Reload_Customer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_Customer_To_Staging_usp_Reload_Cliente"
+      DTS:To="Package\Staging_usp_Reload_Cliente" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_MySolutionUsers_To_Staging_usp_Reload_Customer]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F7AA7AE-AE41-4CA7-AF52-76BECDABB519}"
+      DTS:From="Package\Staging_usp_Reload_MySolutionUsers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_MySolutionUsers_To_Staging_usp_Reload_Customer"
+      DTS:To="Package\Staging_usp_Reload_Customer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_SoggettoCommerciale_Email_To_Staging_usp_Reload_MySolutionUsers]"
+      DTS:CreationName=""
+      DTS:DTSID="{81299D95-6E44-444D-8BC4-BF3667C395E2}"
+      DTS:From="Package\Staging_usp_Reload_SoggettoCommerciale_Email"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_SoggettoCommerciale_Email_To_Staging_usp_Reload_MySolutionUsers"
+      DTS:To="Package\Staging_usp_Reload_MySolutionUsers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_SoggettoCommerciale_To_Staging_usp_Reload_SoggettoCommerciale_Email]"
+      DTS:CreationName=""
+      DTS:DTSID="{57D05503-B0B0-4A68-9B9C-A4E186268E3C}"
+      DTS:From="Package\Staging_usp_Reload_SoggettoCommerciale"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_Staging_usp_Reload_SoggettoCommerciale_To_Staging_usp_Reload_SoggettoCommerciale_Email"
+      DTS:To="Package\Staging_usp_Reload_SoggettoCommerciale_Email" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
