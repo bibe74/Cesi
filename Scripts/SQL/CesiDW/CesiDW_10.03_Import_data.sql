@@ -997,37 +997,37 @@ BEGIN
 END;
 GO
 
-/**
- * @table Import.OpenAICausale
- * @description 
-*/
+----/**
+---- * @table Import.OpenAICausale
+---- * @description 
+----*/
 
---DROP TABLE IF EXISTS Import.OpenAICausale;
-GO
+------DROP TABLE IF EXISTS Import.OpenAICausale;
+----GO
 
-IF OBJECT_ID('Import.OpenAICausale', 'U') IS NULL
-BEGIN
+----IF OBJECT_ID('Import.OpenAICausale', 'U') IS NULL
+----BEGIN
 
-    CREATE TABLE Import.OpenAICausale (
-        Codice      NVARCHAR(32) NOT NULL CONSTRAINT PK_Import_OpenAICausale PRIMARY KEY CLUSTERED,
-        IsAcquisto  BIT NOT NULL,
-        IsConsumo   BIT NOT NULL
-    );
+----    CREATE TABLE Import.OpenAICausale (
+----        Codice      NVARCHAR(32) NOT NULL CONSTRAINT PK_Import_OpenAICausale PRIMARY KEY CLUSTERED,
+----        IsAcquisto  BIT NOT NULL,
+----        IsConsumo   BIT NOT NULL
+----    );
 
-    INSERT INTO Import.OpenAICausale
-    (
-        Codice,
-        IsAcquisto,
-        IsConsumo
-    )
-    VALUES (N'C00', 1, 0),
-        (N'C01', 1, 0),
-        (N'C02', 1, 0),
-        (N'C03', 1, 0),
-        (N'C04', 1, 0),
-        (N'C09', 1, 0),
-        (N'S00', 0, 1),
-        (N'S01', 0, 1);
+----    INSERT INTO Import.OpenAICausale
+----    (
+----        Codice,
+----        IsAcquisto,
+----        IsConsumo
+----    )
+----    VALUES (N'C00', 1, 0),
+----        (N'C01', 1, 0),
+----        (N'C02', 1, 0),
+----        (N'C03', 1, 0),
+----        (N'C04', 1, 0),
+----        (N'C09', 1, 0),
+----        (N'S00', 0, 1),
+----        (N'S01', 0, 1);
 
-END;
-GO
+----END;
+----GO

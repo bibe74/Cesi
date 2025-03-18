@@ -2,23 +2,7 @@
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CesiDW">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
-      <Items>
-        <ConnectionNode Name="EPISQL2021.cesi.local:METRA\a.turelli">
-          <Created>2025-03-05T14:15:19.0663127+01:00</Created>
-          <Type>SQL</Type>
-          <Server>EPISQL2021.cesi.local</Server>
-          <UserName />
-          <Authentication>Windows Authentication</Authentication>
-          <InitialDB>CesiDW</InitialDB>
-          <LoginTimeout>30</LoginTimeout>
-          <TrustServerCertificate>True</TrustServerCertificate>
-          <HostNameInServerCertificate />
-          <EncryptionOption>True</EncryptionOption>
-          <ExecutionTimeout>0</ExecutionTimeout>
-          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
-          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
-        </ConnectionNode>
-      </Items>
+      <Items />
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
@@ -148,6 +132,12 @@
           <AssociatedConnUserName />
           <FullPath>CesiDW_20.04_Landing_WEBINARS.sql</FullPath>
         </FileNode>
+        <FileNode Name="CesiDW_20.05_Landing_GPT.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_20.05_Landing_GPT.sql</FullPath>
+        </FileNode>
         <FileNode Name="CesiDW_20.99_Landing_views.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -232,6 +222,12 @@
           <AssociatedConnUserName />
           <FullPath>CesiDW_40.07_Fact_Crediti.sql</FullPath>
         </FileNode>
+        <FileNode Name="CesiDW_40.08_Fact_CreditiOpenAI.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.08_Fact_CreditiOpenAI.sql</FullPath>
+        </FileNode>
         <FileNode Name="CesiDW_40.99_Fact_views.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -239,8 +235,8 @@
           <FullPath>CesiDW_40.99_Fact_views.sql</FullPath>
         </FileNode>
         <FileNode Name="CesiDW_50.01_user_programmability.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:EPISQL2021.cesi.local:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>EPISQL2021.cesi.local</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>CesiDW_50.01_user_programmability.sql</FullPath>
         </FileNode>
@@ -273,6 +269,12 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>CesiDW_99.99_rebuild_all.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

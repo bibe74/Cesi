@@ -55,6 +55,7 @@
     <Report Include="Accessi demo per invio report.rdl" />
     <Report Include="Accessi per invio report.rdl" />
     <Report Include="Crediti Corsi per invio report.rdl" />
+    <Report Include="Cruscotto Clienti per invio report.rdl" />
     <Report Include="Dettaglio Ordini In Scadenza per invio report.rdl" />
     <Report Include="Dettaglio Ordini Mese Corrente per invio report.rdl" />
     <Report Include="Fatturato Formazione - Master e Revisione per invio report.rdl" />

@@ -3230,6 +3230,7 @@ AS (
     SELECT
         D.PKCliente,
         SUM(S.ImportoResiduo) AS Insoluto
+
     FROM Fact.Scadenze S
     INNER JOIN Fact.Documenti D ON D.PKDocumenti = S.PKDocumenti
         AND D.IsDeleted = CAST(0 AS BIT)
@@ -3240,8 +3241,7 @@ AS (
 Accessi
 AS (
     SELECT
-        --C.PKCliente,
-        C.Email,
+        C.PKCliente, --C.Email,
         SUM(CASE WHEN A.PKData BETWEEN @PKDataInizioUltimoMese AND @PKDataFinePeriodo THEN A.NumeroAccessi ELSE NULL END) AS AccessiUltimoMese,
         SUM(CASE WHEN A.PKData BETWEEN @PKDataInizioUltimoTrimestre AND @PKDataFinePeriodo THEN A.NumeroAccessi ELSE NULL END) AS AccessiUltimoTrimestre,
         SUM(CASE WHEN A.PKData BETWEEN @PKDataInizioUltimoSemestre AND @PKDataFinePeriodo THEN A.NumeroAccessi ELSE NULL END) AS AccessiUltimoSemestre
@@ -3251,14 +3251,12 @@ AS (
         AND A.PKData BETWEEN @PKDataInizioUltimoSemestre AND @PKDataFinePeriodo
     INNER JOIN Dim.ClienteAccessi CA ON CA.PKClienteAccessi = A.PKCliente
     INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
-    GROUP BY --C.PKCliente,
-        C.Email
+    GROUP BY C.PKCliente --, C.Email
 ),
 IscrizioniMaster
 AS (
     SELECT
-        --D.PKCliente,
-        C.Email,
+        D.PKCliente, --C.Email,
         ACM.CategoriaMaster,
         ACM.CodiceEsercizioMaster AS CodiceEsercizio,
         MAX(D.PKDataDocumento) AS DataUltimaFattura,
@@ -3272,8 +3270,7 @@ AS (
     INNER JOIN Staging.ArticoloCategoriaMaster ACM ON ACM.id_articolo = A.id_articolo
     WHERE D.IDProfilo = N'ORDSEM'
         AND D.IsDeleted = CAST(0 AS BIT)
-    GROUP BY --D.PKCliente,
-        C.Email,
+    GROUP BY D.PKCliente, --C.Email,
         ACM.CategoriaMaster,
         ACM.CodiceEsercizioMaster
 ),
@@ -3282,20 +3279,23 @@ AS (
     SELECT
         D.IDDocumento,
         D.NumeroDocumento,
-        C.CodiceCliente,
-        C.RagioneSociale,
-        C.Email,
-        C.Localita AS Citta,
-        C.Provincia,
+        C.PKCliente,
         CASE WHEN D.NoteDecisionali LIKE @AgenteProprietarioPrefix + N'%)' THEN SUBSTRING(D.NoteDecisionali, LEN(@AgenteProprietarioPrefix)+1, LEN(D.NoteDecisionali) - LEN(@AgenteProprietarioPrefix) - 1) ELSE GA.CapoArea END AS AgenteProprietario,
 
         -- Abbonamento MySolution
         A.Tipo AS TipoAbbonamento,
+        CASE A.Tipo
+          WHEN N'FISCO' THEN 'MYS'
+          WHEN N'FULL' THEN 'MYS'
+          WHEN N'LAVORO' THEN 'MYS'
+          WHEN N'MIAFISCO' THEN 'MIA'
+          WHEN N'MIAFULL' THEN 'MIA'
+          WHEN N'MIALAVORO' THEN 'MIA'
+          ELSE N''
+        END AS MacroTipoAbbonamento,
 		SUM(CASE WHEN D.NumeroRiga = 1 THEN D.Quote ELSE NULL END) AS QuoteFormazione,
         D.Libero1 AS Azione,
         D.RinnovoAutomatico AS ClausolaRinnovoAutomatico,
-        C.PKDataDisdetta,
-        DDIS.Data_IT AS DataDisdetta,
         D.PKDataInizioContratto,
         DIC.Data_IT AS DataInizioContratto,
         D.PKDataFineContratto,
@@ -3306,14 +3306,6 @@ AS (
 
     FROM Fact.Documenti D
     INNER JOIN Dim.Cliente C ON C.PKCliente = D.PKCliente
-        AND (
-            @RagioneSociale IS NULL
-            OR C.RagioneSociale LIKE N'%' + @RagioneSociale + N'%'
-        )
-        AND (
-            @CodiceCliente IS NULL
-            OR C.CodiceCliente = @CodiceCliente
-        )
     INNER JOIN Dim.GruppoAgenti GA ON GA.PKGruppoAgenti = D.PKGruppoAgenti
         AND (
             @CapoArea IS NULL
@@ -3329,13 +3321,8 @@ AS (
     INNER JOIN Dim.Data DFC ON DFC.PKData = D.PKDataFineContratto
     INNER JOIN Dim.Data DC ON DC.PKData = D.PKDataCompetenza
     INNER JOIN Dim.Articolo A ON A.PKArticolo = D.PKArticolo
-    INNER JOIN Dim.Data DDIS ON DDIS.PKData = C.PKDataDisdetta
     INNER JOIN Dim.MacroTipologia MT ON MT.PKMacroTipologia = D.PKMacroTipologia
     LEFT JOIN Insoluti I ON I.PKCliente = D.PKCliente
-    LEFT JOIN Import.LiquidazioneProvvigioneTeorica LPTA ON LPTA.CodiceCondizioniPagamento = D.CodiceCondizioniPagamento
-        AND LPTA.DurataContratto = N'Annuale'
-    LEFT JOIN Import.LiquidazioneProvvigioneTeorica LPTP ON LPTP.CodiceCondizioniPagamento = D.CodiceCondizioniPagamento
-        AND LPTP.DurataContratto = N'Pluriennale'
     WHERE D.Profilo = N'ORDINE CLIENTE'
         AND CURRENT_TIMESTAMP BETWEEN D.PKDataInizioContratto AND CASE WHEN D.PKDataFineContratto = CAST('19000101' AS DATE) THEN CAST('20791231' AS DATE) ELSE D.PKDataFineContratto END
         AND D.IsDeleted = CAST(0 AS BIT)
@@ -3345,17 +3332,20 @@ AS (
         )
     GROUP BY D.IDDocumento,
         D.NumeroDocumento,
-        C.CodiceCliente,
-        C.RagioneSociale,
-        C.Email,
-        C.Localita,
-        C.Provincia,
+        C.PKCliente,
         CASE WHEN D.NoteDecisionali LIKE @AgenteProprietarioPrefix + N'%)' THEN SUBSTRING(D.NoteDecisionali, LEN(@AgenteProprietarioPrefix)+1, LEN(D.NoteDecisionali) - LEN(@AgenteProprietarioPrefix) - 1) ELSE GA.CapoArea END,
         A.Tipo,
+        CASE A.Tipo
+          WHEN N'FISCO' THEN 'MYS'
+          WHEN N'FULL' THEN 'MYS'
+          WHEN N'LAVORO' THEN 'MYS'
+          WHEN N'MIAFISCO' THEN 'MIA'
+          WHEN N'MIAFULL' THEN 'MIA'
+          WHEN N'MIALAVORO' THEN 'MIA'
+          ELSE N''
+        END,
         D.Libero1,
         D.RinnovoAutomatico,
-        C.PKDataDisdetta,
-        DDIS.Data_IT,
         D.PKDataInizioContratto,
         DIC.Data_IT,
         D.PKDataFineContratto,
@@ -3363,23 +3353,42 @@ AS (
         D.PKDataCompetenza,
         COALESCE(I.Insoluto, 0.0)
 ),
+Clienti
+AS (
+    SELECT
+        C.PKCliente,
+        C.CodiceCliente,
+        C.RagioneSociale,
+        C.Email,
+        C.Localita AS Citta,
+        C.Provincia,
+        C.PKDataDisdetta,
+        DDIS.Data_IT AS DataDisdetta
+
+    FROM Dim.Cliente C
+    INNER JOIN Dim.Data DDIS ON DDIS.PKData = C.PKDataDisdetta
+    WHERE C.IsDeleted = CAST(0 AS BIT)
+        AND (
+            @RagioneSociale IS NULL
+            OR C.RagioneSociale LIKE N'%' + @RagioneSociale + N'%'
+        )
+        AND (
+            @CodiceCliente IS NULL
+            OR C.CodiceCliente = @CodiceCliente
+        )
+),
 DettaglioOrdini
 AS (
     SELECT
         O.IDDocumento,
         O.NumeroDocumento,
-        O.CodiceCliente,
-        O.RagioneSociale,
-        O.Email,
-        O.Citta,
-        O.Provincia,
+        O.PKCliente,
         O.AgenteProprietario,
         O.TipoAbbonamento,
+        O.MacroTipoAbbonamento,
         O.QuoteFormazione,
         O.Azione,
         O.ClausolaRinnovoAutomatico,
-        O.PKDataDisdetta,
-        O.DataDisdetta,
         O.PKDataInizioContratto,
         O.DataInizioContratto,
         O.PKDataFineContratto,
@@ -3387,16 +3396,15 @@ AS (
         O.PKDataCompetenza,
         O.TotaleDocumento,
         O.Insoluto,
-
-        ROW_NUMBER() OVER (PARTITION BY O.CodiceCliente ORDER BY O.NumeroDocumento) AS rn
+        ROW_NUMBER() OVER (PARTITION BY O.PKCliente ORDER BY O.NumeroDocumento) AS rn
 
     FROM Ordini O
 ),
 CreditiMIA
 AS (
     SELECT
-        --C.PKCliente,
-        C.Email,
+        C.PKCliente,
+        --C.Email,
         SUM(COAI.CreditiAcquistati) AS CreditiAcquistati,
         SUM(COAI.CreditiConsumati) AS CreditiConsumati,
         SUM(COAI.CreditiFuoriOrdine) AS CreditiFuoriOrdine,
@@ -3406,32 +3414,39 @@ AS (
     INNER JOIN Dim.Cliente C ON C.PKCliente = COAI.PKCliente
         AND C.IsDeleted = CAST(0 AS BIT)
     WHERE COAI.IsDeleted = CAST(0 AS BIT)
-    GROUP BY C.Email
+    GROUP BY C.PKCliente
+        --, C.Email
 )
 SELECT
-    DO.IDDocumento,
+    C.PKCliente,
+    C.CodiceCliente,
+    C.RagioneSociale,
+    C.Email,
+    C.Citta,
+    C.Provincia,
+    C.PKDataDisdetta,
+    C.DataDisdetta,
+
+    DOMYS.IDDocumento,
     --DO.NumeroDocumento,
-    DO.CodiceCliente,
-    DO.RagioneSociale,
-    DO.Email,
-    DO.Citta,
-    DO.Provincia,
-    DO.AgenteProprietario,
-    DO.TipoAbbonamento,
-    DO.QuoteFormazione,
-    DO.Azione,
-    DO.ClausolaRinnovoAutomatico,
-    DO.PKDataDisdetta,
-    DO.DataDisdetta,
-    DO.PKDataInizioContratto,
-    DO.DataInizioContratto,
-    DO.PKDataFineContratto,
-    DO.DataFineContratto,
-    DO.TotaleDocumento,
-    CASE WHEN DO.rn = 1 THEN DO.Insoluto ELSE 0.0 END AS Insoluto,
+    DOMYS.AgenteProprietario,
+    DOMYS.QuoteFormazione,
+    DOMYS.Azione,
+    DOMYS.ClausolaRinnovoAutomatico,
+    DOMYS.PKDataInizioContratto,
+    DOMYS.DataInizioContratto,
+    DOMYS.PKDataFineContratto,
+    DOMYS.DataFineContratto,
+    DOMYS.TotaleDocumento,
+    CASE WHEN DOMYS.rn = 1 THEN DOMYS.Insoluto ELSE 0.0 END AS Insoluto,
     A.AccessiUltimoMese,
     A.AccessiUltimoTrimestre,
     A.AccessiUltimoSemestre,
+    DOMIA.PKDataInizioContratto AS PKDataInizioContrattoMIA,
+    DOMIA.DataInizioContratto AS DataInizioContrattoMIA,
+    DOMIA.PKDataFineContratto AS PKDataFineContrattoMIA,
+    DOMIA.DataFineContratto AS DataFineContrattoMIA,
+    DOMIA.TotaleDocumento AS TotaleDocumentoMIA,
     CMIA.CreditiAcquistati,
     --CMIA.CreditiConsumati,
     --CMIA.CreditiFuoriOrdine,
@@ -3447,40 +3462,38 @@ SELECT
     IMMAC.NumeroIscritti AS NumeroIscrittiMiniMasterAnnoCorrente,
     IMMAC.ImportoTotale AS ImportoTotaleMiniMasterAnnoCorrente
 
-FROM DettaglioOrdini DO
-INNER JOIN Dim.Data DIC ON DIC.PKData = DO.PKDataInizioContratto
-    AND DO.PKDataInizioContratto > CAST('19000101' AS DATE)
-    --AND (
-    --    @TipoData <> 'I'
-    --    OR DIC.PKData BETWEEN @PKDataInizioPeriodo AND @PKDataFinePeriodo
-    --)
-INNER JOIN Dim.Data DFC ON DFC.PKData = DO.PKDataFineContratto
-    --AND (
-    --    @TipoData <> 'F'
-    --    OR DFC.PKData BETWEEN @PKDataInizioPeriodo AND @PKDataFinePeriodo
-    --)
-INNER JOIN Dim.Data DC ON DC.PKData = DO.PKDataCompetenza
-    --AND (
-    --    @TipoData <> 'C'
-    --    OR DC.PKData BETWEEN @PKDataInizioPeriodo AND @PKDataFinePeriodo
-    --)
-LEFT JOIN Accessi A ON A.Email = DO.Email
-LEFT JOIN CreditiMIA CMIA ON CMIA.Email = DO.Email
-LEFT JOIN IscrizioniMaster IMAC ON IMAC.Email = DO.Email
+FROM Clienti C
+LEFT JOIN DettaglioOrdini DOMYS ON DOMYS.PKCliente = C.PKCliente
+    AND DOMYS.MacroTipoAbbonamento = N'MYS'
+LEFT JOIN DettaglioOrdini DOMIA ON DOMIA.PKCliente = C.PKCliente
+    AND DOMIA.MacroTipoAbbonamento = N'MIA'
+INNER JOIN Dim.Data DC ON DC.PKData = DOMYS.PKDataCompetenza
+LEFT JOIN Accessi A ON A.PKCliente = C.PKCliente
+LEFT JOIN CreditiMIA CMIA ON CMIA.PKCliente = C.PKCliente
+LEFT JOIN IscrizioniMaster IMAC ON IMAC.PKCliente = C.PKCliente
     AND IMAC.CategoriaMaster = N'Master MySolution'
     AND IMAC.CodiceEsercizio = @CodiceEsercizioMasterCorrente
-LEFT JOIN IscrizioniMaster IMAP ON IMAP.Email = DO.Email
+LEFT JOIN IscrizioniMaster IMAP ON IMAP.PKCliente = C.PKCliente
     AND IMAP.CategoriaMaster = N'Master MySolution'
     AND IMAP.CodiceEsercizio = @CodiceEsercizioMasterPrecedente
-LEFT JOIN IscrizioniMaster IMMAC ON IMMAC.Email = DO.Email
+LEFT JOIN IscrizioniMaster IMMAC ON IMMAC.PKCliente = C.PKCliente
     AND IMMAC.CategoriaMaster = N'Mini Master Revisione'
     AND IMMAC.CodiceEsercizio = @CodiceEsercizioMasterCorrente
-LEFT JOIN IscrizioniMaster IMMAP ON IMMAP.Email = DO.Email
+LEFT JOIN IscrizioniMaster IMMAP ON IMMAP.PKCliente = C.PKCliente
     AND IMMAP.CategoriaMaster = N'Mini Master Revisione'
     AND IMMAP.CodiceEsercizio = @CodiceEsercizioMasterPrecedente
-ORDER BY DO.AgenteProprietario,
-    DO.CodiceCliente,
-    DO.NumeroDocumento;
+WHERE (
+        DOMYS.PKDataInizioContratto > CAST('19000101' AS DATE)
+        OR DOMIA.PKDataInizioContratto > CAST('19000101' AS DATE)
+    ) AND (
+        DOMYS.TotaleDocumento > 0.0
+        OR DOMIA.TotaleDocumento > 0.0
+        OR A.AccessiUltimoSemestre > 0
+        OR CMIA.CreditiAcquistati > 0
+    )
+ORDER BY DOMYS.AgenteProprietario,
+    C.CodiceCliente,
+    DOMYS.rn;
 
 END;
 GO

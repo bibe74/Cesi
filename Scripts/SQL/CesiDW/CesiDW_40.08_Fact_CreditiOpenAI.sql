@@ -50,9 +50,9 @@ WITH OpenAICrediti
 AS (
     SELECT
         C.Email,
-        SUM(CASE WHEN ICA.IsAcquisto = CAST(1 AS BIT) THEN CR.Quantita ELSE 0 END) AS CreditiAcquistati,
-        SUM(CASE WHEN ICA.IsConsumo = CAST(1 AS BIT) AND CR.PartitaId IS NOT NULL THEN CR.Quantita ELSE 0 END) AS CreditiConsumati,
-        SUM(CASE WHEN ICA.IsConsumo = CAST(1 AS BIT) AND CR.PartitaId IS NULL THEN CR.Quantita ELSE 0 END) AS CreditiFuoriOrdine,
+        SUM(CASE WHEN LEFT(CA.Codice, 1) = N'C' THEN CR.Quantita ELSE 0 END) AS CreditiAcquistati,
+        SUM(CASE WHEN LEFT(CA.Codice, 1) = N'S' AND CR.PartitaId IS NOT NULL THEN CR.Quantita ELSE 0 END) AS CreditiConsumati,
+        SUM(CASE WHEN LEFT(CA.Codice, 1) = N'S' AND CR.PartitaId IS NULL THEN CR.Quantita ELSE 0 END) AS CreditiFuoriOrdine,
         SUM(CR.Quantita) AS CreditiResidui,
         MIN(P.datascadenza) AS DataScadenzaOrdine
 
@@ -61,7 +61,6 @@ AS (
         AND C.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Landing.GPT_OpenAICausale CA ON CA.Id = CR.CausaleId
         AND CA.IsDeleted = CAST(0 AS BIT)
-    LEFT JOIN Import.OpenAICausale ICA ON ICA.Codice = CA.Codice
     LEFT JOIN Landing.GPT_OpenAIPartita P ON P.Id = CR.PartitaId
     WHERE CR.IsDeleted = CAST(0 AS BIT)
     GROUP BY C.Email
