@@ -3509,3 +3509,24 @@ EXEC Fact.usp_ReportCruscottoClienti
     @GruppoAgenti = @GruppoAgenti,
     @CapoArea = @CapoArea;
 GO
+
+/**
+SELECT DISTINCT
+    D.AnnoMese,
+    D.AnnoMese_IT AS AnnoMeseDescrizione
+
+FROM Dim.Data D
+WHERE D.PKData < CONVERT(DATE, CURRENT_TIMESTAMP)
+ORDER BY D.AnnoMese DESC;
+
+SELECT DISTINCT
+    GA.CapoArea,
+    GA.CapoArea AS CapoAreaDescrizione
+
+FROM Dim.GruppoAgenti GA
+WHERE GA.PKGruppoAgenti > 0
+
+UNION ALL SELECT NULL, N'Tutti'
+
+ORDER BY CapoArea;
+*/

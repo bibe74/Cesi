@@ -2,7 +2,23 @@
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CesiDW">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
-      <Items />
+      <Items>
+        <ConnectionNode Name="EPISQL2021.cesi.local:METRA\a.turelli">
+          <Created>2025-03-22T15:44:52.2668727+01:00</Created>
+          <Type>SQL</Type>
+          <Server>EPISQL2021.cesi.local</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>CesiDW</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
@@ -157,8 +173,8 @@
           <FullPath>CesiDW_30.02_Dim_GruppoAgenti.sql</FullPath>
         </FileNode>
         <FileNode Name="CesiDW_30.03_Dim_Cliente_ClienteAccessi.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:EPISQL2021.cesi.local:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>EPISQL2021.cesi.local</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CesiDW_30.03_Dim_Cliente_ClienteAccessi.sql</FullPath>
         </FileNode>
@@ -229,14 +245,14 @@
           <FullPath>CesiDW_40.08_Fact_CreditiOpenAI.sql</FullPath>
         </FileNode>
         <FileNode Name="CesiDW_40.99_Fact_views.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:EPISQL2021.cesi.local:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>EPISQL2021.cesi.local</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CesiDW_40.99_Fact_views.sql</FullPath>
         </FileNode>
         <FileNode Name="CesiDW_50.01_user_programmability.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:EPISQL2021.cesi.local:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>EPISQL2021.cesi.local</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>CesiDW_50.01_user_programmability.sql</FullPath>
         </FileNode>
@@ -269,12 +285,6 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>CesiDW_99.99_rebuild_all.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery1.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery1.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

@@ -10,15 +10,12 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="usp_ReportCruscottoClienti">
       <Query>
         <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@AnnoMese">
             <Value>=Parameters!AnnoMese.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@GruppoAgenti">
-            <Value>=Parameters!GruppoAgenti.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@CapoArea">
             <Value>=Parameters!CapoArea.Value</Value>
@@ -26,7 +23,6 @@
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportCruscottoClienti
     @AnnoMese = @AnnoMese,
-    @GruppoAgenti = @GruppoAgenti,
     @CapoArea = @CapoArea;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -189,6 +185,54 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="pCapoArea">
+      <Query>
+        <DataSourceName>CesiDW_ds</DataSourceName>
+        <CommandText>SELECT DISTINCT
+    GA.CapoArea,
+    GA.CapoArea AS CapoAreaDescrizione
+
+FROM Dim.GruppoAgenti GA
+WHERE GA.PKGruppoAgenti &gt; 0
+
+UNION ALL SELECT NULL, N'Tutti'
+
+ORDER BY CapoArea;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CapoArea">
+          <DataField>CapoArea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CapoAreaDescrizione">
+          <DataField>CapoAreaDescrizione</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="pAnnoMese">
+      <Query>
+        <DataSourceName>CesiDW_ds</DataSourceName>
+        <CommandText>SELECT DISTINCT
+    D.AnnoMese,
+    D.AnnoMese_IT AS AnnoMeseDescrizione
+
+FROM Dim.Data D
+WHERE D.PKData &lt; CONVERT(DATE, CURRENT_TIMESTAMP)
+ORDER BY D.AnnoMese DESC;
+</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AnnoMese">
+          <DataField>AnnoMese</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AnnoMeseDescrizione">
+          <DataField>AnnoMeseDescrizione</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -229,28 +273,28 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>6in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>2in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>3in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
@@ -2810,10 +2854,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>usp_ReportCruscottoClienti</DataSetName>
             <Top>0.43in</Top>
             <Height>0.43in</Height>
-            <Width>32in</Width>
+            <Width>49in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -2821,7 +2865,7 @@
         <Height>0.86in</Height>
         <Style />
       </Body>
-      <Width>32in</Width>
+      <Width>49in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -2835,17 +2879,38 @@
     <ReportParameter Name="AnnoMese">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>pAnnoMese</DataSetName>
+          <ValueField>AnnoMese</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>Anno Mese</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="GruppoAgenti">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Gruppo Agenti</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>pAnnoMese</DataSetName>
+          <ValueField>AnnoMese</ValueField>
+          <LabelField>AnnoMeseDescrizione</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
     <ReportParameter Name="CapoArea">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>pCapoArea</DataSetName>
+          <ValueField>CapoArea</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>Capo Area</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>pCapoArea</DataSetName>
+          <ValueField>CapoArea</ValueField>
+          <LabelField>CapoAreaDescrizione</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -2857,11 +2922,6 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>AnnoMese</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>GruppoAgenti</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
