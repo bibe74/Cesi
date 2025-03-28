@@ -14,15 +14,15 @@
       <Query>
         <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@AnnoMese">
-            <Value>=Parameters!AnnoMese.Value</Value>
+          <QueryParameter Name="@PKDataFinePeriodo">
+            <Value>=Parameters!PKDataFinePeriodo.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@CapoArea">
             <Value>=Parameters!CapoArea.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportCruscottoClienti
-    @AnnoMese = @AnnoMese,
+    @PKDataFinePeriodo = @PKDataFinePeriodo,
     @CapoArea = @CapoArea;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -210,26 +210,15 @@ ORDER BY CapoArea;</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="pAnnoMese">
+    <DataSet Name="pPKDataFinePeriodo">
       <Query>
         <DataSourceName>CesiDW_ds</DataSourceName>
-        <CommandText>SELECT DISTINCT
-    D.AnnoMese,
-    D.AnnoMese_IT AS AnnoMeseDescrizione
-
-FROM Dim.Data D
-WHERE D.PKData &lt; CONVERT(DATE, CURRENT_TIMESTAMP)
-ORDER BY D.AnnoMese DESC;
-</CommandText>
+        <CommandText>SELECT DATEADD(DAY, -1, CONVERT(DATE, CURRENT_TIMESTAMP)) AS PKDataFinePeriodo</CommandText>
       </Query>
       <Fields>
-        <Field Name="AnnoMese">
-          <DataField>AnnoMese</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AnnoMeseDescrizione">
-          <DataField>AnnoMeseDescrizione</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="PKDataFinePeriodo">
+          <DataField>PKDataFinePeriodo</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -2876,23 +2865,15 @@ ORDER BY D.AnnoMese DESC;
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="AnnoMese">
-      <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
+    <ReportParameter Name="PKDataFinePeriodo">
+      <DataType>DateTime</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>pAnnoMese</DataSetName>
-          <ValueField>AnnoMese</ValueField>
+          <DataSetName>pPKDataFinePeriodo</DataSetName>
+          <ValueField>PKDataFinePeriodo</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Anno Mese</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>pAnnoMese</DataSetName>
-          <ValueField>AnnoMese</ValueField>
-          <LabelField>AnnoMeseDescrizione</LabelField>
-        </DataSetReference>
-      </ValidValues>
+      <Prompt>Data Fine Periodo</Prompt>
     </ReportParameter>
     <ReportParameter Name="CapoArea">
       <DataType>String</DataType>
@@ -2916,17 +2897,17 @@ ORDER BY D.AnnoMese DESC;
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>AnnoMese</ParameterName>
+          <ParameterName>CapoArea</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>CapoArea</ParameterName>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PKDataFinePeriodo</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

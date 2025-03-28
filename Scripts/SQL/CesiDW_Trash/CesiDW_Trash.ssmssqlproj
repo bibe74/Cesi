@@ -30,6 +30,18 @@
           <AssociatedConnUserName />
           <FullPath>_CesiDW_30.02_Dim_Cliente_OLD.sql</FullPath>
         </FileNode>
+        <FileNode Name="_CesiDW_30.03_Dim_Cliente.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_30.03_Dim_Cliente.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_CesiDW_30.03_Dim_Cliente_NEW.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>_CesiDW_30.03_Dim_Cliente_NEW.sql</FullPath>
+        </FileNode>
         <FileNode Name="_CesiDW_40.02_Fact_Ordini.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
