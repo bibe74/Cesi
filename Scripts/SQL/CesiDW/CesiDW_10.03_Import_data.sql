@@ -267,6 +267,27 @@ GROUP BY SB.Agente
 ORDER BY SB.Agente;
 GO
 
+UPDATE dbo.[Budget2025$] SET Agente = N'RODI' WHERE Agente = N'Direzionali Liguria';
+UPDATE dbo.[Budget2025$] SET Agente = N'TUROLLA' WHERE Agente = N'Turolla/Direzionali'
+
+INSERT INTO Import.Budget (
+    PKDataInizioMese,
+    CapoArea,
+    ImportoBudgetNuoveVendite,
+    ImportoBudgetRinnovi
+)
+SELECT
+    D.PKData AS PKDataInizioMese,
+    CA.CapoArea,
+    COALESCE(B.Importo, 0.0) AS ImportoBudgetNuoveVendite,
+    0.0 AS ImportoBudgetRinnovi
+
+FROM dbo.[Budget2025$] B
+INNER JOIN Dim.Data D ON D.Mese_IT = B.Mese
+    AND D.Anno = 2025
+    AND DATEPART(DAY, D.PKData) = 1
+LEFT JOIN Import.CapiArea CA ON CA.AgenteBudget = B.Agente
+
 */
 
 CREATE OR ALTER VIEW Import.BudgetView
