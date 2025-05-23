@@ -28,10 +28,15 @@ SELECT
         WHEN COALESCE(T.descrizione, N'') LIKE N'%Master MySolution Plus%' THEN N'Master MySolution'
         WHEN COALESCE(T.descrizione, N'') LIKE N'%Mini Master Revisione Legale%' THEN N'Mini Master Revisione'
         WHEN COALESCE(T.descrizione, N'') LIKE N'%Master MySolution 202%' THEN N'Master MySolution'
+        WHEN COALESCE(T.descrizione, N'') LIKE N'%Master MySolution Fisco 202%' THEN N'Master MySolution'
         ELSE N''
     END AS CategoriaMaster,
     CASE
-        WHEN COALESCE(T.descrizione, N'') LIKE N'%Master MySolution On-line%' OR COALESCE(T.descrizione, N'') LIKE N'%Master MySolution Plus%' OR COALESCE(T.descrizione, N'') LIKE N'%Mini Master Revisione Legale%' OR COALESCE(T.descrizione, N'') LIKE N'%Master MySolution 202%'
+        WHEN COALESCE(T.descrizione, N'') LIKE N'%Master MySolution On-line%'
+            OR COALESCE(T.descrizione, N'') LIKE N'%Master MySolution Plus%'
+            OR COALESCE(T.descrizione, N'') LIKE N'%Mini Master Revisione Legale%'
+            OR COALESCE(T.descrizione, N'') LIKE N'%Master MySolution 202%'
+            OR COALESCE(T.descrizione, N'') LIKE N'%Master MySolution Fisco 202%'
         THEN
         CASE
             WHEN COALESCE(T.descrizione, N'') LIKE N'%2012_2013%' THEN N'2012/2013'
@@ -73,6 +78,12 @@ SELECT
             WHEN COALESCE(T.descrizione, N'') LIKE N'%2024_2025%' THEN N'2024/2025'
             WHEN COALESCE(T.descrizione, N'') LIKE N'%24_25%' THEN N'2024/2025'
             WHEN COALESCE(T.descrizione, N'') LIKE N'%2024%' THEN N'2024/2025'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%2025_2026%' THEN N'2025/2026'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%25_26%' THEN N'2025/2026'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%2025%' THEN N'2025/2026'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%2026_2027%' THEN N'2026/2027'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%26_27%' THEN N'2026/2027'
+            WHEN COALESCE(T.descrizione, N'') LIKE N'%2026%' THEN N'2026/2027'
             ELSE N''
         END
         ELSE N''

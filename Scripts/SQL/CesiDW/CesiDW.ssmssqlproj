@@ -234,6 +234,12 @@
           <AssociatedConnUserName />
           <FullPath>CesiDW_60.01_audit_views.sql</FullPath>
         </FileNode>
+        <FileNode Name="CesiDW_70.01_vZOHO_views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_70.01_vZOHO_views.sql</FullPath>
+        </FileNode>
         <FileNode Name="CesiDW_99.01_misc.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
