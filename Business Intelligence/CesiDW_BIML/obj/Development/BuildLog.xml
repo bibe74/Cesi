@@ -8,52 +8,52 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>00_ETL_master.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8540999Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.2992559Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>01_Extract.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8540999Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3012532Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02_Setup.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8551165Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3022492Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03_Transform_and_Load.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8551165Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3032493Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Articolo.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8551165Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3042492Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8561162Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3052595Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_GruppoAgenti.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.857119Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3092498Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Accessi.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.857119Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3122544Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Documenti.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.858116Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3162519Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Scadenze.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.858116Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.317254Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -93,17 +93,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Budget.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.857119Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3132529Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Utente.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.857119Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3102495Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Corsi.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.858116Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3142554Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -113,17 +113,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente_OLD.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8561162Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3062518Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Corso.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.8561162Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.307253Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Crediti.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.858116Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3152512Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -133,7 +133,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_CreditiOpenAI.dtsx</Name>
-      <LastWriteTime>2025-03-09T11:09:28.858116Z</LastWriteTime>
+      <LastWriteTime>2025-05-26T12:37:10.3162519Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

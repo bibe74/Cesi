@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="03/09/2025 12:09:27" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{778EAAD3-DE87-4BDA-99F1-7E782F3D1891}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="03_Transform_and_Load" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{B69BE778-3FC9-44A5-9AE7-B393C515080C}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="05/26/2025 14:37:08" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{1394FD5F-2EEA-416F-B986-365B8B79A749}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="03_Transform_and_Load" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{F803AB17-F836-40DF-A382-5AC402DD0501}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{1CDC0401-062F-4C7F-8A6C-3AAE6EBC9D23}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Cliente" DTS:refId="Package\Dim_Cliente" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{9828F4D2-3791-4DAA-BD8F-7B7A30674F00}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Cliente" DTS:refId="Package\Dim_Cliente" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Dim_Cliente.dtsx</PackageName>
@@ -10,7 +10,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{493A55E3-CCE3-41E5-8231-5EB6BA6169F0}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_GruppoAgenti" DTS:refId="Package\Dim_GruppoAgenti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{35510ADD-6BD9-49D1-8DFB-F2E793074EC9}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_GruppoAgenti" DTS:refId="Package\Dim_GruppoAgenti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Dim_GruppoAgenti.dtsx</PackageName>
@@ -18,7 +18,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{90FEDE1B-2AB5-4D18-A09A-D929E2D32C7B}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Articolo" DTS:refId="Package\Dim_Articolo" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{54509A78-3462-4263-9032-F5129B808950}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Articolo" DTS:refId="Package\Dim_Articolo" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Dim_Articolo.dtsx</PackageName>
@@ -26,7 +26,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{D18F401C-FC41-4AA9-9105-1945BB88D7ED}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Utente" DTS:refId="Package\Dim_Utente" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{BECBF235-9181-4AE6-8B7F-53602891D215}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Utente" DTS:refId="Package\Dim_Utente" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Dim_Utente.dtsx</PackageName>
@@ -34,7 +34,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{FAAC5D15-AE33-4ADD-B4AD-24A76965DA01}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Corso" DTS:refId="Package\Dim_Corso" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{7C50C8C9-6A16-4264-BE44-6F3A5B12D91C}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_Corso" DTS:refId="Package\Dim_Corso" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Dim_Corso.dtsx</PackageName>
@@ -42,7 +42,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{6A80F8FA-869F-495C-B6D4-5F306EC3EF31}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Accessi" DTS:refId="Package\Fact_Accessi" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{64EB3C4E-60F5-4BB9-BB48-BA65A85CFAD0}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Accessi" DTS:refId="Package\Fact_Accessi" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Accessi.dtsx</PackageName>
@@ -50,7 +50,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{38C8A88C-84C0-41C4-BBFC-5B87C5000A8B}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Documenti" DTS:refId="Package\Fact_Documenti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{167FBAC0-44D5-40DA-9CA7-2E24181BC750}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Documenti" DTS:refId="Package\Fact_Documenti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Documenti.dtsx</PackageName>
@@ -58,7 +58,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{949C59D3-DBCD-42CB-AD7E-88EC384E04C6}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Scadenze" DTS:refId="Package\Fact_Scadenze" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{967884B1-509C-40D0-B198-AC964BFD28AD}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Scadenze" DTS:refId="Package\Fact_Scadenze" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Scadenze.dtsx</PackageName>
@@ -66,7 +66,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{69692D63-BD2D-4B2B-9147-F9C423BE5A45}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Budget" DTS:refId="Package\Fact_Budget" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{CA03AB64-16DD-4573-BCDC-8EF7BA114EAA}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Budget" DTS:refId="Package\Fact_Budget" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Scadenze.dtsx</PackageName>
@@ -74,7 +74,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{4403A63A-E55C-49FA-BDFB-0F62DF778CD6}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Corsi" DTS:refId="Package\Fact_Corsi" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{399F5B33-E8BD-4D3C-8740-61146ED95869}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Corsi" DTS:refId="Package\Fact_Corsi" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Corsi.dtsx</PackageName>
@@ -82,7 +82,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{A3A67CFD-3C9D-498B-9A9E-A4BC9DC42609}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Crediti" DTS:refId="Package\Fact_Crediti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{37AC6B4A-0F10-4527-88D7-B6204BB425A2}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_Crediti" DTS:refId="Package\Fact_Crediti" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_Crediti.dtsx</PackageName>
@@ -90,7 +90,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{7F7FF758-F27B-4526-BB7B-ABA949507385}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_CreditiOpenAI" DTS:refId="Package\Fact_CreditiOpenAI" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{EDB20398-B00D-4811-9C33-37047FC3699F}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_CreditiOpenAI" DTS:refId="Package\Fact_CreditiOpenAI" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>Fact_CreditiOpenAI.dtsx</PackageName>
@@ -100,17 +100,17 @@
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{64B331F1-6692-4D44-9449-3976C8A6B2AC}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Dim_Cliente" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Dim_Cliente]" DTS:To="Package\Dim_Cliente" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{96979B24-5DE9-4055-B2CD-F9A56107AA58}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Accessi" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Accessi]" DTS:To="Package\Fact_Accessi" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{8F2842F0-F511-4127-A9DE-A02D43C8AB23}" DTS:From="Package\Dim_Articolo" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Articolo_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Articolo_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{72E64B12-AD10-4A8E-85D5-E193567E8699}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{4B52BEE7-69C9-40E0-B6B5-DAF040C3B379}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{FE3615FB-6456-49E9-9BD9-2DACF993BD53}" DTS:From="Package\Fact_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Fact_Documenti_To_Fact_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Fact_Documenti_To_Fact_Scadenze]" DTS:To="Package\Fact_Scadenze" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{7F375EF0-78D7-4812-BF6E-FA11FAE5523B}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Scadenze]" DTS:To="Package\Fact_Scadenze" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{1BADC41E-3616-466F-8205-358F595918B7}" DTS:From="Package\Fact_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Fact_Documenti_To_Fact_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Fact_Documenti_To_Fact_Budget]" DTS:To="Package\Fact_Budget" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{12DE2FF3-0083-4F93-B3BD-E72A7EE5C5AC}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Fact_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Fact_Budget]" DTS:To="Package\Fact_Budget" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{E2F8DCC2-E4C7-4726-BF7D-C4961ECC7FB4}" DTS:From="Package\Dim_Utente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Utente_To_Fact_Corsi" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Utente_To_Fact_Corsi]" DTS:To="Package\Fact_Corsi" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{355CC7FD-6B6D-46B7-AC3A-D67F8E762B7C}" DTS:From="Package\Dim_Corso" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Corso_To_Fact_Crediti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Corso_To_Fact_Crediti]" DTS:To="Package\Fact_Crediti" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{1B827E0C-4728-4355-93C7-5BBA870E4189}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_CreditiOpenAI" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_CreditiOpenAI]" DTS:To="Package\Fact_CreditiOpenAI" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{8B3D4CED-2D77-45CC-91F0-8E565A4208AD}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Dim_Cliente" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Dim_Cliente]" DTS:To="Package\Dim_Cliente" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{0C845823-BBF0-472A-A743-62D03C506DB9}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Accessi" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Accessi]" DTS:To="Package\Fact_Accessi" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{FAC9FE5A-D990-486D-9AC9-FDD80B87BD01}" DTS:From="Package\Dim_Articolo" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Articolo_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Articolo_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{6CD71283-BEB9-4665-95A2-021F70E3C5A4}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{E069120E-F391-4B9F-8B1C-8D3151072452}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Documenti]" DTS:To="Package\Fact_Documenti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{DE4E4384-5380-415F-8332-605F09A1ED2B}" DTS:From="Package\Fact_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Fact_Documenti_To_Fact_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Fact_Documenti_To_Fact_Scadenze]" DTS:To="Package\Fact_Scadenze" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{234094AE-31D5-4F54-9EBA-D77965EB55B5}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_Scadenze]" DTS:To="Package\Fact_Scadenze" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{D85D4DFF-132A-4BC2-A93D-470731872825}" DTS:From="Package\Fact_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Fact_Documenti_To_Fact_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Fact_Documenti_To_Fact_Budget]" DTS:To="Package\Fact_Budget" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{2FFC1907-CFFB-4CD4-B0DD-08DEA5FA6555}" DTS:From="Package\Dim_GruppoAgenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_GruppoAgenti_To_Fact_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_GruppoAgenti_To_Fact_Budget]" DTS:To="Package\Fact_Budget" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{D150ED83-B85C-4181-A0AE-85735A1B615F}" DTS:From="Package\Dim_Utente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Utente_To_Fact_Corsi" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Utente_To_Fact_Corsi]" DTS:To="Package\Fact_Corsi" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{1EA28F6B-57ED-4294-853D-F6EE38EFFCA2}" DTS:From="Package\Dim_Corso" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Corso_To_Fact_Crediti" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Corso_To_Fact_Crediti]" DTS:To="Package\Fact_Crediti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{AA7AC9F6-6503-4D96-B2A7-4A3D96E9E803}" DTS:From="Package\Dim_Cliente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Dim_Cliente_To_Fact_CreditiOpenAI" DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_Cliente_To_Fact_CreditiOpenAI]" DTS:To="Package\Fact_CreditiOpenAI" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

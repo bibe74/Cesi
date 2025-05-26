@@ -184,7 +184,7 @@
 		</Package>
 		<Package Name="Dim_Articolo" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
 			<Tasks>
-				<ExecuteSQL Name="Staging_usp_Reload_ArticoloCategoriaMaster" ConnectionName="CesiDW">
+				<ExecuteSQL Name="Staging_usp_Reload_ArticoloCategoriaMaster" ConnectionName="CesiDW" Disabled="true">
 					<DirectInput>EXEC Staging.usp_Reload_ArticoloCategoriaMaster;</DirectInput>
 				</ExecuteSQL>
 				<ExecuteSQL Name="Staging_usp_Reload_Articolo" ConnectionName="CesiDW">
