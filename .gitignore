@@ -1,3 +1,6 @@
+# Added manually
+*.ssms_suo
+
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio
 
