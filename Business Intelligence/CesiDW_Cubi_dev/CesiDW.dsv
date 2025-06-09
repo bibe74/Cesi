@@ -1,4 +1,4 @@
-﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1359e1f6-f916-4884-ae48-71fc1c174e47" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b6ab5439-23ce-4748-9a0b-104b11a1563e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>CesiDW</ID>
   <Name>CesiDW</Name>
   <CreatedTimestamp>2021-01-20T11:04:33.013333Z</CreatedTimestamp>
@@ -203,7 +203,7 @@
                   </layoutobject>
                   <shape groupshapeid="0" groupnode="0" />
                 </ddscontrol>
-                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="CreditiOpenAI" left="35773" top="14800" logicalid="116" controlid="57" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="CreditiOpenAI" left="35773" top="14800" logicalid="75" controlid="16" masterid="0" hint1="0" hint2="0" width="4207" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobjectstreaminitwrapper binary="000e00006f10000088130000" />
                   </control>
@@ -227,7 +227,7 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="57" sourceattachpoint="15" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="16" sourceattachpoint="15" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
                     <point x="7179" y="37221" />
                     <point x="21476" y="37221" />
                     <point x="21476" y="19500" />
@@ -247,7 +247,7 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="57" sourceattachpoint="0" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="16" sourceattachpoint="0" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
                     <point x="39688" y="22200" />
                     <point x="39688" y="21000" />
                     <point x="39526" y="21000" />
@@ -570,7 +570,7 @@
                     <point x="9579" y="34300" />
                   </connector>
                 </ddscontrol>
-                <ddscontrol controlprogid="MSDDS.Polyline" left="13539" top="25401" logicalid="138" controlid="79" masterid="0" hint1="0" hint2="0" width="25996" height="4799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="MSDDS.Polyline" left="13539" top="26501" logicalid="138" controlid="79" masterid="0" hint1="0" hint2="0" width="25996" height="3699" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
                       <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -583,9 +583,9 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="7" sourceattachpoint="26" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                    <point x="39235" y="25800" />
-                    <point x="26537" y="25800" />
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="7" sourceattachpoint="30" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="39235" y="26900" />
+                    <point x="26537" y="26900" />
                     <point x="26537" y="29900" />
                     <point x="13839" y="29900" />
                   </connector>
@@ -930,7 +930,7 @@
                     <point x="26591" y="66442" />
                   </connector>
                 </ddscontrol>
-                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="24950" logicalid="156" controlid="97" masterid="0" hint1="0" hint2="0" width="32656" height="12671" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="25500" logicalid="156" controlid="97" masterid="0" hint1="0" hint2="0" width="32656" height="12121" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
                       <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -943,14 +943,14 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="24" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="26" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
                     <point x="7179" y="37221" />
                     <point x="23207" y="37221" />
-                    <point x="23207" y="25250" />
-                    <point x="39235" y="25250" />
+                    <point x="23207" y="25800" />
+                    <point x="39235" y="25800" />
                   </connector>
                 </ddscontrol>
-                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="24400" logicalid="157" controlid="98" masterid="0" hint1="0" hint2="0" width="32656" height="13221" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="24950" logicalid="157" controlid="98" masterid="0" hint1="0" hint2="0" width="32656" height="12671" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
                       <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -963,11 +963,11 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="24" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
                     <point x="7179" y="37221" />
                     <point x="23207" y="37221" />
-                    <point x="23207" y="24700" />
-                    <point x="39235" y="24700" />
+                    <point x="23207" y="25250" />
+                    <point x="39235" y="25250" />
                   </connector>
                 </ddscontrol>
                 <ddscontrol controlprogid="MSDDS.Polyline" left="34937" top="26900" logicalid="158" controlid="99" masterid="0" hint1="0" hint2="0" width="6151" height="21621" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
@@ -990,7 +990,7 @@
                     <point x="40788" y="27200" />
                   </connector>
                 </ddscontrol>
-                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="26600" logicalid="159" controlid="100" masterid="0" hint1="0" hint2="0" width="32656" height="11021" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="MSDDS.Polyline" left="6879" top="26050" logicalid="159" controlid="100" masterid="0" hint1="0" hint2="0" width="32656" height="11571" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
                       <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -1003,11 +1003,11 @@
                       <property name="VisibleAP" value="0" vartype="3" />
                     </ddsxmlobj>
                   </layoutobject>
-                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="15" destattachpoint="28" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
                     <point x="7179" y="37221" />
                     <point x="23207" y="37221" />
-                    <point x="23207" y="26900" />
-                    <point x="39235" y="26900" />
+                    <point x="23207" y="26350" />
+                    <point x="39235" y="26350" />
                   </connector>
                 </ddscontrol>
                 <ddscontrol controlprogid="MSDDS.Polyline" left="23985" top="52721" logicalid="160" controlid="101" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
@@ -1383,7 +1383,8 @@
                   </xs:element>
                   <xs:element name="HasRoleMySolutionDemo" msprop:design-time-name="2cb90584-0fb7-46de-aa55-4ad7f83c999b" msprop:DbColumnName="HasRoleMySolutionDemo" type="xs:boolean" minOccurs="0" />
                   <xs:element name="HasRoleMySolutionInterno" msprop:design-time-name="8511a4b4-cad5-45f9-8611-2ff981cb85c8" msprop:DbColumnName="HasRoleMySolutionInterno" type="xs:boolean" minOccurs="0" />
-                  <xs:element name="HasAbbonamento" msprop:DbColumnName="HasAbbonamento" msprop:design-time-name="64c0263b-8e19-4270-9f8d-444b7ec0b1ce" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="HasAbbonamentoMySolution" msprop:DbColumnName="HasAbbonamentoMySolution" msprop:design-time-name="59b99a2d-a832-4e91-b5e7-9bdef896fa22" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="HasAbbonamentoMIA" msprop:DbColumnName="HasAbbonamentoMIA" msprop:design-time-name="b9af5b82-fd65-442f-ad58-b1c6ad32fb23" type="xs:boolean" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -2637,177 +2638,177 @@
           <xs:selector xpath=".//Fact_CreditiOpenAI" />
           <xs:field xpath="PKCreditiOpenAI" />
         </xs:unique>
-        <xs:keyref name="FK_Fact_CreditiOpenAI_PKDataScadenzaOrdine" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_CreditiOpenAI" />
-          <xs:field xpath="PKDataScadenzaOrdine" />
-        </xs:keyref>
         <xs:keyref name="FK_Fact_CreditiOpenAI_PKCliente" refer="Dim_Cliente_Constraint1">
           <xs:selector xpath=".//Fact_CreditiOpenAI" />
           <xs:field xpath="PKCliente" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Crediti_PKDataCreazione" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Crediti" />
-          <xs:field xpath="PKDataCreazione" />
+        <xs:keyref name="FK_Fact_CreditiOpenAI_PKDataScadenzaOrdine" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_CreditiOpenAI" />
+          <xs:field xpath="PKDataScadenzaOrdine" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Crediti_PKCorso" refer="Dim_Corso_Constraint1">
           <xs:selector xpath=".//Fact_Crediti" />
           <xs:field xpath="PKCorso" />
         </xs:keyref>
+        <xs:keyref name="FK_Fact_Crediti_PKDataCreazione" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Crediti" />
+          <xs:field xpath="PKDataCreazione" />
+        </xs:keyref>
         <xs:keyref name="FK_Dim_Corso_PKDataInizioCorso" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Dim_Corso" />
           <xs:field xpath="PKDataInizioCorso" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_ClienteAccessi_PKCliente" refer="Dim_Cliente_Constraint1">
-          <xs:selector xpath=".//Dim_ClienteAccessi" />
-          <xs:field xpath="PKCliente" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_ClienteAccessi_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
-          <xs:selector xpath=".//Dim_ClienteAccessi" />
-          <xs:field xpath="PKGruppoAgenti" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_ClienteAccessi_PKDataDisdetta" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Dim_ClienteAccessi" />
-          <xs:field xpath="PKDataDisdetta" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_ClienteAccessi_PKDataInizioContratto" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Dim_ClienteAccessi" />
-          <xs:field xpath="PKDataInizioContratto" />
         </xs:keyref>
         <xs:keyref name="FK_Dim_ClienteAccessi_PKDataFineContratto" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Dim_ClienteAccessi" />
           <xs:field xpath="PKDataFineContratto" />
         </xs:keyref>
+        <xs:keyref name="FK_Dim_ClienteAccessi_PKDataInizioContratto" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Dim_ClienteAccessi" />
+          <xs:field xpath="PKDataInizioContratto" />
+        </xs:keyref>
+        <xs:keyref name="FK_Dim_ClienteAccessi_PKDataDisdetta" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Dim_ClienteAccessi" />
+          <xs:field xpath="PKDataDisdetta" />
+        </xs:keyref>
+        <xs:keyref name="FK_Dim_ClienteAccessi_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
+          <xs:selector xpath=".//Dim_ClienteAccessi" />
+          <xs:field xpath="PKGruppoAgenti" />
+        </xs:keyref>
+        <xs:keyref name="FK_Dim_ClienteAccessi_PKCliente" refer="Dim_Cliente_Constraint1">
+          <xs:selector xpath=".//Dim_ClienteAccessi" />
+          <xs:field xpath="PKCliente" />
+        </xs:keyref>
         <xs:keyref name="FK_Dim_Utente_PKCliente" refer="Dim_Cliente_Constraint1">
           <xs:selector xpath=".//Dim_Utente" />
           <xs:field xpath="PKCliente" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Corsi_PKDataIscrizione" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Corsi" />
-          <xs:field xpath="PKDataIscrizione" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Corsi_PKDataInizio" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Corsi" />
-          <xs:field xpath="PKDataInizio" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Corsi_PKUtente" refer="Dim_Utente_Constraint1">
           <xs:selector xpath=".//Fact_Corsi" />
           <xs:field xpath="PKUtente" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Budget_PKMacroTipologia" refer="Dim_MacroTipologia_Constraint1">
-          <xs:selector xpath=".//Fact_Budget" />
-          <xs:field xpath="PKMacroTipologia" />
+        <xs:keyref name="FK_Fact_Corsi_PKDataInizio" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Corsi" />
+          <xs:field xpath="PKDataInizio" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Budget_PKData" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Budget" />
-          <xs:field xpath="PKData" />
+        <xs:keyref name="FK_Fact_Corsi_PKDataIscrizione" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Corsi" />
+          <xs:field xpath="PKDataIscrizione" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Budget_PKCapoArea" refer="Dim_CapoArea_Constraint1">
           <xs:selector xpath=".//Fact_Budget" />
           <xs:field xpath="PKCapoArea" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Scadenze_PKDocumenti" refer="Fact_Documenti_Constraint1">
-          <xs:selector xpath=".//Fact_Scadenze" />
-          <xs:field xpath="PKDocumenti" />
+        <xs:keyref name="FK_Fact_Budget_PKData" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Budget" />
+          <xs:field xpath="PKData" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Scadenze_PKCliente" refer="Dim_Cliente_Constraint1">
-          <xs:selector xpath=".//Fact_Scadenze" />
-          <xs:field xpath="PKCliente" />
+        <xs:keyref name="FK_Fact_Budget_PKMacroTipologia" refer="Dim_MacroTipologia_Constraint1">
+          <xs:selector xpath=".//Fact_Budget" />
+          <xs:field xpath="PKMacroTipologia" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Scadenze_PKDataScadenza" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Fact_Scadenze" />
           <xs:field xpath="PKDataScadenza" />
         </xs:keyref>
+        <xs:keyref name="FK_Fact_Scadenze_PKCliente" refer="Dim_Cliente_Constraint1">
+          <xs:selector xpath=".//Fact_Scadenze" />
+          <xs:field xpath="PKCliente" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Scadenze_PKDocumenti" refer="Fact_Documenti_Constraint1">
+          <xs:selector xpath=".//Fact_Scadenze" />
+          <xs:field xpath="PKDocumenti" />
+        </xs:keyref>
         <xs:keyref name="FK_Dim_GruppoAgenti_PKCapoArea" refer="Dim_CapoArea_Constraint1">
           <xs:selector xpath=".//Dim_GruppoAgenti" />
+          <xs:field xpath="PKCapoArea" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataRegistrazione" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataRegistrazione" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKGruppoAgenti_Riga" refer="Dim_GruppoAgenti_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKGruppoAgenti_Riga" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataInizioEsercizio" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataInizioEsercizio" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataFineEsercizio" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataFineEsercizio" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataInizioContratto" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataInizioContratto" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKCliente" refer="Dim_Cliente_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKCliente" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKGruppoAgenti" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataFineContratto" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataFineContratto" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataDocumento" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataDocumento" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKDataCompetenza" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKDataCompetenza" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKClienteFattura" refer="Dim_Cliente_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKClienteFattura" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKArticolo" refer="Dim_Articolo_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKArticolo" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKCapoArea_Riga" refer="Dim_CapoArea_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
+          <xs:field xpath="PKCapoArea_Riga" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Documenti_PKCapoArea" refer="Dim_CapoArea_Constraint1">
+          <xs:selector xpath=".//Fact_Documenti" />
           <xs:field xpath="PKCapoArea" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Documenti_PKMacroTipologia" refer="Dim_MacroTipologia_Constraint1">
           <xs:selector xpath=".//Fact_Documenti" />
           <xs:field xpath="PKMacroTipologia" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKCapoArea" refer="Dim_CapoArea_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKCapoArea" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKCapoArea_Riga" refer="Dim_CapoArea_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKCapoArea_Riga" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKArticolo" refer="Dim_Articolo_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKArticolo" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKClienteFattura" refer="Dim_Cliente_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKClienteFattura" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataCompetenza" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataCompetenza" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataDocumento" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataDocumento" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataFineContratto" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataFineContratto" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
+        <xs:keyref name="FK_Dim_Cliente_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
+          <xs:selector xpath=".//Dim_Cliente" />
           <xs:field xpath="PKGruppoAgenti" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKCliente" refer="Dim_Cliente_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKCliente" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataInizioContratto" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataInizioContratto" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataFineEsercizio" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataFineEsercizio" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataInizioEsercizio" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataInizioEsercizio" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKGruppoAgenti_Riga" refer="Dim_GruppoAgenti_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKGruppoAgenti_Riga" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Documenti_PKDataRegistrazione" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Fact_Documenti" />
-          <xs:field xpath="PKDataRegistrazione" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_Cliente_PKDataInizioContratto" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Dim_Cliente" />
-          <xs:field xpath="PKDataInizioContratto" />
-        </xs:keyref>
-        <xs:keyref name="FK_Dim_Cliente_PKDataFineContratto" refer="Dim_Data_Constraint1">
-          <xs:selector xpath=".//Dim_Cliente" />
-          <xs:field xpath="PKDataFineContratto" />
         </xs:keyref>
         <xs:keyref name="FK_Dim_Cliente_PKDataDisdetta" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Dim_Cliente" />
           <xs:field xpath="PKDataDisdetta" />
         </xs:keyref>
-        <xs:keyref name="FK_Dim_Cliente_PKGruppoAgenti" refer="Dim_GruppoAgenti_Constraint1">
+        <xs:keyref name="FK_Dim_Cliente_PKDataFineContratto" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Dim_Cliente" />
-          <xs:field xpath="PKGruppoAgenti" />
+          <xs:field xpath="PKDataFineContratto" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Accessi_PKData" refer="Dim_Data_Constraint1">
+        <xs:keyref name="FK_Dim_Cliente_PKDataInizioContratto" refer="Dim_Data_Constraint1">
+          <xs:selector xpath=".//Dim_Cliente" />
+          <xs:field xpath="PKDataInizioContratto" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Accessi_PKCapoArea" refer="Dim_CapoArea_Constraint1">
           <xs:selector xpath=".//Fact_Accessi" />
-          <xs:field xpath="PKData" />
+          <xs:field xpath="PKCapoArea" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Accessi_PKCliente" refer="Dim_Cliente_Constraint1">
           <xs:selector xpath=".//Fact_Accessi" />
           <xs:field xpath="PKCliente" />
         </xs:keyref>
-        <xs:keyref name="FK_Fact_Accessi_PKCapoArea" refer="Dim_CapoArea_Constraint1">
+        <xs:keyref name="FK_Fact_Accessi_PKData" refer="Dim_Data_Constraint1">
           <xs:selector xpath=".//Fact_Accessi" />
-          <xs:field xpath="PKCapoArea" />
+          <xs:field xpath="PKData" />
         </xs:keyref>
       </xs:element>
     </xs:schema>

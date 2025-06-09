@@ -3190,7 +3190,8 @@ CREATE OR ALTER PROCEDURE Fact.usp_ReportCruscottoClienti (
     @PKDataFinePeriodo DATE = NULL,
     --@GruppoAgenti NVARCHAR(60) = NULL,
     @CapoArea NVARCHAR(60) = NULL,
-    @HasAbbonamento BIT = NULL
+    @HasAbbonamentoMySolution BIT = NULL,
+    @HasAbbonamentoMIA BIT = NULL
 )
 AS
 BEGIN
@@ -3435,8 +3436,12 @@ AS (
             OR GA.CapoArea = @CapoArea
         )
         AND (
-            @HasAbbonamento IS NULL
-            OR C.HasAbbonamento = @HasAbbonamento
+            @HasAbbonamentoMySolution IS NULL
+            OR C.HasAbbonamentoMySolution = @HasAbbonamentoMySolution
+        )
+        AND (
+            @HasAbbonamentoMIA IS NULL
+            OR C.HasAbbonamentoMIA = @HasAbbonamentoMIA
         )
         AND GA.IsDeleted = CAST(0 AS BIT)
     WHERE C.IsDeleted = CAST(0 AS BIT)
@@ -3530,7 +3535,8 @@ EXEC Fact.usp_ReportCruscottoClienti
     @PKDataFinePeriodo = NULL,
     --@GruppoAgenti = @GruppoAgenti,
     @CapoArea = @CapoArea,
-    @HasAbbonamento = 1;
+    @HasAbbonamentoMySolution = 1,
+    @HasAbbonamentoMIA = 1;
 GO
 
 /**

@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>7W6vrmZgAYOpxLa5DNuE2dgOzQk=6/9/2025 9:37:335/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>LQm2rPe8Ldb+ct5Vpr04uJ+VxDM=6/9/2025 11:17:445/28/2025 7:34:57</TimeStamp>
         <ID>
           <String>CesiDW</String>
         </ID>
@@ -54,7 +54,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>p5wX/dsMRma67rwxO/t8u3eCOgE=6/9/2025 9:37:335/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>95PVXdomlwv+fdpkqIpcXG/tApA=6/9/2025 11:17:585/28/2025 7:34:57</TimeStamp>
         <ID>
           <String>Cliente</String>
         </ID>
@@ -152,14 +152,14 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>9yt4pCDS3Ky9l8ifXUT1fR+Rggk=6/9/2025 9:37:335/28/2025 7:34:577EME/BYbHqutAv7hFpAVGtOfMes=1/25/2025 12:07:485/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>kqyrE53jpTtwd0Vt/Foh6Wwaw68=6/9/2025 11:17:585/28/2025 7:34:577EME/BYbHqutAv7hFpAVGtOfMes=1/25/2025 12:07:485/28/2025 7:34:58</TimeStamp>
         <ID>
           <String>Documenti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>XbAKRfKq+Rn3UyL9cV93xweRZ8Q=6/9/2025 9:37:335/28/2025 7:34:57UQJNRV/x6xTMbstViq/QusTflhA=3/9/2025 12:20:505/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>FDQl2KoZ3IKc6ngUeWkkLsQgVeM=6/9/2025 11:17:585/28/2025 7:34:57UQJNRV/x6xTMbstViq/QusTflhA=3/9/2025 12:20:505/28/2025 7:34:57</TimeStamp>
         <ID>
           <String>Crediti OpenAI</String>
         </ID>
@@ -183,5 +183,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-06-09T07:38:22.356667Z</LastDeployed>
+  <LastDeployed>2025-06-09T09:18:22.633333Z</LastDeployed>
 </DeploymentSnapshot>

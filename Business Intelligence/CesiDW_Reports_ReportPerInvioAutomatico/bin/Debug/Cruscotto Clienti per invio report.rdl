@@ -20,14 +20,18 @@
           <QueryParameter Name="@CapoArea">
             <Value>=Parameters!CapoArea.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@HasAbbonamento">
-            <Value>=Parameters!HasAbbonamento.Value</Value>
+          <QueryParameter Name="@HasAbbonamentoMySolution">
+            <Value>=Parameters!HasAbbonamentoMySolution.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@HasAbbonamentoMIA">
+            <Value>=Parameters!HasAbbonamentoMIA.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportCruscottoClienti
     @PKDataFinePeriodo = @PKDataFinePeriodo,
     @CapoArea = @CapoArea,
-    @HasAbbonamento = @HasAbbonamento;</CommandText>
+    @HasAbbonamentoMySolution = @HasAbbonamentoMySolution,
+    @HasAbbonamentoMIA = @HasAbbonamentoMIA;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -2869,16 +2873,6 @@ ORDER BY CapoArea;</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="PKDataFinePeriodo">
-      <DataType>DateTime</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>pPKDataFinePeriodo</DataSetName>
-          <ValueField>PKDataFinePeriodo</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>Data Fine Periodo</Prompt>
-    </ReportParameter>
     <ReportParameter Name="CapoArea">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
@@ -2897,15 +2891,40 @@ ORDER BY CapoArea;</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
-    <ReportParameter Name="HasAbbonamento">
+    <ReportParameter Name="PKDataFinePeriodo">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>pPKDataFinePeriodo</DataSetName>
+          <ValueField>PKDataFinePeriodo</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Data Fine Periodo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HasAbbonamentoMySolution">
       <DataType>Boolean</DataType>
       <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value>true</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Has Abbonamento</Prompt>
+      <Prompt>Has Abbonamento My Solution</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Tutti</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>true</Value>
+            <Label>Sì</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>false</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="HasAbbonamentoMIA">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Has Abbonamento MIA</Prompt>
       <ValidValues>
         <ParameterValues>
           <ParameterValue>
@@ -2941,7 +2960,12 @@ ORDER BY CapoArea;</CommandText>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>HasAbbonamento</ParameterName>
+          <ParameterName>HasAbbonamentoMySolution</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>HasAbbonamentoMIA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
