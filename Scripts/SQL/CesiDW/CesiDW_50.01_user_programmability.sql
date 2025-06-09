@@ -3189,7 +3189,8 @@ GO
 CREATE OR ALTER PROCEDURE Fact.usp_ReportCruscottoClienti (
     @PKDataFinePeriodo DATE = NULL,
     --@GruppoAgenti NVARCHAR(60) = NULL,
-    @CapoArea NVARCHAR(60) = NULL
+    @CapoArea NVARCHAR(60) = NULL,
+    @HasAbbonamento BIT = NULL
 )
 AS
 BEGIN
@@ -3208,7 +3209,9 @@ DECLARE @PKDataInizioPeriodo DATE,
     ----@CodiceEsercizioMasterCorrente NVARCHAR(10),
     ----@CodiceEsercizioMasterPrecedente NVARCHAR(10);
     @AnnoMasterCorrente SMALLINT,
-    @AnnoMasterPrecedente SMALLINT;
+    @AnnoMasterPrecedente SMALLINT,
+    @DataInizioAnnoCorrente DATE,
+    @DataFineAnnoCorrente DATE;
 
 SELECT @PKDataInizioUltimoSemestre = DATEADD(MONTH, -6, DATEADD(DAY, 1, @PKDataFinePeriodo)),
     @PKDataInizioUltimoTrimestre = DATEADD(MONTH, -3, DATEADD(DAY, 1, @PKDataFinePeriodo)),
@@ -3221,7 +3224,9 @@ SELECT @AnnoCorrente = YEAR(@PKDataFinePeriodo) - 1;
 ----SELECT @CodiceEsercizioMasterCorrente = CONVERT(NVARCHAR(4), @AnnoCorrente) + N'/' + CONVERT(NVARCHAR(4), @AnnoCorrente + 1),
 ----    @CodiceEsercizioMasterPrecedente = CONVERT(NVARCHAR(4), @AnnoCorrente - 1) + N'/' + CONVERT(NVARCHAR(4), @AnnoCorrente);
 SELECT @AnnoMasterCorrente = @AnnoCorrente,
-    @AnnoMasterPrecedente = @AnnoCorrente - 1;
+    @AnnoMasterPrecedente = @AnnoCorrente - 1,
+    @DataInizioAnnoCorrente = DATEFROMPARTS(@AnnoCorrente, 1, 1),
+    @DataFineAnnoCorrente = DATEFROMPARTS(@AnnoCorrente, 12, 31);
 
 --SELECT @PKDataInizioPeriodo, @PKDataFinePeriodo, @PKDataInizioUltimoMese, @PKDataInizioUltimoTrimestre, @PKDataInizioUltimoSemestre, @AnnoCorrente, @AnnoMasterCorrente, @AnnoMasterPrecedente;
 
@@ -3274,16 +3279,25 @@ AS (
 
     FROM Fact.Documenti D
     INNER JOIN Dim.Cliente C ON C.PKCliente = D.PKCliente
+        AND C.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.GruppoAgenti GA ON GA.PKGruppoAgenti = D.PKGruppoAgenti
+        AND GA.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN IMPORT.CapiArea ICA ON ICA.CapoArea = GA.CapoArea
     INNER JOIN Dim.GruppoAgenti GAR ON GAR.PKGruppoAgenti = D.PKGruppoAgenti_Riga
+        AND GA.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.Data DIC ON DIC.PKData = D.PKDataInizioContratto
     INNER JOIN Dim.Data DFC ON DFC.PKData = D.PKDataFineContratto
     INNER JOIN Dim.Data DC ON DC.PKData = D.PKDataCompetenza
     INNER JOIN Dim.Articolo A ON A.PKArticolo = D.PKArticolo
+        AND A.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.MacroTipologia MT ON MT.PKMacroTipologia = D.PKMacroTipologia
+        AND MT.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Insoluti I ON I.PKCliente = D.PKCliente
     WHERE D.Profilo = N'ORDINE CLIENTE'
+        AND (
+            D.PKDataFineContratto >= @PKDataInizioPeriodo
+            AND D.PKDataInizioContratto <= @PKDataFinePeriodo
+        )
         AND D.IsDeleted = CAST(0 AS BIT)
     GROUP BY D.IDDocumento,
         D.NumeroDocumento,
@@ -3330,8 +3344,8 @@ SELECT
 INTO #DettaglioOrdini
 
 FROM Ordini O
-WHERE O.PKDataInizioContratto <= @PKDataFinePeriodo
-    AND O.PKDataFineContratto >= @PKDataInizioPeriodo;
+WHERE O.PKDataInizioContratto <= @DataFineAnnoCorrente
+    AND O.PKDataFineContratto >= @DataInizioAnnoCorrente;
 
 CREATE NONCLUSTERED INDEX IX_DettaglioOrdini_PKCliente_MacroTipoAbbonamento ON #DettaglioOrdini (PKCliente, MacroTipoAbbonamento);
 
@@ -3364,7 +3378,10 @@ AS (
     INNER JOIN Dim.Data D ON D.PKData = A.PKData
         AND A.PKData BETWEEN @PKDataInizioUltimoSemestre AND @PKDataFinePeriodo
     INNER JOIN Dim.ClienteAccessi CA ON CA.PKClienteAccessi = A.PKCliente
+        AND CA.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
+        AND C.IsDeleted = CAST(0 AS BIT)
+    WHERE A.IsDeleted = CAST(0 AS BIT)
     GROUP BY C.PKCliente --, C.Email
 ),
 IscrizioniMaster
@@ -3380,7 +3397,9 @@ AS (
 
     FROM Fact.Documenti D
     INNER JOIN Dim.Cliente C ON C.PKCliente = D.PKCliente
+        AND C.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.Articolo A ON A.PKArticolo = D.PKArticolo
+        AND A.IsDeleted = CAST(0 AS BIT)
         ----AND A.CodiceEsercizioMaster IN (@CodiceEsercizioMasterCorrente, @CodiceEsercizioMasterPrecedente)
     INNER JOIN Import.ArticoloCategoriaMaster ACM ON ACM.Codice = A.Codice
     INNER JOIN Dim.Data DD ON DD.PKData = D.PKDataDocumento
@@ -3414,6 +3433,10 @@ AS (
         AND (
             @CapoArea IS NULL
             OR GA.CapoArea = @CapoArea
+        )
+        AND (
+            @HasAbbonamento IS NULL
+            OR C.HasAbbonamento = @HasAbbonamento
         )
         AND GA.IsDeleted = CAST(0 AS BIT)
     WHERE C.IsDeleted = CAST(0 AS BIT)
@@ -3506,7 +3529,8 @@ DECLARE @CapoArea NVARCHAR(60);
 EXEC Fact.usp_ReportCruscottoClienti
     @PKDataFinePeriodo = NULL,
     --@GruppoAgenti = @GruppoAgenti,
-    @CapoArea = @CapoArea;
+    @CapoArea = @CapoArea,
+    @HasAbbonamento = 1;
 GO
 
 /**

@@ -20,10 +20,14 @@
           <QueryParameter Name="@CapoArea">
             <Value>=Parameters!CapoArea.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@HasAbbonamento">
+            <Value>=Parameters!HasAbbonamento.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportCruscottoClienti
     @PKDataFinePeriodo = @PKDataFinePeriodo,
-    @CapoArea = @CapoArea;</CommandText>
+    @CapoArea = @CapoArea,
+    @HasAbbonamento = @HasAbbonamento;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -2893,21 +2897,51 @@ ORDER BY CapoArea;</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="HasAbbonamento">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>true</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Has Abbonamento</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Tutti</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>true</Value>
+            <Label>Sì</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>false</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>1</NumberOfRows>
+      <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PKDataFinePeriodo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>CapoArea</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>PKDataFinePeriodo</ParameterName>
+          <RowIndex>1</RowIndex>
+          <ParameterName>HasAbbonamento</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

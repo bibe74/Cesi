@@ -335,7 +335,32 @@ SELECT TOP (1) * FROM Landing.MYSOLUTION_Customer_CustomerRole_Mapping;
 
 CREATE OR ALTER VIEW Staging.MySolutionCustomerView
 AS
-WITH TableDataDetail
+WITH RuoloAbbonamento
+AS (
+    SELECT
+        CR.Id,
+        CR.Name
+
+    FROM Landing.MYSOLUTION_CustomerRole CR
+    WHERE CR.IsDeleted = CAST(0 AS BIT)
+        AND CR.Name IN (
+            N'MySolution.Lavoro',
+            N'MySolution.Fisco',
+            N'MySolution.MiaFisco',
+            N'MySolution.MiaLavoro'
+        )
+),
+ClientiAbbonamento
+AS (
+    SELECT DISTINCT
+        CCRM.Customer_Id,
+        CAST(1 AS BIT) AS HasAbbonamento
+
+    FROM Landing.MYSOLUTION_Customer_CustomerRole_Mapping CCRM
+    INNER JOIN RuoloAbbonamento RA ON RA.Id = CCRM.CustomerRole_Id
+    WHERE CCRM.IsDeleted = CAST(0 AS BIT)
+),
+TableDataDetail
 AS (
     SELECT
         C.Id,
@@ -364,6 +389,7 @@ AS (
             SP.Name,
             CCRM11.Customer_Id,
             CCRM12.Customer_Id,
+            CABB.HasAbbonamento,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -389,7 +415,8 @@ AS (
         ROW_NUMBER() OVER (PARTITION BY C.Id ORDER BY A.Id DESC) AS rnAddressDESC,
         ROW_NUMBER() OVER (PARTITION BY C.Username ORDER BY C.Id DESC, A.Id DESC) AS rnCustomerDESC,
         CASE WHEN CCRM11.Customer_Id IS NOT NULL THEN 1 ELSE 0 END AS HasRoleMySolutionDemo,
-        CASE WHEN CCRM12.Customer_Id IS NOT NULL THEN 1 ELSE 0 END AS HasRoleMySolutionInterno
+        CASE WHEN CCRM12.Customer_Id IS NOT NULL THEN 1 ELSE 0 END AS HasRoleMySolutionInterno,
+        COALESCE(CABB.HasAbbonamento, 0) AS HasAbbonamento
 
     FROM Landing.MYSOLUTION_Customer C
     LEFT JOIN Landing.MYSOLUTION_CustomerAddresses CA ON CA.Customer_Id = C.Id
@@ -442,6 +469,7 @@ AS (
     LEFT JOIN Landing.MYSOLUTION_Customer_CustomerRole_Mapping CCRM12 ON CCRM12.Customer_Id = C.Id
         AND CCRM12.CustomerRole_Id = 12 -- 12: MySolution.Interno
         AND CCRM12.IsDeleted = CAST(0 AS BIT)
+    LEFT JOIN ClientiAbbonamento CABB ON CABB.Customer_Id = C.Id
     WHERE C.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
@@ -477,7 +505,8 @@ SELECT
     TDD.StateProvince,
     TDD.rnCustomerDESC,
     TDD.HasRoleMySolutionDemo,
-    TDD.HasRoleMySolutionInterno
+    TDD.HasRoleMySolutionInterno,
+    TDD.HasAbbonamento
 
 FROM TableDataDetail TDD
 WHERE TDD.rnAddressDESC = 1;
@@ -730,7 +759,35 @@ GO
 
 CREATE OR ALTER VIEW Dim.ClienteCometaView
 AS
-WITH TableData
+WITH RuoloAbbonamento
+AS (
+    SELECT
+        CR.Id,
+        CR.Name
+
+    FROM Landing.MYSOLUTION_CustomerRole CR
+    WHERE CR.IsDeleted = CAST(0 AS BIT)
+        AND CR.Name IN (
+            N'MySolution.Lavoro',
+            N'MySolution.Fisco',
+            N'MySolution.MiaFisco',
+            N'MySolution.MiaLavoro'
+        )
+),
+ClientiAbbonamento
+AS (
+    SELECT DISTINCT
+        C.Email,
+        CAST(1 AS BIT) AS HasAbbonamento
+
+    FROM Landing.MYSOLUTION_Customer_CustomerRole_Mapping CCRM
+    INNER JOIN RuoloAbbonamento RA ON RA.Id = CCRM.CustomerRole_Id
+    INNER JOIN Landing.MYSOLUTION_Customer C ON C.Id = CCRM.Customer_Id
+        AND C.IsDeleted = CAST(0 AS BIT)
+        AND C.Email <> N''
+    WHERE CCRM.IsDeleted = CAST(0 AS BIT)
+),
+TableData
 AS (
     SELECT
         CC.id_sog_commerciale AS IDSoggettoCommerciale,
@@ -787,6 +844,7 @@ AS (
             ----CADBCAP.AgenteDefault,
             ----PA.Agente,
             PACA.Agente,
+            CA.HasAbbonamento,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -850,7 +908,8 @@ AS (
         ----COALESCE(CADBL.CapoAreaDefault, CADBCAP.CapoAreaDefault, PA.CapoArea, N'') AS CapoAreaDefault,
         COALESCE(PACA.CapoArea, N'') AS CapoAreaDefault,
         --COALESCE(CADBL.AgenteDefault, CADBCAP.AgenteDefault, PA.Agente, N'') AS AgenteDefault,
-        COALESCE(PACA.Agente, N'') AS AgenteDefault
+        COALESCE(PACA.Agente, N'') AS AgenteDefault,
+        COALESCE(CA.HasAbbonamento, 0) AS HasAbbonamento
 
     FROM Staging.CometaCustomer CC
     LEFT JOIN Import.Provincia P ON P.CodSiglaProvincia = CC.Provincia
@@ -865,6 +924,7 @@ AS (
     ----LEFT JOIN CapoAreaDefaultByCAP CADBCAP ON CADBCAP.IDProvincia = CC.provincia AND CADBCAP.CAP = CC.cap
     ----LEFT JOIN CapoAreaDefaultByLocalita CADBL ON CADBL.IDProvincia = CC.provincia AND CADBL.Localita = CC.localita
     LEFT JOIN Import.ProvinciaAgenteCapoArea PACA ON PACA.IDProvincia = CC.provincia
+    LEFT JOIN ClientiAbbonamento CA ON CA.Email = CC.Email
     WHERE CC.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
@@ -915,7 +975,8 @@ SELECT
     TD.CapoAreaDefault,
     TD.AgenteDefault,
     CAST(0 AS BIT) AS HasRoleMySolutionDemo,
-    CAST(0 AS BIT) AS HasRoleMySolutionInterno
+    CAST(0 AS BIT) AS HasRoleMySolutionInterno,
+    TD.HasAbbonamento
 
 FROM TableData TD;
 GO
@@ -974,6 +1035,7 @@ AS (
             MSC.HasRoleMySolutionDemo,
             MSC.Username,
             MSC.HasRoleMySolutionInterno,
+            MSC.HasAbbonamento,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -1028,7 +1090,8 @@ AS (
         --MSC.IdCometa,
         --MSC.rnCustomerDESC,
         N'TODO' AS id_sog_commerciale,
-        MSC.HasRoleMySolutionInterno
+        MSC.HasRoleMySolutionInterno,
+        MSC.HasAbbonamento
 
     FROM Staging.MySolutionCustomer MSC
     LEFT JOIN Dim.Cliente CC ON CC.Email = MSC.Email
@@ -1096,7 +1159,8 @@ SELECT
     TD.CapoAreaDefault,
     TD.AgenteDefault,
     TD.HasRoleMySolutionDemo,
-    TD.HasRoleMySolutionInterno
+    TD.HasRoleMySolutionInterno,
+    TD.HasAbbonamento
 
 FROM TableData TD;
 GO
@@ -1158,7 +1222,8 @@ BEGIN
         CapoAreaDefault NVARCHAR(60) NOT NULL,
         AgenteDefault NVARCHAR(60) NOT NULL,
         HasRoleMySolutionDemo BIT NOT NULL,
-        HasRoleMySolutionInterno BIT NOT NULL
+        HasRoleMySolutionInterno BIT NOT NULL,
+        HasAbbonamento BIT NOT NULL
     );
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Dim_Cliente_IDSoggettoCommerciale ON Dim.Cliente (IDSoggettoCommerciale);
@@ -1214,7 +1279,8 @@ BEGIN
         MotivoDisdetta,
         Cognome,
         Nome,
-        IDProvincia
+        IDProvincia,
+        HasAbbonamento
     )
     VALUES
     (   -1,         -- PKCliente - int
@@ -1239,7 +1305,8 @@ BEGIN
         N'',       -- MotivoDisdetta - nvarchar(120)
         N'',       -- Cognome - nvarchar(60)
         N'',       -- Nome - nvarchar(60)
-        N''        -- IDProvincia - nvarchar(10)
+        N'',       -- IDProvincia - nvarchar(10)
+        0          -- HasAbbonamento - bit
     ),
     (   -101,         -- PKCliente - int
         -101,         -- IDSoggettoCommerciale - int
@@ -1263,7 +1330,8 @@ BEGIN
         N'',       -- MotivoDisdetta - nvarchar(120)
         N'',       -- Cognome - nvarchar(60)
         N'',       -- Nome - nvarchar(60)
-        N''        -- IDProvincia - nvarchar(10)
+        N'',       -- IDProvincia - nvarchar(10)
+        0          -- HasAbbonamento - bit
     );
 
     ALTER SEQUENCE dbo.seq_Dim_Cliente RESTART WITH 1;
@@ -1393,7 +1461,8 @@ BEGIN
         TGT.CapoAreaDefault = SRC.CapoAreaDefault,
         TGT.AgenteDefault = SRC.AgenteDefault,
         TGT.HasRoleMySolutionDemo = SRC.HasRoleMySolutionDemo,
-        TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno
+        TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno,
+        TGT.HasAbbonamento = SRC.HasAbbonamento
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -1442,7 +1511,8 @@ BEGIN
         CapoAreaDefault,
         AgenteDefault,
         HasRoleMySolutionDemo,
-        HasRoleMySolutionInterno
+        HasRoleMySolutionInterno,
+        HasAbbonamento
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -1490,7 +1560,8 @@ BEGIN
         SRC.CapoAreaDefault,
         SRC.AgenteDefault,
         SRC.HasRoleMySolutionDemo,
-        SRC.HasRoleMySolutionInterno
+        SRC.HasRoleMySolutionInterno,
+        SRC.HasAbbonamento
       )
 
     OUTPUT
@@ -1557,7 +1628,8 @@ BEGIN
         TGT.CapoAreaDefault = SRC.CapoAreaDefault,
         TGT.AgenteDefault = SRC.AgenteDefault,
         TGT.HasRoleMySolutionDemo = SRC.HasRoleMySolutionDemo,
-        TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno
+        TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno,
+        TGT.HasAbbonamento = SRC.HasAbbonamento
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -1606,7 +1678,8 @@ BEGIN
         CapoAreaDefault,
         AgenteDefault,
         HasRoleMySolutionDemo,
-        HasRoleMySolutionInterno
+        HasRoleMySolutionInterno,
+        HasAbbonamento
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -1654,7 +1727,8 @@ BEGIN
         SRC.CapoAreaDefault,
         SRC.AgenteDefault,
         SRC.HasRoleMySolutionDemo,
-        SRC.HasRoleMySolutionInterno
+        SRC.HasRoleMySolutionInterno,
+        SRC.HasAbbonamento
       )
 
     OUTPUT
@@ -1775,6 +1849,33 @@ BEGIN
     ----FROM Dim.Cliente C
     ----INNER JOIN DocumentiMySolutionNumerati DMSN ON DMSN.PKCliente = C.PKCliente
     ----    AND DMSN.rn = 1;
+
+    WITH AnnoCorrente
+    AS (
+        SELECT
+            MIN(D.PKData) AS PKDataInizioPeriodo,
+            MAX(D.PKData) AS PKDataFinePeriodo
+
+        FROM Dim.Data D
+        WHERE D.Anno = YEAR(CURRENT_TIMESTAMP)
+    ),
+    ClienteHasAbbonamento
+    AS (
+        SELECT DISTINCT
+            C.PKCliente,
+            CAST(1 AS BIT) AS HasAbbonamento
+
+        FROM Fact.Documenti D
+        INNER JOIN AnnoCorrente AC ON D.PKDataFineContratto >= AC.PKDataInizioPeriodo AND D.PKDataInizioContratto <= AC.PKDataFinePeriodo
+        INNER JOIN Dim.Cliente C ON C.PKCliente = D.PKCliente
+            AND C.IsDeleted = CAST(0 AS BIT)
+        WHERE D.Profilo = N'ORDINE CLIENTE'
+            AND D.IsDeleted = CAST(0 AS BIT)
+    )
+    UPDATE C
+    SET C.HasAbbonamento = COALESCE(CHA.HasAbbonamento, 0)
+    FROM Dim.Cliente C
+    LEFT JOIN ClienteHasAbbonamento CHA ON CHA.PKCliente = C.PKCliente;
 
     UPDATE audit.tables
     SET lastupdated_local = lastupdated_staging

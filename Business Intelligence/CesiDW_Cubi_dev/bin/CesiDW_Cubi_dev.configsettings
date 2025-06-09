@@ -30,6 +30,9 @@
         <ID>Corso</ID>
       </Dimension>
       <Dimension>
+        <ID>Crediti Open AI</ID>
+      </Dimension>
+      <Dimension>
         <ID>Crediti</ID>
       </Dimension>
       <Dimension>
@@ -49,9 +52,6 @@
       </Dimension>
       <Dimension>
         <ID>Utente</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Crediti Open AI</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
