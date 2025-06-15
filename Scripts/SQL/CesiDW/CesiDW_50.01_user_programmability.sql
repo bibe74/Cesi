@@ -470,6 +470,8 @@ END;
 
 DECLARE @AgenteProprietarioPrefix NVARCHAR(20) = N'Proprietario(';
 
+DROP TABLE IF EXISTS #ReportData;
+
 WITH Insoluti
 AS (
     SELECT
@@ -685,7 +687,7 @@ AS (
         O.Progressivo,
 		O.Quote,
         ROW_NUMBER() OVER (PARTITION BY O.CodiceCliente ORDER BY O.NumeroDocumento) AS rn,
-        ROW_NUMBER() OVER (PARTITION BY O.PrefissoCapoArea ORDER BY O.CodiceCliente, O.NumeroDocumento) AS rnCapoArea,
+        DENSE_RANK() OVER (PARTITION BY O.PrefissoCapoArea ORDER BY O.CodiceCliente, O.NumeroDocumento) AS rnCapoArea,
         O.TipoCliente,
         O.TipoFatturazione,
         O.PKDataFattura,
@@ -749,6 +751,8 @@ SELECT
     DOR.TipoFatturazione AS TipoFatturazioneRinnovo,
     DATEDIFF(MONTH, DOR.PKDataInizioContratto, DATEADD(DAY, 1, DOR.PKDataFineContratto)) AS DurataMesiRinnovo
 
+INTO #ReportData
+
 FROM DettaglioOrdini DO
 LEFT JOIN DettaglioOrdini DOR ON DOR.IDDocumentoRinnovato = DO.IDDocumento
 INNER JOIN Dim.Data DIC ON DIC.PKData = DO.PKDataInizioContratto
@@ -773,6 +777,102 @@ WHERE (
 ORDER BY DO.AgenteAssegnato,
     DO.CodiceCliente,
     DO.NumeroDocumento;
+
+SELECT
+    RD.CodiceCliente,
+    RD.RagioneSociale,
+    RD.Indirizzo,
+    RD.Citta,
+    RD.Provincia,
+    RD.PartitaIVA,
+    RD.Agente,
+    RD.AgenteAssegnato,
+    RD.Azione,
+    RD.Rinnovo,
+    RD.PKDataInizioContratto,
+    RD.DataInizioContratto,
+    RD.PKDataFineContratto,
+    RD.DataFineContratto,
+    RD.PKDataDocumento,
+    RD.DataDocumento,
+    RD.NumeroDocumento,
+    RD.CodicePagamento,
+    RD.Pagamento,
+    RD.Progetto,
+    SUM(RD.TotaleDocumento) AS TotaleDocumento,
+    SUM(RD.Insoluto) AS Insoluto,
+    RD.PKDataDisdetta,
+    RD.DataDisdetta,
+    RD.MotivoDisdetta,
+    RD.ProgressivoAgenteAssegnato,
+    RD.ImportoProvvigioneCapoArea,
+    RD.ImportoProvvigioneAgente,
+    RD.ImportoProvvigioneSubagente,
+    RD.DurataMesi,
+    RD.Fatturazione,
+    --RD.Progressivo,
+    DENSE_RANK() OVER (ORDER BY RD.CodiceCliente) AS Progressivo,
+    RD.Quote,
+    RD.TipoCliente,
+    RD.TipoFatturazione,
+    RD.PKDataFattura,
+    RD.NoteIntestazione,
+    RD.Email,
+    RD.ProvvigioneTeorica,
+    RD.LiquidazioneProvvigioneTeorica,
+    RD.AgenteProprietario,
+    RD.TotaleRinnovo,
+    RD.DataRinnovo,
+    RD.TipoFatturazioneRinnovo,
+    RD.DurataMesiRinnovo
+
+FROM #ReportData RD
+GROUP BY RD.CodiceCliente,
+    RD.RagioneSociale,
+    RD.Indirizzo,
+    RD.Citta,
+    RD.Provincia,
+    RD.PartitaIVA,
+    RD.Agente,
+    RD.AgenteAssegnato,
+    RD.Azione,
+    RD.Rinnovo,
+    RD.PKDataInizioContratto,
+    RD.DataInizioContratto,
+    RD.PKDataFineContratto,
+    RD.DataFineContratto,
+    RD.PKDataDocumento,
+    RD.DataDocumento,
+    RD.NumeroDocumento,
+    RD.CodicePagamento,
+    RD.Pagamento,
+    RD.Progetto,
+    RD.PKDataDisdetta,
+    RD.DataDisdetta,
+    RD.MotivoDisdetta,
+    RD.ProgressivoAgenteAssegnato,
+    RD.ImportoProvvigioneCapoArea,
+    RD.ImportoProvvigioneAgente,
+    RD.ImportoProvvigioneSubagente,
+    RD.DurataMesi,
+    RD.Fatturazione,
+    --RD.Progressivo,
+    RD.Quote,
+    RD.TipoCliente,
+    RD.TipoFatturazione,
+    RD.PKDataFattura,
+    RD.NoteIntestazione,
+    RD.Email,
+    RD.ProvvigioneTeorica,
+    RD.LiquidazioneProvvigioneTeorica,
+    RD.AgenteProprietario,
+    RD.TotaleRinnovo,
+    RD.DataRinnovo,
+    RD.TipoFatturazioneRinnovo,
+    RD.DurataMesiRinnovo
+ORDER BY RD.AgenteAssegnato,
+    RD.CodiceCliente,
+    RD.NumeroDocumento;
 
 END;
 GO

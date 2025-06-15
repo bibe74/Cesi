@@ -787,6 +787,7 @@ AS (
             ----CADBCAP.AgenteDefault,
             ----PA.Agente,
             PACA.Agente,
+            CASE WHEN COALESCE(GA.CapoArea, N'') = N'' THEN COALESCE(PACA.CapoArea, N'') ELSE GA.CapoArea END,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -850,7 +851,8 @@ AS (
         ----COALESCE(CADBL.CapoAreaDefault, CADBCAP.CapoAreaDefault, PA.CapoArea, N'') AS CapoAreaDefault,
         COALESCE(PACA.CapoArea, N'') AS CapoAreaDefault,
         --COALESCE(CADBL.AgenteDefault, CADBCAP.AgenteDefault, PA.Agente, N'') AS AgenteDefault,
-        COALESCE(PACA.Agente, N'') AS AgenteDefault
+        COALESCE(PACA.Agente, N'') AS AgenteDefault,
+        CASE WHEN COALESCE(GA.CapoArea, N'') = N'' THEN COALESCE(PACA.CapoArea, N'') ELSE GA.CapoArea END AS AgenteZoho
 
     FROM Staging.CometaCustomer CC
     LEFT JOIN Import.Provincia P ON P.CodSiglaProvincia = CC.Provincia
@@ -917,7 +919,8 @@ SELECT
     CAST(0 AS BIT) AS HasRoleMySolutionDemo,
     CAST(0 AS BIT) AS HasRoleMySolutionInterno,
     CAST(0 AS BIT) AS HasAbbonamentoMySolution,
-    CAST(0 AS BIT) AS HasAbbonamentoMIA
+    CAST(0 AS BIT) AS HasAbbonamentoMIA,
+    TD.AgenteZoho
 
 FROM TableData TD;
 GO
@@ -1030,7 +1033,8 @@ AS (
         --MSC.IdCometa,
         --MSC.rnCustomerDESC,
         N'TODO' AS id_sog_commerciale,
-        MSC.HasRoleMySolutionInterno
+        MSC.HasRoleMySolutionInterno,
+        COALESCE(PACA.CapoArea, N'') AS AgenteZoho
 
     FROM Staging.MySolutionCustomer MSC
     LEFT JOIN Dim.Cliente CC ON CC.Email = MSC.Email
@@ -1100,7 +1104,8 @@ SELECT
     TD.HasRoleMySolutionDemo,
     TD.HasRoleMySolutionInterno,
     CAST(0 AS BIT) AS HasAbbonamentoMySolution,
-    CAST(0 AS BIT) AS HasAbbonamentoMIA
+    CAST(0 AS BIT) AS HasAbbonamentoMIA,
+    TD.AgenteZoho
 
 FROM TableData TD;
 GO
@@ -1164,7 +1169,8 @@ BEGIN
         HasRoleMySolutionDemo BIT NOT NULL,
         HasRoleMySolutionInterno BIT NOT NULL,
         HasAbbonamentoMySolution BIT NOT NULL,
-        HasAbbonamentoMIA BIT NOT NULL
+        HasAbbonamentoMIA BIT NOT NULL,
+        AgenteZoho NVARCHAR(60) NOT NULL
     );
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Dim_Cliente_IDSoggettoCommerciale ON Dim.Cliente (IDSoggettoCommerciale);
@@ -1198,6 +1204,7 @@ BEGIN
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_HasRoleMySolutionInterno DEFAULT (0) FOR HasRoleMySolutionInterno;
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_HasAbbonamentoMySolution DEFAULT (0) FOR HasAbbonamentoMySolution;
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_HasAbbonamentoMIA DEFAULT (0) FOR HasAbbonamentoMIA;
+    ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_AgenteZoho DEFAULT (N'') FOR AgenteZoho;
 
     INSERT INTO Dim.Cliente (
         PKCliente,
@@ -1409,7 +1416,8 @@ BEGIN
         TGT.HasRoleMySolutionDemo = SRC.HasRoleMySolutionDemo,
         TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno,
         TGT.HasAbbonamentoMySolution = SRC.HasAbbonamentoMySolution,
-        TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA
+        TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA,
+        TGT.AgenteZoho = SRC.AgenteZoho
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -1460,7 +1468,8 @@ BEGIN
         HasRoleMySolutionDemo,
         HasRoleMySolutionInterno,
         HasAbbonamentoMySolution,
-        HasAbbonamentoMIA
+        HasAbbonamentoMIA,
+        AgenteZoho
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -1510,7 +1519,8 @@ BEGIN
         SRC.HasRoleMySolutionDemo,
         SRC.HasRoleMySolutionInterno,
         SRC.HasAbbonamentoMySolution,
-        SRC.HasAbbonamentoMIA
+        SRC.HasAbbonamentoMIA,
+        SRC.AgenteZoho
       )
 
     OUTPUT
