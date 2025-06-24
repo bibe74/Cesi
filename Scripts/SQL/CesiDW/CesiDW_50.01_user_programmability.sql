@@ -818,7 +818,7 @@ SELECT
     RD.ProvvigioneTeorica,
     RD.LiquidazioneProvvigioneTeorica,
     RD.AgenteProprietario,
-    RD.TotaleRinnovo,
+    SUM(RD.TotaleRinnovo) AS TotaleRinnovo,
     RD.DataRinnovo,
     RD.TipoFatturazioneRinnovo,
     RD.DurataMesiRinnovo
@@ -863,7 +863,7 @@ GROUP BY RD.CodiceCliente,
     RD.ProvvigioneTeorica,
     RD.LiquidazioneProvvigioneTeorica,
     RD.AgenteProprietario,
-    RD.TotaleRinnovo,
+    --RD.TotaleRinnovo,
     RD.DataRinnovo,
     RD.TipoFatturazioneRinnovo,
     RD.DurataMesiRinnovo
@@ -3629,11 +3629,11 @@ DECLARE @GruppoAgenti NVARCHAR(60);
 DECLARE @CapoArea NVARCHAR(60);
 
 EXEC Fact.usp_ReportCruscottoClienti
-    @PKDataFinePeriodo = NULL,
+    @PKDataFinePeriodo = '20251231',
     --@GruppoAgenti = @GruppoAgenti,
     @CapoArea = @CapoArea,
-    @HasAbbonamentoMySolution = 1,
-    @HasAbbonamentoMIA = 1;
+    @HasAbbonamentoMySolution = NULL,
+    @HasAbbonamentoMIA = NULL;
 GO
 
 /**

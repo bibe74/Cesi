@@ -155,7 +155,7 @@ GO
 -- L'elaborazione notturna aggiungerà comunque, come prima query, le date dell'intero anno corrente (il 1° gennaio 2022 apparirà tutto il 2022)
 EXEC setup.usp_InsertDates
     @StartDate = '2008-01-01', -- date
-    @EndDate = '2028-12-31';   -- date
+    @EndDate = '2030-12-31';   -- date
 GO
 
 -- Correzione giorni della settimana
