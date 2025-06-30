@@ -3,6 +3,7 @@
   <ConnectionProperties>
     <Extension>SQL</Extension>
     <ConnectString>Data Source=EPISQL2021;Initial Catalog=CesiDW</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>316581bc-7d1f-4ffa-9da5-52cbaeb42c29</DataSourceID>
 </RptDataSource>

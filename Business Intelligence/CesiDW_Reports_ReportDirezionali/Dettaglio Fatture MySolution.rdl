@@ -41,6 +41,12 @@
           <QueryParameter Name="@TipoReport">
             <Value>=Parameters!TipoReport.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@HasAbbonamentoMySolution">
+            <Value>=Parameters!HasAbbonamentoMySolution.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@HasAbbonamentoMIA">
+            <Value>=Parameters!HasAbbonamentoMIA.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportDettaglioFatture
     @PKDataInizioPeriodo = @PKDataInizioPeriodo,
@@ -51,7 +57,9 @@
     @RagioneSociale = @RagioneSociale,
     @CodiceCliente = @CodiceCliente,
     @PartitaIVA = @PartitaIVA,
-    @TipoReport = @TipoReport;</CommandText>
+    @TipoReport = @TipoReport,
+    @HasAbbonamentoMySolution = @HasAbbonamentoMySolution,
+    @HasAbbonamentoMIA = @HasAbbonamentoMIA;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -123,12 +131,12 @@
           <DataField>NumeroDocumento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Pagamento">
-          <DataField>Pagamento</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="CodicePagamento">
           <DataField>CodicePagamento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Pagamento">
+          <DataField>Pagamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Progetto">
@@ -3124,6 +3132,41 @@ UNION ALL SELECT 'M', 'MySolution'</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="PartitaIVA">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Partita IVA</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HasAbbonamentoMySolution">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Has Abbonamento My Solution</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Tutti</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>true</Value>
+            <Label>Sì</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>false</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CodiceCliente">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Codice Cliente</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RagioneSociale">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Ragione Sociale</Prompt>
+    </ReportParameter>
     <ReportParameter Name="TipoReport">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
@@ -3142,26 +3185,17 @@ UNION ALL SELECT 'M', 'MySolution'</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
-    <ReportParameter Name="CodiceCliente">
-      <DataType>String</DataType>
+    <ReportParameter Name="HasAbbonamentoMIA">
+      <DataType>Boolean</DataType>
       <Nullable>true</Nullable>
-      <Prompt>Codice Cliente</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="RagioneSociale">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Ragione Sociale</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="PartitaIVA">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Partita IVA</Prompt>
+      <Prompt>Has Abbonamento MIA</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>3</NumberOfColumns>
-      <NumberOfRows>4</NumberOfRows>
+      <NumberOfRows>5</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -3200,23 +3234,33 @@ UNION ALL SELECT 'M', 'MySolution'</CommandText>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>TipoReport</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>3</RowIndex>
           <ParameterName>CodiceCliente</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>3</RowIndex>
           <ParameterName>RagioneSociale</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>PartitaIVA</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>2</RowIndex>
-          <ParameterName>TipoReport</ParameterName>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>HasAbbonamentoMySolution</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>HasAbbonamentoMIA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

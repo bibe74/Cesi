@@ -71,8 +71,8 @@ GO
 --Specify Start Date and End date here
 --Value of Start Date Must be Less than Your End Date 
 
-DECLARE @StartDate DATE = '01/01/1980' --Starting value of Date Range
-DECLARE @EndDate DATE = '01/01/2031' --End Value of Date Range
+DECLARE @StartDate DATE = '1980-01-01' --Starting value of Date Range
+DECLARE @EndDate DATE = '2079-12-31' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of Year
 DECLARE
@@ -105,7 +105,7 @@ SET @CurrentQuarter = DATEPART(QQ, @CurrentDate)
 /********************************************************************************************/
 --Proceed only if Start Date(Current date ) is less than End date you specified above
 
-WHILE @CurrentDate < @EndDate
+WHILE @CurrentDate <= @EndDate
 BEGIN
  
 /*Begin day of week logic*/
@@ -607,3 +607,4 @@ Festività italiane.
 		THEN 0 WHEN HolidayIT   IS NOT NULL THEN 1 END
 
 /*****************************************************************************************/
+SELECT MAX(Date) FROM Import.Dates

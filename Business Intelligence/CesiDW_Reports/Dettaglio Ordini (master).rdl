@@ -41,6 +41,12 @@
           <QueryParameter Name="@Azione">
             <Value>=Parameters!Azione.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@HasAbbonamentoMySolution">
+            <Value>=Parameters!HasAbbonamentoMySolution.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@HasAbbonamentoMIA">
+            <Value>=Parameters!HasAbbonamentoMIA.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandText>EXEC Fact.usp_ReportDettaglioOrdini
     @PKDataInizioPeriodo = @PKDataInizioPeriodo,
@@ -51,7 +57,9 @@
     @RagioneSociale = @RagioneSociale,
     @CodiceCliente = @CodiceCliente,
     @PartitaIVA = @PartitaIVA,
-    @Azione = @Azione;</CommandText>
+    @Azione = @Azione,
+    @HasAbbonamentoMySolution = @HasAbbonamentoMySolution,
+    @HasAbbonamentoMIA = @HasAbbonamentoMIA;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -181,7 +189,7 @@
         </Field>
         <Field Name="Progressivo">
           <DataField>Progressivo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="Quote">
           <DataField>Quote</DataField>
@@ -2638,7 +2646,6 @@ ORDER BY Azione;</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -3933,11 +3940,51 @@ ORDER BY Azione;</CommandText>
       <Nullable>true</Nullable>
       <Prompt>Partita IVA</Prompt>
     </ReportParameter>
+    <ReportParameter Name="HasAbbonamentoMySolution">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Has Abbonamento My Solution</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Tutti</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>true</Value>
+            <Label>Sì</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>false</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="HasAbbonamentoMIA">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Has Abbonamento MIA</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Tutti</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>true</Value>
+            <Label>Sì</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>false</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>3</NumberOfColumns>
-      <NumberOfRows>4</NumberOfRows>
+      <NumberOfRows>5</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -3977,22 +4024,32 @@ ORDER BY Azione;</CommandText>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>3</RowIndex>
-          <ParameterName>CodiceCliente</ParameterName>
+          <ParameterName>Azione</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>CodiceCliente</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>3</RowIndex>
           <ParameterName>RagioneSociale</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>PartitaIVA</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>2</RowIndex>
-          <ParameterName>Azione</ParameterName>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>HasAbbonamentoMySolution</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>HasAbbonamentoMIA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

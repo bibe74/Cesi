@@ -71,6 +71,10 @@
           <DataField>IDDocumento</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Telefono">
+          <DataField>Telefono</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="AgenteProprietario">
           <DataField>AgenteProprietario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -276,6 +280,9 @@ ORDER BY CapoArea;</CommandText>
                   <Width>4in</Width>
                 </TablixColumn>
                 <TablixColumn>
+                  <Width>2in</Width>
+                </TablixColumn>
+                <TablixColumn>
                   <Width>4in</Width>
                 </TablixColumn>
                 <TablixColumn>
@@ -473,6 +480,43 @@ ORDER BY CapoArea;</CommandText>
                               <Style>Solid</Style>
                             </BottomBorder>
                             <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Telefono</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1749,6 +1793,41 @@ ORDER BY CapoArea;</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Telefono">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Telefono.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Telefono</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Citta">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -2829,6 +2908,7 @@ ORDER BY CapoArea;</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -2854,7 +2934,7 @@ ORDER BY CapoArea;</CommandText>
             <DataSetName>usp_ReportCruscottoClienti</DataSetName>
             <Top>0.43in</Top>
             <Height>0.43in</Height>
-            <Width>49in</Width>
+            <Width>51in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -2862,7 +2942,7 @@ ORDER BY CapoArea;</CommandText>
         <Height>0.86in</Height>
         <Style />
       </Body>
-      <Width>49in</Width>
+      <Width>51in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
