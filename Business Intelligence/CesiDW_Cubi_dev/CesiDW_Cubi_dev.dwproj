@@ -142,7 +142,7 @@
           <ConfigurationSetting>
             <Id>CesiDW</Id>
             <Name>CesiDW</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=EPISQL2021;Persist Security Info=True;User ID=cesidw_reader;Initial Catalog=CesiDW</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=EPISQL2021;Persist Security Info=True;Password=;User ID=;Initial Catalog=CesiDW</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

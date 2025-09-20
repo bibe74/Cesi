@@ -3,9 +3,9 @@
     <#@ include file="PackageConnections.biml" #>
 	</Connections>
     <#
-    string metadataConnectionString_Extract = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
-    string metadataConnectionString_Transform = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
-    string metadataConnectionString_Load = "Data Source=EPISQL2021;Initial Catalog=CesiDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;";
+    string metadataConnectionString_Extract = "Data Source=EPISQL2021.cesi.local;Initial Catalog=CesiDW;Encrypt=True;TrustServerCertificate=True;Provider=MSOLEDBSQL;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True;";
+    string metadataConnectionString_Transform = "Data Source=EPISQL2021.cesi.local;Initial Catalog=CesiDW;Encrypt=True;TrustServerCertificate=True;Provider=MSOLEDBSQL;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True;";
+    string metadataConnectionString_Load = "Data Source=EPISQL2021.cesi.local;Initial Catalog=CesiDW;Encrypt=True;TrustServerCertificate=True;Provider=MSOLEDBSQL;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True;";
     DataTable tables;
     DataTable procedures;
 	#>
@@ -295,6 +295,16 @@
 				</ExecuteSQL>
 			</Tasks>
 		</Package>
+		<Package Name="Fact_DomandeMIA" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+			<Tasks>
+				<ExecuteSQL Name="Staging_usp_Reload_DomandeMIA" ConnectionName="CesiDW">
+					<DirectInput>EXEC Staging.usp_Reload_DomandeMIA;</DirectInput>
+				</ExecuteSQL>
+				<ExecuteSQL Name="Fact_usp_Merge_DomandeMIA" ConnectionName="CesiDW">
+					<DirectInput>EXEC Fact.usp_Merge_DomandeMIA;</DirectInput>
+				</ExecuteSQL>
+			</Tasks>
+		</Package>
 		<Package Name="03_Transform_and_Load" ProtectionLevel="EncryptSensitiveWithUserKey">
 			<Tasks>
 			  <ExecutePackage Name="Dim_Cliente" DelayValidation="true">
@@ -384,6 +394,9 @@
 					  <Input OutputPathName="Dim_Cliente.Output" />
 					</Inputs>
 				  </PrecedenceConstraints>
+			  </ExecutePackage>
+			  <ExecutePackage Name="Fact_DomandeMIA" DelayValidation="true">
+				  <ExternalProjectPackage Package="Fact_DomandeMIA.dtsx" />
 			  </ExecutePackage>
 			</Tasks>
 		</Package>

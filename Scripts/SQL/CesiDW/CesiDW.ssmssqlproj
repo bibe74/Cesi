@@ -216,6 +216,12 @@
           <AssociatedConnUserName />
           <FullPath>CesiDW_40.08_Fact_CreditiOpenAI.sql</FullPath>
         </FileNode>
+        <FileNode Name="CesiDW_40.09_Fact_DomandeMIA.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.09_Fact_DomandeMIA.sql</FullPath>
+        </FileNode>
         <FileNode Name="CesiDW_40.99_Fact_views.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />

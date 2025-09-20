@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="05/26/2025 14:37:08" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{1ABB0958-138E-4739-8F4E-037515A6F84A}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Budget" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{90778C27-8DC7-4D7D-91A8-8DF196813120}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="09/19/2025 21:08:35" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{E627BBA6-C996-4D6C-9189-051A3A3C5CE9}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Budget" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{5C43C49C-931E-4D96-A627-076C25A64CC7}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{AA022CCB-D7DF-42EC-AA4D-E8ACC66F7285}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{D3CB4EC0-AA97-436C-B3FD-9B830F029676}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
-        <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False" />
+        <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{08677014-584C-4EE0-AFDA-7030E5ED1153}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Budget" DTS:refId="Package\Staging_usp_Reload_Budget" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E9F65208-9BEF-4EDB-AC3C-3E51DEE4E6BF}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Budget" DTS:refId="Package\Staging_usp_Reload_Budget" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Budget;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4E14B48D-E854-4228-A74A-5218F029ECE6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Budget" DTS:refId="Package\Fact_usp_Merge_Budget" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{EABCEFAB-5D1B-45D4-B856-708D79DB90BA}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Budget" DTS:refId="Package\Fact_usp_Merge_Budget" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Budget;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{668B8AB9-D964-47CA-8605-F050FA617CCA}" DTS:From="Package\Staging_usp_Reload_Budget" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Budget_To_Fact_usp_Merge_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Budget_To_Fact_usp_Merge_Budget]" DTS:To="Package\Fact_usp_Merge_Budget" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{59B299BA-3978-4B26-9A0A-16DB39E6541D}" DTS:From="Package\Staging_usp_Reload_Budget" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Budget_To_Fact_usp_Merge_Budget" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Budget_To_Fact_usp_Merge_Budget]" DTS:To="Package\Fact_usp_Merge_Budget" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

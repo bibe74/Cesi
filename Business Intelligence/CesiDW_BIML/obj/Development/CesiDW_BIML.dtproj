@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MIRZAKHANI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIZbzqEgS9Eqw1rCUEnNxjQAAAAACAAAAAAAQZgAAAAEAACAAAADUG1qfuoIqfc5ifPAFDLW+IdOLN2rWr2s7uT/hXYcCTgAAAAAOgAAAAAIAACAAAAAoHiPpA/W7EJG9brdoRa+WiGnpCXQC1aqIv8WbaWWa45AAAAB+xy1NFDuUigJNxdn353fBKSgOhuBR6qhlzPHDYkvUrkibtsdGDFVvhWqqhJlaoOpJZlyxX/GWZ8HBBdm2TGrRbhTRLX/kXV9fcDGOdoBS+oCILeLSgNeuXmZvf/trsFpKumcLW5+3Y8vyuy4FJu2cISgzRGJ2vwthfKYJbXcoJFddNTCuu0nnN1q8Xf7rjiNAAAAAPa+xdWvzBGd8E4XiakwN3FZp/ulcJEhSO8ML4JOoi1LPPSKfzfAZThCqr7tnxere8zCw0rjxObu4sIvgRsfPUw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvDq9+7/m0keBKTRNHaKT2AAAAAACAAAAAAAQZgAAAAEAACAAAADLbc3hHyAcfccCGgQeRPpDssSKPLMzBsXey6NWwT7G3gAAAAAOgAAAAAIAACAAAADG4WzgBX17iiRxprrdk6QfNQ5BE4KAo3Nh7Y2mNyw7/ZAAAACg4Nxx+ZO9p4imiFXLsQz3ETUSlUrWspX8LaHTB/2TNkrICKwA32n3RNv2CQCAUxKgNffRKjvc8JwCP7h+fJEiN1HXSxrMDfKqpV3EKjiplWGjiy2s5jP5beHZOr7PH3B0ZqA2apRcL2nmtRn9cw53phsk09K/uVjIj6/nRmk+idkAgaxD6SEDWr5Qs00M7HpAAAAARUJ70rmRT5fOkjeqegsSPpRl3Gx5yUQedSN7Qefr8sdkb9p4vMmSe1xrsQyXf26nKyeNuRr/3szwm2STmP8+4A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -57,6 +57,7 @@
           <SSIS:Package SSIS:Name="ProcessFull Crediti Cube.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Fact_CreditiOpenAI.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ProcessFull Crediti OpenAI Cube.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Fact_DomandeMIA.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -64,14 +65,14 @@
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="00_ETL_master.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{84F124AE-59E7-4BDB-903B-CA5F569619CB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{43B8D5DE-FF22-4334-AE64-70A1FF4896C7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">00_ETL_master</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{30EA53E7-5CB7-4CD0-95CF-5268A6035D2A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{737F1B63-5300-45D5-B1F9-98D43613435E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -81,14 +82,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="01_Extract.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{8562C0BF-AEC6-4B69-840A-8E9FD0C7DF06}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0538CBDE-312B-4CEF-80B3-22FDB519F029}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">01_Extract</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C5DEC17F-3E73-4AF4-81DA-55571D00AACB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BC5DB643-D92E-4151-8275-DB41C6680305}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -121,7 +122,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -225,7 +226,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -247,14 +248,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="02_Setup.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{9C1ED460-22C7-4B17-A78D-D1458CBE063C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0E3CDDB5-65C7-45D3-8B70-1FAE44B9A065}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">02_Setup</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{120BD898-1D13-4019-9CDA-4BB31C231F76}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{705FC52E-D732-4829-B549-920C5F7326A0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -287,7 +288,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -391,7 +392,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -413,14 +414,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="03_Transform_and_Load.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{1394FD5F-2EEA-416F-B986-365B8B79A749}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{B944F275-C62F-4BD6-B2D0-6478B4E8EE93}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">03_Transform_and_Load</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F803AB17-F836-40DF-A382-5AC402DD0501}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{59E5A0D1-8C25-4C43-AE9C-390420203C8A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -430,14 +431,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_Articolo.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D0EBE7A8-0297-4434-954A-9F86DEFD1690}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{032A5A1A-1BE7-4125-8904-1A7B2555C1C5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_Articolo</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AB7B0693-B9E2-4564-8F18-A08227987716}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2B2A2362-8579-4ECB-A3F1-4E72787BE770}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -470,7 +471,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -574,7 +575,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -596,14 +597,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_Cliente.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D3ADC7C3-862A-4075-B6AF-AE98CAF34482}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{943B3EE7-ADE6-4D3B-9BF2-553D5377A022}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_Cliente</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3E922D86-80D3-4EB4-BD24-E607116E7AE2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6BAA0830-8415-4A8D-983A-E38F0BE8DD90}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -636,7 +637,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -740,7 +741,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -762,14 +763,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_GruppoAgenti.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{3540565A-6778-4834-92FD-4AF1EEA8C2E2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{B3DC32AC-B022-422C-AE85-959936C31778}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_GruppoAgenti</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B5C2CBEF-D95E-4C3B-9E43-353F469BDF12}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7065018F-5BC8-4987-A7EF-3210762F73A6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -802,7 +803,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -906,7 +907,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -928,14 +929,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Accessi.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{922DFEC8-8017-40BC-AD65-A9A178852515}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{4B2BFD74-0BDC-4C0B-8F0E-4A58AB59D45E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Accessi</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B5DACB9D-5BAA-486C-B334-1F90FCAA9473}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0614C940-1AF5-499F-A4C4-039CB82142AA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -968,7 +969,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1072,7 +1073,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1094,14 +1095,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Documenti.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D0CFD8A8-ABEC-49CE-ABCC-80C31B2B7138}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{BA950CB3-B338-4210-A0DE-F69E49F6934E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Documenti</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DDBA44F7-2BCD-4D9B-A50A-ABB58BD0A608}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{812D58E6-BAA2-431F-A8E2-F5A5E600B0F1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1134,7 +1135,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1238,7 +1239,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1260,14 +1261,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Scadenze.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{265C311D-8D0F-4A1F-8DC6-23DC083C73CC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{A022CFDB-AF27-4A76-990E-8D2CB1D2E98A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Scadenze</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BA7DD3E0-9ED5-4E5A-8A06-04F184441AB7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7BBCD42A-61C2-4012-8C9E-5600FFF3C2DA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1300,7 +1301,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1404,7 +1405,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1426,14 +1427,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull Accessi Cube.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{C7D6D139-7D72-48E6-9A1A-CD08DCA36775}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{2955D05F-7DC7-4651-A0D6-4A0CC136ACE6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull Accessi Cube</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{49E2DF9E-8401-49CF-BDD2-C8B0773CA5B4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9B4742EF-1637-40A4-ADAF-01E673AF2313}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1546,14 +1547,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull CesiDW_Cubi_dev.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{801D9A11-5443-424D-A2DF-137008A1E614}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{6E8420A3-7259-45AA-B396-AB2D10E95AE0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull CesiDW_Cubi_dev</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0E358EEC-4CC3-4DBF-81B5-D5CE71127146}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3DF39EEF-533B-4065-878A-6EC3C8F18CA9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1666,14 +1667,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull CesiDW_Cubi_dev Cubes.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{31B56AE9-5262-44BA-9012-4511A16D93EA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0F50C9A8-D89C-4E75-9671-F667B0B6AFDF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull CesiDW_Cubi_dev Cubes</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{16CB5FA1-ED35-46AD-B0C2-3F5B1A5123EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F5716710-83EB-4EA8-9A73-B2675E91F169}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1683,14 +1684,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull CesiDW_Cubi_dev Dimensions.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{1875B18A-1C33-4A62-872A-CF61321C9C74}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{175A4AAA-35EB-4A31-A466-B31CD5186AFA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull CesiDW_Cubi_dev Dimensions</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9A0B7E8B-FC01-49BC-9AAA-A6BAA3BAD324}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D60CC0BC-4BA7-4DAE-A52C-984D87B60850}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1803,14 +1804,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull CesiDW_Cubi_dev master.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{A789D091-2CCC-4855-A1F8-28CA23738C47}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{4F20F55A-A569-44A9-8B1E-7C6C36D5F068}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull CesiDW_Cubi_dev master</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5868B930-5B61-4563-8CFF-F31F908A5CD1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6BA44374-2C54-4156-A3A2-01C046E5F734}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1820,14 +1821,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull Documenti Cube.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{3816C5EC-34AF-4B4E-B664-CB7B4843806B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{8D9CD3D7-2205-40F1-9222-0FD9B17797A1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull Documenti Cube</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{60054B12-8B0C-4589-A660-5009C6C07D80}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2158578C-9462-41C7-B63F-9B7A1B92C982}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1940,14 +1941,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessUpdate CesiDW_Cubi_dev.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{136547E3-DEC4-43CA-A1E3-A63CFE94C9FB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{15F52F5F-3428-4599-9531-E97E0102580F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessUpdate CesiDW_Cubi_dev</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2F384954-A294-41CF-B48F-E23F7377E9B4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4D2F95CD-5BA7-4003-A9FA-3FA15E7B8F93}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2060,14 +2061,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Budget.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{1ABB0958-138E-4739-8F4E-037515A6F84A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{E627BBA6-C996-4D6C-9189-051A3A3C5CE9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Budget</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{90778C27-8DC7-4D7D-91A8-8DF196813120}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5C43C49C-931E-4D96-A627-076C25A64CC7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2100,7 +2101,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2204,7 +2205,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2226,14 +2227,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_Utente.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{5E5D36D1-FBDB-49EA-BF6E-400CFABFE4DE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{74B58382-2D78-4C49-B274-53D09D411652}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_Utente</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FD37F882-6A91-455C-B8F5-C319C806D7AB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{778A8548-BD6A-408C-9E71-637D87AAAA0F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2266,7 +2267,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2370,7 +2371,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2392,14 +2393,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Corsi.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{BBCF84FD-CBBB-4606-A9D1-E5976584009F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{F51E5077-20AD-4AD4-9ACF-39C7E8196085}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Corsi</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{75B85857-4EB8-4B1B-9A16-3B02CDD492F6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B33B68FD-E4D0-4CEE-8BA2-527EB27C0E73}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2432,7 +2433,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2536,7 +2537,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2558,14 +2559,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull Corsi Cube.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{AA79C223-9140-429D-89CA-E3885A3ED92C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{8EAB9068-E50A-4672-9DE9-6DF7FDD402D3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull Corsi Cube</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BB7A700C-EE0A-4D27-A543-89415F528874}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3635FC6D-647F-4542-B8CE-FA3697901165}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2678,14 +2679,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_Cliente_OLD.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{8035758B-99BD-45B4-B4B1-39296953EEAE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{514FEBDF-98BE-485B-8076-E2E632E7832A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_Cliente_OLD</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BB08A237-A7AF-4BCC-B165-EA97350A4A73}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7D07C75B-2041-43A7-BF58-7876D0DC9EF9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2718,7 +2719,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2822,7 +2823,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2844,14 +2845,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Dim_Corso.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{614ABAF2-A515-4BE2-ABB9-805115870478}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0A8B94E7-5A0D-4E7D-AAFA-46E6311152CF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Dim_Corso</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8EB1F7B5-EA9F-4E01-AB70-93F12C7731DF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B78400FA-6FFB-4679-A418-0170EB0387D6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2884,7 +2885,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2988,7 +2989,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3010,14 +3011,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_Crediti.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D64D39C0-3A7D-4DCD-8F19-3371F4B71704}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{CCFE0679-FD51-4E91-AD4E-D4BD213E7901}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_Crediti</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3BA3E665-BA99-48E3-831F-C5D8562A6174}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{03E2ED09-D661-4AA5-82B4-6A8FCF8DED09}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3050,7 +3051,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3154,7 +3155,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3176,14 +3177,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull Crediti Cube.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{BA4351A4-9215-4C63-A930-7921D437D843}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{B08A7322-787D-4F85-877F-0B1E70350754}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull Crediti Cube</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C3D32811-85FA-44AA-B753-79F0A72946D2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5072660E-912D-4F50-9904-4EAA0AB5E886}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3296,14 +3297,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Fact_CreditiOpenAI.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{810E5222-73C7-4B59-8C92-59A09D3085C8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{A4345367-D5B6-42DD-9907-6ACE13E3559D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Fact_CreditiOpenAI</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{634A29BB-E7F3-43FF-AED9-0159B6DDA66F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F24722BD-0A97-4A8B-8EF0-9FD2BAB46814}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3336,7 +3337,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3440,7 +3441,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">EPISQL2021</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3462,14 +3463,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ProcessFull Crediti OpenAI Cube.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{69D53E93-317A-49E6-9877-EAB04E055D5B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{3569247F-A211-4313-AD78-45FF856448B4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ProcessFull Crediti OpenAI Cube</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{65F10908-92E4-417B-92DE-7E2365DB29C4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{880D7730-B046-4F0F-962E-7BCCFA386A75}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3565,6 +3566,172 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.CesiDW_Cubi_dev.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Fact_DomandeMIA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{24297976-4617-4396-A4DC-2A787C104DD7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Fact_DomandeMIA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{91A7A929-368D-46B7-81F7-0424A173624D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ConnectRetryCount">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ConnectRetryInterval">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">5</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ConnectUsingManagedIdentity">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CesiDW</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">EPISQL2021.cesi.local</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.CesiDW.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>

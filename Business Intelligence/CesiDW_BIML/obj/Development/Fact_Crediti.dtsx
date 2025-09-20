@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="5/26/2025 2:37:08 PM"
+  DTS:CreationDate="9/19/2025 9:08:35 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{D64D39C0-3A7D-4DCD-8F19-3371F4B71704}"
+  DTS:DTSID="{CCFE0679-FD51-4E91-AD4E-D4BD213E7901}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Crediti"
-  DTS:VersionGUID="{3BA3E665-BA99-48E3-831F-C5D8562A6174}"
+  DTS:VersionGUID="{03E2ED09-D661-4AA5-82B4-6A8FCF8DED09}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,13 +18,13 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A894F80A-1A16-491E-B093-7FBF73857FD1}"
+      DTS:DTSID="{D2FA5BCF-1E81-4F1A-8A57-E96BDC343F53}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;" />
+          DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Crediti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{824F9ECE-0FBB-4491-963A-0EE1EAB6C007}"
+      DTS:DTSID="{FF813349-D56E-4211-A0A1-8B17C09A561B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Crediti"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A894F80A-1A16-491E-B093-7FBF73857FD1}"
+          SQLTask:Connection="{D2FA5BCF-1E81-4F1A-8A57-E96BDC343F53}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Crediti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{863132F1-1456-4251-ABAB-6CD5E13AC865}"
+      DTS:DTSID="{A65A1D05-4A2E-4454-BD33-A54D48340D11}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Crediti"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A894F80A-1A16-491E-B093-7FBF73857FD1}"
+          SQLTask:Connection="{D2FA5BCF-1E81-4F1A-8A57-E96BDC343F53}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti]"
       DTS:CreationName=""
-      DTS:DTSID="{F85FB605-A5C5-45CC-A5D0-232223A71FDF}"
+      DTS:DTSID="{FBEDC28E-32B7-4174-9DE3-6C49B08ACD19}"
       DTS:From="Package\Staging_usp_Reload_Crediti"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti"

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="5/26/2025 2:37:07 PM"
+  DTS:CreationDate="9/19/2025 9:08:35 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{9C1ED460-22C7-4B17-A78D-D1458CBE063C}"
+  DTS:DTSID="{0E3CDDB5-65C7-45D3-8B70-1FAE44B9A065}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="02_Setup"
-  DTS:VersionGUID="{120BD898-1D13-4019-9CDA-4BB31C231F76}"
+  DTS:VersionGUID="{705FC52E-D732-4829-B549-920C5F7326A0}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,13 +18,13 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{ED9E0C30-97AD-4524-AC0E-E95655CDF277}"
+      DTS:DTSID="{F8D061C4-F827-492D-A917-65EE1CF4EC05}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="data source=EPISQL2021;initial catalog=CesiDW;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;" />
+          DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Setup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{29A4B93D-E5D6-467E-9C0D-2B4E6E33C4B5}"
+      DTS:DTSID="{BB0DA6EE-00E2-4BA9-B73C-F977CB12F4C0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Setup"
@@ -42,7 +42,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{ED9E0C30-97AD-4524-AC0E-E95655CDF277}"
+          SQLTask:Connection="{F8D061C4-F827-492D-A917-65EE1CF4EC05}"
           SQLTask:SqlStatementSource="EXEC setup.usp_InsertDates;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>

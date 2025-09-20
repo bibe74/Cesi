@@ -227,31 +227,48 @@ AS (
 
     FROM Landing.COMETA_Documento_Riga DR
     INNER JOIN Landing.COMETA_Documento D ON D.id_documento = DR.id_documento
+        AND D.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Landing.COMETA_Profilo_Documento PD ON PD.id_prof_documento = D.id_prof_documento
+        AND PD.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_Registro R ON R.id_registro = D.id_registro
+        AND R.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_Esercizio E ON E.id_esercizio = R.id_esercizio
+        AND E.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.Data DIE ON DIE.PKData = E.data_inizio
     LEFT JOIN Dim.Data DFE ON DFE.PKData = E.data_fine
     LEFT JOIN Dim.Data DReg ON DReg.PKData = D.data_registrazione
     LEFT JOIN Dim.Data DD ON DD.PKData = D.data_documento
     LEFT JOIN Dim.Data DC ON DC.PKData = D.data_competenza
     INNER JOIN Dim.Cliente C ON C.IDSoggettoCommerciale = D.id_sog_commerciale
+        AND C.IsDeleted = CAST(0 AS BIT)
     INNER JOIN Dim.Cliente CF ON CF.IDSoggettoCommerciale = D.id_sog_commerciale
+        AND CF.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.GruppoAgenti GA ON GA.id_gruppo_agenti = D.id_gruppo_agenti
+        AND GA.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.Data DFC ON DFC.PKData = D.data_fine_contratto
     LEFT JOIN Dim.Data DIC ON DIC.PKData = D.data_inizio_contratto
     LEFT JOIN Landing.COMETA_Libero_1 L1 ON L1.id_libero_1 = D.id_libero_1
+        AND L1.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_Libero_2 L2 ON L2.id_libero_2 = D.id_libero_2
+        AND L2.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_Libero_3 L3 ON L3.id_libero_3 = D.id_libero_3
+        AND L3.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_Tipo_Fatturazione TF ON TF.id_tipo_fatturazione = D.id_tipo_fatturazione
+        AND TF.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.GruppoAgenti GAR ON GAR.id_gruppo_agenti = DR.id_gruppo_agenti
+        AND GAR.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.Articolo ART ON ART.id_articolo = DR.id_articolo
+        AND ART.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_CondizioniPagamento CP ON CP.id_con_pagamento = D.id_con_pagamento
+        AND CP.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Import.ProfiliDocumento IPD ON IPD.id_prof_documento = D.id_prof_documento
     LEFT JOIN Import.Libero2MacroTipologia L2MT ON L2MT.IDLibero2 = L2.codice
     LEFT JOIN Dim.MacroTipologia MT ON MT.MacroTipologia = L2MT.MacroTipologia
+        AND MT.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Landing.COMETA_MySolutionContracts MSC ON MSC.id_riga_documento = DR.id_riga_documento
+        AND MSC.IsDeleted = CAST(0 AS BIT)
     LEFT JOIN Dim.Data DDD ON DDD.PKData = D.data_disdetta
+    WHERE DR.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
     -- Chiavi
@@ -736,6 +753,10 @@ BEGIN
         SRC.PKDataDisdetta,
         SRC.IDDocumentoRinnovato
       )
+
+    WHEN NOT MATCHED BY SOURCE THEN UPDATE
+        SET TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+            TGT.IsDeleted = CAST(1 AS BIT)
 
     OUTPUT
         CURRENT_TIMESTAMP AS merge_datetime,

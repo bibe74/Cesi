@@ -60,4 +60,6 @@ IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND 
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAICliente') EXEC('CREATE SYNONYM GPT.OpenAICliente FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAICliente;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAICredito') EXEC('CREATE SYNONYM GPT.OpenAICredito FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAICredito;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIPartita') EXEC('CREATE SYNONYM GPT.OpenAIPartita FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIPartita;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIMessage') EXEC('CREATE SYNONYM GPT.OpenAIMessage FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIMessage;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIThread') EXEC('CREATE SYNONYM GPT.OpenAIThread FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIThread;');
 GO

@@ -580,3 +580,276 @@ GO
 
 SELECT * FROM Landing.GPT_OpenAIPartita;
 GO
+
+/**
+ * @table Landing.GPT_OpenAIMessage
+ * @description 
+
+ * @depends GPT.OpenAIMessage
+
+SELECT TOP 100 * FROM GPT.OpenAIMessage;
+*/
+
+IF OBJECT_ID('Landing.GPT_OpenAIMessageView', 'V') IS NULL EXEC('CREATE VIEW Landing.GPT_OpenAIMessageView AS SELECT 1 AS fld;');
+GO
+
+ALTER VIEW Landing.GPT_OpenAIMessageView
+AS
+WITH TableData
+AS (
+    SELECT
+
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            Id,
+            ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            OpenAIThreadId,
+            Message,
+            IsQuestion,
+            CreatedOn,
+            ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+        Id,
+        OpenAIThreadId,
+        Message,
+        IsQuestion,
+        CreatedOn
+
+    FROM GPT.OpenAIMessage
+    WHERE CreatedOn >= CAST('20250901' AS SMALLDATETIME)
+)
+SELECT
+    -- Chiavi
+    0+TD.Id AS Id,
+
+    -- Campi per sincronizzazione
+    TD.HistoricalHashKey,
+    TD.ChangeHashKey,
+    CONVERT(VARCHAR(34), TD.HistoricalHashKey, 1) AS HistoricalHashKeyASCII,
+    CONVERT(VARCHAR(34), TD.ChangeHashKey, 1) AS ChangeHashKeyASCII,
+    TD.InsertDatetime,
+    TD.UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    -- Attributi
+    TD.OpenAIThreadId,
+    TD.Message,
+    TD.IsQuestion,
+    TD.CreatedOn
+
+FROM TableData TD;
+GO
+
+--DROP TABLE IF EXISTS Landing.GPT_OpenAIMessage;
+GO
+
+IF OBJECT_ID(N'Landing.GPT_OpenAIMessage', N'U') IS NULL
+BEGIN
+    SELECT TOP 0 * INTO Landing.GPT_OpenAIMessage FROM Landing.GPT_OpenAIMessageView;
+
+    ALTER TABLE Landing.GPT_OpenAIMessage ALTER COLUMN Id INT NOT NULL;
+
+    ALTER TABLE Landing.GPT_OpenAIMessage ADD CONSTRAINT PK_Landing_GPT_OpenAIMessage PRIMARY KEY CLUSTERED (UpdateDatetime, Id);
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_GPT_OpenAIMessage_BusinessKey ON Landing.GPT_OpenAIMessage (Id);
+END;
+GO
+
+IF OBJECT_ID('GPT.usp_Merge_OpenAIMessage', 'P') IS NULL EXEC('CREATE PROCEDURE GPT.usp_Merge_OpenAIMessage AS RETURN 0;');
+GO
+
+ALTER PROCEDURE GPT.usp_Merge_OpenAIMessage
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO Landing.GPT_OpenAIMessage AS TGT
+    USING Landing.GPT_OpenAIMessageView (nolock) AS SRC
+    ON SRC.Id = TGT.Id
+
+    WHEN MATCHED AND (SRC.ChangeHashKeyASCII <> TGT.ChangeHashKeyASCII)
+      THEN UPDATE SET
+        TGT.ChangeHashKey = SRC.ChangeHashKey,
+        TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
+        --TGT.InsertDatetime = SRC.InsertDatetime,
+        TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.OpenAIThreadId = SRC.OpenAIThreadId,
+        TGT.Message = SRC.Message,
+        TGT.IsQuestion = SRC.IsQuestion,
+        TGT.CreatedOn = SRC.CreatedOn
+
+    WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
+      THEN INSERT VALUES (
+        Id,
+
+        HistoricalHashKey,
+        ChangeHashKey,
+        HistoricalHashKeyASCII,
+        ChangeHashKeyASCII,
+        InsertDatetime,
+        UpdateDatetime,
+        IsDeleted,
+    
+        OpenAIThreadId,
+        Message,
+        IsQuestion,
+        CreatedOn
+      )
+
+    WHEN NOT MATCHED BY SOURCE
+        AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE
+        SET TGT.IsDeleted = CAST(1 AS BIT),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+        TGT.ChangeHashKeyASCII = ''
+
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.GPT_OpenAIMessage' AS full_olap_table_name,
+        'Id = ' + CAST(COALESCE(inserted.Id, deleted.Id) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END;
+GO
+
+EXEC GPT.usp_Merge_OpenAIMessage;
+GO
+
+SELECT * FROM Landing.GPT_OpenAIMessage;
+GO
+
+/**
+ * @table Landing.GPT_OpenAIThread
+ * @description 
+
+ * @depends GPT.OpenAIThread
+
+SELECT TOP 100 * FROM GPT.OpenAIThread;
+*/
+
+IF OBJECT_ID('Landing.GPT_OpenAIThreadView', 'V') IS NULL EXEC('CREATE VIEW Landing.GPT_OpenAIThreadView AS SELECT 1 AS fld;');
+GO
+
+ALTER VIEW Landing.GPT_OpenAIThreadView
+AS
+WITH TableData
+AS (
+    SELECT
+
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            Id,
+            ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            ClienteId,
+            Area,
+            ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+        Id,
+        ClienteId,
+        Area
+
+    FROM GPT.OpenAIThread
+)
+SELECT
+    -- Chiavi
+    0+TD.Id AS Id,
+
+    -- Campi per sincronizzazione
+    TD.HistoricalHashKey,
+    TD.ChangeHashKey,
+    CONVERT(VARCHAR(34), TD.HistoricalHashKey, 1) AS HistoricalHashKeyASCII,
+    CONVERT(VARCHAR(34), TD.ChangeHashKey, 1) AS ChangeHashKeyASCII,
+    TD.InsertDatetime,
+    TD.UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    -- Attributi
+    TD.ClienteId,
+    TD.Area
+
+FROM TableData TD;
+GO
+
+--DROP TABLE IF EXISTS Landing.GPT_OpenAIThread;
+GO
+
+IF OBJECT_ID(N'Landing.GPT_OpenAIThread', N'U') IS NULL
+BEGIN
+    SELECT TOP 0 * INTO Landing.GPT_OpenAIThread FROM Landing.GPT_OpenAIThreadView;
+
+    ALTER TABLE Landing.GPT_OpenAIThread ALTER COLUMN Id INT NOT NULL;
+
+    ALTER TABLE Landing.GPT_OpenAIThread ADD CONSTRAINT PK_Landing_GPT_OpenAIThread PRIMARY KEY CLUSTERED (UpdateDatetime, Id);
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_GPT_OpenAIThread_BusinessKey ON Landing.GPT_OpenAIThread (Id);
+END;
+GO
+
+IF OBJECT_ID('GPT.usp_Merge_OpenAIThread', 'P') IS NULL EXEC('CREATE PROCEDURE GPT.usp_Merge_OpenAIThread AS RETURN 0;');
+GO
+
+ALTER PROCEDURE GPT.usp_Merge_OpenAIThread
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO Landing.GPT_OpenAIThread AS TGT
+    USING Landing.GPT_OpenAIThreadView (nolock) AS SRC
+    ON SRC.Id = TGT.Id
+
+    WHEN MATCHED AND (SRC.ChangeHashKeyASCII <> TGT.ChangeHashKeyASCII)
+      THEN UPDATE SET
+        TGT.ChangeHashKey = SRC.ChangeHashKey,
+        TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
+        --TGT.InsertDatetime = SRC.InsertDatetime,
+        TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.ClienteId = SRC.ClienteId,
+        TGT.Area = SRC.Area
+
+    WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
+      THEN INSERT VALUES (
+        Id,
+
+        HistoricalHashKey,
+        ChangeHashKey,
+        HistoricalHashKeyASCII,
+        ChangeHashKeyASCII,
+        InsertDatetime,
+        UpdateDatetime,
+        IsDeleted,
+    
+        ClienteId,
+        Area
+      )
+
+    WHEN NOT MATCHED BY SOURCE
+        AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE
+        SET TGT.IsDeleted = CAST(1 AS BIT),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+        TGT.ChangeHashKeyASCII = ''
+
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.GPT_OpenAIThread' AS full_olap_table_name,
+        'Id = ' + CAST(COALESCE(inserted.Id, deleted.Id) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END;
+GO
+
+EXEC GPT.usp_Merge_OpenAIThread;
+GO
+
+SELECT * FROM Landing.GPT_OpenAIThread;
+GO
