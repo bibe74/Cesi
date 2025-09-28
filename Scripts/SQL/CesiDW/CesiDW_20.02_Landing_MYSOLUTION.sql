@@ -386,6 +386,7 @@ AS (
             SendRiqualification,
             IsSpecial,
             DateExpiration,
+            StateProvinceId,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -417,7 +418,8 @@ AS (
         MysolutionSubscriptionQuote,
         SendRiqualification,
         IsSpecial,
-        DateExpiration
+        DateExpiration,
+        StateProvinceId
 
     FROM MYSOLUTION.Customer
     WHERE Active = CAST(1 AS BIT)
@@ -465,7 +467,8 @@ SELECT
     TD.MysolutionSubscriptionQuote,
     TD.SendRiqualification,
     TD.IsSpecial,
-    TD.DateExpiration
+    TD.DateExpiration,
+    TD.StateProvinceId
 
 FROM TableData TD;
 GO
@@ -530,7 +533,8 @@ BEGIN
         TGT.MysolutionSubscriptionQuote = SRC.MysolutionSubscriptionQuote,
         TGT.SendRiqualification = SRC.SendRiqualification,
         TGT.IsSpecial = SRC.IsSpecial,
-        TGT.DateExpiration = SRC.DateExpiration
+        TGT.DateExpiration = SRC.DateExpiration,
+        TGT.StateProvinceId = SRC.StateProvinceId
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
@@ -571,7 +575,8 @@ BEGIN
         MysolutionSubscriptionQuote,
         SendRiqualification,
         IsSpecial,
-        DateExpiration
+        DateExpiration,
+        StateProvinceId
       )
 
     WHEN NOT MATCHED BY SOURCE

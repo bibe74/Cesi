@@ -229,7 +229,7 @@ BEGIN
         INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
             AND (
                 @Agente IS NULL
-                OR C.AgenteZoho = @Agente
+                OR C.AgenteDefault = @Agente
             )
         INNER JOIN SettimaneNumerate SN ON A.PKData BETWEEN SN.PKDataLunedi AND SN.PKDataDomenica
         WHERE A.IsDeleted = CAST(0 AS BIT)
@@ -250,7 +250,7 @@ BEGIN
         INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
             AND (
                 @Agente IS NULL
-                OR C.AgenteZoho = @Agente
+                OR C.AgenteDefault = @Agente
             )
         WHERE A.IsDeleted = CAST(0 AS BIT)
             AND A.PKData BETWEEN DATEADD(MONTH, -3, @PKDataFinePeriodo) AND @PKDataFinePeriodo
@@ -261,7 +261,8 @@ BEGIN
         SELECT
             CA.PKCliente,
             CA.CodiceCliente,
-            C.AgenteZoho AS Agente,
+            --C.AgenteZoho AS Agente,
+            CA.AgenteDefault AS Agente,
             CA.RagioneSociale,
             CA.Email,
             CA.Telefono,
@@ -276,7 +277,7 @@ BEGIN
         INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
             AND (
                 @Agente IS NULL
-                OR C.AgenteZoho = @Agente
+                OR C.AgenteDefault = @Agente
             )
         INNER JOIN Dim.Data DIC ON DIC.PKData = CA.PKDataInizioContratto
         INNER JOIN Dim.Data DFC ON DFC.PKData = CA.PKDataFineContratto

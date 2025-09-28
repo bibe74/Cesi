@@ -58,7 +58,7 @@
     <Report Include="Cruscotto Clienti per invio report.rdl" />
     <Report Include="Dettaglio Ordini In Scadenza per invio report.rdl" />
     <Report Include="Dettaglio Ordini Mese Corrente per invio report.rdl" />
-    <Report Include="Domande MIA.rdl" />
+    <Report Include="Domande MIA per invio report.rdl" />
     <Report Include="Fatturato Formazione - Master e Revisione per invio report.rdl" />
     <Report Include="Fatturato Formazione - Nuovi iscritti per invio report.rdl" />
     <Report Include="SQLServerVersion.rdl" />

@@ -360,8 +360,8 @@ AS (
             GA10.Value,
             GA11.Value,
             CY.Name,
-            GA12.Value,
-            SP.Name,
+            COALESCE(SPC.Id, GA12.Value),
+            COALESCE(SPC.Name, SP.Name, A.StateProvince),
             CCRM11.Customer_Id,
             CCRM12.Customer_Id,
             ' '
@@ -384,8 +384,8 @@ AS (
         COALESCE(GA10.Value, A.City, N'') AS City,
         COALESCE(GA11.Value, N'') AS CountryId,
         COALESCE(CY.Name, A.Country, N'') AS Country,
-        COALESCE(GA12.Value, N'') AS StateProvinceId,
-        COALESCE(SP.Name, A.StateProvince, N'') AS StateProvince,
+        COALESCE(SPC.Id, GA12.Value, N'') AS StateProvinceId,
+        COALESCE(SPC.Name, SP.Name, A.StateProvince, N'') AS StateProvince,
         ROW_NUMBER() OVER (PARTITION BY C.Id ORDER BY A.Id DESC) AS rnAddressDESC,
         ROW_NUMBER() OVER (PARTITION BY C.Username ORDER BY C.Id DESC, A.Id DESC) AS rnCustomerDESC,
         CASE WHEN CCRM11.Customer_Id IS NOT NULL THEN 1 ELSE 0 END AS HasRoleMySolutionDemo,
@@ -442,6 +442,8 @@ AS (
     LEFT JOIN Landing.MYSOLUTION_Customer_CustomerRole_Mapping CCRM12 ON CCRM12.Customer_Id = C.Id
         AND CCRM12.CustomerRole_Id = 12 -- 12: MySolution.Interno
         AND CCRM12.IsDeleted = CAST(0 AS BIT)
+    LEFT JOIN Landing.MYSOLUTION_StateProvince SPC ON SPC.Id = C.StateProvinceId
+        AND SPC.IsDeleted = CAST(0 AS BIT)
     WHERE C.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
@@ -995,7 +997,7 @@ AS (
         MSC.Company AS RagioneSociale,
         MSC.CodiceFiscale,
         LEFT(MSC.VATNumber, 20) AS PartitaIVA,
-        MSC.StreetAddress AS Indirizzo,
+        LEFT(MSC.StreetAddress, 120) AS Indirizzo,
         LEFT(MSC.ZipPostalCode, 10) AS CAP,
         MSC.City AS Localita,
         --MSC.StateProvinceId,
@@ -1858,6 +1860,9 @@ BEGIN
     COMMIT TRANSACTION;
 
 END;
+GO
+
+EXEC Dim.usp_Merge_Cliente;
 GO
 
 /**
