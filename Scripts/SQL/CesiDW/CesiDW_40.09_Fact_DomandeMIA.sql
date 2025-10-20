@@ -93,7 +93,7 @@ AS (
                         ' '
                     ),
                     0,
-                    2000
+                    4000
                 )
             )
         ) AS Testo,
@@ -257,7 +257,7 @@ BEGIN
 	    IsDeleted BIT NOT NULL,
 
 	    PKDataCreazione DATE NOT NULL CONSTRAINT FK_Fact_DomandeMIA_PKDataCreazione FOREIGN KEY REFERENCES Dim.Data (PKData),
-	    Testo NVARCHAR(2000) NULL,
+	    Testo NVARCHAR(4000) NULL,
 	    IsDomanda BIT NOT NULL,
 	    Area NVARCHAR(80) NULL,
 	    Email NVARCHAR(60) NULL

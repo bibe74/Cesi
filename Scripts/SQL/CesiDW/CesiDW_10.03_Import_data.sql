@@ -155,7 +155,6 @@ BEGIN
     UNION ALL SELECT N'Turolla Paola', N'CESI\Paola Turolla', N'paola.turolla@cesimultimedia.com'
     UNION ALL SELECT N'SQL Administrator', N'CESI\sadmin', N''
     UNION ALL SELECT N'Turelli Alberto', N'CESI\Alberto Turelli', N'alberto.turelli@gmail.com'
-    UNION ALL SELECT N'Turelli Alberto (Metra)', N'METRA\bs_turelli', N''
     UNION ALL SELECT N'Eleonora Soravia', N'CESI\Eleonora Soravia', N'eleonora.soravia@cesimultimedia.com'
     UNION ALL SELECT N'Valentina Borroni', N'CESI\Valentina Borroni', N'valentina.borroni@cesimultimedia.it';
 
