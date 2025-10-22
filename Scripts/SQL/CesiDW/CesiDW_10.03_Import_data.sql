@@ -158,6 +158,21 @@ BEGIN
     UNION ALL SELECT N'Eleonora Soravia', N'CESI\Eleonora Soravia', N'eleonora.soravia@cesimultimedia.com'
     UNION ALL SELECT N'Valentina Borroni', N'CESI\Valentina Borroni', N'valentina.borroni@cesimultimedia.it';
 
+    -- 22/10/2025, mail di Andrea
+    DELETE FROM Import.Amministratori WHERE Email IN (
+        N'valeria.barbaglia@cesimultimedia.com',
+        N'giuseppe.lobrano@cesimultimedia.com',
+        N'antonio.loprevite@cesimultimedia.com',
+        N'valentina.borroni@cesimultimedia.it'
+    );
+    INSERT INTO Import.Amministratori (
+	    Amministratore,
+        ADUser,
+	    Email
+    )
+    VALUES (N'Cipriani Valentina', N'CESI\Valentina Cipriani', N'valentina.cipriani@cesimultimedia.it'),
+        (N'Mottica Gabriella', N'CESI\Gabriella Mottica', N'gabriella.mottica@cesimultimedia.it');
+
 END;
 GO
 
