@@ -173,6 +173,14 @@ BEGIN
     VALUES (N'Cipriani Valentina', N'CESI\Valentina Cipriani', N'valentina.cipriani@cesimultimedia.it'),
         (N'Mottica Gabriella', N'CESI\Gabriella Mottica', N'gabriella.mottica@cesimultimedia.it');
 
+    -- 29/10/2025, mail di Andrea
+    INSERT INTO Import.Amministratori (
+	    Amministratore,
+        ADUser,
+	    Email
+    )
+    VALUES (N'Mastropietro Nicola', N'CESI\Nicola Mastropietro', N'nicola.mastropietro@cesimultimedia.it');
+
 END;
 GO
 
