@@ -101,7 +101,7 @@ AS (
     SELECT
         N'Accessi',
         --N'cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;giuseppe.lobrano@cesimultimedia.com;valeria.barbaglia@cesimultimedia.it;antonio.loprevite@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;eleonora.soravia@cesimultimedia.it;valentina.borroni@cesimultimedia.it',
-        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;eleonora.soravia@cesimultimedia.it;angela.battaglia@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it',
+        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;angela.battaglia@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;anna.defeudis@cesimultimedia.it',
         N'Report Accessi',
         NULL
 
@@ -176,7 +176,7 @@ AS (
     SELECT
         N'Accessi Demo',
         --N'cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;giuseppe.lobrano@cesimultimedia.com;valeria.barbaglia@cesimultimedia.it;antonio.loprevite@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;eleonora.soravia@cesimultimedia.it;valentina.borroni@cesimultimedia.it',
-        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;eleonora.soravia@cesimultimedia.it;angela.battaglia@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it',
+        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;angela.battaglia@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;anna.defeudis@cesimultimedia.it',
         N'Report Accessi Demo',
         NULL
 )

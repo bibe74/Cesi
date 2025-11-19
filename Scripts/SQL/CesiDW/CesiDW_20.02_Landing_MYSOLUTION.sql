@@ -690,7 +690,8 @@ BEGIN
         TGT.ChangeHashKey = SRC.ChangeHashKey,
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
-        TGT.UpdateDatetime = SRC.UpdateDatetime
+        TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
