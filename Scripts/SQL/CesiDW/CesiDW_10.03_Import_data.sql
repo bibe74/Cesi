@@ -181,6 +181,9 @@ BEGIN
     )
     VALUES (N'Mastropietro Nicola', N'CESI\Nicola Mastropietro', N'nicola.mastropietro@cesimultimedia.it');
 
+    -- 10/11/2025, mail di Gabriella Mottica
+    DELETE FROM Import.Amministratori WHERE Amministratore = N'Eleonora Soravia';
+
 END;
 GO
 
