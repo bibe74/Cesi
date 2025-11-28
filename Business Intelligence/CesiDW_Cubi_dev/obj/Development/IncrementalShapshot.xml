@@ -19,154 +19,154 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>8lehZG9IAfFbLiDVriat7v+dy0c=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>istoKhUXeuhSQkF1ufzDsdGS/3I=9/14/2025 19:06:359/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>CesiDW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>Fb0jpcSE1dgML4FIxhGxiUd3UTo=6/30/2025 20:54:215/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>/ezgHF0QmscKDb4y0LeeSJQ2568=11/28/2025 18:06:089/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>CesiDW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>aw5XcLKJ2seq1WZgeERJ1z7l3FE=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>aw5XcLKJ2seq1WZgeERJ1z7l3FE=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Articolo</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>UWu1Nhcw/fejAMLakRMzIyYd4fI=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>UWu1Nhcw/fejAMLakRMzIyYd4fI=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Capo Area</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>bxetA72/bb0zvkhQH9BMVhkTfFs=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>bxetA72/bb0zvkhQH9BMVhkTfFs=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Cliente Accessi</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>RytE/xKg+6v4WmgaqQlm2HAO76U=6/30/2025 20:54:155/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>jVm7CQs5XhZOK0jbE+t8FqExjsI=11/28/2025 18:06:089/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Cliente</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>IFLXmvY7iyPh+SuJk1OQZKA8abE=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>IFLXmvY7iyPh+SuJk1OQZKA8abE=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Corsi</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>wrVj60tXOR8I2NHBKYvtqyXK5HE=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>wrVj60tXOR8I2NHBKYvtqyXK5HE=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Corso</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ph951lktyHTgDfkK7AZQZGlagWs=3/9/2025 12:22:545/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>ph951lktyHTgDfkK7AZQZGlagWs=3/9/2025 11:22:549/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Crediti Open AI</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>czwUSrClEZys6SYlvgxZ3Lm85HA=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>czwUSrClEZys6SYlvgxZ3Lm85HA=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Crediti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>wLkpxUUeyvUoymw+YkngpmHmnVw=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>wLkpxUUeyvUoymw+YkngpmHmnVw=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Data</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>CCYOhAbm7bsf5WdjRoZDIqIZAkY=1/25/2025 12:07:485/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>CCYOhAbm7bsf5WdjRoZDIqIZAkY=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Documenti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Fe0/7QhhANm3U+Jn54kvC+Lj55c=1/25/2025 12:07:505/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>Fe0/7QhhANm3U+Jn54kvC+Lj55c=1/25/2025 11:07:509/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Gruppo Agenti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>vwUtoyDm4+Y8l9RENzIoH3QvWsE=1/25/2025 12:07:505/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>vwUtoyDm4+Y8l9RENzIoH3QvWsE=1/25/2025 11:07:509/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Macro Tipologia</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>TFBwzUdE8gYdA3xnozv96THTBtA=1/25/2025 12:07:505/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>TFBwzUdE8gYdA3xnozv96THTBtA=1/25/2025 11:07:509/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Scadenze</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>9n/Zvt1k1PLGrGIlQgCT6Ud6hyk=1/25/2025 12:07:505/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>9n/Zvt1k1PLGrGIlQgCT6Ud6hyk=1/25/2025 11:07:509/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Utente</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>to+WTNb+SXCjys5yS8Y5qUPXxRI=1/25/2025 12:07:485/28/2025 7:34:57/BYndaQW6tx5/xTo5E/SFOK+XgM=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>to+WTNb+SXCjys5yS8Y5qUPXxRI=1/25/2025 11:07:489/11/2025 19:55:32/BYndaQW6tx5/xTo5E/SFOK+XgM=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Accessi</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>Id7qLXWfZEfL8W0NGRVmQcFkhto=1/25/2025 12:07:485/28/2025 7:34:57USMt1I/8xVEskO7yPzDvGdPACXA=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>Id7qLXWfZEfL8W0NGRVmQcFkhto=1/25/2025 11:07:489/11/2025 19:55:32USMt1I/8xVEskO7yPzDvGdPACXA=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Corsi</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>84onbaEDxE+n8xCPvYvJEI5HvFs=1/25/2025 12:07:485/28/2025 7:34:57Hr8MoqcBlLjU5Tjnj8OnU0f0ZEg=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>84onbaEDxE+n8xCPvYvJEI5HvFs=1/25/2025 11:07:489/11/2025 19:55:32Hr8MoqcBlLjU5Tjnj8OnU0f0ZEg=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Crediti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>LNnK/OOvo/EFg7O6XVc7n/aXQHk=6/30/2025 20:54:155/28/2025 7:34:577EME/BYbHqutAv7hFpAVGtOfMes=1/25/2025 12:07:485/28/2025 7:34:58</TimeStamp>
+        <TimeStamp>cUPOXFqiAMuY1Jyz7eRW6J/pjM8=11/28/2025 18:06:089/11/2025 19:55:327EME/BYbHqutAv7hFpAVGtOfMes=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Documenti</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>YPkAsFvTJ2EkQH1BC9AHKBo+Hog=6/30/2025 20:54:155/28/2025 7:34:57UQJNRV/x6xTMbstViq/QusTflhA=3/9/2025 12:20:505/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>F9V1LWhnvy63lrn0X7XjHFlfDIk=11/28/2025 18:06:089/11/2025 19:55:32UQJNRV/x6xTMbstViq/QusTflhA=3/9/2025 11:20:509/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Crediti OpenAI</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Role</Type>
-        <TimeStamp>vhVOc2oAG+3sOxzNsgfLsgrJsFQ=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+        <TimeStamp>vhVOc2oAG+3sOxzNsgfLsgrJsFQ=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
         <ID>
           <String>Role</String>
         </ID>
@@ -174,7 +174,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>hSZufin2rTtcpmqR9TlGLrGV6ww=1/25/2025 12:07:485/28/2025 7:34:57</TimeStamp>
+      <TimeStamp>hSZufin2rTtcpmqR9TlGLrGV6ww=1/25/2025 11:07:489/11/2025 19:55:32</TimeStamp>
       <ID>
         <String>CesiDW_Cubi_dev</String>
       </ID>
@@ -183,5 +183,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-06-30T19:51:39.11Z</LastDeployed>
+  <LastDeployed>2025-11-28T17:06:21.883333Z</LastDeployed>
 </DeploymentSnapshot>

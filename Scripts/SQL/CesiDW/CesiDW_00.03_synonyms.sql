@@ -9,6 +9,7 @@ GO
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'Anagrafica') EXEC('CREATE SYNONYM COMETA.Anagrafica FOR SERVER01.MyDatamartReporting.dbo.COMETA_anagrafica;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'Articolo') EXEC('CREATE SYNONYM COMETA.Articolo FOR SERVER01.MyDatamartReporting.dbo.COMETA_articolo;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'CategoriaCommercialeArticolo') EXEC('CREATE SYNONYM COMETA.CategoriaCommercialeArticolo FOR SERVER01.MyDatamartReporting.dbo.COMETA_cat_com_articolo;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'CategoriaCommercialeSoggettoCommerciale') EXEC('CREATE SYNONYM COMETA.CategoriaCommercialeSoggettoCommerciale FOR SERVER01.MyDatamartReporting.dbo.COMETA_cat_com_sc;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'CategoriaFiscale') EXEC('CREATE SYNONYM COMETA.CategoriaFiscale FOR SERVER01.MyDatamartReporting.dbo.COMETA_cat_fiscale;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'CategoriaMerceologica') EXEC('CREATE SYNONYM COMETA.CategoriaMerceologica FOR SERVER01.MyDatamartReporting.dbo.COMETA_cat_merceologica;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETA') AND name = 'CondizioniPagamento') EXEC('CREATE SYNONYM COMETA.CondizioniPagamento FOR SERVER01.MyDatamartReporting.dbo.COMETA_con_pagamento;');

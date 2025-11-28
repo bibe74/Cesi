@@ -209,7 +209,9 @@ AS (
         COALESCE(DD.motivo_disdetta, N'') AS motivo_disdetta,
         COALESCE(TDT.num_riferimento, N'') AS Telefono,
         COALESCE(TDC.num_riferimento, N'') AS Cellulare,
-        COALESCE(TDF.num_riferimento, N'') AS Fax
+        COALESCE(TDF.num_riferimento, N'') AS Fax,
+        COALESCE(SC.id_cat_com_sc, N'') AS IDProfessione,
+        COALESCE(CCSC.descrizione, CASE WHEN COALESCE(SC.id_cat_com_sc, N'') = N'' THEN N'' ELSE N'<???>' END) AS Professione
 
     FROM Landing.COMETA_SoggettoCommerciale SC
     INNER JOIN Landing.COMETA_Anagrafica A ON A.id_anagrafica = SC.id_anagrafica
@@ -229,6 +231,8 @@ AS (
     LEFT JOIN TelefonoDettaglio TDF ON TDF.id_anagrafica = SC.id_anagrafica
         AND TDF.tipo = 'F'
         AND TDF.rn = 1
+    LEFT JOIN Landing.COMETA_CategoriaCommercialeSoggettoCommerciale CCSC ON CCSC.id_cat_com_sc = SC.id_cat_com_sc
+        AND CCSC.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
     -- Chiavi
@@ -272,7 +276,9 @@ SELECT
     TD.motivo_disdetta,
     TD.Telefono,
     TD.Cellulare,
-    TD.Fax
+    TD.Fax,
+    TD.IDProfessione,
+    TD.Professione
 
 FROM TableData TD;
 GO
@@ -796,6 +802,8 @@ AS (
             ----PA.Agente,
             PACA.Agente,
             CASE WHEN COALESCE(GA.CapoArea, N'') = N'' THEN COALESCE(PACA.CapoArea, N'') ELSE GA.CapoArea END,
+            CC.IDProfessione,
+            CC.Professione,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -860,7 +868,9 @@ AS (
         COALESCE(PACA.CapoArea, N'') AS CapoAreaDefault,
         --COALESCE(CADBL.AgenteDefault, CADBCAP.AgenteDefault, PA.Agente, N'') AS AgenteDefault,
         COALESCE(PACA.Agente, N'') AS AgenteDefault,
-        CASE WHEN COALESCE(GA.CapoArea, N'') = N'' THEN COALESCE(PACA.CapoArea, N'') ELSE GA.CapoArea END AS AgenteZoho
+        CASE WHEN COALESCE(GA.CapoArea, N'') = N'' THEN COALESCE(PACA.CapoArea, N'') ELSE GA.CapoArea END AS AgenteZoho,
+        CC.IDProfessione,
+        CC.Professione
 
     FROM Staging.CometaCustomer CC
     LEFT JOIN Import.Provincia P ON P.CodSiglaProvincia = CC.Provincia
@@ -928,7 +938,9 @@ SELECT
     CAST(0 AS BIT) AS HasRoleMySolutionInterno,
     CAST(0 AS BIT) AS HasAbbonamentoMySolution,
     CAST(0 AS BIT) AS HasAbbonamentoMIA,
-    TD.AgenteZoho
+    TD.AgenteZoho,
+    TD.IDProfessione,
+    TD.Professione
 
 FROM TableData TD;
 GO
@@ -1115,7 +1127,9 @@ SELECT
     TD.HasRoleMySolutionInterno,
     CAST(0 AS BIT) AS HasAbbonamentoMySolution,
     CAST(0 AS BIT) AS HasAbbonamentoMIA,
-    TD.AgenteZoho
+    TD.AgenteZoho,
+    -1 AS IDProfessione,
+    N'' AS Professione
 
 FROM TableData TD;
 GO
@@ -1180,7 +1194,9 @@ BEGIN
         HasRoleMySolutionInterno BIT NOT NULL,
         HasAbbonamentoMySolution BIT NOT NULL,
         HasAbbonamentoMIA BIT NOT NULL,
-        AgenteZoho NVARCHAR(60) NOT NULL
+        AgenteZoho NVARCHAR(60) NOT NULL,
+        IDProfessione INT NOT NULL,
+        Professione NVARCHAR(60) NOT NULL
     );
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Dim_Cliente_IDSoggettoCommerciale ON Dim.Cliente (IDSoggettoCommerciale);
@@ -1215,6 +1231,8 @@ BEGIN
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_HasAbbonamentoMySolution DEFAULT (0) FOR HasAbbonamentoMySolution;
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_HasAbbonamentoMIA DEFAULT (0) FOR HasAbbonamentoMIA;
     ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_AgenteZoho DEFAULT (N'') FOR AgenteZoho;
+    ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_IDProfessione DEFAULT (-1) FOR IDProfessione;
+    ALTER TABLE Dim.Cliente ADD CONSTRAINT DFT_Dim_Cliente_Professione DEFAULT (N'') FOR Professione;
 
     INSERT INTO Dim.Cliente (
         PKCliente,
@@ -1432,7 +1450,9 @@ BEGIN
         TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno,
         TGT.HasAbbonamentoMySolution = SRC.HasAbbonamentoMySolution,
         TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA,
-        TGT.AgenteZoho = SRC.AgenteZoho
+        TGT.AgenteZoho = SRC.AgenteZoho,
+        TGT.IDProfessione = SRC.IDProfessione,
+        TGT.Professione = SRC.Professione
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -1484,7 +1504,9 @@ BEGIN
         HasRoleMySolutionInterno,
         HasAbbonamentoMySolution,
         HasAbbonamentoMIA,
-        AgenteZoho
+        AgenteZoho,
+        IDProfessione,
+        Professione
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -1535,7 +1557,9 @@ BEGIN
         SRC.HasRoleMySolutionInterno,
         SRC.HasAbbonamentoMySolution,
         SRC.HasAbbonamentoMIA,
-        SRC.AgenteZoho
+        SRC.AgenteZoho,
+        SRC.IDProfessione,
+        SRC.Professione
       )
 
     OUTPUT
@@ -1604,7 +1628,9 @@ BEGIN
         TGT.HasRoleMySolutionDemo = SRC.HasRoleMySolutionDemo,
         TGT.HasRoleMySolutionInterno = SRC.HasRoleMySolutionInterno,
         TGT.HasAbbonamentoMySolution = SRC.HasAbbonamentoMySolution,
-        TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA
+        TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA,
+        TGT.IDProfessione = SRC.IDProfessione,
+        TGT.Professione = SRC.Professione
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -1655,7 +1681,9 @@ BEGIN
         HasRoleMySolutionDemo,
         HasRoleMySolutionInterno,
         HasAbbonamentoMySolution,
-        HasAbbonamentoMIA
+        HasAbbonamentoMIA,
+        IDProfessione,
+        Professione
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -1705,7 +1733,9 @@ BEGIN
         SRC.HasRoleMySolutionDemo,
         SRC.HasRoleMySolutionInterno,
         SRC.HasAbbonamentoMySolution,
-        SRC.HasAbbonamentoMIA
+        SRC.HasAbbonamentoMIA,
+        SRC.IDProfessione,
+        SRC.Professione
       )
 
     OUTPUT

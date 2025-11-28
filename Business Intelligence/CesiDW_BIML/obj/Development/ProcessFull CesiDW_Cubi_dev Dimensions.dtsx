@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{175A4AAA-35EB-4A31-A466-B31CD5186AFA}"
+  DTS:DTSID="{0692E8FB-2F9D-45D6-ADC9-80C8E52FF302}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessFull CesiDW_Cubi_dev Dimensions"
-  DTS:VersionGUID="{D60CC0BC-4BA7-4DAE-A52C-984D87B60850}"
+  DTS:VersionGUID="{CB4205B6-405A-47B5-89B4-FA36DE890264}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]"
       DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{712C8B95-A077-4314-BF8B-0D443A9E624C}"
+      DTS:DTSID="{C2936DFC-83B6-4D1A-BD7D-8713A433EB3C}"
       DTS:ObjectName="CesiDW_Cubi_dev">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Dimensions_ProcessFull"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{F957B5A0-FC31-4B50-BFDF-6F0005BACA55}"
+      DTS:DTSID="{05A7E9C0-E505-49F7-895B-AF152EBF3313}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dimensions_ProcessFull"

@@ -36,7 +36,8 @@ SELECT
     C.Localita,
     C.Provincia,
     C.IsAttivo,
-    C.IsAbbonato
+    C.IsAbbonato,
+    C.Professione
 
 FROM Dim.Cliente C
 INNER JOIN Dim.GruppoAgenti GA ON GA.PKGruppoAgenti = C.PKGruppoAgenti

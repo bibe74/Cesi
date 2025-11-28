@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{3569247F-A211-4313-AD78-45FF856448B4}"
+  DTS:DTSID="{46ABCC48-5376-4FE9-9D9A-1CB6A86F760F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessFull Crediti OpenAI Cube"
-  DTS:VersionGUID="{880D7730-B046-4F0F-962E-7BCCFA386A75}"
+  DTS:VersionGUID="{3E1F72B0-2F51-4A3A-B2BA-614B7640A816}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]"
       DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{D6880689-8218-4111-9EF7-CAF3EC8F1E20}"
+      DTS:DTSID="{1054BDAD-F3F7-4405-B154-E45DA58D89A4}"
       DTS:ObjectName="CesiDW_Cubi_dev">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Crediti OpenAI"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{9DAB754C-0037-4F34-887F-23C8177C7487}"
+      DTS:DTSID="{44D7EC15-7D75-419B-9377-FC05527350D1}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Crediti OpenAI"

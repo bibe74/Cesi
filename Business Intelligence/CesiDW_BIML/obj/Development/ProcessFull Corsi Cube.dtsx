@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{8EAB9068-E50A-4672-9DE9-6DF7FDD402D3}"
+  DTS:DTSID="{19FBA6FE-AB29-4D2D-AB51-88C1D0BB5ED3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessFull Corsi Cube"
-  DTS:VersionGUID="{3635FC6D-647F-4542-B8CE-FA3697901165}"
+  DTS:VersionGUID="{4FD551A2-FD6C-4BB5-BDCB-AC24404BB9DF}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]"
       DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{B086B000-59BD-4FB6-8BFB-9E853E206BB4}"
+      DTS:DTSID="{9C7CFD76-B55E-4968-BA95-9C5F84929468}"
       DTS:ObjectName="CesiDW_Cubi_dev">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Corsi"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{357F84F4-8D03-4100-B233-166FA17EDD1B}"
+      DTS:DTSID="{095B5DF1-3A29-46C7-B28E-06F988E93DAF}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Corsi"

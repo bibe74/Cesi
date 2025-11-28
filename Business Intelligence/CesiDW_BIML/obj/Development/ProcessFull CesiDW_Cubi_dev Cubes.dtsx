@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{0F50C9A8-D89C-4E75-9671-F667B0B6AFDF}"
+  DTS:DTSID="{8EEE9DAF-55B7-4082-8D58-7CB23031D0E1}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessFull CesiDW_Cubi_dev Cubes"
-  DTS:VersionGUID="{F5716710-83EB-4EA8-9A73-B2675E91F169}"
+  DTS:VersionGUID="{60F7A251-7505-4B79-B3C4-050B59809188}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -19,7 +19,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Accessi Cube"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:DTSID="{74B497F5-383C-449E-B8AE-11E1BC5187BA}"
+      DTS:DTSID="{450E4438-A46A-43BB-BD0A-994BDC36B931}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Accessi Cube"
@@ -35,7 +35,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Corsi Cube"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:DTSID="{3611845A-A6B8-461D-A3A3-6E4AF279735F}"
+      DTS:DTSID="{C10642D7-D80B-463A-A173-4408179AC6DA}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Corsi Cube"
@@ -51,7 +51,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Crediti Cube"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:DTSID="{C021E882-D444-418A-9ADE-B51B3A844A7F}"
+      DTS:DTSID="{4884EF08-9DF3-4357-A29B-2B0978AD1369}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Crediti Cube"
@@ -67,7 +67,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Crediti OpenAI Cube"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:DTSID="{ED257AD7-9D5A-4C1D-AAB9-13119BAD2307}"
+      DTS:DTSID="{24528FC2-EF93-4920-992B-B984C8A0102A}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Crediti OpenAI Cube"
@@ -83,7 +83,7 @@
     <DTS:Executable
       DTS:refId="Package\ProcessFull Documenti Cube"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:DTSID="{30D8DD16-71E5-4B50-8C6B-CBA7A21C6285}"
+      DTS:DTSID="{CF21A5C6-F6BE-45EC-814A-25710C17D588}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProcessFull Documenti Cube"
@@ -101,7 +101,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Accessi Cube_To_ProcessFull Corsi Cube]"
       DTS:CreationName=""
-      DTS:DTSID="{D34AAECA-B0CB-4771-A10D-BF0B305E1E9E}"
+      DTS:DTSID="{C12AEC7B-10A1-48B9-849C-8CBEF259FB84}"
       DTS:From="Package\ProcessFull Accessi Cube"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_ProcessFull Accessi Cube_To_ProcessFull Corsi Cube"
@@ -109,7 +109,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Corsi Cube_To_ProcessFull Crediti Cube]"
       DTS:CreationName=""
-      DTS:DTSID="{52628791-DD70-4C36-BC88-3CDFBE4692CE}"
+      DTS:DTSID="{FA712AA5-BC93-4FE1-A083-8E316562C95C}"
       DTS:From="Package\ProcessFull Corsi Cube"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_ProcessFull Corsi Cube_To_ProcessFull Crediti Cube"
@@ -117,7 +117,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Crediti Cube_To_ProcessFull Documenti Cube]"
       DTS:CreationName=""
-      DTS:DTSID="{54222534-0BE4-4485-8531-EE9AFB061F34}"
+      DTS:DTSID="{B9A8AF79-A0DA-4B76-B37E-D4E56C183859}"
       DTS:From="Package\ProcessFull Crediti Cube"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_ProcessFull Crediti Cube_To_ProcessFull Documenti Cube"
@@ -125,7 +125,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_ProcessFull Documenti Cube_To_ProcessFull Crediti OpenAI Cube]"
       DTS:CreationName=""
-      DTS:DTSID="{579735AF-D3E4-4659-B84E-1CACBA1D3399}"
+      DTS:DTSID="{2FB27844-B747-4FA7-BA05-82FC6CA2C955}"
       DTS:From="Package\ProcessFull Documenti Cube"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_ProcessFull Documenti Cube_To_ProcessFull Crediti OpenAI Cube"

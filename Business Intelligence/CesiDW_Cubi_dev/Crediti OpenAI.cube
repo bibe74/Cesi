@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e3d3109b-a6e2-423e-9cac-27f9c1f85414" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5e37df97-1181-441a-be3c-a8464f849b60" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Crediti OpenAI</ID>
   <Name>Crediti OpenAI</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -189,206 +189,212 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="3c0b074c-112c-446a-b06b-78e772ff59f9">
+    <Dimension dwd:design-time-name="f0df4ae0-aca1-4c8c-8c2a-77db78e8303a">
       <ID>Cliente</ID>
       <Name>Cliente</Name>
       <DimensionID>Cliente</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="2557062e-0484-4b54-8532-6416b8308b34">
+        <Attribute dwd:design-time-name="2d90a088-4acc-4f76-a147-44e725625c07">
           <AttributeID>PK Cliente</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="653568e7-7345-44d9-bd77-0bb486a89fcc">
+        <Attribute dwd:design-time-name="303aaf85-4758-4303-adf9-80235ea388e6">
           <AttributeID>Is Deleted</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="c58b6a39-0d87-46ec-9e18-e7dfd1ad8895">
+        <Attribute dwd:design-time-name="ebb18105-8b4b-4f20-98c9-ab76fe869f89">
           <AttributeID>Codice Cliente</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="596281ee-7439-4560-855d-fa2ba4e21cca">
+        <Attribute dwd:design-time-name="497cd59c-5803-44f2-b6f9-17281e89bbeb">
           <AttributeID>Ragione Sociale</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ac34ae5c-c5ce-49e5-8df2-174eb6460efa">
+        <Attribute dwd:design-time-name="d47275ea-6790-4362-9743-3c56da9330e4">
           <AttributeID>Codice Fiscale</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cc63b0e7-b985-44bb-a4ee-183db9580ead">
+        <Attribute dwd:design-time-name="19f5a478-da59-401c-ad46-acff7701f1d8">
           <AttributeID>Partita IVA</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e4a066cf-382b-4b85-bd86-cbf1ec2a72ce">
+        <Attribute dwd:design-time-name="578e9a3c-4afa-420f-b103-50868b446fc2">
           <AttributeID>Localita</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="3a016aba-4f97-419d-a452-58bf561ddecd">
+        <Attribute dwd:design-time-name="d760e683-5cc2-4d5c-9560-cc2ed545bde8">
           <AttributeID>Telefono</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e86ef0a6-c5b3-4251-9136-e86ac9e97ed2">
+        <Attribute dwd:design-time-name="1869b181-8805-4a9c-9edc-9ca476abf970">
           <AttributeID>Tipo Cliente</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="107537d9-4126-44e2-96a3-07995f0e8e2f">
+        <Attribute dwd:design-time-name="cf477489-eaaf-4339-adba-f68e7200dd22">
           <AttributeID>Agente</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ca3980b2-f88b-45f8-ae45-ba94167b97f0">
+        <Attribute dwd:design-time-name="c0ead489-2485-465a-9825-db4fc8fc3772">
           <AttributeID>PK Data Disdetta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4318c3e7-80bd-41bf-832b-e24aac236188">
+        <Attribute dwd:design-time-name="9e53e5c7-0198-4300-bb4c-dc2b24d4b17a">
           <AttributeID>PK Data Fine Contratto</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6d7de73c-f5c8-4de9-b985-2deb654eda8f">
+        <Attribute dwd:design-time-name="d7b0968e-1777-413a-ba50-ced3dbca442b">
           <AttributeID>PK Data Inizio Contratto</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6986e6e0-9fee-4baf-afb1-468131ceeebe">
+        <Attribute dwd:design-time-name="040098b3-0256-4b00-b050-5bd69e2be7db">
           <AttributeID>ID Anagrafica Cometa</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4e280804-7313-4d7f-8e98-b5147d4f6fcf">
+        <Attribute dwd:design-time-name="94203c16-f333-4a2b-9216-64d8bbfcf94d">
           <AttributeID>Has Anagrafica Cometa</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="caae44c5-89ea-4df9-8b23-96ea22be1eb3">
+        <Attribute dwd:design-time-name="c7c41a15-2495-479f-b8f3-4ad07ec130cf">
           <AttributeID>PK Gruppo Agenti</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b5ccba9c-8f37-45b4-8066-e01f17531629">
+        <Attribute dwd:design-time-name="a319ce27-a701-475f-9ef6-3b4c031f9c8d">
           <AttributeID>Email</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cbb15c9d-6f41-4c94-8a62-ecdb917747c2">
+        <Attribute dwd:design-time-name="24493fd1-d02b-4145-b4b0-617599a2cf5e">
           <AttributeID>ID Soggetto Commerciale</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="c1de92f4-9d65-485c-9cb7-c29822c4b476">
+        <Attribute dwd:design-time-name="59520d14-5dd2-48e4-b156-5e1dfbe77972">
           <AttributeID>Tipo Soggetto Commerciale</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cdeb49da-9c45-46ad-95b5-f663866d3c07">
+        <Attribute dwd:design-time-name="bbdfa1c4-a1b5-4d3f-be4b-4161e5335012">
           <AttributeID>Indirizzo</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="317ef968-d86d-458c-bc97-0209286ce699">
+        <Attribute dwd:design-time-name="81cad306-ea2c-4253-a584-fbe1028a2185">
           <AttributeID>CAP</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="74ac7fe8-67d4-46de-abc4-e1fd5aa629bf">
+        <Attribute dwd:design-time-name="33d872ca-f561-4d3a-bb35-c3e2da5c26bd">
           <AttributeID>Nazione</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="683f91e4-3b61-44ac-acfe-a485cf917565">
+        <Attribute dwd:design-time-name="2e8cb4a0-3df6-48f4-903d-44535d92ff6c">
           <AttributeID>Has Anagrafica Nop Commerce</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0f20cad2-8fc8-4143-b066-d790dbc6d733">
+        <Attribute dwd:design-time-name="cb67df39-42e7-4412-b0b1-7304593ec384">
           <AttributeID>Has Anagrafica My Solution</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8a94b66f-a9e5-4267-b3eb-df30594b64b1">
+        <Attribute dwd:design-time-name="f9d95282-e9bf-49ae-9d06-854ae8b6f7c6">
           <AttributeID>Provenienza Anagrafica</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1eb1905c-a526-430a-8031-69478688ceae">
+        <Attribute dwd:design-time-name="cf5ea57f-6d77-4956-a12c-839332b6264e">
           <AttributeID>Regione</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9f5aea08-5930-4ede-9ef3-9ec2e95df902">
+        <Attribute dwd:design-time-name="53afa2ee-d242-42eb-a8f2-e37a44ad663e">
           <AttributeID>Macroregione</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="33b76a3c-ac6a-4205-a606-9ebdd504a5e8">
+        <Attribute dwd:design-time-name="50c6bf96-19e5-4998-a240-a17c3247c6e1">
           <AttributeID>Cognome</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5b3f8707-4787-4049-a16c-ff0711ae745b">
+        <Attribute dwd:design-time-name="858ed81a-681c-486b-9102-0d76969e691c">
           <AttributeID>Nome</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cac91543-bcfb-4fe8-8ac5-83ce7d186d23">
+        <Attribute dwd:design-time-name="9e033c80-13b6-4b97-bd83-dfa6d5c245f4">
           <AttributeID>Is Attivo</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="73f4388f-b1d5-493c-8c5d-5d6122a4cd1d">
+        <Attribute dwd:design-time-name="391426d6-18db-4146-96cc-c74210112697">
           <AttributeID>Cellulare</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="74eea6db-0c6b-45bb-82a5-7fb5842cb866">
+        <Attribute dwd:design-time-name="11f4bc8e-7320-4bf6-8212-6fbbd9d5d090">
           <AttributeID>Fax</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="aaf3a1e5-50da-4bec-9837-95bbdc34bb9b">
+        <Attribute dwd:design-time-name="290fff16-27b1-422d-bf95-fd9c3a770bf7">
           <AttributeID>Motivo Disdetta</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6754af1a-03ed-4372-8b22-5b5b11bd7971">
+        <Attribute dwd:design-time-name="c69e462e-89d9-49f8-a1c1-55650841a239">
           <AttributeID>Is Abbonato</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="f53992ff-3151-4740-97d5-704ae3cf64d2">
+        <Attribute dwd:design-time-name="b5dd7440-21bb-493f-94ff-96c6d45e632a">
           <AttributeID>ID Soggetto Commerciale Migrazione</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5dc88603-1527-4889-94ec-6bf63001a381">
+        <Attribute dwd:design-time-name="7eb64cf4-509b-434a-b87e-1aae68dcc4b0">
           <AttributeID>ID Soggetto Commerciale Migrazione Old</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d7ce109f-62f9-464d-812e-35ac2f6c2ef9">
+        <Attribute dwd:design-time-name="bb1672a2-82c8-4997-99d1-d8347100703d">
           <AttributeID>Provincia</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7d402d54-7f5b-4a5e-8ebd-52d6ecdbf857">
+        <Attribute dwd:design-time-name="f5fc2672-322f-4f62-bc0d-f5f54d839d36">
           <AttributeID>ID Provincia</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7a8e9971-56c1-4219-b686-e1043fc82596">
+        <Attribute dwd:design-time-name="1fed6d57-db7e-40bb-ba66-5ac2beb5bd04">
           <AttributeID>Is Cliente Formazione</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="54c27446-a17a-408c-ae8f-d34806e3c086">
+        <Attribute dwd:design-time-name="c4389307-cb3d-4200-9fd6-509c4964c992">
           <AttributeID>Capo Area Default</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9aec45b8-8d4d-49ac-ae0d-aed04267bdd5">
+        <Attribute dwd:design-time-name="0d34ff6a-e15b-4038-bbf3-3c639f6159a2">
           <AttributeID>Agente Default</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="46eb2e26-dbbf-429e-8fc6-7296a4d85d5b">
+        <Attribute dwd:design-time-name="2ab3f8f8-70fc-4e81-801a-756034dcd9f2">
           <AttributeID>Has Role My Solution Interno</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="140446b8-a84d-459b-b977-75e60a28584f">
+        <Attribute dwd:design-time-name="96af86b9-c351-4d5a-bfd7-7bced8562a48">
           <AttributeID>Has Abbonamento My Solution</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="73a9755c-ca11-4a52-af5f-8cbf402e5dd4">
+        <Attribute dwd:design-time-name="2d0c939b-b0b6-4c9c-aeb1-63e008e6cc63">
           <AttributeID>Has Abbonamento MIA</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="96de2989-16f0-4c39-825f-ffa20236971d">
+        <Attribute dwd:design-time-name="74b6e051-58de-4cb7-bfa3-354211aa8013">
           <AttributeID>Agente Zoho</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f183a725-1e33-4cf3-b440-0bc0f800e6a6">
+          <AttributeID>ID Professione</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ec95eacb-9f16-4b36-a044-bc77a7650ffb">
+          <AttributeID>Professione</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="6ef6ab71-2fc8-45a5-9208-84a5839d73e6">
+    <Dimension dwd:design-time-name="166ae247-9304-4cb0-9e5b-c09e8c2a6b74">
       <ID>Crediti Open AI</ID>
       <Name>Crediti Open AI</Name>
       <DimensionID>Crediti Open AI</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="fe3a368b-bea9-463b-8ac9-a6eeaa2f5f32">
+        <Attribute dwd:design-time-name="e8246e3a-dbed-46d4-ad1e-db6438af2bd1">
           <AttributeID>PK Crediti Open AI</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ed2016ff-67f1-41fc-a8e5-fcd82838704a">
+        <Attribute dwd:design-time-name="07873cae-6d38-40dc-9517-38618f6008bb">
           <AttributeID>PK Data Scadenza Ordine</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="098e2193-2add-48a6-a2ec-cad7a7363628">
+        <Attribute dwd:design-time-name="3c1bf318-542c-4d55-befe-5ed94f684aa9">
           <AttributeID>PK Cliente</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="fd1b46b0-bd8a-45b0-b018-ac396258e393">
+    <Dimension dwd:design-time-name="c452361a-fb46-4fee-9a8e-fe57d7edd001">
       <ID>PK Data Scadenza Ordine</ID>
       <Name>Data Scadenza Ordine</Name>
       <DimensionID>Data</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="5b5873a5-9216-4382-9a33-c0e0f55aa592">
+        <Attribute dwd:design-time-name="c2b93c13-7514-46a3-98b8-7b61a7587d16">
           <AttributeID>PK Data</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fd9f92ea-5190-434c-b456-d7d647531d23">
+        <Attribute dwd:design-time-name="c4eb6bba-184a-4b58-9933-576134760ed3">
           <AttributeID>Anno</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9a962a63-3311-4971-9d4b-0a9ff74b83fd">
+        <Attribute dwd:design-time-name="09c45eb2-8298-467b-addd-0dc52fc108d0">
           <AttributeID>Mese</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="14d3658c-8cbc-4cf6-881b-b352fe4604ac">
+        <Attribute dwd:design-time-name="f5b3e1db-4fc1-454b-ae6f-7186c47d7dc7">
           <AttributeID>Anno Mese</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1cd6fc60-6e63-4211-9609-06778ac56751">
+        <Attribute dwd:design-time-name="541ce4eb-3e9b-4e75-b818-572c495193ed">
           <AttributeID>Settimana</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="338c557c-75ca-42bc-8893-86654eb31dd8">
+        <Attribute dwd:design-time-name="877a3017-a2db-4a19-b0de-ed3fa0b5da49">
           <AttributeID>Anno Settimana</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="be18879f-5cc5-4f92-bbd8-0acedea9a5e6">
+        <Attribute dwd:design-time-name="bb5f284a-6e50-4dc4-8096-184a19efeed2">
           <AttributeID>PK Data 1</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a9d4a8aa-9d30-4dac-8611-6f5cf4df7c44">
+        <Attribute dwd:design-time-name="9a2722a0-ee04-4c95-9b91-856b7de41194">
           <AttributeID>Giorno Settimana</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="b4327dce-cd0c-4530-b5ed-8701fb5090bf">
+        <Hierarchy dwd:design-time-name="05826c78-8609-4828-a2cf-6657d8678c3f">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="1d95fa12-3c70-4d44-8348-a4298870a7a8">
+        <Hierarchy dwd:design-time-name="fccc7f72-6ea9-4f97-820d-b459005fc43f">
           <HierarchyID>Hierarchy 1</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="e4687a33-5baf-48a9-8e58-172aa2196918">
+    <MeasureGroup dwd:design-time-name="6e3a9713-537c-47f8-ad96-7e68d7e2dac0">
       <ID>Crediti Open AI</ID>
       <Name>Crediti Open AI</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -396,48 +402,48 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="7be01694-36b8-45e6-a97b-1c332b5a4863">
+        <Measure dwd:design-time-name="4b3fe3b3-5f7f-4cd1-8ccc-bcee6c222b8d">
           <ID>Crediti Acquistati</ID>
           <Name>Crediti Acquistati</Name>
-          <Source dwd:design-time-name="2f502c77-cdad-4685-8e2d-77e1643bfb54">
+          <Source dwd:design-time-name="b620d4ca-c02e-45c0-9645-87d1585fa8d1">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="1c4b4811-e28c-4b5a-befb-a5734a99d4d0">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="74151015-cd22-46f7-9d1b-1eccd8e46f90">
               <TableID>Fact_CreditiOpenAI</TableID>
               <ColumnID>CreditiAcquistati</ColumnID>
             </Source>
           </Source>
           <FormatString>#,###</FormatString>
         </Measure>
-        <Measure dwd:design-time-name="8766aabf-b1d0-47b3-becb-ea5d54ab0aad">
+        <Measure dwd:design-time-name="9fc03845-8d4e-40b8-a48f-1cad58ab9185">
           <ID>Crediti Consumati</ID>
           <Name>Crediti Consumati</Name>
-          <Source dwd:design-time-name="33ddc276-1715-4ad3-8d98-aad7d4280145">
+          <Source dwd:design-time-name="f6dff647-ef03-4f3a-9f26-3cd540f757c2">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="973a35ab-908d-4b72-93aa-78cacd117e7e">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7df12cfc-5756-40e1-8ab2-191a0d68d06c">
               <TableID>Fact_CreditiOpenAI</TableID>
               <ColumnID>CreditiConsumati</ColumnID>
             </Source>
           </Source>
           <FormatString>#,###</FormatString>
         </Measure>
-        <Measure dwd:design-time-name="cd6415b3-b59b-4b30-b4ae-62bfd1640b9d">
+        <Measure dwd:design-time-name="58804f3f-a072-42f6-8d16-617847aa3aec">
           <ID>Crediti Fuori Ordine</ID>
           <Name>Crediti Fuori Ordine</Name>
-          <Source dwd:design-time-name="d6fde195-5ac5-4e77-8152-0e58e69a41ac">
+          <Source dwd:design-time-name="846ab5db-0e62-497a-a409-de8f2220a59c">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="035c0651-541f-45e0-ad2d-099ccc133d93">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c2d5e5c6-be81-4071-b13a-70490918a66b">
               <TableID>Fact_CreditiOpenAI</TableID>
               <ColumnID>CreditiFuoriOrdine</ColumnID>
             </Source>
           </Source>
           <FormatString>#,###</FormatString>
         </Measure>
-        <Measure dwd:design-time-name="7bf28e86-2baf-4ce8-9905-9a28cbcdcb1d">
+        <Measure dwd:design-time-name="3b394468-69f6-4d75-be24-6e1616e17651">
           <ID>Crediti Residui</ID>
           <Name>Crediti Residui</Name>
-          <Source dwd:design-time-name="011a1668-e754-4b04-b041-8b04cb9b2a42">
+          <Source dwd:design-time-name="8b978300-3487-426a-9215-6db3ac61dcfd">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="28fe62b8-e631-4522-9c66-d9bfcd7f9290">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b638396b-4ad7-442e-acf5-ad33ac7e4b21">
               <TableID>Fact_CreditiOpenAI</TableID>
               <ColumnID>CreditiResidui</ColumnID>
             </Source>
@@ -448,15 +454,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a9e1c26c-7f8a-4199-9bde-68cf584478f7">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="8afd42c8-52d4-4a5e-aaa6-c2d790a0b3b0">
           <CubeDimensionID>Crediti Open AI</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e32d5a33-fed3-4fe0-8e5d-8d8d8969701c">
+            <Attribute dwd:design-time-name="f62bc079-cea2-4a40-a8d1-d992da8bd0c6">
               <AttributeID>PK Crediti Open AI</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ffa5e506-ece0-4fde-b904-31e85b9ab2e1">
+                <KeyColumn dwd:design-time-name="5a4867b9-0da6-4f0a-b2c0-c92a01982330">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fbf2afc3-6c56-4bc5-9c31-6834d9ae235a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="36edc098-59db-48c4-bd92-8108bd250465">
                     <TableID>Fact_CreditiOpenAI</TableID>
                     <ColumnID>PKCreditiOpenAI</ColumnID>
                   </Source>
@@ -466,15 +472,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ad66a18a-d288-4548-bbd9-639099a3d279">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fdc45e20-0733-4e89-80d6-ba1f7acfc012">
           <CubeDimensionID>PK Data Scadenza Ordine</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c0399998-48f8-48fa-a593-555e79852ea7">
+            <Attribute dwd:design-time-name="f5101a90-bca9-4f7d-9e27-0338a52c126f">
               <AttributeID>PK Data</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e2000243-de6d-41f4-a31e-16cc33523901">
+                <KeyColumn dwd:design-time-name="cfc8328d-411e-4ca2-a4c7-400042f658ec">
                   <DataType>Date</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c3447779-d67a-4d1f-9118-d979a7c06025">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e49105a9-2f31-415a-9ebd-f885b3e4f343">
                     <TableID>Fact_CreditiOpenAI</TableID>
                     <ColumnID>PKDataScadenzaOrdine</ColumnID>
                   </Source>
@@ -484,15 +490,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d5285aba-7047-4ad2-b71e-d0665feb369c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="10749378-7ea1-4d5e-a712-005b8f1d885a">
           <CubeDimensionID>Cliente</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="136c5d8c-19fa-45ea-8003-010f7b48d36c">
+            <Attribute dwd:design-time-name="69d0d873-b4b5-4470-b291-9c1775d0e81d">
               <AttributeID>PK Cliente</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a4d0fb99-1203-494d-ac13-ad30aa43fa84">
+                <KeyColumn dwd:design-time-name="a2e4d96a-5293-4252-9d0a-09f24e9569e1">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f7cc7dc5-b820-40e4-8bd0-be4d7b585765">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3edba2ec-ecda-4684-8c82-b05064e62ec3">
                     <TableID>Fact_CreditiOpenAI</TableID>
                     <ColumnID>PKCliente</ColumnID>
                   </Source>
@@ -506,7 +512,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="684eba6c-d415-4150-bbcd-937ea5bf6d8a">
+  <Source dwd:design-time-name="873472b3-ccae-4a51-97d8-de0c2f8a7249">
     <DataSourceViewID>CesiDW</DataSourceViewID>
   </Source>
 </Cube>

@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d5830460-da6f-4bb2-8445-7d47d97b825e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5b379d8d-44e9-4d20-b160-b174f34feded" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Cliente</ID>
   <Name>Cliente</Name>
   <CreatedTimestamp>2021-01-20T11:04:33.09Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2835" scrolltop="-10676" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11800" y="19791" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2835" scrolltop="-10676" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="15266" y="26141" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -68,10 +68,10 @@
   </Annotations>
   <LastProcessed>2022-01-15T13:05:57.45Z</LastProcessed>
   <State>Processed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="71d89ff3-3119-4401-9e87-889b038de27d">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a86be504-d93a-47fb-b3ef-730c2f8d817b">
     <DataSourceViewID>CesiDW</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="348dd750-9a16-4d70-a743-ef4225e0daf7">
+  <ErrorConfiguration dwd:design-time-name="b83e8f5a-1868-4688-bb27-b840ebdf61e0">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
@@ -81,202 +81,210 @@
   <Collation>Latin1_General_CI_AS</Collation>
   <UnknownMemberName>Unknown</UnknownMemberName>
   <Attributes>
-    <Attribute dwd:design-time-name="2b67ba2e-c9a4-4fdf-a62d-826ef712e434">
+    <Attribute dwd:design-time-name="a833cc1b-e8c9-4de2-94b6-b3450e180677">
       <ID>PK Cliente</ID>
       <Name>PK Cliente</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="875a8999-dcb1-4791-8aa6-9aef2c174c25">
+        <KeyColumn dwd:design-time-name="7f7badb2-539b-42c6-be74-84373ac41a95">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="22a0e0c1-d831-4fa2-8c39-8c7533030d23">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="12b245e7-6167-4f8e-b21c-ec1db62bc344">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PKCliente</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="4c723cc5-343e-4fc9-a022-d29c81aa14d0">
+      <NameColumn dwd:design-time-name="8fd126d9-8203-4937-9923-2c0f0a0e68f6">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="d7e753bb-3b8d-4007-84ae-5e19f57b2175">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6bc64014-9747-49b2-9ce0-48c13274576d">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PKCliente</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="8e3189c4-474c-49f0-b829-0c6c37577a98">
+        <AttributeRelationship dwd:design-time-name="f16362ed-affd-4495-916d-082f2249b26d">
           <AttributeID>Is Deleted</AttributeID>
           <Name>Is Deleted</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3da2ecb9-08e2-41ee-a244-1f82e020e1f5">
+        <AttributeRelationship dwd:design-time-name="76bdd9dc-5585-4106-871d-f8881847f521">
           <AttributeID>Codice Cliente</AttributeID>
           <Name>Codice Cliente</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="7432cdfe-2891-4544-9136-61f897781013">
+        <AttributeRelationship dwd:design-time-name="2e624bb7-f833-49a0-b81c-b50d5ddd951f">
           <AttributeID>Ragione Sociale</AttributeID>
           <Name>Ragione Sociale</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="fb42776b-0803-4df8-b374-a22a8b82dc43">
+        <AttributeRelationship dwd:design-time-name="a6b75fbe-df5c-4888-8d30-3e5801aef8cd">
           <AttributeID>Codice Fiscale</AttributeID>
           <Name>Codice Fiscale</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="16c06e83-c26a-495e-863f-bd615a95816d">
+        <AttributeRelationship dwd:design-time-name="8dc3ce86-7757-41c3-a323-10cd2841e4cc">
           <AttributeID>Partita IVA</AttributeID>
           <Name>Partita IVA</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="711bffea-aa30-4610-b2c9-7bac5ed772bb">
+        <AttributeRelationship dwd:design-time-name="aab9173a-f086-40e2-9703-dec4558cfbd9">
           <AttributeID>Localita</AttributeID>
           <Name>Localita</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="9005bb35-ab81-485f-af72-d2586b28017d">
+        <AttributeRelationship dwd:design-time-name="a5bf34de-21f8-455f-88a8-19ab7d960c93">
           <AttributeID>Telefono</AttributeID>
           <Name>Telefono</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ce51ec48-5f30-40c9-8f11-87c2faee27bf">
+        <AttributeRelationship dwd:design-time-name="f218e7d2-c6dc-44df-9968-38340ee9204e">
           <AttributeID>Tipo Cliente</AttributeID>
           <Name>Tipo Cliente</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="32498fda-a861-4fea-8867-11e20a3e7fbb">
+        <AttributeRelationship dwd:design-time-name="7e3b5664-161d-4516-ad8b-1471cecf6a83">
           <AttributeID>Agente</AttributeID>
           <Name>Agente</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="caa54bf2-6667-4001-b773-51e705b8c3e0">
+        <AttributeRelationship dwd:design-time-name="52904db1-f37c-4fa1-afbf-a4706544218a">
           <AttributeID>PK Data Disdetta</AttributeID>
           <Name>PK Data Disdetta</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="19e1e70d-8f5d-4aac-ab78-0545183b03e5">
+        <AttributeRelationship dwd:design-time-name="77a24232-62fd-41b3-89b9-512f30e9c631">
           <AttributeID>PK Data Fine Contratto</AttributeID>
           <Name>PK Data Fine Contratto</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="28f6f21e-34f8-4f26-a643-68ff5358901d">
+        <AttributeRelationship dwd:design-time-name="89e8272e-d0b0-4516-8d55-9da8aae58fca">
           <AttributeID>PK Data Inizio Contratto</AttributeID>
           <Name>PK Data Inizio Contratto</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="01957d3c-f8c1-4e8d-9a9c-ae1984418da5">
+        <AttributeRelationship dwd:design-time-name="c7d1b8ee-f85b-484a-aeec-fce37befe442">
           <AttributeID>ID Anagrafica Cometa</AttributeID>
           <Name>ID Anagrafica Cometa</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="d4b95282-7bfc-4265-ab76-3e595f8151e4">
+        <AttributeRelationship dwd:design-time-name="f4ea07f6-ea95-4722-80f6-c80257e1e3d6">
           <AttributeID>Has Anagrafica Cometa</AttributeID>
           <Name>Has Anagrafica Cometa</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="09077987-39f1-4b25-82b1-85e16afd932d">
+        <AttributeRelationship dwd:design-time-name="fb6b40c1-4187-4a8a-91a5-12066ef32438">
           <AttributeID>PK Gruppo Agenti</AttributeID>
           <Name>PK Gruppo Agenti</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="b0da7b7a-ce27-463c-813d-5805970cfc88">
+        <AttributeRelationship dwd:design-time-name="0cf3cdb1-5f70-4bdb-b71e-8ddc9981a54b">
           <AttributeID>Email</AttributeID>
           <Name>Email</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="666843e5-440f-4bf7-87d6-19e7e2da89b1">
+        <AttributeRelationship dwd:design-time-name="db7a7f34-43bf-4a46-9f6a-7a0503934ac7">
           <AttributeID>ID Soggetto Commerciale</AttributeID>
           <Name>ID Soggetto Commerciale</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="378fa147-939d-4b4b-be4b-74da4e2a69dd">
+        <AttributeRelationship dwd:design-time-name="1b835081-2d82-4c25-af54-1765d6ed107d">
           <AttributeID>Tipo Soggetto Commerciale</AttributeID>
           <Name>Tipo Soggetto Commerciale</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="1f2902b0-975e-4b6b-810a-21429e4275ed">
+        <AttributeRelationship dwd:design-time-name="6df400bf-ddb7-45e2-90b0-bfe53fee5e4a">
           <AttributeID>Indirizzo</AttributeID>
           <Name>Indirizzo</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="9ee4da96-95a1-4b64-a5ec-5c31c399dcd9">
+        <AttributeRelationship dwd:design-time-name="25995ff2-241d-47e2-b9f7-8b27da32ac24">
           <AttributeID>CAP</AttributeID>
           <Name>CAP</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="6f441ad4-2b92-49c2-943d-db381c6ef70d">
+        <AttributeRelationship dwd:design-time-name="f6e43607-1ab2-4928-a860-8191a93cfbfa">
           <AttributeID>Nazione</AttributeID>
           <Name>Nazione</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="e71a9408-138e-4db2-a3dd-52e192277ada">
+        <AttributeRelationship dwd:design-time-name="035e6c67-1a87-4793-a5b2-dca47b2982dd">
           <AttributeID>Has Anagrafica Nop Commerce</AttributeID>
           <Name>Has Anagrafica Nop Commerce</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ddd0c724-7d5f-49e9-ba9a-229d46881ad2">
+        <AttributeRelationship dwd:design-time-name="50d248f7-5bee-4bcb-97ec-46584aa7ef91">
           <AttributeID>Has Anagrafica My Solution</AttributeID>
           <Name>Has Anagrafica My Solution</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="0608a332-6735-425c-a33e-736298f966ad">
+        <AttributeRelationship dwd:design-time-name="2536a111-c75a-4cb4-99a7-a8c27908ee92">
           <AttributeID>Provenienza Anagrafica</AttributeID>
           <Name>Provenienza Anagrafica</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="63cdc759-2c38-4866-aa3c-3764814b8bbf">
+        <AttributeRelationship dwd:design-time-name="715ff010-7da6-422d-8f79-29800f546dea">
           <AttributeID>Regione</AttributeID>
           <Name>Regione</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="bccee630-dcd9-4694-9b2c-4069a1fc3980">
+        <AttributeRelationship dwd:design-time-name="93915bb1-063d-49df-9024-423359ab7977">
           <AttributeID>Macroregione</AttributeID>
           <Name>Macroregione</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="f193c97c-b389-42d4-8191-c7526ffa6f36">
+        <AttributeRelationship dwd:design-time-name="76b68060-49fe-474c-b34d-7f2978d2e73d">
           <AttributeID>Cognome</AttributeID>
           <Name>Cognome</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="807b8fc6-0b44-4ad8-81ab-35954f8a9dc4">
+        <AttributeRelationship dwd:design-time-name="6ae39b7c-58d3-4839-8af6-645b791eb273">
           <AttributeID>Nome</AttributeID>
           <Name>Nome</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="73f7d61c-1e03-46ba-a3c8-afde2804dcef">
+        <AttributeRelationship dwd:design-time-name="c6819634-55d2-498a-8660-1fef7db660a7">
           <AttributeID>Is Attivo</AttributeID>
           <Name>Is Attivo</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="1d801c3c-aa64-437f-8b89-5f104a13ba1c">
+        <AttributeRelationship dwd:design-time-name="ccff3b2f-1514-4503-b936-019b5b76dfd0">
           <AttributeID>Cellulare</AttributeID>
           <Name>Cellulare</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="58fe9032-b7b7-4890-9f11-c7a24e95026c">
+        <AttributeRelationship dwd:design-time-name="d0892da2-705f-4ddd-b62a-7e206635526d">
           <AttributeID>Fax</AttributeID>
           <Name>Fax</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3a1cb243-e81a-4ab9-806a-1c6a5e0b5a9c">
+        <AttributeRelationship dwd:design-time-name="b75b6001-50b1-4f3f-a52d-f10aa3435980">
           <AttributeID>Motivo Disdetta</AttributeID>
           <Name>Motivo Disdetta</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="54d4eda7-4a6e-4bec-b569-921af9a5e128">
+        <AttributeRelationship dwd:design-time-name="98169ca0-5f4f-483e-bdf1-7f8e57cd6df9">
           <AttributeID>Is Abbonato</AttributeID>
           <Name>Is Abbonato</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="0c4e8a0a-0873-4f71-b910-510f81474912">
+        <AttributeRelationship dwd:design-time-name="e228554e-e98b-4217-bf2b-d80eea04512b">
           <AttributeID>ID Soggetto Commerciale Migrazione</AttributeID>
           <Name>ID Soggetto Commerciale Migrazione</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="35e210be-519c-493c-b6d4-8a7eadea3ca8">
+        <AttributeRelationship dwd:design-time-name="38a6355e-a24d-4872-82e7-d6f24e003034">
           <AttributeID>ID Soggetto Commerciale Migrazione Old</AttributeID>
           <Name>ID Soggetto Commerciale Migrazione Old</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="17fe6e38-a34a-45bb-a232-590b3d65ed84">
+        <AttributeRelationship dwd:design-time-name="1afe94c0-fc1f-4c53-b650-79dd19e629d0">
           <AttributeID>Provincia</AttributeID>
           <Name>Provincia</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3ae48617-63a4-4e9b-a29c-eafda5b8faca">
+        <AttributeRelationship dwd:design-time-name="05ee20a1-727b-46fe-bb04-8b60222e8476">
           <AttributeID>ID Provincia</AttributeID>
           <Name>ID Provincia</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="727ecac2-5226-4891-a9e0-7a8ebb67bfbc">
+        <AttributeRelationship dwd:design-time-name="f8efe222-2d07-4a95-8a9e-cb59d4e1b74f">
           <AttributeID>Is Cliente Formazione</AttributeID>
           <Name>Is Cliente Formazione</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="bf68b106-a73e-43a6-884e-00803f4c7ebb">
+        <AttributeRelationship dwd:design-time-name="f58a4616-a3e0-477f-abc9-943cfb701956">
           <AttributeID>Capo Area Default</AttributeID>
           <Name>Capo Area Default</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3e837f6a-4947-476b-b603-738fe568dcd0">
+        <AttributeRelationship dwd:design-time-name="8c8b098c-e540-4754-bd98-633e4b0bde74">
           <AttributeID>Agente Default</AttributeID>
           <Name>Agente Default</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="d76f9c11-2f2b-41a8-8042-674fd5f8df78">
+        <AttributeRelationship dwd:design-time-name="6a15a7b1-3e17-4814-82a2-7d39bf45616b">
           <AttributeID>Has Role My Solution Interno</AttributeID>
           <Name>Has Role My Solution Interno</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="aee71685-5aec-4467-8204-264939b3d863">
+        <AttributeRelationship dwd:design-time-name="088c6d84-206a-46c5-a3e3-a1df4e12c79a">
           <AttributeID>Has Abbonamento My Solution</AttributeID>
           <Name>Has Abbonamento My Solution</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="97173f09-fe90-4edf-85cf-23b5a94e1f47">
+        <AttributeRelationship dwd:design-time-name="0c302a95-3985-4530-9964-e15bca8f6ae1">
           <AttributeID>Has Abbonamento MIA</AttributeID>
           <Name>Has Abbonamento MIA</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ff1e1742-5457-4b46-bc90-fdf72417632c">
+        <AttributeRelationship dwd:design-time-name="e17f6532-5a3d-43a7-a834-652dd1dc1098">
           <AttributeID>Agente Zoho</AttributeID>
           <Name>Agente Zoho</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fa28625e-dd6f-422e-a44f-ed9537a710d8">
+          <AttributeID>ID Professione</AttributeID>
+          <Name>ID Professione</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9212ec85-599f-437d-8a87-925e626ab30d">
+          <AttributeID>Professione</AttributeID>
+          <Name>Professione</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
@@ -284,21 +292,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="5501441e-7c21-4bb3-b381-ea261191c61d">
+    <Attribute dwd:design-time-name="96b12509-3c93-4261-abaf-78c7871444e5">
       <ID>Is Deleted</ID>
       <Name>Is Deleted</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="355ca92f-e045-4d7e-b597-58bbd90c8ba7">
+        <KeyColumn dwd:design-time-name="e160e630-919d-477b-b163-fcaf5b3e2e3a">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1875b080-c3ba-4ff5-8aaa-84dfd58dccf3">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ebf91785-dabd-4561-8f90-0cb51e9316e6">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IsDeleted</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="280bee0f-a2cb-4521-bbe2-35367b9bfa23">
+      <NameColumn dwd:design-time-name="b91686c4-2ca2-4651-afdc-c8c21b5ed431">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="fce60880-c21b-4d45-9039-f4993f5bc6de">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a7216ac8-624c-4a28-9eb8-22a371720e28">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IsDeleted</ColumnID>
         </Source>
@@ -308,23 +316,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d35486f9-0570-48cc-9497-e7af2e90857f">
+    <Attribute dwd:design-time-name="2eed12f4-8d2d-47d0-b464-e8f545068e52">
       <ID>Codice Cliente</ID>
       <Name>Codice Cliente</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7c2a105a-d092-44dd-ae7d-6fa593eae429">
+        <KeyColumn dwd:design-time-name="21522101-284b-4e62-a81b-46d21ab5644a">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="36a5eae1-68a5-4cb3-bd02-e69c8d40840b">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1dbf36f3-cce7-48ce-ada9-1bfc29a0bff0">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>CodiceCliente</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="1bda6508-de92-4812-9026-8db424161d91">
+      <NameColumn dwd:design-time-name="d5d1b4f6-bcb6-4495-b3c4-2daf0e5010e4">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="6bf6db74-8a53-4e7c-be59-ee39b3ac372f">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="44daad36-38b3-4c20-b147-0ef16c366f83">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>CodiceCliente</ColumnID>
         </Source>
@@ -334,23 +342,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="9e563f8d-8925-4f86-8ff5-dd620fae8211">
+    <Attribute dwd:design-time-name="2dd7bb9a-438a-43b1-baae-4f7107e4d179">
       <ID>Ragione Sociale</ID>
       <Name>Ragione Sociale</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="216c3577-8e4b-4e27-9001-3c325835820b">
+        <KeyColumn dwd:design-time-name="7c0eb89d-b3ca-4e27-9944-57f60915e37f">
           <DataType>WChar</DataType>
           <DataSize>120</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="24aa1c3a-9c26-46be-a2c3-05cf4b042a4f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="624e709b-238c-4196-80d7-4e806ebe4246">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>RagioneSociale</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="e63b2d51-8080-4719-a1b5-01a464b722f6">
+      <NameColumn dwd:design-time-name="ac04cc66-d10d-4de0-afd0-f815c13e43fa">
         <DataType>WChar</DataType>
         <DataSize>120</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="97b0b39f-da40-4ae8-ab3f-bd509f1ba9d4">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="71a6d037-e660-4844-b629-f59d5acfc7bf">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>RagioneSociale</ColumnID>
         </Source>
@@ -360,23 +368,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="df84239c-eb64-4a1b-b61f-ff50dbee91fd">
+    <Attribute dwd:design-time-name="645e3021-b95f-48b6-a8df-e7c455d771a6">
       <ID>Codice Fiscale</ID>
       <Name>Codice Fiscale</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8fff8344-f529-474a-bf83-9d23ad62c43a">
+        <KeyColumn dwd:design-time-name="051e448c-883d-4e7d-a43b-49c484d671e1">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="59e0c8f0-c92c-4d78-a444-0aad6f16fb0e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="62c55a9e-712c-495c-8c17-176ad37019cb">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>CodiceFiscale</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="3f5ad413-c49c-4d86-96f0-efbcccf72d10">
+      <NameColumn dwd:design-time-name="2375c7a3-5a3c-4382-bc76-447b4976ae29">
         <DataType>WChar</DataType>
         <DataSize>20</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="fe0cacf5-a1c6-47c1-92d8-2409377d4e17">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3fb6d765-2e39-488a-ac97-7675ee1f1161">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>CodiceFiscale</ColumnID>
         </Source>
@@ -386,23 +394,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="5d42cc34-8320-409c-8b15-0dbd77cef4dd">
+    <Attribute dwd:design-time-name="5cc043d8-ed40-44f1-8b2e-dd10d9e54421">
       <ID>Partita IVA</ID>
       <Name>Partita IVA</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f818a33d-de78-4d3f-8fa7-c30a85b6347f">
+        <KeyColumn dwd:design-time-name="0711231b-b2d4-4144-a0d4-ff9534dd5a58">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="72de17a0-40f0-4a4a-bcea-b8bf0e924db9">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ce00c12c-59ea-42ed-b057-4d74435dd6c7">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PartitaIVA</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ff1c10b3-f7b0-4efc-89a3-619cab6e6696">
+      <NameColumn dwd:design-time-name="abe57f3d-f31e-490c-b1e5-f8dd3939b2f1">
         <DataType>WChar</DataType>
         <DataSize>20</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="82871007-8c74-4cf5-834f-9c96718663c5">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7abfee8b-a483-4d2a-a5ce-6e2608c75eae">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PartitaIVA</ColumnID>
         </Source>
@@ -412,23 +420,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="dfe0bda7-deae-4c42-b70c-cf9dc84f5042">
+    <Attribute dwd:design-time-name="350edc58-85a7-4a74-b8c4-78dcce108864">
       <ID>Localita</ID>
       <Name>Localita</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2f8776c7-1a70-4b78-aa1b-4d19b46cf4c3">
+        <KeyColumn dwd:design-time-name="c533a496-3574-4347-af42-ba1890f95c3b">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="80b22c9b-0b40-4202-b022-49d412513253">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5e574a60-e45d-4ff2-ab77-6ce9c92bf167">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Localita</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="5b304d77-9816-46bf-946c-7789634d9f64">
+      <NameColumn dwd:design-time-name="4201891d-3780-4a8f-8a66-e944cf1d7033">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="c44c2b65-dce6-4709-90da-6f4374d7aef2">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="eb974fec-82f9-49bf-9dfb-1a809d9726e6">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Localita</ColumnID>
         </Source>
@@ -438,23 +446,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="df3ed009-8a4b-4a54-a4fe-8600a0256e63">
+    <Attribute dwd:design-time-name="44d43762-da98-4d44-b1b0-fa1e676401b5">
       <ID>Telefono</ID>
       <Name>Telefono</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="72a0bda8-e533-4df5-af49-28e265fddf51">
+        <KeyColumn dwd:design-time-name="3094ec48-dc6c-4276-87f7-37d2b2beb308">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6aa99f6-aa8a-4742-bb28-3d021252d82f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8ee102e-8632-43d1-a5b2-4e7e840f9263">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Telefono</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="457e52f6-0816-42a8-9ade-3bf97e3957da">
+      <NameColumn dwd:design-time-name="8a5011cf-006b-4579-92ee-74d39467bd25">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="5b766a8e-e4a9-443d-a97f-9b214eea52b6">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f55a633f-556f-432a-a4a8-6cb6288a45d5">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Telefono</ColumnID>
         </Source>
@@ -464,23 +472,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="a3704894-2927-49a6-9e62-a9d051ac309c">
+    <Attribute dwd:design-time-name="4d72e07d-50eb-44cb-9177-757007f226a9">
       <ID>Tipo Cliente</ID>
       <Name>Tipo Cliente</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9937f22c-84f5-422b-b156-94c156558a70">
+        <KeyColumn dwd:design-time-name="2974c766-e315-405e-bdbd-58597a2ca98a">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6e848aac-5a55-4746-8ac9-169d2da17841">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7aee56b6-72ca-44cf-9259-594cb41dcbb9">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>TipoCliente</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="5bca2346-85fe-4578-83fb-421e6b37b992">
+      <NameColumn dwd:design-time-name="7f438239-a532-41cd-a979-1c19f4854e0f">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e9c059f7-5da1-4b90-a7c0-b7fc7bed76a4">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="74939e7f-a6ff-4bec-9d05-a282875d3a41">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>TipoCliente</ColumnID>
         </Source>
@@ -490,23 +498,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="40b40700-7d0d-4e0b-ad53-7de094b80bca">
+    <Attribute dwd:design-time-name="7e7111b1-7fb0-40f0-8bf3-7d2514e418d8">
       <ID>Agente</ID>
       <Name>Agente</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0ea3999e-c1f4-4adf-b672-2fb344d8054d">
+        <KeyColumn dwd:design-time-name="f73af83d-cd91-4317-82b9-011b4966e7e7">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="cdcf9451-1366-46f4-a8a0-b9d549ef236c">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f2783a0-f212-43d7-a5af-ebb1a61f4ac8">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Agente</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="26e6490c-05c7-4e4a-928d-c649c0d8d927">
+      <NameColumn dwd:design-time-name="0ed0edb4-3172-40ac-b40f-d1efa3262b3b">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="38feee6f-fd44-4e01-aec4-e4653995336a">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="01928d8f-f9de-4585-909c-a03366e2cdb0">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Agente</ColumnID>
         </Source>
@@ -516,21 +524,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="47d7c6cb-9144-44fd-8dcb-2cd689c31374">
+    <Attribute dwd:design-time-name="0d153d45-1bec-4b83-9b9f-8567dc495595">
       <ID>PK Data Disdetta</ID>
       <Name>PK Data Disdetta</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="495e844d-a437-4650-9976-698c8c232d80">
+        <KeyColumn dwd:design-time-name="94c7ed72-c7eb-48fb-a727-9bb2e33f2b87">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="39491c9d-6bfd-4887-9e1f-b67e8053121d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f2ec266-c905-429d-990c-efacaf94d854">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PKDataDisdetta</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="038f275c-1287-44fb-8e63-2f24eea2725b">
+      <NameColumn dwd:design-time-name="4730146a-0304-4445-99a5-a2eb1d8a2af0">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="3437e0ea-1354-4312-a334-2ebc14ffb967">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d54f9429-e00c-4e25-a08f-6f2b59379dae">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PKDataDisdetta</ColumnID>
         </Source>
@@ -541,21 +549,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="49ef3727-5daa-4415-bf6c-b086ea5d9f00">
+    <Attribute dwd:design-time-name="aff13426-7f2d-412c-8995-b5d99f84b589">
       <ID>PK Data Fine Contratto</ID>
       <Name>PK Data Fine Contratto</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a8aa7154-d5d4-45e2-ad7b-8c6dc2891c8a">
+        <KeyColumn dwd:design-time-name="44a14d99-0fa3-43d9-9601-0776678598ec">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="714c3470-146e-49a5-981e-77273bcbd657">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e7e4df94-066d-4055-9184-9bc01743dd92">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PKDataFineContratto</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bd2a4a3e-ffb0-4f68-90bb-394ac76ee674">
+      <NameColumn dwd:design-time-name="cad326a0-8bd4-48d9-91e4-fbcfa801b5d6">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="68f72e51-8fc8-4a6d-aa52-c2d08f3e5a0c">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="61de4206-560d-4b30-a961-edc69b011a58">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PKDataFineContratto</ColumnID>
         </Source>
@@ -566,21 +574,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3c60c6eb-e5b4-4e97-8ca2-9aa73f063526">
+    <Attribute dwd:design-time-name="7558bf75-61af-42ba-9838-c39645961172">
       <ID>PK Data Inizio Contratto</ID>
       <Name>PK Data Inizio Contratto</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9cf14849-5405-4418-b98c-251aa52ffd65">
+        <KeyColumn dwd:design-time-name="2d50d71b-e807-4a9e-8c2f-83fa9fc27667">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1fb5f364-9be7-4583-b828-6421fb16ee4d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6621d4aa-6a27-4547-b7ff-5485252f79dd">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PKDataInizioContratto</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bf7cb66f-cc41-4625-9887-08be887bf576">
+      <NameColumn dwd:design-time-name="3fe726ed-4ee8-48f6-98a3-dd1e5b9b27fd">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8d1c5314-9bf3-4bc6-a095-41ee032e6ef6">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e761a8b3-8cec-45a6-9a20-f38c0eb4496b">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PKDataInizioContratto</ColumnID>
         </Source>
@@ -591,21 +599,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="61f3c066-49c1-47fd-8df4-e80b591e2ac2">
+    <Attribute dwd:design-time-name="bfaca497-bc55-4e8b-958a-9152e4751575">
       <ID>ID Anagrafica Cometa</ID>
       <Name>ID Anagrafica Cometa</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="db297953-5200-43d5-b140-f48e2a5ac266">
+        <KeyColumn dwd:design-time-name="d81c55dd-f467-4880-93a6-38bf72e0ae42">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1b57c14-8ff8-4ecb-848a-20bed3e206d7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b42c7172-bcc8-44ab-ab2b-c6294e987d06">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IDAnagraficaCometa</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="0343fe47-1e0d-44ad-b997-488bf1262f30">
+      <NameColumn dwd:design-time-name="7dfaee30-d53d-4d63-b3c2-e30ec5a79f98">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="d217c651-cde9-4e65-902a-05e92c9791fe">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="78f2d780-dbe5-4703-8c31-f0733bd06f17">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IDAnagraficaCometa</ColumnID>
         </Source>
@@ -614,21 +622,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="18c24305-3fbc-4e8c-a915-17030489773b">
+    <Attribute dwd:design-time-name="58827809-a686-48ea-8c8d-3df13906b132">
       <ID>Has Anagrafica Cometa</ID>
       <Name>Has Anagrafica Cometa</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7d8968e4-a103-492f-8d49-388d5f592b32">
+        <KeyColumn dwd:design-time-name="c5a8531a-b943-4827-b6ab-f79163d2f988">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac09df41-f866-4c37-99df-a6c994fcc1ef">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3067b065-2313-43ea-b4e6-3428e381c0af">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasAnagraficaCometa</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="1135d314-f5f5-492d-a4be-0ae29b8492fc">
+      <NameColumn dwd:design-time-name="d8e1991d-acde-407a-8fe5-acadd4eb34c1">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="34979bc0-9ace-4589-bf38-fa59f3c2f3bd">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6191d27a-4bcc-4d01-870d-1142ace7f207">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>HasAnagraficaCometa</ColumnID>
         </Source>
@@ -637,21 +645,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="cd0e7b7a-4078-41c0-bce7-559f862339d1">
+    <Attribute dwd:design-time-name="c7dc4dc0-aff3-4480-b451-0e38868cc425">
       <ID>PK Gruppo Agenti</ID>
       <Name>PK Gruppo Agenti</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bcf2a593-db81-4b89-b62a-e2a194ce680b">
+        <KeyColumn dwd:design-time-name="1cf6f5a2-d2eb-482d-8444-a7e691b50d23">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2afb45f0-fc5b-42ae-8940-e7c3f51966d1">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b19e756b-8a26-4d94-baa7-bfe8ed5867e2">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>PKGruppoAgenti</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b94d3314-b27e-4e4a-b39a-b771c5fb2e37">
+      <NameColumn dwd:design-time-name="96b713e6-660d-453e-85a9-c6b144fc4ee8">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="a25c13ee-13e8-47c5-af41-56f1ae704c24">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3c04caca-db84-42a4-a601-32886ec1580f">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>PKGruppoAgenti</ColumnID>
         </Source>
@@ -661,23 +669,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="6d3bf6d8-7674-42cf-add7-0f6329ce5f66">
+    <Attribute dwd:design-time-name="1489a95e-8951-4b99-8beb-7facb213edaf">
       <ID>Email</ID>
       <Name>Email</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2461a9fd-d9b8-4794-a74d-e93f8a1422b3">
+        <KeyColumn dwd:design-time-name="fcdfa133-4ecd-4cd8-9e70-d2a291a423cb">
           <DataType>WChar</DataType>
           <DataSize>120</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b63389d2-4f49-445b-bcd7-ed371856fb28">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eea832a4-ac3d-47f3-8943-8eeead4193d5">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Email</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b169b0b7-e271-4aa3-b960-98203b64740c">
+      <NameColumn dwd:design-time-name="353ac827-7255-4049-af4d-64a34b38abad">
         <DataType>WChar</DataType>
         <DataSize>120</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="5f5c1d51-790d-4265-b5f1-331be2cfc167">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="eb32513e-dcad-443b-9c02-8301cf28b02b">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Email</ColumnID>
         </Source>
@@ -686,21 +694,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="421c31c0-1d30-478a-bdeb-b254698100c0">
+    <Attribute dwd:design-time-name="c94c07e0-79b3-4f88-bb4f-8b1361e680d9">
       <ID>ID Soggetto Commerciale</ID>
       <Name>ID Soggetto Commerciale</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="515a2546-d7bf-4e7b-8fbf-0dfb08f71c2d">
+        <KeyColumn dwd:design-time-name="0af21f7e-8cfa-4492-a77a-199e4dcd76f0">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc7669bb-240d-4672-8d84-db9bbe4fce19">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ce275d9-970e-489b-9664-38d783b3363c">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IDSoggettoCommerciale</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="c04ddb37-3429-4243-8651-38404dc0ce8f">
+      <NameColumn dwd:design-time-name="37e14fb9-2b11-4950-b1c3-b358350b595e">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="93c3da2e-a55d-472b-b7a4-8f49aef74e2c">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0cc9dff1-f067-4347-ab63-da9ecd40385b">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IDSoggettoCommerciale</ColumnID>
         </Source>
@@ -709,23 +717,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d5a541d7-fde4-4554-8c1b-4b3c4115edb7">
+    <Attribute dwd:design-time-name="c464634c-b439-4506-8faa-7b671b893577">
       <ID>Tipo Soggetto Commerciale</ID>
       <Name>Tipo Soggetto Commerciale</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="eef542f1-9301-4d04-8a05-8d67a3b279dd">
+        <KeyColumn dwd:design-time-name="09a223c1-9df4-4e1a-8a15-f81e7a9e5026">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a89d9778-b53e-4f54-b7db-56b6eb064524">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="03df4780-1792-4b05-8df0-b7c273eeadb5">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>TipoSoggettoCommerciale</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ec648036-6671-4b0f-8b86-245011365234">
+      <NameColumn dwd:design-time-name="ff0d412f-3b58-4ed1-85cb-bd5c4521f09f">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="b8332674-dbf2-4f3b-a7b9-f13e300a1808">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3cac3bc7-677b-4296-9c5e-81872aac50b6">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>TipoSoggettoCommerciale</ColumnID>
         </Source>
@@ -734,23 +742,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="532c619f-550d-4d26-9bfa-c9f55998de80">
+    <Attribute dwd:design-time-name="7c6a0e16-2942-4d60-bfba-f4a8812a8fac">
       <ID>Indirizzo</ID>
       <Name>Indirizzo</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8912d8b6-e69c-4087-ace2-28e007965db8">
+        <KeyColumn dwd:design-time-name="24edf8f9-f523-4ad1-9b2d-416aaab3e3df">
           <DataType>WChar</DataType>
           <DataSize>120</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f5ea593b-f7f9-408e-a156-6a6483284293">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a7f7399c-3009-4aa1-ab5a-c92c51bd676c">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Indirizzo</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="3b0b8587-5641-4f04-b175-777fcaeb9969">
+      <NameColumn dwd:design-time-name="e0a1bd59-bd78-4ff9-b200-a7ea2da14fe1">
         <DataType>WChar</DataType>
         <DataSize>120</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="6686068e-f561-48d8-9eb6-c4f7ce0f892a">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="277ea68d-e607-46d0-8bec-6063f196fb28">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Indirizzo</ColumnID>
         </Source>
@@ -759,23 +767,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="00c351ea-c2fb-42e4-8505-a5d784207369">
+    <Attribute dwd:design-time-name="d4b810f2-7559-46b7-a7f6-168b6be8d1bd">
       <ID>CAP</ID>
       <Name>CAP</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="22554110-3c70-40d9-91e8-80e2d1348fa3">
+        <KeyColumn dwd:design-time-name="c60b54e6-2283-49da-9df7-b416d3601a1d">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="be78b607-db23-40af-bcd3-bd3f88d286a4">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eb2ee799-5e5c-48a5-88b2-078a0a17190a">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>CAP</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="3f265db4-fa92-4c0a-8fb7-8e8f2c9e3e0b">
+      <NameColumn dwd:design-time-name="5ecc68d5-a9d0-4409-bfdc-4743157978c2">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="b0d34d3b-adfe-4d89-b6d7-2f0c09ff65d9">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f748fc86-e59b-451f-a9f4-357db16a9fc0">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>CAP</ColumnID>
         </Source>
@@ -784,23 +792,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="6afaf947-7846-4539-9b1e-70fcfbb95395">
+    <Attribute dwd:design-time-name="d3b0fccc-769b-417a-9e59-aa9ccefa0f4e">
       <ID>Nazione</ID>
       <Name>Nazione</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="b47310fe-43be-4892-bf94-23b97b5b070b">
+        <KeyColumn dwd:design-time-name="b11f0759-54ba-4b00-aedb-31faf956f810">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a59710c6-86bc-4cfc-bfef-ba42672b25c8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="432e76a7-52c7-4733-aeeb-4e974c35df0a">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Nazione</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b7452207-41d6-487d-83c5-0a6c82159cd2">
+      <NameColumn dwd:design-time-name="936581ef-5fca-4b69-a70d-9ba47cda65c4">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="bdd1dc69-d94b-4bdf-b719-c8be5bf8798c">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="982398da-534f-42e2-a677-8e6a1dfc2ad3">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Nazione</ColumnID>
         </Source>
@@ -809,21 +817,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="440e20e2-ec43-4ad9-9ffd-68b0f08db57f">
+    <Attribute dwd:design-time-name="e6b29e99-6220-4665-a190-cb3ab7e7e941">
       <ID>Has Anagrafica Nop Commerce</ID>
       <Name>Has Anagrafica Nop Commerce</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="b5d8ecfb-7563-4d61-b0cc-26ba9730838f">
+        <KeyColumn dwd:design-time-name="8391274d-8dcf-44aa-acef-2df3d7b41358">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="761f126a-9919-404a-ab8e-e9475bf495bd">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="215f0c7d-f10a-4c0f-b5e9-ba62ae0b958b">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasAnagraficaNopCommerce</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ce085336-a2c6-4322-acf8-c9202e39eddc">
+      <NameColumn dwd:design-time-name="129ef11c-ec76-420e-b101-3224a4c2a72c">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="9025aa82-8f3c-4979-b3e9-9078411497ab">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="85bac7a7-1df1-494e-80dd-273194da0e38">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>HasAnagraficaNopCommerce</ColumnID>
         </Source>
@@ -832,21 +840,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="ea8e4979-7ac4-41d2-b256-f51c54940835">
+    <Attribute dwd:design-time-name="37697a69-16ba-4186-a80b-63b89f3420f0">
       <ID>Has Anagrafica My Solution</ID>
       <Name>Has Anagrafica My Solution</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="b9712c1c-a193-4972-92cc-1d3cd22a15b8">
+        <KeyColumn dwd:design-time-name="8611466f-f74b-433a-88fc-bf2a5cf4b35c">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d114405e-a1c8-414c-ada8-f772b5b3020a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="30c1067d-2a6f-4bcc-943e-d4404be8a376">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasAnagraficaMySolution</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="d3734d32-268c-4508-9236-0f3868493a9e">
+      <NameColumn dwd:design-time-name="2cece143-1f2e-4d8d-b7af-07cd16752e84">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="2ec0b48a-5c04-4bba-9a54-3ac042674c9d">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d458fb9e-ac81-4cf0-8c51-e9d66247d1a5">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>HasAnagraficaMySolution</ColumnID>
         </Source>
@@ -855,23 +863,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="770ab4ac-77b2-4d11-b196-c44169884e8a">
+    <Attribute dwd:design-time-name="bbc652d1-7cc2-4d74-b1c7-808c1e64d5a1">
       <ID>Provenienza Anagrafica</ID>
       <Name>Provenienza Anagrafica</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="3eb989a8-ec24-4dc2-bb3a-f9abf5956760">
+        <KeyColumn dwd:design-time-name="4bc7614b-93fe-426b-b68e-f9b29543e599">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="db597e21-96ee-44cb-ad0f-f116b851b956">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c47a112b-6d6d-48db-b0f8-519983215be1">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>ProvenienzaAnagrafica</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="016fad23-7d6a-401a-8080-8f6e5515bc73">
+      <NameColumn dwd:design-time-name="8046f654-e428-42c1-a6f1-92e7d3b5b790">
         <DataType>WChar</DataType>
         <DataSize>20</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="1997c8a2-fa0c-4b23-b431-c9ecbdcead5f">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="52778af4-39c9-4d5f-af19-57c23257c3a6">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>ProvenienzaAnagrafica</ColumnID>
         </Source>
@@ -880,23 +888,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="4f32a855-51a0-46d6-a7f6-b7192e33701a">
+    <Attribute dwd:design-time-name="c2efcb14-71db-4417-8391-3ccec04db65d">
       <ID>Regione</ID>
       <Name>Regione</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="93704e49-a25d-4650-988b-c569ca19f14f">
+        <KeyColumn dwd:design-time-name="7e8d5af5-9091-4d42-8c56-bb250eb96310">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5c290205-b0e2-4a88-8b82-693b9778752d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1140f3cd-908a-4670-8561-d5b57bd34cef">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Regione</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="553ab224-d336-4b67-b50f-b20c8e44e1ab">
+      <NameColumn dwd:design-time-name="a92f6d0f-9cd7-4101-aadd-1b03ed910b27">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="c7372fc5-362e-4a5b-8d6d-cc550496f314">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8f1e974c-41c8-4ec0-9157-d1a1dbad7c0c">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Regione</ColumnID>
         </Source>
@@ -905,23 +913,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="2dce6d6f-cca1-43e3-9d57-8fd6b64e4dc8">
+    <Attribute dwd:design-time-name="5ad38f28-37ea-45f9-9c81-ec76e1d0af26">
       <ID>Macroregione</ID>
       <Name>Macroregione</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="765dd58e-95b3-4e7e-a897-946fc666a6e9">
+        <KeyColumn dwd:design-time-name="7c9d31c0-0ad0-48e1-93b9-d3e96fdd2366">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6427672c-e8bc-4e18-b4fb-a94426d95397">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1029596d-dd8c-4ed3-bb12-6ac0ea796fef">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Macroregione</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="a526315a-5dbf-4577-a3d3-f5d1556a13ef">
+      <NameColumn dwd:design-time-name="3cae9008-649d-494c-adb7-6374725ac0de">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="be97cea2-f801-4260-a9f9-2b224510bbd7">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f1124dae-8043-4eb1-b84d-457eba5cf0e9">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Macroregione</ColumnID>
         </Source>
@@ -930,23 +938,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d70baaf7-c930-4ecb-adee-768bdc1aed68">
+    <Attribute dwd:design-time-name="57996ef1-09fd-45d5-8c18-1f62df04b02c">
       <ID>Cognome</ID>
       <Name>Cognome</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="be70df04-633b-4440-92a4-4df8f0ea750c">
+        <KeyColumn dwd:design-time-name="9a4f9d9e-083e-4d58-ae9f-a0b5be73fcd8">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f703a4a6-8b39-4077-b0bc-5dca7eb637fe">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ae3bcbb-6c2c-4596-9110-c5638e3838a7">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Cognome</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="04557c86-da68-4c7c-92ad-0a10ae8b63c3">
+      <NameColumn dwd:design-time-name="b8fb8279-3696-4d94-89ca-b50ac42db048">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="48699a92-e069-4ef5-adb4-5eed32fa215d">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0f6e6cea-d0fb-4436-9301-86c605b1a757">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Cognome</ColumnID>
         </Source>
@@ -955,23 +963,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3bc56ad8-eb44-4bed-9a04-405de52b3ac8">
+    <Attribute dwd:design-time-name="f03fa442-ae24-450d-8b8c-84171fc07dc6">
       <ID>Nome</ID>
       <Name>Nome</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8f6f2691-6562-4624-afc6-f9c1d0228374">
+        <KeyColumn dwd:design-time-name="8fd8f59c-85be-4eca-935f-b73361b04ed4">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c980c04d-3b6a-4ded-aae0-478789ac3e96">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ba1f17b1-9603-4649-b081-4f9f473f0864">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Nome</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="43e29800-5010-40d3-ba09-66706b904f66">
+      <NameColumn dwd:design-time-name="97c27930-17b7-43da-9e0b-eec8499f8f2c">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8426d610-e89b-4503-a01b-0983b19ca5b7">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3c962112-de6b-4b3f-a0e9-0939f9103460">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Nome</ColumnID>
         </Source>
@@ -980,21 +988,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="105a67b8-7ba8-4c7b-927a-e78246beb6ec">
+    <Attribute dwd:design-time-name="79e0088a-1430-44d1-8a01-1fe309080cc5">
       <ID>Is Attivo</ID>
       <Name>Is Attivo</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="24d167da-e020-4673-849d-1059fe2d1486">
+        <KeyColumn dwd:design-time-name="d8b02925-5cd6-461e-aace-0d6af766918c">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="70809e5f-f432-4862-a40f-185b336ac456">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1752e091-d70b-482a-a5b2-8c93b02be143">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IsAttivo</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="ba711390-97a2-4ad2-864c-957b5dde1724">
+      <NameColumn dwd:design-time-name="90265c8b-a3db-434a-8368-de1bcc979e75">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8cec71ab-e13e-4d43-98ab-ea184a9d1d47">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a4af2af0-25c5-49e2-a5c1-0f09a50fc425">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IsAttivo</ColumnID>
         </Source>
@@ -1003,23 +1011,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="089c4b04-70cf-47d3-9c4e-e93b1d0d9cd3">
+    <Attribute dwd:design-time-name="1fb0920a-da25-41cb-8a5c-ec6a9bb5f84e">
       <ID>Cellulare</ID>
       <Name>Cellulare</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1db7c7e5-e8b9-4ca1-94c2-e05372241b28">
+        <KeyColumn dwd:design-time-name="bb9d555d-5fac-476d-89db-350fc42329d3">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="36e7df78-ea29-4821-8a40-c425f1ded94e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="29846da7-f06c-464f-972c-43346f3d3933">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Cellulare</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="6124f733-7f6c-4b79-8c2a-4eb67a44f448">
+      <NameColumn dwd:design-time-name="ecd98147-d53c-46f8-8229-3ca7e060df3d">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="e7b5fd9f-f1f7-47ac-bfea-f0d72f6deb7e">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="aa3be52a-c951-4588-bf30-56ea94a1cbbc">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Cellulare</ColumnID>
         </Source>
@@ -1028,23 +1036,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="84bb0f68-5ad0-4858-a76c-dea2578decad">
+    <Attribute dwd:design-time-name="0745526d-a08f-483a-b76e-cceb3302f935">
       <ID>Fax</ID>
       <Name>Fax</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d58335ae-b63d-46a2-9585-034e4dc07a8e">
+        <KeyColumn dwd:design-time-name="af1efbe4-f1bf-4b14-8789-5a7ab0059baa">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="44994369-ff33-43b0-bda2-ce51bf0f2dc8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57269d59-54e6-4f3f-9aca-be73dfdb9497">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Fax</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="7d447c7a-9038-40b9-8784-35315a18bdff">
+      <NameColumn dwd:design-time-name="be315c19-5579-47e4-88c3-af05eb0af86d">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="8cce9801-bdfd-4093-b7c0-814f6d6f56f7">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="923c03c6-9e9c-48b2-8b1c-0564e13f4d32">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Fax</ColumnID>
         </Source>
@@ -1053,23 +1061,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="6ee887da-c66b-454b-943f-1d5b67516c0b">
+    <Attribute dwd:design-time-name="b8c10682-e2cb-4fdb-ad3c-47a9a7734194">
       <ID>Motivo Disdetta</ID>
       <Name>Motivo Disdetta</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="edb1e095-2614-48c6-9448-ef17f0dab8bd">
+        <KeyColumn dwd:design-time-name="83f4ab43-9b54-491a-b5b4-770621f6c765">
           <DataType>WChar</DataType>
           <DataSize>120</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="01d0b808-dcb5-4a95-bfc2-4fc50253c3f7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e746314e-fe5b-4109-87cc-5b10d56b0ab6">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>MotivoDisdetta</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="11ab6948-ed0d-4b87-b825-afef766603b7">
+      <NameColumn dwd:design-time-name="b71bbb6c-9e1f-47f7-a349-67fd947a3208">
         <DataType>WChar</DataType>
         <DataSize>120</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="d30f89d3-d979-4e5a-9259-e97006c08236">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="64a4476f-4c0b-48ba-9a7d-b685518cf696">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>MotivoDisdetta</ColumnID>
         </Source>
@@ -1078,21 +1086,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="32ebb4af-213b-462a-98ed-9d5dd3baf295">
+    <Attribute dwd:design-time-name="96c2147e-bd41-41b9-849b-339373eb8e66">
       <ID>Is Abbonato</ID>
       <Name>Is Abbonato</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2ab7d92d-ca67-446b-b06d-c7b1a5b6630d">
+        <KeyColumn dwd:design-time-name="0e4091f6-887a-44a4-b08a-0c5e8ecce07b">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6cd4a05c-8276-4aa9-8c26-488f99e2d480">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36ecdb55-c4ba-4b9c-80cf-34120985f8ea">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IsAbbonato</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b232b776-e68e-41dd-9fc4-f5992f291f9a">
+      <NameColumn dwd:design-time-name="cec1271f-19d8-4d0c-acb5-1f0442f3203e">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="ac4b5847-ed12-4f0c-8521-0cd304324873">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c3a3498c-8ea5-4ce4-b629-08e3c47f3792">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IsAbbonato</ColumnID>
         </Source>
@@ -1101,21 +1109,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="adda92cd-7a85-41e1-b136-5403b641eaef">
+    <Attribute dwd:design-time-name="3da865e8-ce98-4228-82ee-369943760d30">
       <ID>ID Soggetto Commerciale Migrazione</ID>
       <Name>ID Soggetto Commerciale Migrazione</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bf65c2c9-c1bd-4919-a36e-3215eef30ae6">
+        <KeyColumn dwd:design-time-name="f3c2c949-966d-4250-9116-b63b5f411242">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="92dce579-c75f-4b5e-9259-f42178ebf36a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="982ef3b4-a7a8-4272-b5c0-37a63855a927">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IDSoggettoCommerciale_migrazione</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="2041029f-6bce-4c3e-99dc-81766406aec7">
+      <NameColumn dwd:design-time-name="8588b784-79f5-49a6-9d0b-3965ff96d414">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="3a306c2b-372d-4535-85be-39b78144db42">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8147c040-8b56-47b0-9ecb-57365e12cbdb">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IDSoggettoCommerciale_migrazione</ColumnID>
         </Source>
@@ -1124,21 +1132,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="72f13732-bc75-4fb4-9e48-fed81261f303">
+    <Attribute dwd:design-time-name="40b5c4c2-9d1a-41c0-9ac7-17bf2e9e713f">
       <ID>ID Soggetto Commerciale Migrazione Old</ID>
       <Name>ID Soggetto Commerciale Migrazione Old</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="07ce29fe-b6f1-445e-a082-d04b3a2045c9">
+        <KeyColumn dwd:design-time-name="9636a5d7-8f58-4361-936d-8822a7abb6d5">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="88fd6f1c-b616-41c2-88eb-96cc6f20e6f8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d9b52233-81de-4286-a621-2b3902c34571">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IDSoggettoCommerciale_migrazione_old</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="0c8f420d-cab1-43d4-b7ab-78cb18bf267b">
+      <NameColumn dwd:design-time-name="78e18ae6-daf4-4def-801c-432262c887e7">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="a2cd6a2a-8da8-440e-8009-a8e3de59ed3d">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3d20fc87-b4b8-4939-902b-690f88082a3a">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IDSoggettoCommerciale_migrazione_old</ColumnID>
         </Source>
@@ -1147,23 +1155,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="1b2fbfcb-19c2-4054-8da3-7008d4c117c1">
+    <Attribute dwd:design-time-name="6a2060c2-e96e-48ab-9fda-0806c71d004f">
       <ID>Provincia</ID>
       <Name>Provincia</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c7c1a50f-298b-4ea6-af29-0429587778c6">
+        <KeyColumn dwd:design-time-name="aa689d50-125b-40f5-9683-db4652ec0cfd">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="67ce8f45-25d1-4b49-9b41-1ac75ca484c7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9a99448f-3eac-4e39-a3ee-4635a867190e">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>Provincia</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="f91edd92-f321-462a-a9f6-a3a557f388bd">
+      <NameColumn dwd:design-time-name="79cbbdcb-4a2d-455f-9d0f-0af6e96fc28a">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="d99280cc-db13-48f0-bfc3-4a8189ff6fb9">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="70e0f015-b966-4711-9567-8c773463c6b0">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>Provincia</ColumnID>
         </Source>
@@ -1172,23 +1180,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="1a5fba43-9154-4203-abb5-215f08675d7c">
+    <Attribute dwd:design-time-name="7e3eec94-eea0-46a1-bef7-49f64408ea7c">
       <ID>ID Provincia</ID>
       <Name>ID Provincia</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="eaedcc2a-b573-4db0-849c-01cf59addd8a">
+        <KeyColumn dwd:design-time-name="9429da73-951a-4fa5-a920-2361a52b6e94">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a3cdc09-d664-4400-be2a-3a7247e1c1a7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a9a0398b-0670-4fb9-b7ba-6db2f69226e0">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IDProvincia</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="7380c31a-2ea2-4116-8cdf-bd1d8d96856c">
+      <NameColumn dwd:design-time-name="af1a34a4-0220-46e3-bae1-ef2dcd8d789a">
         <DataType>WChar</DataType>
         <DataSize>10</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="a3b1b0a2-a4c7-460c-8b36-0c0a700c6394">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="68098a8f-0f10-48ac-bcf6-00c4d248ef5e">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IDProvincia</ColumnID>
         </Source>
@@ -1197,21 +1205,21 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="240b214b-2af6-4ed6-a599-5324ece99b6c">
+    <Attribute dwd:design-time-name="a9c1282b-5c1d-4057-a2be-546ab9ca897b">
       <ID>Is Cliente Formazione</ID>
       <Name>Is Cliente Formazione</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="045ad672-120e-42aa-9bd5-63c9eb4fe904">
+        <KeyColumn dwd:design-time-name="5bd48c2c-ac40-4ebe-a54c-a56ebf50d995">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="fb88dd11-d1e4-449e-b9c7-f0346bfee3e7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1c50d694-a73e-417c-86a9-ffb9a0f9818a">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>IsClienteFormazione</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="21d02fd1-1d25-48ce-a7b1-9c435cc392d6">
+      <NameColumn dwd:design-time-name="a8441e6a-0207-48aa-8646-3127cdae6f85">
         <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="55337e0e-15b0-40dd-9d00-67fa0bc4b530">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="37420770-19a0-46ce-9200-c42fc6e4a010">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>IsClienteFormazione</ColumnID>
         </Source>
@@ -1220,23 +1228,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="31e1c7a6-0e7a-4b3d-8147-6cff0386eef5">
+    <Attribute dwd:design-time-name="8e8434ae-467a-4983-a590-e65482624ce7">
       <ID>Capo Area Default</ID>
       <Name>Capo Area Default</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="156e174a-49fb-4a6c-bd8b-7af1b672df53">
+        <KeyColumn dwd:design-time-name="09ec6b3a-078d-446f-932f-b77b332b3107">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="33ddd6a5-7eca-4da5-bd4f-c0b97cbf4907">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac4b9df3-ff50-45d4-8af0-ac703198a1aa">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>CapoAreaDefault</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="bdbe6a42-3cd6-42a2-ba12-37d83a7a4ac3">
+      <NameColumn dwd:design-time-name="7cc1ed8c-7e56-45fd-be2f-0d74b1874cfe">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="1be4e74c-0944-4e03-95b2-bdb310b6af48">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fee0126f-695d-46b7-9cdc-1151b5de5aac">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>CapoAreaDefault</ColumnID>
         </Source>
@@ -1245,23 +1253,23 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="562e2b3f-9555-4ea3-9770-cc1fdb317eff">
+    <Attribute dwd:design-time-name="16ea5ad4-b6fb-4ba0-a210-a9a6825dc045">
       <ID>Agente Default</ID>
       <Name>Agente Default</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7bd747b7-1355-466c-bd77-edd130ef72ae">
+        <KeyColumn dwd:design-time-name="a5d757d4-6a22-4ba7-a87c-ffdc60b4e1e3">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="87b6e5a7-ba00-453e-bf5d-f28010de41be">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d25ab954-e148-4a6b-8672-b0981237d4e4">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>AgenteDefault</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="b35c1009-d521-4939-a409-31f4c179a437">
+      <NameColumn dwd:design-time-name="a5e3ec02-9313-4c37-85ab-a064e2776099">
         <DataType>WChar</DataType>
         <DataSize>60</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="bd945b5e-a276-4548-84cd-357b83fae315">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="28b829f0-87fd-467f-8015-6b952aea811d">
           <TableID>Dim_Cliente</TableID>
           <ColumnID>AgenteDefault</ColumnID>
         </Source>
@@ -1270,13 +1278,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="36901ffa-844e-4a1c-a754-50a41cbf9665">
+    <Attribute dwd:design-time-name="bc245eaf-ddc7-42a7-8b0f-4b8e29b4b89a">
       <ID>Has Role My Solution Interno</ID>
       <Name>Has Role My Solution Interno</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="057e6df1-ed10-4990-8374-1aa2ff3ae0e4">
+        <KeyColumn dwd:design-time-name="4149f2bd-06ed-40a1-9e55-ae29bd037853">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="18bcc64f-9e12-4331-912f-bf7ab8a1b556">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f4bdb506-5a08-4fef-abe8-b8c52b4295ef">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasRoleMySolutionInterno</ColumnID>
           </Source>
@@ -1286,13 +1294,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d12346bb-e3c3-4d42-8d7c-1ded7f8cff3c">
+    <Attribute dwd:design-time-name="58b5e044-d20a-4f3b-9eb4-b35fe46fa12c">
       <ID>Has Abbonamento My Solution</ID>
       <Name>Has Abbonamento My Solution</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bccba4fd-dda8-4c39-b81a-d005659711a2">
+        <KeyColumn dwd:design-time-name="85374450-1830-4602-9d76-4410736874e2">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="36e9bc30-f77c-4a55-9d47-4f2a2169b76f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b7d70ae-daad-443d-847d-30b21dd01bbd">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasAbbonamentoMySolution</ColumnID>
           </Source>
@@ -1302,13 +1310,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="507855cb-3cc2-48bc-b596-3327a4de356a">
+    <Attribute dwd:design-time-name="c8be8432-beae-406b-b5ef-58b13f945cda">
       <ID>Has Abbonamento MIA</ID>
       <Name>Has Abbonamento MIA</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f6bb2922-cb1d-401f-9c60-a034eff53182">
+        <KeyColumn dwd:design-time-name="59e18a1c-bc8b-456a-adfc-96339d1ec718">
           <DataType>Boolean</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="60f6788c-8f5f-4abd-892b-dd18e61d2ce4">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fafbce39-d04f-4480-aa09-7cf717c121cb">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>HasAbbonamentoMIA</ColumnID>
           </Source>
@@ -1318,14 +1326,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="7a56d8f5-1512-43c1-b47c-872c9bf56292">
+    <Attribute dwd:design-time-name="9379bffd-73d3-4644-ab24-3d03864142e5">
       <ID>Agente Zoho</ID>
       <Name>Agente Zoho</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1cf70b2e-c7c8-4fab-9a33-275ffb60295b">
+        <KeyColumn dwd:design-time-name="f527d980-a80a-47c1-83b2-59a3a6df84bb">
           <DataType>WChar</DataType>
           <DataSize>60</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="3c38e039-5ca2-42af-894b-4bc0d1b53965">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9aa48bed-6800-43ba-a161-a0bb99b9d71f">
             <TableID>Dim_Cliente</TableID>
             <ColumnID>AgenteZoho</ColumnID>
           </Source>
@@ -1335,13 +1343,46 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
+    <Attribute dwd:design-time-name="c0498aba-ae2b-4c15-b811-f8e6df876500">
+      <ID>ID Professione</ID>
+      <Name>ID Professione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="925aece6-479a-4f88-ad8a-0391ebbd6ddf">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6fdd6950-52ca-4612-a2aa-fb3a17e7147d">
+            <TableID>Dim_Cliente</TableID>
+            <ColumnID>IDProfessione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0418e2f2-d9a5-4c1c-bdf4-fdc422e7699b">
+      <ID>Professione</ID>
+      <Name>Professione</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1b5065fe-f009-479d-9fd9-678f05c6feaf">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69391112-9d76-4cb2-a9ff-00ef5ec45c83">
+            <TableID>Dim_Cliente</TableID>
+            <ColumnID>Professione</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <MembersWithData>NonLeafDataHidden</MembersWithData>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
   </Attributes>
-  <ProactiveCaching dwd:design-time-name="524c7f3e-03ff-4d1f-b956-e699fc59c8de">
+  <ProactiveCaching dwd:design-time-name="edb614e3-688e-498b-ab68-5d9a017452d3">
     <SilenceInterval>-PT1S</SilenceInterval>
     <Latency>-PT1S</Latency>
     <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
     <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
-    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="7df23c33-b804-4f62-9be7-e4dbc5633bc4" />
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="86b0dec9-784f-4aa6-be2a-ba802fab15a3" />
   </ProactiveCaching>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

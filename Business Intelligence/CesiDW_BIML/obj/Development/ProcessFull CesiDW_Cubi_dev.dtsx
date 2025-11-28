@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{6E8420A3-7259-45AA-B396-AB2D10E95AE0}"
+  DTS:DTSID="{483EF157-7A0E-4E72-BB83-42B892CC37F6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessFull CesiDW_Cubi_dev"
-  DTS:VersionGUID="{3DF39EEF-533B-4065-878A-6EC3C8F18CA9}"
+  DTS:VersionGUID="{9686E438-BF2F-4D9D-848E-CDB41D743C71}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]"
       DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{9BE1F9E0-6A21-48C8-93EA-93E66A4BE1EC}"
+      DTS:DTSID="{81B28AF3-01F5-424F-8D97-CBEB4E2EBF76}"
       DTS:ObjectName="CesiDW_Cubi_dev">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Cubes_ProcessFull"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{8846AD25-DE15-4BBC-92FE-02AB222232DA}"
+      DTS:DTSID="{4B72AD85-89B9-43AB-AB63-32CE30DD4C70}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cubes_ProcessFull"
@@ -48,7 +48,7 @@
     <DTS:Executable
       DTS:refId="Package\Dimensions_ProcessFull"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{34BAE2F9-7CEB-4514-8EDD-967695483CE7}"
+      DTS:DTSID="{AC1F66E9-6DEF-41B3-BF5B-AC85A759F70B}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dimensions_ProcessFull"
@@ -65,7 +65,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Dimensions_ProcessFull_To_Cubes_ProcessFull]"
       DTS:CreationName=""
-      DTS:DTSID="{E3F5E727-FA4D-4DD9-B0B3-966746C6AEE0}"
+      DTS:DTSID="{621C7217-79F3-415B-AE35-354453970CC1}"
       DTS:From="Package\Dimensions_ProcessFull"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Dimensions_ProcessFull_To_Cubes_ProcessFull"

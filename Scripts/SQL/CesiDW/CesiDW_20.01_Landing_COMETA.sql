@@ -3144,6 +3144,7 @@ AS (
             id_anagrafica,
             tipo,
             id_gruppo_agenti,
+            id_cat_com_sc,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -3152,6 +3153,7 @@ AS (
         id_anagrafica,
         tipo,
         id_gruppo_agenti,
+        id_cat_com_sc,
         ROW_NUMBER() OVER (PARTITION BY id_anagrafica ORDER BY id_sog_commerciale DESC) AS rnIDSoggettoCommercialeDESC
 
     FROM COMETA.SoggettoCommerciale
@@ -3174,6 +3176,7 @@ SELECT
     TD.id_anagrafica,
     TD.tipo COLLATE DATABASE_DEFAULT AS tipo,
     TD.id_gruppo_agenti,
+    TD.id_cat_com_sc,
     TD.rnIDSoggettoCommercialeDESC
 
 FROM TableData TD;
@@ -3228,6 +3231,7 @@ BEGIN
         TGT.id_anagrafica = SRC.id_anagrafica,
         TGT.tipo = SRC.tipo,
         TGT.id_gruppo_agenti = SRC.id_gruppo_agenti,
+        TGT.id_cat_com_sc = SRC.id_cat_com_sc,
         TGT.rnIDSoggettoCommercialeDESC = SRC.rnIDSoggettoCommercialeDESC
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
@@ -3246,6 +3250,7 @@ BEGIN
         id_anagrafica,
         tipo,
         id_gruppo_agenti,
+        id_cat_com_sc,
         rnIDSoggettoCommercialeDESC
       )
 
@@ -3714,4 +3719,146 @@ END;
 GO
 
 EXEC COMETA.usp_Merge_MySolutionTrascodifica;
+GO
+
+/*
+    SCHEMA_NAME > COMETA
+    TABLE_NAME > CategoriaCommercialeSoggettoCommerciale
+*/
+
+/**
+ * @table Landing.COMETA_CategoriaCommercialeSoggettoCommerciale
+ * @description 
+
+ * @depends COMETA.CategoriaCommercialeSoggettoCommerciale
+
+SELECT TOP 100 * FROM COMETA.CategoriaCommercialeSoggettoCommerciale;
+*/
+
+IF OBJECT_ID('Landing.COMETA_CategoriaCommercialeSoggettoCommercialeView', 'V') IS NULL EXEC('CREATE VIEW Landing.COMETA_CategoriaCommercialeSoggettoCommercialeView AS SELECT 1 AS fld;');
+GO
+
+ALTER VIEW Landing.COMETA_CategoriaCommercialeSoggettoCommercialeView
+AS
+WITH TableData
+AS (
+    SELECT
+        id_cat_com_sc,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            id_cat_com_sc,
+            ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            codice,
+            descrizione,
+            ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+        codice,
+        descrizione
+
+    FROM COMETA.CategoriaCommercialeSoggettoCommerciale
+)
+SELECT
+    -- Chiavi
+    TD.id_cat_com_sc,
+
+    -- Campi per sincronizzazione
+    TD.HistoricalHashKey,
+    TD.ChangeHashKey,
+    CONVERT(VARCHAR(34), TD.HistoricalHashKey, 1) AS HistoricalHashKeyASCII,
+    CONVERT(VARCHAR(34), TD.ChangeHashKey, 1) AS ChangeHashKeyASCII,
+    TD.InsertDatetime,
+    TD.UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    -- Attributi
+    TD.codice COLLATE DATABASE_DEFAULT AS codice,
+    TD.descrizione COLLATE DATABASE_DEFAULT AS descrizione
+
+FROM TableData TD;
+GO
+
+--DROP TABLE IF EXISTS Landing.COMETA_CategoriaCommercialeSoggettoCommerciale;
+GO
+
+IF OBJECT_ID(N'Landing.COMETA_CategoriaCommercialeSoggettoCommerciale', N'U') IS NULL
+BEGIN
+    SELECT TOP 0 * INTO Landing.COMETA_CategoriaCommercialeSoggettoCommerciale FROM Landing.COMETA_CategoriaCommercialeSoggettoCommercialeView;
+
+    ALTER TABLE Landing.COMETA_CategoriaCommercialeSoggettoCommerciale ALTER COLUMN id_cat_com_sc INT NOT NULL;
+
+    ALTER TABLE Landing.COMETA_CategoriaCommercialeSoggettoCommerciale ADD CONSTRAINT PK_Landing_COMETA_CategoriaCommercialeSoggettoCommerciale PRIMARY KEY CLUSTERED (UpdateDatetime, id_cat_com_sc);
+
+    ALTER TABLE Landing.COMETA_CategoriaCommercialeSoggettoCommerciale ALTER COLUMN codice NVARCHAR(60) NULL;
+    ALTER TABLE Landing.COMETA_CategoriaCommercialeSoggettoCommerciale ALTER COLUMN descrizione NVARCHAR(60) NULL;
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_COMETA_CategoriaCommercialeSoggettoCommerciale_BusinessKey ON Landing.COMETA_CategoriaCommercialeSoggettoCommerciale (id_cat_com_sc);
+END;
+GO
+
+IF OBJECT_ID('COMETA.usp_Merge_CategoriaCommercialeSoggettoCommerciale', 'P') IS NULL EXEC('CREATE PROCEDURE COMETA.usp_Merge_CategoriaCommercialeSoggettoCommerciale AS RETURN 0;');
+GO
+
+ALTER PROCEDURE COMETA.usp_Merge_CategoriaCommercialeSoggettoCommerciale
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @IsCometaExportRunning BIT = 1;
+
+    SELECT TOP (1) @IsCometaExportRunning = IsCometaExportRunning FROM COMETA.Semaforo;
+
+    IF (COALESCE(@IsCometaExportRunning, 1) = 1) RETURN -1;
+
+    MERGE INTO Landing.COMETA_CategoriaCommercialeSoggettoCommerciale AS TGT
+    USING Landing.COMETA_CategoriaCommercialeSoggettoCommercialeView (nolock) AS SRC
+    ON SRC.id_cat_com_sc = TGT.id_cat_com_sc
+
+    WHEN MATCHED AND (SRC.ChangeHashKeyASCII <> TGT.ChangeHashKeyASCII)
+      THEN UPDATE SET
+        TGT.ChangeHashKey = SRC.ChangeHashKey,
+        TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
+        --TGT.InsertDatetime = SRC.InsertDatetime,
+        TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
+        TGT.codice = SRC.codice,
+        TGT.descrizione = SRC.descrizione
+
+    WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
+      THEN INSERT VALUES (
+        id_cat_com_sc,
+
+        HistoricalHashKey,
+        ChangeHashKey,
+        HistoricalHashKeyASCII,
+        ChangeHashKeyASCII,
+        InsertDatetime,
+        UpdateDatetime,
+        IsDeleted,
+    
+        codice,
+        descrizione
+      )
+
+    WHEN NOT MATCHED BY SOURCE
+        AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE
+        SET TGT.IsDeleted = CAST(1 AS BIT),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+        TGT.ChangeHashKeyASCII = ''
+
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.COMETA_CategoriaCommercialeSoggettoCommerciale' AS full_olap_table_name,
+        'id_cat_com_sc = ' + CAST(COALESCE(inserted.id_cat_com_sc, deleted.id_cat_com_sc) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END;
+GO
+
+EXEC COMETA.usp_Merge_CategoriaCommercialeSoggettoCommerciale;
 GO

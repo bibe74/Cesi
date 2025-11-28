@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="9/17/2025 8:33:27 PM"
+  DTS:CreationDate="11/28/2025 6:06:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{15F52F5F-3428-4599-9531-E97E0102580F}"
+  DTS:DTSID="{5C54CBAC-0DB6-45B9-863A-549BE1E8ABEB}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="ProcessUpdate CesiDW_Cubi_dev"
-  DTS:VersionGUID="{4D2F95CD-5BA7-4003-A9FA-3FA15E7B8F93}"
+  DTS:VersionGUID="{17A79A65-D8ED-4473-9BC1-82079EFB1FC7}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW_Cubi_dev]"
       DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{4488717B-7299-4FAF-902D-59FB07BF66B7}"
+      DTS:DTSID="{6B86D623-3896-430B-8E0B-452AF9EC218E}"
       DTS:ObjectName="CesiDW_Cubi_dev">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Cubes_ProcessData"
       DTS:CreationName="STOCK:SEQUENCE"
-      DTS:DTSID="{9832F39E-4E91-47EA-9690-A72740FE3E96}"
+      DTS:DTSID="{FBA6550B-04DE-43BA-A40E-67B3ECE7285E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cubes_ProcessData">
@@ -42,7 +42,7 @@
         <DTS:Executable
           DTS:refId="Package\Cubes_ProcessData\Cube Accessi"
           DTS:CreationName="STOCK:SEQUENCE"
-          DTS:DTSID="{0BA2A8E1-02B1-42BE-9B4B-446C5221D7CB}"
+          DTS:DTSID="{F1897705-A97C-45EC-9F0D-6FFAC0E133F0}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cube Accessi">
@@ -51,7 +51,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Accessi\Measure Group Accessi"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{766E7A80-C1E0-41D0-B883-AA6D2FD4AC6D}"
+              DTS:DTSID="{D713C1AB-013F-4676-A3C0-8145EEEFA1FA}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Accessi">
@@ -60,7 +60,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Accessi\Measure Group Accessi\Partition Accessi"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{DC53BE09-94A6-4DA6-85D5-D5EFB495C058}"
+                  DTS:DTSID="{93CD7258-53E8-40D5-9FCA-8B8602CA7464}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Accessi"
@@ -77,7 +77,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Accessi\Measure Group Accessi - Conteggio"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{9F25EC92-B15F-4B3E-8967-DBD9F4987901}"
+              DTS:DTSID="{7BF25764-BBB4-4C75-83AF-61B9B57C33D8}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Accessi - Conteggio">
@@ -86,7 +86,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Accessi\Measure Group Accessi - Conteggio\Partition Accessi"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{2471B1B0-AA55-4C7E-8238-D7337CA36166}"
+                  DTS:DTSID="{2026DC5D-145A-4882-AA4F-E4E8AD72A6ED}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Accessi"
@@ -105,7 +105,7 @@
         <DTS:Executable
           DTS:refId="Package\Cubes_ProcessData\Cube Corsi"
           DTS:CreationName="STOCK:SEQUENCE"
-          DTS:DTSID="{46768FC9-04C6-4361-B7E9-F9386D770A3D}"
+          DTS:DTSID="{60E34EE5-8515-4026-99CC-DE02686E70FC}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cube Corsi">
@@ -114,7 +114,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Corsi\Measure Group Corsi"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{A5882EB6-F327-4723-AD1E-930F6A54A964}"
+              DTS:DTSID="{F9CDC410-CFA0-4B92-8DF6-B0776517F9AF}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Corsi">
@@ -123,7 +123,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Corsi\Measure Group Corsi\Partition Corsi"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{AA1EB276-A2F6-4787-9E3D-3AD7260EA24D}"
+                  DTS:DTSID="{DDEBE336-A9A4-41C5-940D-B54EF29C3E7F}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Corsi"
@@ -142,7 +142,7 @@
         <DTS:Executable
           DTS:refId="Package\Cubes_ProcessData\Cube Crediti"
           DTS:CreationName="STOCK:SEQUENCE"
-          DTS:DTSID="{550A7D65-7240-4F33-AF25-577AB5A5EF9C}"
+          DTS:DTSID="{84DC6B82-EA67-40BE-B8F9-07FE2CDD33C0}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cube Crediti">
@@ -151,7 +151,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Crediti\Measure Group Crediti"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{50FDF4A4-49BB-4703-918C-CA41BF1F81ED}"
+              DTS:DTSID="{8A6EEAB4-44BD-4BA0-9C72-73B736AE50E2}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Crediti">
@@ -160,7 +160,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Crediti\Measure Group Crediti\Partition Crediti"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{DAF2A5AA-EB84-42B7-8E2F-C5A8602852C4}"
+                  DTS:DTSID="{79DB133C-58F7-4ED0-BE43-8BF32A5977A8}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Crediti"
@@ -179,7 +179,7 @@
         <DTS:Executable
           DTS:refId="Package\Cubes_ProcessData\Cube Crediti OpenAI"
           DTS:CreationName="STOCK:SEQUENCE"
-          DTS:DTSID="{150F0D37-7E79-4D52-A041-6A46F2493A25}"
+          DTS:DTSID="{94D59C77-A736-410E-9C71-13FC847D6890}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cube Crediti OpenAI">
@@ -188,7 +188,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Crediti OpenAI\Measure Group Crediti Open AI"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{00AB07C1-2841-4EDD-AA00-AE640B4E2BBD}"
+              DTS:DTSID="{A7526015-AA51-499A-AB64-97BDF72E6D79}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Crediti Open AI">
@@ -197,7 +197,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Crediti OpenAI\Measure Group Crediti Open AI\Partition Crediti Open AI"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{850AA928-78A6-4021-8328-6A6C8AB80E43}"
+                  DTS:DTSID="{A76FD59C-85ED-4E0B-B8C8-A5C8B9905D7A}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Crediti Open AI"
@@ -216,7 +216,7 @@
         <DTS:Executable
           DTS:refId="Package\Cubes_ProcessData\Cube Documenti"
           DTS:CreationName="STOCK:SEQUENCE"
-          DTS:DTSID="{E6529AFF-FCAA-4E21-82E2-1CB2423C4C51}"
+          DTS:DTSID="{F20D03E2-94AD-483A-ABCA-48656E24E7CD}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cube Documenti">
@@ -225,7 +225,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Budget"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{DB2DAE2F-B1F1-4318-BB84-0E34B0544C8A}"
+              DTS:DTSID="{93558FE9-BE5F-466B-8B10-132823DF8885}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Budget">
@@ -234,11 +234,11 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Budget\Partition Budget"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{F8935FFD-7AC2-4534-91C2-91F938AC13FA}"
+                  DTS:DTSID="{E0024BB8-2FE9-436A-8CE3-3E5A357B3503}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Budget"
-                  DTS:ThreadHint="5">
+                  DTS:ThreadHint="4">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -251,7 +251,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Conteggio Clienti"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{B21D85A2-03B6-4671-A6F0-703066486133}"
+              DTS:DTSID="{C4EF9252-0798-4315-BDF9-FA9AB36460B4}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Conteggio Clienti">
@@ -260,11 +260,11 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Conteggio Clienti\Partition Cliente"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{D91CA9B3-6C7B-4D96-8FBD-A29FF246182D}"
+                  DTS:DTSID="{5EFD3C7D-A7E6-4596-A23A-0402DC47EEF8}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Cliente"
-                  DTS:ThreadHint="6">
+                  DTS:ThreadHint="5">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -277,7 +277,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Conteggio Documenti"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{C56F191A-C03B-42F7-99BC-49E7316AD98D}"
+              DTS:DTSID="{44F2887B-D672-4EF8-9FB9-69F8D3D4A8DE}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Conteggio Documenti">
@@ -286,11 +286,11 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Conteggio Documenti\Partition Documenti"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{3352353E-C0E7-4012-B8DC-63A62A059E32}"
+                  DTS:DTSID="{0E7FF593-F6D8-490F-9C83-C369B1D90701}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Documenti"
-                  DTS:ThreadHint="4">
+                  DTS:ThreadHint="6">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -303,7 +303,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Documenti"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{47A27E2D-97F4-4A94-B100-CD520BF90DE1}"
+              DTS:DTSID="{B62C7745-DA5E-4CBB-8450-4839EBB1BC4A}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Documenti">
@@ -312,7 +312,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Documenti\Partition Documenti"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{70914797-8BE9-4AF6-821C-7FBD096B5175}"
+                  DTS:DTSID="{FB7F14A2-273A-41A5-865E-B4DFE960A14F}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Documenti"
@@ -329,7 +329,7 @@
             <DTS:Executable
               DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Scadenze"
               DTS:CreationName="STOCK:SEQUENCE"
-              DTS:DTSID="{718E9D67-82D6-4FDA-A56A-166D672A2080}"
+              DTS:DTSID="{E80C2D75-C33E-452E-BE57-7E7D70377F1D}"
               DTS:ExecutableType="STOCK:SEQUENCE"
               DTS:LocaleID="-1"
               DTS:ObjectName="Measure Group Scadenze">
@@ -338,7 +338,7 @@
                 <DTS:Executable
                   DTS:refId="Package\Cubes_ProcessData\Cube Documenti\Measure Group Scadenze\Partition Scadenze"
                   DTS:CreationName="Microsoft.DTSProcessingTask"
-                  DTS:DTSID="{DBE89860-E100-4820-BCC0-A15D1454CF36}"
+                  DTS:DTSID="{0092D904-C333-4823-B0D7-27550B7791AE}"
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Scadenze"
@@ -359,7 +359,7 @@
     <DTS:Executable
       DTS:refId="Package\Cubes_ProcessIndexes"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{90AF3DB4-3FA0-4461-9AB7-4ABF3585303E}"
+      DTS:DTSID="{B947AB7C-EED6-4D05-BFA6-1DCB853AFEAB}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cubes_ProcessIndexes"
@@ -374,7 +374,7 @@
     <DTS:Executable
       DTS:refId="Package\Dimensions_ProcessUpdate"
       DTS:CreationName="Microsoft.DTSProcessingTask"
-      DTS:DTSID="{5370A8B0-C94C-4F4D-BF48-72965AD41AC4}"
+      DTS:DTSID="{DCFA1EF1-2988-49AC-9254-120D56C9CC1E}"
       DTS:ExecutableType="Microsoft.DTSProcessingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dimensions_ProcessUpdate"
@@ -391,7 +391,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Cubes_ProcessData_To_Cubes_ProcessIndexes]"
       DTS:CreationName=""
-      DTS:DTSID="{94E1D750-5DF1-42CA-9232-0A389E5ED460}"
+      DTS:DTSID="{4F2433F5-9B9F-4BC7-BE3E-DEFAA2EC0F73}"
       DTS:From="Package\Cubes_ProcessData"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Cubes_ProcessData_To_Cubes_ProcessIndexes"
@@ -399,7 +399,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Dimensions_ProcessUpdate_To_Cubes_ProcessData]"
       DTS:CreationName=""
-      DTS:DTSID="{5092E821-4E94-4E90-B700-0ADCF8EF41D0}"
+      DTS:DTSID="{AFBA56E8-28EA-4764-AA83-924120C17F71}"
       DTS:From="Package\Dimensions_ProcessUpdate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Dimensions_ProcessUpdate_To_Cubes_ProcessData"

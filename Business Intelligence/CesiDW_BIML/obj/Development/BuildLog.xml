@@ -8,142 +8,142 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>00_ETL_master.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7502866Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5916007Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>01_Extract.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.752319Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5925996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02_Setup.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7533174Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5925996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03_Transform_and_Load.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7623104Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5935996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Articolo.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7643093Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5935996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7643093Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5935996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_GruppoAgenti.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7663093Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5955995Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Accessi.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7683088Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5955995Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Documenti.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7703097Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5976Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Scadenze.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7713097Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5985996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull Accessi Cube.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1582168Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5985996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull CesiDW_Cubi_dev.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1592267Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5985996Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull CesiDW_Cubi_dev Cubes.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1592267Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6001062Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull CesiDW_Cubi_dev Dimensions.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.160228Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6004665Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull CesiDW_Cubi_dev master.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1615906Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6015035Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull Documenti Cube.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1646008Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6025101Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessUpdate CesiDW_Cubi_dev.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1656007Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.603932Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Budget.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7683088Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5965994Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Utente.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7673094Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5955995Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Corsi.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.76931Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5965994Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull Corsi Cube.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1626053Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6015035Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente_OLD.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7653181Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5945999Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Corso.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7663093Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5945999Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Crediti.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.76931Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5965994Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull Crediti Cube.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1636025Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6015035Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_CreditiOpenAI.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7703097Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5976Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ProcessFull Crediti OpenAI Cube.dtsx</Name>
-      <LastWriteTime>2025-09-17T18:33:32.1636025Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.6025101Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_DomandeMIA.dtsx</Name>
-      <LastWriteTime>2025-09-19T19:08:37.7713097Z</LastWriteTime>
+      <LastWriteTime>2025-11-28T17:06:52.5976Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
