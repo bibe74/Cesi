@@ -176,6 +176,7 @@ AS (
             TDT.num_riferimento,
             TDC.num_riferimento,
             TDF.num_riferimento,
+            SC.id_cat_com_sc,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,

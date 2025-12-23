@@ -307,6 +307,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione,
         TGT.id_cat_com_articolo = SRC.id_cat_com_articolo,
@@ -454,6 +455,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -595,6 +597,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -733,6 +736,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -954,6 +958,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_prof_documento = SRC.id_prof_documento,
         TGT.id_registro = SRC.id_registro,
         TGT.data_registrazione = SRC.data_registrazione,
@@ -1170,6 +1175,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_documento = SRC.id_documento,
         TGT.id_gruppo_agenti = SRC.id_gruppo_agenti,
         TGT.num_riga = SRC.num_riga,
@@ -1331,6 +1337,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.data_inizio = SRC.data_inizio,
         TGT.data_fine = SRC.data_fine
@@ -1486,6 +1493,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione,
         TGT.id_sog_com_capo_area = SRC.id_sog_com_capo_area,
@@ -1633,6 +1641,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -1774,6 +1783,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -1915,6 +1925,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 
@@ -2057,6 +2068,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_scadenza = SRC.id_scadenza,
         TGT.data = SRC.data,
         TGT.importo = SRC.importo
@@ -2298,6 +2310,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_anagrafica = SRC.id_anagrafica,
         TGT.codice = SRC.codice,
         TGT.RagioneSociale = SRC.RagioneSociale,
@@ -2564,6 +2577,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_anagrafica = SRC.id_anagrafica,
         TGT.codice = SRC.codice,
         TGT.RagioneSociale = SRC.RagioneSociale,
@@ -2753,6 +2767,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione,
         TGT.tipo_registro = SRC.tipo_registro
@@ -2902,6 +2917,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_esercizio = SRC.id_esercizio,
         TGT.tipo_registro = SRC.tipo_registro,
         TGT.id_mod_registro = SRC.id_mod_registro,
@@ -3062,6 +3078,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.tipo_scadenza = SRC.tipo_scadenza,
         TGT.id_sog_commerciale = SRC.id_sog_commerciale,
         TGT.data_scadenza = SRC.data_scadenza,
@@ -3135,11 +3152,11 @@ WITH TableData
 AS (
     SELECT
         id_sog_commerciale,
-        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+        CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
             id_sog_commerciale,
             ' '
         ))) AS HistoricalHashKey,
-        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+        CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
             codice,
             id_anagrafica,
             tipo,
@@ -3227,6 +3244,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.id_anagrafica = SRC.id_anagrafica,
         TGT.tipo = SRC.tipo,
@@ -3259,7 +3277,7 @@ BEGIN
       THEN UPDATE
         SET TGT.IsDeleted = CAST(1 AS BIT),
         TGT.UpdateDatetime = CURRENT_TIMESTAMP,
-        TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+        TGT.ChangeHashKey = CONVERT(VARBINARY(32), ''),
         TGT.ChangeHashKeyASCII = ''
 
     OUTPUT
@@ -3397,6 +3415,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.id_anagrafica = SRC.id_anagrafica,
         TGT.tipo = SRC.tipo,
         TGT.num_riferimento = SRC.num_riferimento,
@@ -3550,6 +3569,7 @@ BEGIN
         TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
+        TGT.IsDeleted = SRC.IsDeleted,
         TGT.codice = SRC.codice,
         TGT.descrizione = SRC.descrizione
 

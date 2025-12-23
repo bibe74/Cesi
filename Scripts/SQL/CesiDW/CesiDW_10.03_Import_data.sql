@@ -117,6 +117,14 @@ BEGIN
         N'CARELLA ALESSANDRO'
     );
 
+    -- Richiesta di Gabriella del 1/12/2025
+    UPDATE Import.CapiArea
+    SET InvioEmail = CAST(0 AS BIT)
+    WHERE Agente IN (
+        N'Polinari Mirco',
+        N'Pavanello Gianluca'
+    );
+
 END;
 GO
 

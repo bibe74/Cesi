@@ -169,7 +169,9 @@ AS (
 
     FROM Dim.ClienteAccessi C
     LEFT JOIN Import.CapiArea ICA ON ICA.CapoArea = C.Agente
+        AND ICA.InvioEmail = CAST(1 AS BIT)
     WHERE C.HasRoleMySolutionDemo = CAST(1 AS BIT)
+        AND ICA.Email IS NOT NULL
 
     UNION ALL
 
