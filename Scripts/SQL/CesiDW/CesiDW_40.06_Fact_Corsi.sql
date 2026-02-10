@@ -55,7 +55,6 @@ AS
 WITH TableData
 AS (
     SELECT
-
         CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
             T.OrderItemId,
             T.Partecipant_Id,
@@ -117,12 +116,16 @@ AS (
         T.OrderNumber AS NumeroOrdine,
         T.OrderStatus AS StatoOrdine,
         T.OrderCreatedDate,
-        COALESCE(DI.PKData, CAST('19000101' AS DATE)) AS PKDataIscrizione
+        COALESCE(DI.PKData, CAST('19000101' AS DATE)) AS PKDataIscrizione,
+        ROW_NUMBER() OVER (PARTITION BY T.OrderItemId, T.Partecipant_Id ORDER BY U.PKUtente) AS rn
 
     FROM Landing.MYSOLUTION_CoursesData T
     LEFT JOIN Dim.Utente U ON U.Email = T.CustomerUserName
+        AND U.IsDeleted = CAST(0 AS BIT)
+        AND U.Email <> N''
     LEFT JOIN Dim.Data D ON D.PKData = T.StartDate
     LEFT JOIN Dim.Data DI ON DI.PKData = T.OrderCreatedDate
+    WHERE T.IsDeleted = CAST(0 AS BIT)
 )
 SELECT
     -- Chiavi
@@ -161,7 +164,8 @@ SELECT
     TD.StatoOrdine,
     TD.PKDataIscrizione
 
-FROM TableData TD;
+FROM TableData TD
+WHERE TD.rn = 1;
 GO
 
 --IF OBJECT_ID(N'Staging.Corsi', N'U') IS NOT NULL DROP TABLE Staging.Corsi;

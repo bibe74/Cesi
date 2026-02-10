@@ -3738,9 +3738,6 @@ BEGIN
 END;
 GO
 
-EXEC COMETA.usp_Merge_MySolutionTrascodifica;
-GO
-
 /*
     SCHEMA_NAME > COMETA
     TABLE_NAME > CategoriaCommercialeSoggettoCommerciale
