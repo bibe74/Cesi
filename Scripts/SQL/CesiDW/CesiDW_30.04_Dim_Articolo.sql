@@ -302,7 +302,8 @@ AS (
         COALESCE(ABID.Data3, N'') AS Data3,
         COALESCE(ABID.Data4, N'') AS Data4,
         COALESCE(ABID.Data5, N'') AS Data5,
-        COALESCE(ABID.Data6, N'') AS Data6 
+        COALESCE(ABID.Data6, N'') AS Data6,
+        CASE WHEN DA.Codice LIKE N'MIA%L' THEN LEFT(RIGHT(DA.Codice, 2), 1) ELSE N'' END AS LivelloMIA
 
     FROM DatiArticolo DA
     LEFT JOIN Landing.COMETAINTEGRATION_ArticleBIData ABID ON ABID.ArticleID = DA.id_articolo
@@ -337,7 +338,8 @@ SELECT
     TD.Data3,
     TD.Data4,
     TD.Data5,
-    TD.Data6
+    TD.Data6,
+    TD.LivelloMIA
 
 FROM TableData TD;
 GO
@@ -367,6 +369,8 @@ BEGIN
     ALTER TABLE Staging.Articolo ALTER COLUMN Data4 NVARCHAR(40) NOT NULL;
     ALTER TABLE Staging.Articolo ALTER COLUMN Data5 NVARCHAR(40) NOT NULL;
     ALTER TABLE Staging.Articolo ALTER COLUMN Data6 NVARCHAR(40) NOT NULL;
+    ALTER TABLE Staging.Articolo ALTER COLUMN Data6 NVARCHAR(40) NOT NULL;
+    ALTER TABLE Staging.Articolo ALTER COLUMN LivelloMIA NVARCHAR(1) NOT NULL;
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_COMETA_Articolo_BusinessKey ON Staging.Articolo (id_articolo);
 END;
@@ -462,7 +466,8 @@ BEGIN
         Data3 NVARCHAR(40) NOT NULL,
         Data4 NVARCHAR(40) NOT NULL,
         Data5 NVARCHAR(40) NOT NULL,
-        Data6 NVARCHAR(40) NOT NULL
+        Data6 NVARCHAR(40) NOT NULL,
+        LivelloMIA NVARCHAR(1) NOT NULL
     );
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Dim_Articolo_id_articolo ON Dim.Articolo (id_articolo);
@@ -490,7 +495,8 @@ BEGIN
         Data3,
         Data4,
         Data5,
-        Data6
+        Data6,
+        LivelloMIA
     )
     VALUES
     (   -1,         -- PKArticolo - int
@@ -511,7 +517,8 @@ BEGIN
         N'',       -- Data3 - nvarchar(40)
         N'',       -- Data4 - nvarchar(40)
         N'',       -- Data5 - nvarchar(40)
-        N''        -- Data6 - nvarchar(40)
+        N'',       -- Data6 - nvarchar(40)
+        N''        -- LivelloMIA - nvarchar(1)
     ),
     (   -101,         -- PKArticolo - int
         -101,         -- id_articolo - int
@@ -531,7 +538,8 @@ BEGIN
         N'',       -- Data3 - nvarchar(40)
         N'',       -- Data4 - nvarchar(40)
         N'',       -- Data5 - nvarchar(40)
-        N''        -- Data6 - nvarchar(40)
+        N'',       -- Data6 - nvarchar(40)
+        N''        -- LivelloMIA - nvarchar(1)
     );
 
     ALTER SEQUENCE dbo.seq_Dim_Articolo RESTART WITH 1;
@@ -581,7 +589,8 @@ BEGIN
         TGT.Data3 = SRC.Data3,
         TGT.Data4 = SRC.Data4,
         TGT.Data5 = SRC.Data5,
-        TGT.Data6 = SRC.Data6
+        TGT.Data6 = SRC.Data6,
+        TGT.LivelloMIA = SRC.LivelloMIA
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -609,7 +618,8 @@ BEGIN
         Data3,
         Data4,
         Data5,
-        Data6
+        Data6,
+        LivelloMIA
       )
       VALUES (
         SRC.id_articolo,
@@ -636,7 +646,8 @@ BEGIN
         SRC.Data3,
         SRC.Data4,
         SRC.Data5,
-        SRC.Data6
+        SRC.Data6,
+        SRC.LivelloMIA
       )
 
     OUTPUT
