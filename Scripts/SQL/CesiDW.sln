@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # SQL Server Management Studio Version 22
-VisualStudioVersion = 18.2.11415.280 d18.0
+VisualStudioVersion = 18.2.11415.280
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "CesiDW", "CesiDW\CesiDW.ssmssqlproj", "{3898426A-60F0-4D36-AC20-73174FE87C2B}"
 EndProject
@@ -17,7 +17,7 @@ Global
 		{3898426A-60F0-4D36-AC20-73174FE87C2B}.Default|Default.ActiveCfg = Default
 		{87412656-9D5F-45B1-81E5-0BEC37EDA920}.Default|Default.ActiveCfg = Default
 		{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}.Default|Default.ActiveCfg = Default
-		{F85BC37E-5B86-48AB-A318-E98F3C5A4AB2}.Default|Default.ActiveCfg = Default
+		{950E54AF-64BB-48BD-8090-70B4E3FBB7C3}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

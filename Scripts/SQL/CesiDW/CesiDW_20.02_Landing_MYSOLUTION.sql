@@ -2828,3 +2828,155 @@ GO
 
 EXEC MYSOLUTION.usp_Merge_Partecipant;
 GO
+
+/**
+ * @table Landing.MYSOLUTION_Demo
+ * @description
+
+*/
+
+CREATE OR ALTER VIEW Landing.MYSOLUTION_DemoView
+AS
+WITH TableData
+AS (
+    SELECT DISTINCT
+        T.ID AS Id,
+    
+        CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
+    	    T.ID,
+    	    ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
+            T.Email,
+            T.RagioneSociale,
+            T.Nome,
+            T.Cognome,
+            T.Citta,
+            T.Provincia,
+            T.ProvinciaAbbr,
+            CONVERT(DATE, T.CreatedOnUtc),
+    	    ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+    
+        T.EMAIL AS Email,
+        T.RagioneSociale,
+        T.Nome,
+        T.Cognome,
+        T.Citta,
+        T.Provincia,
+        T.ProvinciaAbbr AS SiglaProvincia,
+        CONVERT(DATE, T.CreatedOnUtc) AS DataInizioDemo
+    
+    FROM MYSOLUTION.Demo T
+)
+SELECT
+    -- Chiavi
+    TD.Id,
+
+    -- Campi per sincronizzazione
+    TD.HistoricalHashKey,
+    TD.ChangeHashKey,
+    CONVERT(VARCHAR(34), TD.HistoricalHashKey, 1) AS HistoricalHashKeyASCII,
+    CONVERT(VARCHAR(34), TD.ChangeHashKey, 1) AS ChangeHashKeyASCII,
+    TD.InsertDatetime,
+    TD.UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    -- Attributi
+    TD.Email,
+    TD.RagioneSociale,
+    TD.Nome,
+    TD.Cognome,
+    TD.Citta,
+    TD.Provincia,
+    TD.SiglaProvincia,
+    TD.DataInizioDemo
+
+FROM TableData TD;
+GO
+
+--DROP TABLE IF EXISTS Landing.MYSOLUTION_Demo;
+GO
+
+IF OBJECT_ID(N'Landing.MYSOLUTION_Demo', N'U') IS NULL
+BEGIN
+    SELECT TOP 0 * INTO Landing.MYSOLUTION_Demo FROM Landing.MYSOLUTION_DemoView;
+
+    ALTER TABLE Landing.MYSOLUTION_Demo ADD CONSTRAINT PK_Landing_MYSOLUTION_Demo PRIMARY KEY CLUSTERED (UpdateDatetime, Id);
+
+    --ALTER TABLE Landing.MYSOLUTION_Demo ALTER COLUMN  NVARCHAR(60) NOT NULL;
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_MYSOLUTION_Demo_BusinessKey ON Landing.MYSOLUTION_Demo (Id);
+END;
+GO
+
+IF OBJECT_ID('MYSOLUTION.usp_Merge_Demo', 'P') IS NULL EXEC('CREATE PROCEDURE MYSOLUTION.usp_Merge_Demo AS RETURN 0;');
+GO
+
+ALTER PROCEDURE MYSOLUTION.usp_Merge_Demo
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO Landing.MYSOLUTION_Demo AS TGT
+    USING Landing.MYSOLUTION_DemoView (NOLOCK) AS SRC
+    ON SRC.Id = TGT.Id
+
+    WHEN MATCHED AND (SRC.ChangeHashKeyASCII <> TGT.ChangeHashKeyASCII)
+      THEN UPDATE SET
+        TGT.ChangeHashKey = SRC.ChangeHashKey,
+        TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII,
+        --TGT.InsertDatetime = SRC.InsertDatetime,
+        TGT.Email = SRC.Email,
+        TGT.RagioneSociale = SRC.RagioneSociale,
+        TGT.Nome = SRC.Nome,
+        TGT.Cognome = SRC.Cognome,
+        TGT.Citta = SRC.Citta,
+        TGT.Provincia = SRC.Provincia,
+        TGT.SiglaProvincia = SRC.SiglaProvincia,
+        TGT.DataInizioDemo = SRC.DataInizioDemo
+
+    WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
+      THEN INSERT VALUES (
+        Id,
+
+        HistoricalHashKey,
+        ChangeHashKey,
+        HistoricalHashKeyASCII,
+        ChangeHashKeyASCII,
+        InsertDatetime,
+        UpdateDatetime,
+        IsDeleted,
+    
+        Email,
+        RagioneSociale,
+        Nome,
+        Cognome,
+        Citta,
+        Provincia,
+        SiglaProvincia,
+        DataInizioDemo
+      )
+
+    WHEN NOT MATCHED BY SOURCE
+        AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE
+        SET TGT.IsDeleted = CAST(1 AS BIT),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.ChangeHashKey = CONVERT(VARBINARY(32), ''),
+        TGT.ChangeHashKeyASCII = ''
+
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.MYSOLUTION_Demo' AS full_olap_table_name,
+        'Id = ' + CAST(COALESCE(inserted.Id, deleted.Id) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END;
+GO
+
+EXEC MYSOLUTION.usp_Merge_Demo;
+GO

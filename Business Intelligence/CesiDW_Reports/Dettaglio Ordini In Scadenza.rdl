@@ -181,7 +181,7 @@
         </Field>
         <Field Name="Progressivo">
           <DataField>Progressivo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="Quote">
           <DataField>Quote</DataField>
@@ -217,6 +217,26 @@
         </Field>
         <Field Name="AgenteProprietario">
           <DataField>AgenteProprietario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotaleRinnovo">
+          <DataField>TotaleRinnovo</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DataRinnovo">
+          <DataField>DataRinnovo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TipoFatturazioneRinnovo">
+          <DataField>TipoFatturazioneRinnovo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DurataMesiRinnovo">
+          <DataField>DurataMesiRinnovo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LivelloMIA">
+          <DataField>LivelloMIA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -513,16 +533,16 @@ ORDER BY Azione;</CommandText>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5in</Width>
+                  <Width>4.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2in</Width>
@@ -534,19 +554,22 @@ ORDER BY Azione;</CommandText>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>2.99999in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2in</Width>
@@ -556,33 +579,6 @@ ORDER BY Azione;</CommandText>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>3in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2in</Width>
@@ -597,7 +593,34 @@ ORDER BY Azione;</CommandText>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3in</Width>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.99999in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.99999in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.99999in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.99999in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2in</Width>
@@ -615,12 +638,12 @@ ORDER BY Azione;</CommandText>
                   <Width>2in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6in</Width>
+                  <Width>5.99999in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.22in</Height>
+                  <Height>0.21999in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1133,6 +1156,45 @@ ORDER BY Azione;</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox41">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Livello MIA</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox41</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2030,7 +2092,7 @@ ORDER BY Azione;</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.20999in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2515,6 +2577,43 @@ ORDER BY Azione;</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TipoFatturazione</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LivelloMIA">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!LivelloMIA.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>LivelloMIA</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3413,6 +3512,7 @@ ORDER BY Azione;</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -3436,15 +3536,15 @@ ORDER BY Azione;</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>usp_ReportDettaglioOrdiniInScadenza</DataSetName>
-            <Height>0.43in</Height>
-            <Width>78in</Width>
+            <Height>0.42999in</Height>
+            <Width>78.99999in</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>0.43in</Height>
+        <Height>0.42999in</Height>
         <Style />
       </Body>
-      <Width>78in</Width>
+      <Width>78.99999in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

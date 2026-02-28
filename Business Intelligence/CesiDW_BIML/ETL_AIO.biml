@@ -287,8 +287,14 @@
 		</Package>
 		<Package Name="Fact_CreditiOpenAI" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
 			<Tasks>
+				<ExecuteSQL Name="Staging_usp_Reload_CreditiOpenAIDettaglio" ConnectionName="CesiDW">
+					<DirectInput>EXEC Staging.usp_Reload_CreditiOpenAIDettaglio;</DirectInput>
+				</ExecuteSQL>
 				<ExecuteSQL Name="Staging_usp_Reload_CreditiOpenAI" ConnectionName="CesiDW">
 					<DirectInput>EXEC Staging.usp_Reload_CreditiOpenAI;</DirectInput>
+				</ExecuteSQL>
+				<ExecuteSQL Name="Fact_usp_Merge_CreditiOpenAIDettaglio" ConnectionName="CesiDW">
+					<DirectInput>EXEC Fact.usp_Merge_CreditiOpenAIDettaglio;</DirectInput>
 				</ExecuteSQL>
 				<ExecuteSQL Name="Fact_usp_Merge_CreditiOpenAI" ConnectionName="CesiDW">
 					<DirectInput>EXEC Fact.usp_Merge_CreditiOpenAI;</DirectInput>
