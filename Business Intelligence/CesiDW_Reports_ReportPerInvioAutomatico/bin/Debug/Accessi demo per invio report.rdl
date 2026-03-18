@@ -695,7 +695,7 @@ ORDER BY TipoCliente;</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!NumeroPagineVisitate.Value)</Value>
+                                  <Value>=Sum(Fields!NumeroAccessi.Value)</Value>
                                   <Style>
                                     <Color>#333333</Color>
                                   </Style>
@@ -722,6 +722,7 @@ ORDER BY TipoCliente;</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                       <DataElementOutput>Output</DataElementOutput>
                     </TablixCell>

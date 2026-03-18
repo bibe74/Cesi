@@ -693,7 +693,7 @@ ORDER BY Agente;</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!NumeroPagineVisitate.Value)</Value>
+                                  <Value>=Sum(Fields!NumeroAccessi.Value)</Value>
                                   <Style>
                                     <Color>#333333</Color>
                                   </Style>
@@ -720,6 +720,7 @@ ORDER BY Agente;</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                       <DataElementOutput>Output</DataElementOutput>
                     </TablixCell>
