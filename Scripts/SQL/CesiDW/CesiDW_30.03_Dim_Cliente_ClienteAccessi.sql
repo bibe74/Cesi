@@ -1379,7 +1379,9 @@ BEGIN
 
     DELETE C
     FROM Dim.Cliente C
-    INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = C.PKCliente;
+    INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = C.PKCliente
+    LEFT JOIN Fact.CreditiOpenAIDettaglio COAID ON COAID.PKCliente = C.PKCliente
+    WHERE COAID.PKCreditiOpenAIDettaglio IS NULL;
 
     -- Verifica clienti non-COMETA passati in COMETA
     UPDATE C
