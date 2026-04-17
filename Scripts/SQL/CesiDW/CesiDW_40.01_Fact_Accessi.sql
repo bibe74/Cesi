@@ -66,6 +66,7 @@ AS (
     INNER JOIN Staging.SoggettoCommerciale_Email SCE ON SCE.Email = UCPV.Username
         AND SCE.rnSoggettoCommercialeDESC = 1
     INNER JOIN Dim.Cliente C ON C.IDSoggettoCommerciale = SCE.IDSoggettoCommerciale
+        AND C.IsDeleted = CAST(0 AS BIT)
 
     UNION ALL
 
@@ -78,6 +79,7 @@ AS (
         AND SCE.rnSoggettoCommercialeDESC = 1
     INNER JOIN Dim.Cliente C ON C.Email = UCPV.Username
         AND C.HasAnagraficaCometa = CAST(0 AS BIT)
+        AND C.IsDeleted = CAST(0 AS BIT)
     WHERE SCE.Email IS NULL
 ),
 AccessiDettaglio
