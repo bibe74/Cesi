@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="11/28/2025 18:06:50" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{6BB17AC9-B77A-4142-89C1-60DBB52A5E8E}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Crediti" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{A075242A-C04A-429F-AC46-F8E8DEC089AE}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{1D0D4950-F5F3-463F-B361-65E8948053E8}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Crediti" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{53A8C717-E349-4413-AF4C-FAC092ECADF6}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{892C4731-A80D-4BC2-B5BA-CCB3EDDBC5D9}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{7D4306B5-D070-498D-A4EE-4C562DAC2D56}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{0D240E21-316D-4F37-A135-2EB066DF0AA6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Crediti" DTS:refId="Package\Staging_usp_Reload_Crediti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{27E1510F-F009-4A09-BA42-07318B496876}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Crediti" DTS:refId="Package\Staging_usp_Reload_Crediti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{F9F4B92A-DDA2-4363-94D3-1F3B5A6490EC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Crediti" DTS:refId="Package\Fact_usp_Merge_Crediti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{13C197FE-6FDA-4005-A497-ACE113EE2000}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Crediti" DTS:refId="Package\Fact_usp_Merge_Crediti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{557D5461-23CE-4700-866C-A7F84481814E}" DTS:From="Package\Staging_usp_Reload_Crediti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti]" DTS:To="Package\Fact_usp_Merge_Crediti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{5F368B6B-5639-4BBC-9637-C560BE37DAF7}" DTS:From="Package\Staging_usp_Reload_Crediti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti]" DTS:To="Package\Fact_usp_Merge_Crediti" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

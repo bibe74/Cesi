@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="11/28/2025 18:06:50" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{9B63DDCB-21B6-4346-B05E-5051232468CD}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Documenti" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{B3E0B62F-807A-4A4A-96A3-FD27389D06F6}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{CFC1A7DB-F9F2-4E2D-A3CC-3D21D7EB6A65}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Documenti" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{441EB6EE-F25E-43EE-AF25-30A2D7046BB7}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{B3AF440D-E217-40DE-84B4-88D604105E47}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{04E32C96-438C-4343-A070-EF153656115F}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{68149B2B-73F9-41DF-A7FC-8B8988163C89}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Documenti" DTS:refId="Package\Staging_usp_Reload_Documenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{C3139AAF-215F-46C8-89E1-DD6F1157017F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Documenti" DTS:refId="Package\Staging_usp_Reload_Documenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Documenti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{14BB2B1D-435B-4D7B-8BBD-8C651EFCFFFB}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Documenti" DTS:refId="Package\Fact_usp_Merge_Documenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{2B1F0AF5-CD5E-4926-A578-79AB36173E80}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Documenti" DTS:refId="Package\Fact_usp_Merge_Documenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Documenti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{EFDD2FF2-7649-4F45-9953-5D6CD2B33171}" DTS:From="Package\Staging_usp_Reload_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti]" DTS:To="Package\Fact_usp_Merge_Documenti" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{245DAF79-7AC7-4A38-86BE-D7A1BF283B7F}" DTS:From="Package\Staging_usp_Reload_Documenti" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti]" DTS:To="Package\Fact_usp_Merge_Documenti" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

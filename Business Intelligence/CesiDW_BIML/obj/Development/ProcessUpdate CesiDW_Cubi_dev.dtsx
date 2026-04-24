@@ -64,7 +64,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Accessi"
-                  DTS:ThreadHint="0">
+                  DTS:ThreadHint="6">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -90,7 +90,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Accessi"
-                  DTS:ThreadHint="1">
+                  DTS:ThreadHint="7">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -127,7 +127,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Corsi"
-                  DTS:ThreadHint="2">
+                  DTS:ThreadHint="8">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -164,7 +164,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Crediti"
-                  DTS:ThreadHint="3">
+                  DTS:ThreadHint="9">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -201,7 +201,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Crediti Open AI"
-                  DTS:ThreadHint="9">
+                  DTS:ThreadHint="5">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -264,7 +264,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Cliente"
-                  DTS:ThreadHint="5">
+                  DTS:ThreadHint="0">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -290,7 +290,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Documenti"
-                  DTS:ThreadHint="6">
+                  DTS:ThreadHint="1">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -316,7 +316,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Documenti"
-                  DTS:ThreadHint="7">
+                  DTS:ThreadHint="2">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData
@@ -342,7 +342,7 @@
                   DTS:ExecutableType="Microsoft.DTSProcessingTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Partition Scadenze"
-                  DTS:ThreadHint="8">
+                  DTS:ThreadHint="3">
                   <DTS:Variables />
                   <DTS:ObjectData>
                     <ASProcessingData

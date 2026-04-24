@@ -17,8 +17,16 @@
           <QueryParameter Name="@CapoArea">
             <Value>=Parameters!CapoArea.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@PKDataCreazionePartitaInizio">
+            <Value>=Parameters!PKDataCreazionePartitaInizio.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@PKDataCreazionePartitaFine">
+            <Value>=Parameters!PKDataCreazionePartitaFine.Value</Value>
+          </QueryParameter>
         </QueryParameters>
-        <CommandText>EXEC Fact.usp_ReportCreditiMIA @CapoArea = @CapoArea;</CommandText>
+        <CommandText>EXEC Fact.usp_ReportCreditiMIA @CapoArea = @CapoArea,
+    @PKDataCreazionePartitaInizio = @PKDataCreazionePartitaInizio,
+    @PKDataCreazionePartitaFine = @PKDataCreazionePartitaFine;</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -48,19 +56,19 @@
         </Field>
         <Field Name="Ultimo_utilizzo">
           <DataField>Ultimo utilizzo</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Data_creazione_partita">
           <DataField>Data creazione partita</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Data_scadenza_partita">
           <DataField>Data scadenza partita</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Data_inizio_demo">
           <DataField>Data inizio demo</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -86,6 +94,24 @@ ORDER BY CapoArea;</CommandText>
         <Field Name="CapoAreaDescrizione">
           <DataField>CapoAreaDescrizione</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="pDataCreazionePartita">
+      <Query>
+        <DataSourceName>CesiDW_ds</DataSourceName>
+        <CommandText>SELECT
+    DATEADD(DAY, 1, DATEADD(DAY, -DATEPART(DAYOFYEAR, CURRENT_TIMESTAMP), CONVERT(DATE, CURRENT_TIMESTAMP))) AS PKDataCreazionePartitaInizio,
+    CONVERT(DATE, CURRENT_TIMESTAMP) AS PKDataCreazionePartitaFine;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PKDataCreazionePartitaInizio">
+          <DataField>PKDataCreazionePartitaInizio</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PKDataCreazionePartitaFine">
+          <DataField>PKDataCreazionePartitaFine</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1021,16 +1047,48 @@ ORDER BY CapoArea;</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="PKDataCreazionePartitaInizio">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>pDataCreazionePartita</DataSetName>
+          <ValueField>PKDataCreazionePartitaInizio</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Data Creazione Partita: dal</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PKDataCreazionePartitaFine">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>pDataCreazionePartita</DataSetName>
+          <ValueField>PKDataCreazionePartitaFine</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>al</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>1</NumberOfRows>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>CapoArea</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>PKDataCreazionePartitaInizio</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>PKDataCreazionePartitaFine</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

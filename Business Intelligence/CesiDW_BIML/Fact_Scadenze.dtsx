@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="11/28/2025 18:06:50" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{AF07775F-D854-4E78-80A0-7B8159767030}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Scadenze" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{08D2929A-0EE6-48AD-BD1B-176D61B192F9}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{BC9E1AEE-8ADF-48BF-A3A0-ADE83AEF0ABA}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_Scadenze" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{F30C3533-0F07-41AE-A3AD-0F733E0A4D46}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{D3F1B4CE-D12A-4E10-94B5-17EFE974B6E5}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{6973441C-9356-482C-BC7B-E7F8113BDB0A}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{5A8E7845-5C08-409D-8A07-B5F485E673D2}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Scadenze" DTS:refId="Package\Staging_usp_Reload_Scadenze" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E5412F29-0887-4F9B-B325-B8F6EFCB83DF}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Scadenze" DTS:refId="Package\Staging_usp_Reload_Scadenze" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Scadenze;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{CDF8F16D-7EB8-4D47-BE0E-673E0E4BFA92}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Scadenze" DTS:refId="Package\Fact_usp_Merge_Scadenze" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E265395C-AF0E-4531-8B79-5A0971FD5D34}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_Scadenze" DTS:refId="Package\Fact_usp_Merge_Scadenze" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Scadenze;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{DBC2550C-B1D2-4762-8E54-93A1F7080C9B}" DTS:From="Package\Staging_usp_Reload_Scadenze" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze]" DTS:To="Package\Fact_usp_Merge_Scadenze" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{3C2F3AC8-52D1-4ED2-8385-B28D092DA6CA}" DTS:From="Package\Staging_usp_Reload_Scadenze" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze]" DTS:To="Package\Fact_usp_Merge_Scadenze" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

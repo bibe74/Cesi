@@ -1,283 +1,288 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="11/28/2025 18:06:49" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{077ACD7B-3375-4C6A-8466-EB2DE778AF82}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="01_Extract" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{97203D66-39FD-4BFB-B679-C50E04FF4404}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{9F4BFD94-301D-4A17-8361-DA87D17E75A0}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="01_Extract" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{94CF9063-C1CF-4AC6-9B79-45FBB2E74C14}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{DE761BD8-47C4-4FA7-8903-2BF43333D64B}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{1846C486-9807-4CF7-BCFB-9438494DCAD9}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{13E245BC-F8FC-4F82-9403-96797DF53D94}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_COMETA" DTS:refId="Package\ETL_COMETA">
+    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{F06980F0-F27F-4F34-86F5-9F01D736D999}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_COMETA" DTS:refId="Package\ETL_COMETA">
       <DTS:Executables>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A3391C38-8F12-4641-A04A-8846CAE31284}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Anagrafica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Anagrafica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B0EFEBB3-431E-4870-B7FF-A36662215EC3}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Anagrafica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Anagrafica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Anagrafica;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B1877BBA-E254-43BB-90B0-CC8C98EA155C}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Articolo" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Articolo" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1125B4BD-2712-45C9-A0D3-B0B18196A7FA}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Articolo" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Articolo" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Articolo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{85A1DC16-FD20-4C37-8B25-B994D5D7ABBD}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaCommercialeArticolo" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaCommercialeArticolo" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A823F11B-C1E9-4870-85EF-98F0DDD6B364}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaCommercialeArticolo" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaCommercialeArticolo" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_CategoriaCommercialeArticolo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{3245CBE7-EB86-4386-ABF3-87298F6E20F6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaCommercialeSoggettoCommerciale" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaCommercialeSoggettoCommerciale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{039D7184-73A0-4556-BD38-23B0276A209B}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaCommercialeSoggettoCommerciale" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaCommercialeSoggettoCommerciale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_CategoriaCommercialeSoggettoCommerciale;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{D5366E36-5019-44E4-8FF0-E0A1F2D6C1B6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaMerceologica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaMerceologica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{AF70E2A9-5A89-4A27-905C-828D92DC8857}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CategoriaMerceologica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CategoriaMerceologica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_CategoriaMerceologica;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{9428CD1A-92C8-4640-B4CF-FF5DB4F0074C}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CondizioniPagamento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CondizioniPagamento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{896EB6BC-089B-401A-87D1-C922A1AC731A}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_CondizioniPagamento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_CondizioniPagamento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_CondizioniPagamento;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{ABF08BF8-E3DC-418F-A0D3-DD53792855AE}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Documento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Documento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{BA1B108B-1952-4DB6-9EA5-04919F9FC58F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Documento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Documento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Documento;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{76FC65E6-B7D4-409E-B313-1556C50CDA63}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Documento_Riga" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Documento_Riga" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1E7FB719-F55C-4908-9D70-F79C0B7549E7}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Documento_Riga" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Documento_Riga" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Documento_Riga;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{CD849368-556C-4B89-996D-1874F0DF5CF2}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Esercizio" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Esercizio" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{07E84974-90B2-4F3E-AE13-38A3146E631A}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Esercizio" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Esercizio" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Esercizio;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{F921DD2E-B5CF-41E2-89E6-55DF34A93417}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Gruppo_Agenti" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Gruppo_Agenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{D55434D7-2B14-4584-A399-0F261A5275EE}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Gruppo_Agenti" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Gruppo_Agenti" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Gruppo_Agenti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{37DF5AE4-DD6B-4692-82C7-2FA57B84F329}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_1" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_1" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{599CBFDF-5D6A-444F-9876-2D795E0494C3}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_1" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_1" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Libero_1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E29B3426-DDFD-4147-A5C2-4CFFFE3150AC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_2" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_2" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{31D802AD-D286-4B26-8793-D7D9ED9DC084}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_2" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_2" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Libero_2;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{03FEC25A-BE73-4507-AC0F-6E5F10E13357}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_3" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_3" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{225A3065-573D-4B2C-9DF5-1A975FD1AE5A}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Libero_3" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Libero_3" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Libero_3;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1CFE6F87-D4F1-4854-8FE1-CFF0EF0712D9}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MovimentiScadenza" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MovimentiScadenza" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4F9C421D-50AD-488D-8C42-6332B54D3F7F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MovimentiScadenza" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MovimentiScadenza" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_MovimentiScadenza;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{3118CE22-8CF1-40C0-99CC-F3C864E71869}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionContracts" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionContracts" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{619BD908-26AC-4EA0-BF45-0E026FE5781E}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionContracts" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionContracts" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_MySolutionContracts;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{446AA439-51A8-4D15-ACC4-08FCD248756F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionTrascodifica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionTrascodifica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{DA68DF7F-67C6-4836-924B-018E1F7EC27C}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionTrascodifica" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionTrascodifica" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_MySolutionTrascodifica;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{F67818EC-5327-4528-A90F-428BFB8F941A}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionUsers" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionUsers" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{AB14D385-31EE-47B1-A48D-874459AD106C}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_MySolutionUsers" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_MySolutionUsers" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_MySolutionUsers;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{0E7FE921-552C-403F-8A61-246DCE30B0EF}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Profilo_Documento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Profilo_Documento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{11FB35C9-FA6D-4FEA-A883-DEDA80637CF1}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Profilo_Documento" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Profilo_Documento" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Profilo_Documento;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{EEC2440C-E42A-4044-A076-AC2DBD856AD4}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Registro" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Registro" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B6716D40-B7ED-41BA-BB0A-4A036F70566D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Registro" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Registro" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Registro;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E6977108-47FD-4D11-99D5-2DF3E1488B31}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Scadenza" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Scadenza" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{5B854108-9A69-41F8-B501-783EDD956783}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Scadenza" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Scadenza" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Scadenza;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4467535C-CCEE-425B-806B-C10665BD37E8}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_SoggettoCommerciale" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_SoggettoCommerciale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{3F7DABCA-C602-4882-8774-B219AE293447}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_SoggettoCommerciale" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_SoggettoCommerciale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_SoggettoCommerciale;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B1B7E44C-1856-4194-B9D5-C500ECC7EF6D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Telefono" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Telefono" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B98B06B4-5700-484B-A631-1C82221FC598}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Telefono" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Telefono" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Telefono;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1F5A665D-CF05-45E1-9469-D17D79528601}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Tipo_Fatturazione" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Tipo_Fatturazione" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E8A803D6-0EE5-424E-BABE-7708AA10C6CA}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETA_usp_Merge_Tipo_Fatturazione" DTS:refId="Package\ETL_COMETA\COMETA_usp_Merge_Tipo_Fatturazione" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETA.usp_Merge_Tipo_Fatturazione;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{08CD92A2-36DD-49E5-A88B-36BE91E72E12}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_MYSOLUTION" DTS:refId="Package\ETL_MYSOLUTION">
+    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{A34D1473-E8CE-4106-BBDD-AC5FE97EC862}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_MYSOLUTION" DTS:refId="Package\ETL_MYSOLUTION">
       <DTS:Executables>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A83631A2-2B68-4382-AC26-B7BA3EAB5A33}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Address" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Address" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{700A2E54-AEB2-4D62-A124-52CD0878F3A6}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Address" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Address" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Address;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1CF6529E-D3AA-46E2-9F46-198DF578ECB7}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Country" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Country" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{0B6DF7CF-1C1B-4844-8190-C96865D2D78B}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Country" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Country" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Country;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{56649D04-6C16-4399-97CC-CCA0A100DF2B}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Courses" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Courses" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{898E9759-773D-4E78-BF5C-23A18DA50219}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Courses" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Courses" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Courses;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{CDC4B3DA-F93D-4C9A-A604-3BC68D2B1FAE}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CoursesData" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CoursesData" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{8CF9432C-0495-4494-AA43-812F7A816E6D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CoursesData" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CoursesData" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_CoursesData;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{D42328B8-4D29-4253-B12A-3B583FBAB48E}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Customer" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Customer" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{35E0A169-F243-4C1C-B262-BBD2A3B329B9}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Customer" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Customer" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Customer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{D2EA6D38-8BB5-4698-A68E-5099F3B1DD33}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Customer_CustomerRole_Mapping" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Customer_CustomerRole_Mapping" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{948695DC-6ED9-4082-ABB1-B0D9007D4C85}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Customer_CustomerRole_Mapping" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Customer_CustomerRole_Mapping" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Customer_CustomerRole_Mapping;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{2DFB7021-159A-40CC-B62E-4CA2B799E501}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerAddresses" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerAddresses" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{F6073B4D-807A-4806-9A13-1D8C0DD90FF9}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerAddresses" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerAddresses" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_CustomerAddresses;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{AE501533-DCE5-4F76-BA9D-843128ECF9BB}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerPartecipants" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerPartecipants" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{424DF184-195B-4B2F-B211-750A30E88E7A}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerPartecipants" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerPartecipants" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_CustomerPartecipants;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{046C58A6-BF27-49B9-89E8-19E897DAAC48}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerRole" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerRole" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{6D0DD5FA-56E5-4D5C-8A68-72EB05F80F0D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_CustomerRole" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_CustomerRole" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_CustomerRole;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{647DEB51-73A7-4D73-8FD2-726C5EC02C65}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_GenericAttribute" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_GenericAttribute" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{3DCAE025-0FDD-47B2-9D93-884360D66333}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Demo" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Demo" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Demo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{E46E696D-4124-4CBD-A533-F56D5AB4A636}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_GenericAttribute" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_GenericAttribute" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_GenericAttribute;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4AEE6E53-9F0D-4C1C-AA13-9E00F7853B9F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_LogsForReport" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_LogsForReport" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{BE2F50C2-8146-43A3-A805-D5C28669B566}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_LogsForReport" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_LogsForReport" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_LogsForReport;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A41B6F8C-41D1-4594-9A94-2BA8D8EEB701}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_NopCustomer" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_NopCustomer" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{6085F877-144E-40E6-9A31-C1C899F179CC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_NopCustomer" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_NopCustomer" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_NopCustomer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A61F75B6-9F15-4666-ACD7-280E77DCD4B5}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_OrderItemPartecipant" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_OrderItemPartecipant" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{8FD333AA-3042-4809-9B85-D4501D37B9EC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_OrderItemPartecipant" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_OrderItemPartecipant" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_OrderItemPartecipant;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{2DED51AA-6864-4FED-B39C-F76371980934}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Partecipant" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Partecipant" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{70C1F539-E2A9-4F85-B817-76BDA42F16F7}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Partecipant" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Partecipant" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Partecipant;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{23A7C88E-C7A3-431E-9B7E-ECCF6EEC6C3F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_StateProvince" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_StateProvince" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{DF6EF586-1737-49B2-917C-399196B9B15D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_StateProvince" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_StateProvince" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_StateProvince;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{1983F059-E764-422A-A654-4DB8960FD5A0}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Users" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Users" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{EF0D336F-633E-4D51-ADE2-180767445106}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="MYSOLUTION_usp_Merge_Users" DTS:refId="Package\ETL_MYSOLUTION\MYSOLUTION_usp_Merge_Users" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC MYSOLUTION.usp_Merge_Users;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{45472F1E-2DDA-4F68-890B-1E0FDAC6461E}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_COMETAINTEGRATION" DTS:refId="Package\ETL_COMETAINTEGRATION">
+    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{8C9D2F9C-D588-4BC4-89BD-DAD492A3743F}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_COMETAINTEGRATION" DTS:refId="Package\ETL_COMETAINTEGRATION">
       <DTS:Executables>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{69FC08BF-B9A0-4993-9840-B4367941AB76}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETAINTEGRATION_usp_Merge_ArticleBIData" DTS:refId="Package\ETL_COMETAINTEGRATION\COMETAINTEGRATION_usp_Merge_ArticleBIData" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{727C553B-266A-4EBC-8524-04AFC9097CDF}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="COMETAINTEGRATION_usp_Merge_ArticleBIData" DTS:refId="Package\ETL_COMETAINTEGRATION\COMETAINTEGRATION_usp_Merge_ArticleBIData" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC COMETAINTEGRATION.usp_Merge_ArticleBIData;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{13FB8A25-0358-42C4-8296-B676927C9968}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_WEBINARS" DTS:refId="Package\ETL_WEBINARS">
+    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{E315E7D6-8ED3-4ABC-9050-6C64459C16BB}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_WEBINARS" DTS:refId="Package\ETL_WEBINARS">
       <DTS:Executables>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{326E9447-EBF1-4CD1-B621-88E0570887FC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoAutocertificazione" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoAutocertificazione" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{0817BCD5-D8B5-462B-9BCC-684A95353A9F}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoAutocertificazione" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoAutocertificazione" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC WEBINARS.usp_Merge_CreditoAutocertificazione;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{6A9C8FC1-6D88-408E-831D-408FC83629AE}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoCorso" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoCorso" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{12660238-9131-4542-9D83-7E35ECDDF20D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoCorso" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoCorso" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC WEBINARS.usp_Merge_CreditoCorso;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{71C67D95-633E-4EDB-8EB9-2B01ED1386CA}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoTipologia" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoTipologia" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B197365D-3D4B-4971-8C15-4C2F2B016A87}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_CreditoTipologia" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_CreditoTipologia" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC WEBINARS.usp_Merge_CreditoTipologia;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{CDFA15B8-032C-4A9F-8C73-D08DB7DFD512}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_WeAutocertificazioni" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_WeAutocertificazioni" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4C64DF5A-F359-4858-8B9D-1CF74D8BB77D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_WeAutocertificazioni" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_WeAutocertificazioni" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC WEBINARS.usp_Merge_WeAutocertificazioni;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{63854BE9-0FA2-4A93-860B-D8CA2D9105CB}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_WeBinars" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_WeBinars" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{51B309B1-B2E2-4C89-B4DF-B3B330D60A44}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="WEBINARS_usp_Merge_WeBinars" DTS:refId="Package\ETL_WEBINARS\WEBINARS_usp_Merge_WeBinars" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC WEBINARS.usp_Merge_WeBinars;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{D8525819-967D-4407-8A3F-7283B4DB03F0}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_GPT" DTS:refId="Package\ETL_GPT">
+    <DTS:Executable DTS:CreationName="STOCK:SEQUENCE" DTS:DTSID="{C6A712CD-2BD5-4876-8F34-EA9761A15279}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="ETL_GPT" DTS:refId="Package\ETL_GPT">
       <DTS:Executables>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{C3C6539F-44AE-4106-863E-16B58AB3E7D2}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICausale" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICausale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{B76FA17F-290A-46B3-A698-191289748417}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICausale" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICausale" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAICausale;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{9E01CB4A-98AF-41CE-A6F0-6D7A1F5F486D}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICliente" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICliente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{CE023392-0B00-40FE-9BC0-A480C5F12C06}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICliente" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICliente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAICliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{4836EC65-BA83-4218-A009-9DD3556AF924}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICredito" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICredito" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{30726271-FB12-4D6F-A51C-3709A11A7549}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAICredito" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAICredito" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAICredito;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{995EC8F0-286B-474D-829C-C24919371612}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIMessage" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIMessage" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{A74D2034-E11E-4360-9B19-F16A872EE888}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIMessage" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIMessage" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAIMessage;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{32119B96-A8B3-4E55-A819-2192182D6BCF}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIPartita" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIPartita" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{405E1306-D131-48D9-9F0B-0E6A2965B462}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIPartita" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIPartita" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAIPartita;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{9E1EDBA0-8811-4F51-A24C-ED511E835690}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIThread" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIThread" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+        <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{BD39603F-9D44-4451-99B1-B63A0B3F7905}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="GPT_usp_Merge_OpenAIThread" DTS:refId="Package\ETL_GPT\GPT_usp_Merge_OpenAIThread" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:ObjectData>
             <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC GPT.usp_Merge_OpenAIThread;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>

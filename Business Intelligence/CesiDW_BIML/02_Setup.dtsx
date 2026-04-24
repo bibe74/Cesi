@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="11/28/2025 18:06:49" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{C8F821FC-FFB6-4FDC-B0A4-1AD70E67940A}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="02_Setup" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{62FF57D5-C190-437D-977E-30921FE13F45}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{3F662C9A-BB2F-4019-AB4A-7BB8B3618A68}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="02_Setup" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{7B8E8995-886C-4D1B-B950-4BBB43F0BE13}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{582D4570-715A-4293-B6F6-F2F3494B45B6}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{79A85A1B-2ECE-41B8-84A1-93D7F8A8C38E}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{AEF70907-42C8-4566-8E80-0AEE60804AC1}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Setup" DTS:refId="Package\Setup" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{82AF81E6-56D5-4556-A55B-04F477B8394B}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Setup" DTS:refId="Package\Setup" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC setup.usp_InsertDates;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>

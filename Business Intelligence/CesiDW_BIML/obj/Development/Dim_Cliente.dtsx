@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/28/2025 6:06:50 PM"
+  DTS:CreationDate="4/24/2026 2:49:22 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{0313D068-B96E-4FD4-9392-0451F011E44F}"
+  DTS:DTSID="{435D4578-149A-4897-9952-174031C08FFD}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Cliente"
-  DTS:VersionGUID="{E0C8D015-09C6-417E-9C50-E23EA39E22E2}"
+  DTS:VersionGUID="{835732DD-C824-4E40-85B6-BE272DC84F8D}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{9778996E-C749-4488-BA56-78D07268C2E8}"
+      DTS:DTSID="{FB6152E8-0F35-4F06-B941-C61363269325}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Dim_usp_Merge_Cliente"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{B32E3EC7-31D1-4874-9D19-BC254C5AA226}"
+      DTS:DTSID="{567EE407-A3E1-47FC-B71D-83069829E141}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dim_usp_Merge_Cliente"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_Cliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Dim_usp_Merge_ClienteAccessi"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{4853B3F2-2F1A-499A-8B6F-61DAD33BCE73}"
+      DTS:DTSID="{0A7BD851-D008-4048-854C-554AA4591FB0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dim_usp_Merge_ClienteAccessi"
@@ -58,14 +58,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_ClienteAccessi;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_AccessiCustomer"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{0C69FC0D-B5A9-4F78-B25C-CFC40CC87E98}"
+      DTS:DTSID="{16BA1B59-1ED1-4027-A644-17B0D02BB5A1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_AccessiCustomer"
@@ -74,14 +74,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_AccessiCustomer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_AccessiUsername"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{41E66E2F-F3C1-4573-925F-3144DD3E3C70}"
+      DTS:DTSID="{CAF73BB0-157A-49BB-99BC-1AC6FF075FCA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_AccessiUsername"
@@ -90,14 +90,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_AccessiUsername;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_CometaCustomer"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{485CFE9D-9A4D-4856-B95B-A7458F7672B7}"
+      DTS:DTSID="{F339C7A1-992F-4905-8518-B742B810C820}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_CometaCustomer"
@@ -106,14 +106,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_CometaCustomer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_MySolutionCustomer"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{367FB440-31F7-4756-84AC-0A27D1F4429A}"
+      DTS:DTSID="{C9AA31EF-D48D-4343-969C-E4EC5670EFC0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_MySolutionCustomer"
@@ -122,7 +122,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9778996E-C749-4488-BA56-78D07268C2E8}"
+          SQLTask:Connection="{FB6152E8-0F35-4F06-B941-C61363269325}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_MySolutionCustomer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -131,7 +131,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Dim_usp_Merge_Cliente_To_Dim_usp_Merge_ClienteAccessi]"
       DTS:CreationName=""
-      DTS:DTSID="{294E01AA-4D28-4E72-8E0C-E005FDBC6FF8}"
+      DTS:DTSID="{A9650114-5EFC-4DF9-BE1B-3A9A31D151B8}"
       DTS:From="Package\Dim_usp_Merge_Cliente"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Dim_usp_Merge_Cliente_To_Dim_usp_Merge_ClienteAccessi"
@@ -139,7 +139,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_AccessiCustomer_To_Dim_usp_Merge_Cliente]"
       DTS:CreationName=""
-      DTS:DTSID="{6DBF218F-E609-4233-A270-75720E56FEBE}"
+      DTS:DTSID="{5AB40C64-FE54-4DC5-A90E-B67298C91197}"
       DTS:From="Package\Staging_usp_Reload_AccessiCustomer"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_AccessiCustomer_To_Dim_usp_Merge_Cliente"
@@ -147,7 +147,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_AccessiUsername_To_Staging_usp_Reload_AccessiCustomer]"
       DTS:CreationName=""
-      DTS:DTSID="{B5F64E43-E4DF-4DEE-9FCE-F85DB18FB214}"
+      DTS:DTSID="{C350DE4F-3330-488E-BD65-F2A8ECCC5273}"
       DTS:From="Package\Staging_usp_Reload_AccessiUsername"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_AccessiUsername_To_Staging_usp_Reload_AccessiCustomer"
@@ -155,7 +155,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_CometaCustomer_To_Staging_usp_Reload_MySolutionCustomer]"
       DTS:CreationName=""
-      DTS:DTSID="{AE7A2BF9-89A7-4995-8121-D693A4D79C2D}"
+      DTS:DTSID="{942C7EBC-2EBD-4A9E-AEA5-85D1AF366192}"
       DTS:From="Package\Staging_usp_Reload_CometaCustomer"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_CometaCustomer_To_Staging_usp_Reload_MySolutionCustomer"
@@ -163,7 +163,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_MySolutionCustomer_To_Staging_usp_Reload_AccessiUsername]"
       DTS:CreationName=""
-      DTS:DTSID="{8368CEE9-7624-4C16-90F4-5090E9CA90A9}"
+      DTS:DTSID="{90F81EC3-859B-4256-8807-D461386A87D7}"
       DTS:From="Package\Staging_usp_Reload_MySolutionCustomer"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_MySolutionCustomer_To_Staging_usp_Reload_AccessiUsername"
