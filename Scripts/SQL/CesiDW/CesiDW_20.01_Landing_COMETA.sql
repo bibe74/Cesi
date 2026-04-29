@@ -888,7 +888,7 @@ SELECT
     TD.id_libero_3,
     TD.id_tipo_fatturazione,
     TD.data_disdetta,
-    TD.motivo_disdetta,
+    LEFT(TD.motivo_disdetta, 120) AS motivo_disdetta,
     TD.id_con_pagamento,
     TD.rinnovo_automatico COLLATE DATABASE_DEFAULT AS rinnovo_automatico,
     LEFT(TD.note_intestazione, 1000) COLLATE DATABASE_DEFAULT AS note_intestazione,
@@ -976,9 +976,12 @@ BEGIN
         TGT.id_libero_3 = SRC.id_libero_3,
         TGT.id_tipo_fatturazione = SRC.id_tipo_fatturazione,
         TGT.id_con_pagamento = SRC.id_con_pagamento,
+        TGT.data_disdetta = SRC.data_disdetta,
+        TGT.motivo_disdetta = SRC.motivo_disdetta,
         TGT.rinnovo_automatico = SRC.rinnovo_automatico,
         TGT.note_intestazione = SRC.note_intestazione,
         TGT.note_decisionali = SRC.note_decisionali
+
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
