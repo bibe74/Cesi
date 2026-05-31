@@ -1377,6 +1377,11 @@ BEGIN
     FROM Fact.CreditiOpenAI T
     INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = T.PKCliente;
 
+    UPDATE T
+    SET T.PKCliente = CNIC.PKClienteCometa
+    FROM Fact.CreditiOpenAIDettaglio T
+    INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = T.PKCliente;
+
     DELETE C
     FROM Dim.Cliente C
     INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = C.PKCliente
