@@ -54,7 +54,7 @@ AS
 WITH UtentiConPagineVisitate
 AS (
     SELECT DISTINCT Username
-    FROM Landing.MYSOLUTION_LogsForReport LFR
+    FROM Landing.MYSOLUTION_LogsForReport
 ),
 UtentiConPagineVisitateClienti
 AS (
@@ -198,7 +198,7 @@ BEGIN
 
     INSERT INTO Staging.Accessi
     SELECT * FROM Staging.AccessiView
-    WHERE UpdateDatetime > @lastupdated_staging;
+    --WHERE UpdateDatetime > @lastupdated_staging;
 
     SELECT @lastupdated_staging = MAX(UpdateDatetime) FROM Staging.Accessi;
 
