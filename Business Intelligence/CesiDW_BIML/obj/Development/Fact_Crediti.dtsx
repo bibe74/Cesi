@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{1D0D4950-F5F3-463F-B361-65E8948053E8}"
+  DTS:DTSID="{0076B059-25F4-4149-8365-B206E402F819}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Crediti"
-  DTS:VersionGUID="{53A8C717-E349-4413-AF4C-FAC092ECADF6}"
+  DTS:VersionGUID="{34096631-8C18-4623-97DB-7B18402752A1}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{7D4306B5-D070-498D-A4EE-4C562DAC2D56}"
+      DTS:DTSID="{6BE644F2-1D8E-4655-AB37-92DF408D317A}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Crediti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{13C197FE-6FDA-4005-A497-ACE113EE2000}"
+      DTS:DTSID="{92FA6DE2-A714-401C-9158-955056C97842}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Crediti"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7D4306B5-D070-498D-A4EE-4C562DAC2D56}"
+          SQLTask:Connection="{6BE644F2-1D8E-4655-AB37-92DF408D317A}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Crediti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{27E1510F-F009-4A09-BA42-07318B496876}"
+      DTS:DTSID="{0655A0CF-DA29-45D3-8614-B5BE469BC15D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Crediti"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7D4306B5-D070-498D-A4EE-4C562DAC2D56}"
+          SQLTask:Connection="{6BE644F2-1D8E-4655-AB37-92DF408D317A}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Crediti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti]"
       DTS:CreationName=""
-      DTS:DTSID="{5F368B6B-5639-4BBC-9637-C560BE37DAF7}"
+      DTS:DTSID="{03A43468-2561-4101-AA42-A7F926CE4516}"
       DTS:From="Package\Staging_usp_Reload_Crediti"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Crediti_To_Fact_usp_Merge_Crediti"

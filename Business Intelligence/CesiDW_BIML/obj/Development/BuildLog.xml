@@ -2,58 +2,58 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CesiDW_BIML</Name>
-    <LastWriteTime>2026-04-06T05:40:31.7636273Z</LastWriteTime>
+    <LastWriteTime>2026-07-24T14:43:57.639262Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>00_ETL_master.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6158852Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1163518Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>01_Extract.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6173962Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1183501Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02_Setup.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6184064Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1193508Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03_Transform_and_Load.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6194149Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1203506Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Articolo.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6204137Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1213506Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6204137Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1223454Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_GruppoAgenti.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6234389Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1253383Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Accessi.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6244409Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1273367Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Documenti.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6274413Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1323548Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Scadenze.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6284393Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1343382Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -93,17 +93,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Budget.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6244409Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1283383Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Utente.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6234389Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1263384Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Corsi.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6254221Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1293395Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -113,17 +113,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Cliente_OLD.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6214152Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1233364Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Corso.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.622424Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1243391Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Crediti.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6264248Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1303386Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -133,7 +133,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_CreditiOpenAI.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6264248Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1313404Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -143,7 +143,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_DomandeMIA.dtsx</Name>
-      <LastWriteTime>2026-04-24T12:50:23.6284393Z</LastWriteTime>
+      <LastWriteTime>2026-07-24T14:43:50.1333394Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Analytics.dtsx</Name>
+      <LastWriteTime>2026-07-24T14:43:50.1273367Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_UtilizzoOpenAI.dtsx</Name>
+      <LastWriteTime>2026-07-24T14:43:50.1153534Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

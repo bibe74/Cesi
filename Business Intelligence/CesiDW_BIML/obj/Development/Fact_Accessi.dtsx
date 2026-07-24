@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:44 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{491C5E15-1E83-420E-B00F-15186C068F51}"
+  DTS:DTSID="{64163244-DD36-4448-82AE-963FBD73AB9F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Accessi"
-  DTS:VersionGUID="{835CA2C6-EC42-46DE-92DC-9FDFBFF71441}"
+  DTS:VersionGUID="{95D7183C-1785-4C65-A0F4-15E18415A229}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3C09536D-F248-4747-8566-9B556F2788F0}"
+      DTS:DTSID="{55E4866B-841B-453C-8071-8883389B43BC}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Accessi"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{9664A6BB-8504-4CD3-97CF-2BB28857D22D}"
+      DTS:DTSID="{5C1A1204-C4BA-421B-AA03-8B524FA6EB06}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Accessi"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3C09536D-F248-4747-8566-9B556F2788F0}"
+          SQLTask:Connection="{55E4866B-841B-453C-8071-8883389B43BC}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Accessi;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Accessi"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{CE9D34B4-7682-49EF-9D1D-E637CB928F05}"
+      DTS:DTSID="{96FD1B34-C627-40B9-8E90-5795D4280D27}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Accessi"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3C09536D-F248-4747-8566-9B556F2788F0}"
+          SQLTask:Connection="{55E4866B-841B-453C-8071-8883389B43BC}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Accessi;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Accessi_To_Fact_usp_Merge_Accessi]"
       DTS:CreationName=""
-      DTS:DTSID="{3BDADD97-7854-4BEB-AEA5-5B4923AD3440}"
+      DTS:DTSID="{B24D91DF-931C-463E-959A-B537546E98F6}"
       DTS:From="Package\Staging_usp_Reload_Accessi"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Accessi_To_Fact_usp_Merge_Accessi"

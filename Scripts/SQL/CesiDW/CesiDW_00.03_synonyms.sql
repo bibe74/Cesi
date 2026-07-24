@@ -52,6 +52,7 @@ IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('MYSOLUTION
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('MYSOLUTION') AND name = 'StateProvince') EXEC('CREATE SYNONYM MYSOLUTION.StateProvince FOR MYSOLUTIONPRODUZIONE2.Nop_MySolution.dbo.StateProvince;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('MYSOLUTION') AND name = 'Users') EXEC('CREATE SYNONYM MYSOLUTION.Users FOR MYSOLUTIONPRODUZIONE2.Nop_MySolution.dbo.VW_MySolution_Users;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('MYSOLUTION') AND name = 'Demo') EXEC('CREATE SYNONYM MYSOLUTION.Demo FOR MYSOLUTIONPRODUZIONE2.Nop_MySolution.dbo.VW_MySolution_Demo;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('MYSOLUTION') AND name = 'Analytics') EXEC('CREATE SYNONYM MYSOLUTION.Analytics FOR MYSOLUTIONPRODUZIONE2.MySolution.dbo.Analytics;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('COMETAINTEGRATION') AND name = 'ArticleBIData') EXEC('CREATE SYNONYM COMETAINTEGRATION.ArticleBIData FOR MYSOLUTIONPRODUZIONE2.CometaIntegration.dbo.ArticleBIData;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS') AND name = 'WeAutocertificazioni') EXEC('CREATE SYNONYM WEBINARS.WeAutocertificazioni FOR MYSOLUTIONPRODUZIONE2.dbWebinars.dbo.WeAutocertificazioni;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('WEBINARS') AND name = 'WeBinars') EXEC('CREATE SYNONYM WEBINARS.WeBinars FOR MYSOLUTIONPRODUZIONE2.dbWebinars.dbo.WeBinars;');
@@ -64,4 +65,5 @@ IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND 
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIPartita') EXEC('CREATE SYNONYM GPT.OpenAIPartita FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIPartita;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIMessage') EXEC('CREATE SYNONYM GPT.OpenAIMessage FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIMessage;');
 IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAIThread') EXEC('CREATE SYNONYM GPT.OpenAIThread FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAIThread;');
+IF NOT EXISTS(SELECT * FROM sys.synonyms WHERE schema_id = SCHEMA_ID('GPT') AND name = 'OpenAITokenUsage') EXEC('CREATE SYNONYM GPT.OpenAITokenUsage FOR MYSOLUTIONPRODUZIONE2.dbGPT.dbo.OpenAITokenUsage;');
 GO

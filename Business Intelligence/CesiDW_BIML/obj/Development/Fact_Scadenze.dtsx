@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{BC9E1AEE-8ADF-48BF-A3A0-ADE83AEF0ABA}"
+  DTS:DTSID="{8958BEA6-6859-458C-9C7C-142AC777B7C3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Scadenze"
-  DTS:VersionGUID="{F30C3533-0F07-41AE-A3AD-0F733E0A4D46}"
+  DTS:VersionGUID="{1BF5E16B-EF21-4B91-B665-0B21411EC957}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6973441C-9356-482C-BC7B-E7F8113BDB0A}"
+      DTS:DTSID="{11A15243-5C4C-443E-9D7F-A263450E87BA}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Scadenze"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{E265395C-AF0E-4531-8B79-5A0971FD5D34}"
+      DTS:DTSID="{E2290D94-B00D-4B0D-B03C-93C896D6759E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Scadenze"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6973441C-9356-482C-BC7B-E7F8113BDB0A}"
+          SQLTask:Connection="{11A15243-5C4C-443E-9D7F-A263450E87BA}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Scadenze;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Scadenze"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{E5412F29-0887-4F9B-B325-B8F6EFCB83DF}"
+      DTS:DTSID="{36F1F7D6-9D5C-44AA-BA07-BAFB1B1812D0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Scadenze"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6973441C-9356-482C-BC7B-E7F8113BDB0A}"
+          SQLTask:Connection="{11A15243-5C4C-443E-9D7F-A263450E87BA}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Scadenze;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze]"
       DTS:CreationName=""
-      DTS:DTSID="{3C2F3AC8-52D1-4ED2-8385-B28D092DA6CA}"
+      DTS:DTSID="{1CEC4327-F1FD-4CDA-9F58-57B5037F4201}"
       DTS:From="Package\Staging_usp_Reload_Scadenze"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Scadenze_To_Fact_usp_Merge_Scadenze"

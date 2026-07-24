@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{D72DAF39-A4BA-4BF2-A623-37EF169E5B99}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_DomandeMIA" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{C4B2B7A6-72A0-4289-BCB5-24851F93DFD4}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="07/24/2026 16:43:45" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{37BAE0F3-67A5-441C-B0CA-F433A2853F10}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Fact_DomandeMIA" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{9F60E059-DB7E-4A68-AE3D-CEC039423870}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{9F7A391F-6080-40F5-8073-C90FA9D4498E}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{2B072323-FA4F-453D-94F4-D23E9B4EECD6}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{9149143F-EA34-41B2-B4E3-1EEF14333664}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_DomandeMIA" DTS:refId="Package\Staging_usp_Reload_DomandeMIA" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{60B781AA-0F97-43B1-96FF-6E7512C114F4}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_DomandeMIA" DTS:refId="Package\Staging_usp_Reload_DomandeMIA" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_DomandeMIA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{3F8271BD-D38B-4258-91F4-A3CFAF6EEB24}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_DomandeMIA" DTS:refId="Package\Fact_usp_Merge_DomandeMIA" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{BDCC22AE-4138-40EC-BCF9-A97124AFD41C}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Fact_usp_Merge_DomandeMIA" DTS:refId="Package\Fact_usp_Merge_DomandeMIA" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_DomandeMIA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{6B35FCE3-7798-48AF-B547-8F5BC083E5DE}" DTS:From="Package\Staging_usp_Reload_DomandeMIA" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_DomandeMIA_To_Fact_usp_Merge_DomandeMIA" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_DomandeMIA_To_Fact_usp_Merge_DomandeMIA]" DTS:To="Package\Fact_usp_Merge_DomandeMIA" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{716DEB93-02AE-4BAF-A294-A291A8F7619E}" DTS:From="Package\Staging_usp_Reload_DomandeMIA" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_DomandeMIA_To_Fact_usp_Merge_DomandeMIA" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_DomandeMIA_To_Fact_usp_Merge_DomandeMIA]" DTS:To="Package\Fact_usp_Merge_DomandeMIA" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

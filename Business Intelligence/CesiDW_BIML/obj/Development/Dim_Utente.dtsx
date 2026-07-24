@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:44 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{856853FB-B3FB-496F-AEE7-C4AFEA66F30D}"
+  DTS:DTSID="{9E62EB2B-2C11-49AA-AE7B-F95023B6E32B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Utente"
-  DTS:VersionGUID="{4D50151D-4C35-4003-930B-FC8097BFC583}"
+  DTS:VersionGUID="{013C7EFF-5A61-4B75-8DCE-A2F41A68DC9C}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{68159070-FDCE-47C1-BB4B-93507D2AB3CD}"
+      DTS:DTSID="{CDD7C68B-418B-4A70-8035-B50E29186BE7}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Dim_usp_Merge_Utente"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{8B3E0F48-21BB-4A23-B4EF-4C4430180EAC}"
+      DTS:DTSID="{40B326F6-B7A0-4537-A3C7-CC76F9C2CDF3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dim_usp_Merge_Utente"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{68159070-FDCE-47C1-BB4B-93507D2AB3CD}"
+          SQLTask:Connection="{CDD7C68B-418B-4A70-8035-B50E29186BE7}"
           SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Utente"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{50E2B354-27B2-4216-A83C-EE23D4D8740B}"
+      DTS:DTSID="{FFAE06D3-E91F-4BCF-9934-1CC262580290}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Utente"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{68159070-FDCE-47C1-BB4B-93507D2AB3CD}"
+          SQLTask:Connection="{CDD7C68B-418B-4A70-8035-B50E29186BE7}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente]"
       DTS:CreationName=""
-      DTS:DTSID="{8DE274A0-B4F3-4952-AEAD-11E7AD145E05}"
+      DTS:DTSID="{4EC1EB2C-2C56-4BD2-8A5B-FA2A4F766D5A}"
       DTS:From="Package\Staging_usp_Reload_Utente"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente"

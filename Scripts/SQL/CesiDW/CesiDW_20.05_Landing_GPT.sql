@@ -855,5 +855,146 @@ GO
 EXEC GPT.usp_Merge_OpenAIThread;
 GO
 
-SELECT * FROM Landing.GPT_OpenAIThread;
+/**
+ * @table Landing.GPT_OpenAITokenUsage
+ * @description 
+
+ * @depends GPT.OpenAITokenUsage
+
+SELECT TOP 100 * FROM GPT.OpenAITokenUsage;
+*/
+
+IF OBJECT_ID('Landing.GPT_OpenAITokenUsageView', 'V') IS NULL EXEC('CREATE VIEW Landing.GPT_OpenAITokenUsageView AS SELECT 1 AS fld;');
+GO
+
+ALTER VIEW Landing.GPT_OpenAITokenUsageView
+AS
+WITH TableData
+AS (
+    SELECT
+       Id,
+
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            Id,
+            ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            email,
+            threadId,
+            conversationId,
+            createdOn,
+            assistantArea,
+            responseMode,
+            model,
+            vectorStorageId,
+            input_tokens,
+            output_tokens,
+            reasoning_tokens,
+            total_tokens,
+            estimatedTotalCostUsd,
+            ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+
+        email,
+        threadId,
+        conversationId,
+        createdOn,
+        assistantArea,
+        responseMode,
+        model,
+        vectorStorageId,
+        input_tokens,
+        output_tokens,
+        reasoning_tokens,
+        total_tokens,
+        estimatedTotalCostUsd
+
+    FROM GPT.OpenAITokenUsage
+)
+SELECT
+    -- Chiavi
+    0+TD.Id AS Id,
+
+    -- Campi per sincronizzazione
+    TD.HistoricalHashKey,
+    TD.ChangeHashKey,
+    CONVERT(VARCHAR(34), TD.HistoricalHashKey, 1) AS HistoricalHashKeyASCII,
+    CONVERT(VARCHAR(34), TD.ChangeHashKey, 1) AS ChangeHashKeyASCII,
+    TD.InsertDatetime,
+    TD.UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    -- Attributi
+    TD.email,
+    TD.threadId,
+    TD.conversationId,
+    TD.createdOn,
+    TD.assistantArea,
+    TD.responseMode,
+    TD.model,
+    TD.vectorStorageId,
+    TD.input_tokens,
+    TD.output_tokens,
+    TD.reasoning_tokens,
+    TD.total_tokens,
+    TD.estimatedTotalCostUsd
+
+FROM TableData TD;
+GO
+
+--EXEC audit.usp_CreateScriptFromTableView @schemaName = 'Landing', @tableName = 'GPT_OpenAITokenUsage';
+GO
+
+--DROP TABLE IF EXISTS Landing.GPT_OpenAITokenUsage;
+GO
+
+IF OBJECT_ID('Landing.GPT_OpenAITokenUsage', 'U') IS NULL
+BEGIN
+    SELECT TOP (0) * INTO Landing.GPT_OpenAITokenUsage FROM Landing.GPT_OpenAITokenUsageView;
+
+    ALTER TABLE Landing.GPT_OpenAITokenUsage ALTER COLUMN Id INT NOT NULL;
+
+    ALTER TABLE Landing.GPT_OpenAITokenUsage ADD CONSTRAINT PK_Landing_GPT_OpenAITokenUsage PRIMARY KEY CLUSTERED (UpdateDatetime, Id);
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_Landing_GPT_OpenAITokenUsage_BusinessKey ON Landing.GPT_OpenAITokenUsage (Id);
+    --CREATE UNIQUE NONCLUSTERED INDEX IX_Landing_GPT_OpenAITokenUsage_AlternateKey ON Landing.GPT_OpenAITokenUsage ();
+END;
+GO
+
+CREATE OR ALTER PROCEDURE Landing.usp_Merge_GPT_OpenAITokenUsage
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO Landing.GPT_OpenAITokenUsage AS TGT
+    USING Landing.GPT_OpenAITokenUsageView AS SRC ON (
+         SRC.Id = TGT.Id 
+    )
+
+    WHEN MATCHED AND SRC.ChangeHashKey <> TGT.ChangeHashKey
+      THEN UPDATE SET TGT.ChangeHashKey = SRC.ChangeHashKey, TGT.ChangeHashKeyASCII = SRC.ChangeHashKeyASCII, TGT.UpdateDatetime = SRC.UpdateDatetime, TGT.IsDeleted = SRC.IsDeleted, 
+        TGT.email = SRC.email, TGT.threadId = SRC.threadId, TGT.conversationId = SRC.conversationId, TGT.createdOn = SRC.createdOn, TGT.assistantArea = SRC.assistantArea, TGT.responseMode = SRC.responseMode, TGT.model = SRC.model, TGT.vectorStorageId = SRC.vectorStorageId, TGT.input_tokens = SRC.input_tokens, TGT.output_tokens = SRC.output_tokens, TGT.reasoning_tokens = SRC.reasoning_tokens, TGT.total_tokens = SRC.total_tokens, TGT.estimatedTotalCostUsd = SRC.estimatedTotalCostUsd
+
+    WHEN NOT MATCHED BY TARGET
+      THEN INSERT (Id, HistoricalHashKey, ChangeHashKey, HistoricalHashKeyASCII, ChangeHashKeyASCII, InsertDatetime, UpdateDatetime, IsDeleted, email, threadId, conversationId, createdOn, assistantArea, responseMode, model, vectorStorageId, input_tokens, output_tokens, reasoning_tokens, total_tokens, estimatedTotalCostUsd)
+        VALUES (Id, HistoricalHashKey, ChangeHashKey, HistoricalHashKeyASCII, ChangeHashKeyASCII, InsertDatetime, UpdateDatetime, IsDeleted, email, threadId, conversationId, createdOn, assistantArea, responseMode, model, vectorStorageId, input_tokens, output_tokens, reasoning_tokens, total_tokens, estimatedTotalCostUsd)
+
+    WHEN NOT MATCHED BY SOURCE AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE SET TGT.ChangeHashKey = CONVERT(VARBINARY(32), 0),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.IsDeleted = CAST(1 AS BIT)
+    
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.GPT_OpenAITokenUsage' AS full_olap_table_name,
+        'Id = ' + CAST(COALESCE(inserted.Id, deleted.Id) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END
+GO
+
+EXEC Landing.usp_Merge_GPT_OpenAITokenUsage;
 GO

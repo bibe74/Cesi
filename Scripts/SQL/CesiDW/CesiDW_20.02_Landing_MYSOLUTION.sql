@@ -2980,3 +2980,105 @@ GO
 
 EXEC MYSOLUTION.usp_Merge_Demo;
 GO
+
+/**
+ * @table Landing.MYSOLUTION_Analytics
+ * @description
+
+*/
+
+CREATE OR ALTER VIEW Landing.MYSOLUTION_AnalyticsView
+AS
+WITH TableData
+AS (
+    SELECT
+        CONVERT(DATE, created_at) AS created_at,
+        COALESCE(email, N'') AS email,
+        path,
+        COUNT(1) AS NumeroVisite
+      
+      FROM MYSOLUTION.Analytics A
+      GROUP BY CONVERT(DATE, created_at),
+        email,
+        path
+)
+SELECT
+    TD.created_at,
+    TD.email,
+    TD.path,
+
+    CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
+        TD.created_at,
+        TD.email,
+        TD.path,
+    	' '
+    ))) AS HistoricalHashKey,
+    CONVERT(VARBINARY(32), HASHBYTES('SHA2_256', CONCAT(
+        TD.NumeroVisite,
+    	' '
+    ))) AS ChangeHashKey,
+    CURRENT_TIMESTAMP AS InsertDatetime,
+    CURRENT_TIMESTAMP AS UpdateDatetime,
+    CAST(0 AS BIT) AS IsDeleted,
+
+    TD.NumeroVisite
+
+FROM TableData TD;
+GO
+
+--EXEC audit.usp_CreateScriptFromTableView @schemaName = 'Landing', @tableName = 'MYSOLUTION_Analytics';
+GO
+
+--DROP TABLE IF EXISTS Landing.MYSOLUTION_Analytics;
+GO
+
+IF OBJECT_ID('Landing.MYSOLUTION_Analytics', 'U') IS NULL
+BEGIN
+    SELECT TOP (0) * INTO Landing.MYSOLUTION_Analytics FROM Landing.MYSOLUTION_AnalyticsView;
+
+    ALTER TABLE Landing.MYSOLUTION_Analytics ALTER COLUMN created_at DATE NOT NULL;
+    ALTER TABLE Landing.MYSOLUTION_Analytics ALTER COLUMN email NVARCHAR(60) NOT NULL;
+    ALTER TABLE Landing.MYSOLUTION_Analytics ALTER COLUMN path NVARCHAR(255) NOT NULL;
+
+    ALTER TABLE Landing.MYSOLUTION_Analytics ADD CONSTRAINT PK_Landing_MYSOLUTION_Analytics PRIMARY KEY CLUSTERED (UpdateDatetime, created_at, email, path);
+
+    CREATE UNIQUE NONCLUSTERED INDEX IX_Landing_MYSOLUTION_Analytics_BusinessKey ON Landing.MYSOLUTION_Analytics (created_at, email, path);
+    --CREATE UNIQUE NONCLUSTERED INDEX IX_Landing_MYSOLUTION_Analytics_AlternateKey ON Landing.MYSOLUTION_Analytics ();
+END;
+GO
+
+CREATE OR ALTER PROCEDURE Landing.usp_Merge_MYSOLUTION_Analytics
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO Landing.MYSOLUTION_Analytics AS TGT
+    USING Landing.MYSOLUTION_AnalyticsView AS SRC ON (
+         SRC.created_at = TGT.created_at AND SRC.email = TGT.email AND SRC.path = TGT.path 
+    )
+
+    WHEN MATCHED AND SRC.ChangeHashKey <> TGT.ChangeHashKey
+      THEN UPDATE SET TGT.ChangeHashKey = SRC.ChangeHashKey, TGT.UpdateDatetime = SRC.UpdateDatetime, TGT.IsDeleted = SRC.IsDeleted, 
+        TGT.NumeroVisite = SRC.NumeroVisite
+
+    WHEN NOT MATCHED BY TARGET
+      THEN INSERT (created_at, email, path, HistoricalHashKey, ChangeHashKey, InsertDatetime, UpdateDatetime, IsDeleted, NumeroVisite)
+        VALUES (created_at, email, path, HistoricalHashKey, ChangeHashKey, InsertDatetime, UpdateDatetime, IsDeleted, NumeroVisite)
+
+    WHEN NOT MATCHED BY SOURCE AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE SET TGT.ChangeHashKey = CONVERT(VARBINARY(32), 0),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.IsDeleted = CAST(1 AS BIT)
+    
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'Landing.MYSOLUTION_Analytics' AS full_olap_table_name,
+        'created_at = ' + CAST(COALESCE(inserted.created_at, deleted.created_at) AS NVARCHAR) + 'email = ' + CAST(COALESCE(inserted.email, deleted.email) AS NVARCHAR) + 'path = ' + CAST(COALESCE(inserted.path, deleted.path) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END
+GO
+
+EXEC Landing.usp_Merge_MYSOLUTION_Analytics;
+GO

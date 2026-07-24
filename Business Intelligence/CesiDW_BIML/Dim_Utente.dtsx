@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{856853FB-B3FB-496F-AEE7-C4AFEA66F30D}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Dim_Utente" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{4D50151D-4C35-4003-930B-FC8097BFC583}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="07/24/2026 16:43:44" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{9E62EB2B-2C11-49AA-AE7B-F95023B6E32B}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="Dim_Utente" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{013C7EFF-5A61-4B75-8DCE-A2F41A68DC9C}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{68159070-FDCE-47C1-BB4B-93507D2AB3CD}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
+    <DTS:ConnectionManager DTS:CreationName="OLEDB" DTS:DTSID="{CDD7C68B-418B-4A70-8035-B50E29186BE7}" DTS:ObjectName="CesiDW" DTS:refId="Package.ConnectionManagers[CesiDW]">
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="data source=EPISQL2021.cesi.local;initial catalog=CesiDW;encrypt=True;trustservercertificate=True;provider=MSOLEDBSQL;integrated security=SSPI" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{50E2B354-27B2-4216-A83C-EE23D4D8740B}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Utente" DTS:refId="Package\Staging_usp_Reload_Utente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{FFAE06D3-E91F-4BCF-9934-1CC262580290}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Staging_usp_Reload_Utente" DTS:refId="Package\Staging_usp_Reload_Utente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{8B3E0F48-21BB-4A23-B4EF-4C4430180EAC}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_usp_Merge_Utente" DTS:refId="Package\Dim_usp_Merge_Utente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecuteSQLTask" DTS:DTSID="{40B326F6-B7A0-4537-A3C7-CC76F9C2CDF3}" DTS:ExecutableType="Microsoft.ExecuteSQLTask" DTS:LocaleID="-1" DTS:ObjectName="Dim_usp_Merge_Utente" DTS:refId="Package\Dim_usp_Merge_Utente" DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <SQLTask:SqlTaskData SQLTask:Connection="CesiDW" SQLTask:SqlStatementSource="EXEC Dim.usp_Merge_Utente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{8DE274A0-B4F3-4952-AEAD-11E7AD145E05}" DTS:From="Package\Staging_usp_Reload_Utente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente]" DTS:To="Package\Dim_usp_Merge_Utente" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{4EC1EB2C-2C56-4BD2-8A5B-FA2A4F766D5A}" DTS:From="Package\Staging_usp_Reload_Utente" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente" DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Utente_To_Dim_usp_Merge_Utente]" DTS:To="Package\Dim_usp_Merge_Utente" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

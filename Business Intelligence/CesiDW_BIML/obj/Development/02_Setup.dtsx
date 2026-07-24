@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:44 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{3F662C9A-BB2F-4019-AB4A-7BB8B3618A68}"
+  DTS:DTSID="{D91A5FB9-8FA5-4A06-9579-259F88908318}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="02_Setup"
-  DTS:VersionGUID="{7B8E8995-886C-4D1B-B950-4BBB43F0BE13}"
+  DTS:VersionGUID="{A165737D-3F54-486F-83A4-F1824C5E08CF}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{79A85A1B-2ECE-41B8-84A1-93D7F8A8C38E}"
+      DTS:DTSID="{E77510DF-716D-4AD6-940C-C022585FED18}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Setup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{82AF81E6-56D5-4556-A55B-04F477B8394B}"
+      DTS:DTSID="{EC58B4A2-75DA-4B29-A523-DA71EC9860BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Setup"
@@ -42,7 +42,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{79A85A1B-2ECE-41B8-84A1-93D7F8A8C38E}"
+          SQLTask:Connection="{E77510DF-716D-4AD6-940C-C022585FED18}"
           SQLTask:SqlStatementSource="EXEC setup.usp_InsertDates;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>

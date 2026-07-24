@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DTS:Executable DTS:CreationDate="04/24/2026 14:49:22" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{9D11D05E-CA7B-46E5-8AE2-D925DB41B514}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="00_ETL_master" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{7998F0E3-66BC-4F0D-B57D-4E0F01921E66}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+<DTS:Executable DTS:CreationDate="07/24/2026 16:43:45" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="RAMANUJAN" DTS:CreatorName="a.turelli" DTS:DTSID="{F674E977-4337-495D-9EE1-50599E1D4174}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="1033" DTS:ObjectName="00_ETL_master" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{67075EF9-6218-437E-B33F-241B981E74BC}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
   <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Executables>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{F2836E1B-76BC-42DD-BF66-713C2AED4E90}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="01_Extract" DTS:refId="Package\01_Extract" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{437BCA40-2751-4B74-918E-8213CF1711F3}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="01_Extract" DTS:refId="Package\01_Extract" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>01_Extract.dtsx</PackageName>
@@ -10,7 +10,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{D260A305-45EF-4249-9FC5-5529DE17C7C4}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="02_Setup" DTS:refId="Package\02_Setup" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{82C390A0-D23C-41D3-8EC1-EB0C7CD8027F}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="02_Setup" DTS:refId="Package\02_Setup" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>02_Setup.dtsx</PackageName>
@@ -18,7 +18,7 @@
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{71018FDE-63E2-4790-B226-CF1E5EEA333D}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="03_Transform_and_Load" DTS:refId="Package\03_Transform_and_Load" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+    <DTS:Executable DTS:CreationName="Microsoft.ExecutePackageTask" DTS:DelayValidation="True" DTS:DTSID="{E843FE18-48DE-4DA6-861D-D0DF66F8D6CB}" DTS:ExecutableType="Microsoft.ExecutePackageTask" DTS:LocaleID="-1" DTS:ObjectName="03_Transform_and_Load" DTS:refId="Package\03_Transform_and_Load" DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:ObjectData>
         <ExecutePackageTask>
           <PackageName>03_Transform_and_Load.dtsx</PackageName>
@@ -28,7 +28,7 @@
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{5B7288CA-6D66-45CD-91B9-77111B0A9AF6}" DTS:From="Package\01_Extract" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_01_Extract_To_02_Setup" DTS:refId="Package.PrecedenceConstraints[Constraint_01_Extract_To_02_Setup]" DTS:To="Package\02_Setup" />
-    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{CCC9D94D-F30F-4EE8-85FE-E050AD9AAE09}" DTS:From="Package\02_Setup" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_02_Setup_To_03_Transform_and_Load" DTS:refId="Package.PrecedenceConstraints[Constraint_02_Setup_To_03_Transform_and_Load]" DTS:To="Package\03_Transform_and_Load" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{74ACD503-A3E3-4352-86B6-B7C642B51A07}" DTS:From="Package\01_Extract" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_01_Extract_To_02_Setup" DTS:refId="Package.PrecedenceConstraints[Constraint_01_Extract_To_02_Setup]" DTS:To="Package\02_Setup" />
+    <DTS:PrecedenceConstraint DTS:CreationName="" DTS:DTSID="{A6A27CA0-1F37-4FD6-B41E-04C059F20F2D}" DTS:From="Package\02_Setup" DTS:LogicalAnd="True" DTS:ObjectName="Constraint_02_Setup_To_03_Transform_and_Load" DTS:refId="Package.PrecedenceConstraints[Constraint_02_Setup_To_03_Transform_and_Load]" DTS:To="Package\03_Transform_and_Load" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

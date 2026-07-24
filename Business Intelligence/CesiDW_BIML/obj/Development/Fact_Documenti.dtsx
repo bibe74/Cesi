@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:44 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{CFC1A7DB-F9F2-4E2D-A3CC-3D21D7EB6A65}"
+  DTS:DTSID="{A3744437-6B88-47FD-BB68-F0F094501FE6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Documenti"
-  DTS:VersionGUID="{441EB6EE-F25E-43EE-AF25-30A2D7046BB7}"
+  DTS:VersionGUID="{32B4CFC9-FCFE-45EC-A10A-CE507041C6E6}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{04E32C96-438C-4343-A070-EF153656115F}"
+      DTS:DTSID="{030A93A5-E967-4AA2-8069-4DD1DF092AEF}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Documenti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{2B1F0AF5-CD5E-4926-A578-79AB36173E80}"
+      DTS:DTSID="{5FC65D58-2C48-4321-A1BB-159D6144B6AE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Documenti"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{04E32C96-438C-4343-A070-EF153656115F}"
+          SQLTask:Connection="{030A93A5-E967-4AA2-8069-4DD1DF092AEF}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Documenti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Documenti"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{C3139AAF-215F-46C8-89E1-DD6F1157017F}"
+      DTS:DTSID="{55243855-848A-4695-80B5-347764339945}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Documenti"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{04E32C96-438C-4343-A070-EF153656115F}"
+          SQLTask:Connection="{030A93A5-E967-4AA2-8069-4DD1DF092AEF}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Documenti;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti]"
       DTS:CreationName=""
-      DTS:DTSID="{245DAF79-7AC7-4A38-86BE-D7A1BF283B7F}"
+      DTS:DTSID="{1FE269A6-3297-4DDE-B118-E11EF2E6D81F}"
       DTS:From="Package\Staging_usp_Reload_Documenti"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Documenti_To_Fact_usp_Merge_Documenti"

@@ -3802,6 +3802,111 @@ GO
 EXEC Fact.usp_ReportCreditiMIA @CapoArea = NULL; -- nvarchar(60)
 GO
 
-SELECT
-    COALESCE(@PKDataCreazionePartitaInizio, DATEADD(DAY, 1, DATEADD(DAY, -DATEPART(DAYOFYEAR, CURRENT_TIMESTAMP), CONVERT(DATE, CURRENT_TIMESTAMP)))) AS PKDataCreazionePartitaInizio,
-    COALESCE(@PKDataCreazionePartitaFine, CONVERT(DATE, CURRENT_TIMESTAMP)) AS PKDataCreazionePartitaFine;
+/**
+ * @storedprocedure Fact.usp_ReportAnalytics
+*/
+
+CREATE OR ALTER PROCEDURE Fact.usp_ReportAnalytics (
+    @CapoArea NVARCHAR(60) = NULL,
+    @PKDataVisitaInizio DATE = NULL,
+    @PKDataVisitaFine DATE = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    SELECT @PKDataVisitaInizio = COALESCE(@PKDataVisitaInizio, DATEADD(DAY, -1, CONVERT(DATE, CURRENT_TIMESTAMP)));
+    SELECT @PKDataVisitaFine = COALESCE(@PKDataVisitaFine, DATEADD(DAY, -1, CONVERT(DATE, CURRENT_TIMESTAMP)));
+
+    SELECT
+        C.Email,
+        C.CodiceCliente,
+        C.RagioneSociale,
+        DV.Data_IT AS [Data visita],
+        A.Percorso,
+        A.NumeroVisite AS [Numero visite]
+
+    FROM Fact.Analytics A
+    INNER JOIN Dim.Cliente C ON C.PKCliente = A.PKCliente
+        AND C.IsDeleted = CAST(0 AS BIT)
+    INNER JOIN Dim.GruppoAgenti GA ON GA.PKGruppoAgenti = C.PKGruppoAgenti
+        AND GA.IsDeleted = CAST(0 AS BIT)
+        AND (
+            @CapoArea IS NULL
+            OR GA.CapoArea = @CapoArea
+        )
+    INNER JOIN Dim.Data DV ON DV.PKData = A.PKDataVisita
+        AND DV.PKData BETWEEN @PKDataVisitaInizio AND @PKDataVisitaFine
+    WHERE A.IsDeleted = CAST(0 AS BIT)
+    ORDER BY C.Email,
+        A.PKDataVisita;
+
+END;
+GO
+
+GRANT EXECUTE ON Fact.usp_ReportAnalytics TO cesidw_reader;
+GO
+
+EXEC Fact.usp_ReportAnalytics @CapoArea = NULL; -- nvarchar(60)
+GO
+
+/**
+ * @storedprocedure Fact.usp_ReportUtilizzoOpenAI
+*/
+
+CREATE OR ALTER PROCEDURE Fact.usp_ReportUtilizzoOpenAI (
+    @CapoArea NVARCHAR(60) = NULL,
+    @PKDataConversazioneInizio DATE = NULL,
+    @PKDataConversazioneFine DATE = NULL
+)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    SELECT @PKDataConversazioneInizio = COALESCE(@PKDataConversazioneInizio, DATEADD(DAY, -1, CONVERT(DATE, CURRENT_TIMESTAMP)));
+    SELECT @PKDataConversazioneFine = COALESCE(@PKDataConversazioneFine, DATEADD(DAY, -1, CONVERT(DATE, CURRENT_TIMESTAMP)));
+
+    SELECT
+        C.Email,
+        C.CodiceCliente,
+        C.RagioneSociale,
+        UOAI.IDThread,
+        UOAI.IDConversazione,
+        UOAI.PKDataConversazione,
+        DC.Data_IT AS [Data Conversazione],
+        UOAI.Area,
+        UOAI.ModalitaRisposta,
+        UOAI.Modello,
+        UOAI.IDVectorStorage,
+        UOAI.InputTokens,
+        UOAI.OutputTokens,
+        UOAI.ReasoningTokens,
+        UOAI.TotalTokens,
+        UOAI.EstimatedTotalCostUSD
+
+    FROM Fact.UtilizzoOpenAI UOAI
+    INNER JOIN Dim.Cliente C ON C.PKCliente = UOAI.PKCliente
+        AND C.IsDeleted = CAST(0 AS BIT)
+    INNER JOIN Dim.GruppoAgenti GA ON GA.PKGruppoAgenti = C.PKGruppoAgenti
+        AND GA.IsDeleted = CAST(0 AS BIT)
+        AND (
+            @CapoArea IS NULL
+            OR GA.CapoArea = @CapoArea
+        )
+    INNER JOIN Dim.Data DC ON DC.PKData = UOAI.PKDataConversazione
+        AND DC.PKData BETWEEN @PKDataConversazioneInizio AND @PKDataConversazioneFine
+    WHERE UOAI.IsDeleted = CAST(0 AS BIT)
+    ORDER BY C.Email,
+        UOAI.PKDataConversazione,
+        UOAI.PKUtilizzoOpenAI;
+
+END;
+GO
+
+GRANT EXECUTE ON Fact.usp_ReportUtilizzoOpenAI TO cesidw_reader;
+GO
+
+EXEC Fact.usp_ReportUtilizzoOpenAI @CapoArea = NULL; -- nvarchar(60)
+GO

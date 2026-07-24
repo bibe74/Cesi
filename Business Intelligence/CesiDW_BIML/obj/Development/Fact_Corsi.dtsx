@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/24/2026 2:49:22 PM"
+  DTS:CreationDate="7/24/2026 4:43:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="RAMANUJAN"
   DTS:CreatorName="a.turelli"
-  DTS:DTSID="{D68551D1-03A3-4CFC-ADD1-EBB59E4BD09E}"
+  DTS:DTSID="{0E1D0814-8BB7-449E-99C4-A23CEB874147}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact_Corsi"
-  DTS:VersionGUID="{61508BB8-0AEE-4E2C-8673-0E2F7B0DA543}"
+  DTS:VersionGUID="{203DCD08-3971-4605-BC85-F363E3DBE721}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -18,7 +18,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CesiDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{08134826-0EAB-4C08-A3B2-120819995012}"
+      DTS:DTSID="{A4D4E2B8-E505-456B-8207-D38ADA64CF9B}"
       DTS:ObjectName="CesiDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:Executable
       DTS:refId="Package\Fact_usp_Merge_Corsi"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{8A34A7E9-5F6F-4D5E-A94E-AE8153178E29}"
+      DTS:DTSID="{6D307A00-4022-4827-90B6-25B3A2A135EA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact_usp_Merge_Corsi"
@@ -42,14 +42,14 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{08134826-0EAB-4C08-A3B2-120819995012}"
+          SQLTask:Connection="{A4D4E2B8-E505-456B-8207-D38ADA64CF9B}"
           SQLTask:SqlStatementSource="EXEC Fact.usp_Merge_Corsi;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Staging_usp_Reload_Corsi"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{77144333-3FCC-4DAA-BB83-16AE2A8EB9C6}"
+      DTS:DTSID="{11C6A75B-1D52-463E-936D-CA568EB07F00}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging_usp_Reload_Corsi"
@@ -58,7 +58,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{08134826-0EAB-4C08-A3B2-120819995012}"
+          SQLTask:Connection="{A4D4E2B8-E505-456B-8207-D38ADA64CF9B}"
           SQLTask:SqlStatementSource="EXEC Staging.usp_Reload_Corsi;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -67,7 +67,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint_Staging_usp_Reload_Corsi_To_Fact_usp_Merge_Corsi]"
       DTS:CreationName=""
-      DTS:DTSID="{918C08C0-7663-48CC-814C-0EE8C0264F04}"
+      DTS:DTSID="{E6AD0A5E-1851-4517-81C6-6B0F3986E6C2}"
       DTS:From="Package\Staging_usp_Reload_Corsi"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint_Staging_usp_Reload_Corsi_To_Fact_usp_Merge_Corsi"

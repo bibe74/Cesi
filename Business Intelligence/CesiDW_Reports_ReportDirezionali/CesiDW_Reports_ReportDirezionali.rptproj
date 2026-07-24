@@ -52,6 +52,8 @@
     <DataSource Include="CesiDW_ds.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Analytics.rdl" />
+    <Report Include="Costi ed Uso MIA.rdl" />
     <Report Include="Dettaglio Fatture Formazione.rdl" />
     <Report Include="Dettaglio Fatture MySolution.rdl" />
     <Report Include="Dettaglio Fatture.rdl" />

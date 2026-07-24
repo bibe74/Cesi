@@ -311,7 +311,21 @@
 				</ExecuteSQL>
 			</Tasks>
 		</Package>
-		<Package Name="03_Transform_and_Load" ProtectionLevel="EncryptSensitiveWithUserKey">
+		<Package Name="Fact_Analytics" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+			<Tasks>
+				<ExecuteSQL Name="Fact_usp_Merge_Analytics" ConnectionName="CesiDW">
+					<DirectInput>EXEC Fact.usp_Merge_Analytics;</DirectInput>
+				</ExecuteSQL>
+			</Tasks>
+		</Package>
+		<Package Name="Fact_UtilizzoOpenAI" ProtectionLevel="EncryptSensitiveWithUserKey" ConstraintMode="Linear">
+			<Tasks>
+				<ExecuteSQL Name="Fact_usp_Merge_UtilizzoOpenAI" ConnectionName="CesiDW">
+					<DirectInput>EXEC Fact.usp_Merge_UtilizzoOpenAI;</DirectInput>
+				</ExecuteSQL>
+			</Tasks>
+		</Package>
+        <Package Name="03_Transform_and_Load" ProtectionLevel="EncryptSensitiveWithUserKey">
 			<Tasks>
 			  <ExecutePackage Name="Dim_Cliente" DelayValidation="true">
 				  <ExternalProjectPackage Package="Dim_Cliente.dtsx" />
@@ -403,6 +417,22 @@
 			  </ExecutePackage>
 			  <ExecutePackage Name="Fact_DomandeMIA" DelayValidation="true">
 				  <ExternalProjectPackage Package="Fact_DomandeMIA.dtsx" />
+			  </ExecutePackage>
+			  <ExecutePackage Name="Fact_Analytics" DelayValidation="true">
+				  <ExternalProjectPackage Package="Fact_Analytics.dtsx" />
+				  <PrecedenceConstraints>
+					<Inputs>
+					  <Input OutputPathName="Dim_Cliente.Output" />
+					</Inputs>
+				  </PrecedenceConstraints>
+			  </ExecutePackage>
+			  <ExecutePackage Name="Fact_UtilizzoOpenAI" DelayValidation="true">
+				  <ExternalProjectPackage Package="Fact_UtilizzoOpenAI.dtsx" />
+				  <PrecedenceConstraints>
+					<Inputs>
+					  <Input OutputPathName="Dim_Cliente.Output" />
+					</Inputs>
+				  </PrecedenceConstraints>
 			  </ExecutePackage>
 			</Tasks>
 		</Package>
