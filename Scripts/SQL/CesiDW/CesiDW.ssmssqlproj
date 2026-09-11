@@ -222,6 +222,18 @@
           <AssociatedConnUserName />
           <FullPath>CesiDW_40.09_Fact_DomandeMIA.sql</FullPath>
         </FileNode>
+        <FileNode Name="CesiDW_40.10_Fact_Analytics.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.10_Fact_Analytics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="CesiDW_40.11_Fact_UtilizzoOpenAI.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>CesiDW_40.11_Fact_UtilizzoOpenAI.sql</FullPath>
+        </FileNode>
         <FileNode Name="CesiDW_40.99_Fact_views.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />

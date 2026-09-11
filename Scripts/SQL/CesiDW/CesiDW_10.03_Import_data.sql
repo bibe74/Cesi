@@ -192,6 +192,14 @@ BEGIN
     -- 10/11/2025, mail di Gabriella Mottica
     DELETE FROM Import.Amministratori WHERE Amministratore = N'Eleonora Soravia';
 
+    -- 11/09/2025, mail di Andrea
+    INSERT INTO Import.Amministratori (
+	    Amministratore,
+        ADUser,
+	    Email
+    )
+    VALUES (N'Dosi Paolo', N'CESI\Paolo Dosi', N'paolo.dosi@cesimultimedia.it');
+
 END;
 GO
 
