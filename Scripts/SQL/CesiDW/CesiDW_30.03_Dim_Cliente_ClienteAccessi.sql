@@ -1377,6 +1377,21 @@ BEGIN
     FROM Fact.CreditiOpenAI T
     INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = T.PKCliente;
 
+    WITH ClientiCometaDaAggiornare
+    AS (
+        SELECT DISTINCT
+            T.PKCliente,
+            CNIC.PKClienteCometa
+
+        FROM Fact.CreditiOpenAIDettaglio T
+        INNER JOIN Staging.ClientiNOPInCometa CNIC ON CNIC.PKClienteNOP = T.PKCliente
+    )
+    DELETE COAID
+    FROM Fact.CreditiOpenAIDettaglio COAID
+    INNER JOIN ClientiCometaDaAggiornare CCDA ON CCDA.PKCliente = COAID.PKCliente;
+
+    EXEC Staging.usp_Reload_CreditiOpenAIDettaglio;
+
     UPDATE T
     SET T.PKCliente = CNIC.PKClienteCometa
     FROM Fact.CreditiOpenAIDettaglio T

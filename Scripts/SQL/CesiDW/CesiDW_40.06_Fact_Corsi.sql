@@ -395,6 +395,13 @@ BEGIN
         ImportoTotaleOrdine
     )
 
+    WHEN NOT MATCHED BY SOURCE
+      THEN UPDATE
+        SET TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+            TGT.ChangeHashKeyASCII = '',
+            TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+            TGT.IsDeleted = CAST(1 AS BIT)
+
     OUTPUT
         CURRENT_TIMESTAMP AS merge_datetime,
         $action AS merge_action,
@@ -402,8 +409,8 @@ BEGIN
         'OrderItemId = ' + CAST(COALESCE(inserted.OrderItemId, deleted.OrderItemId) AS NVARCHAR(1000)) + ', Partecipant_Id = ' + CAST(COALESCE(inserted.Partecipant_Id, deleted.Partecipant_Id) AS NVARCHAR(1000)) AS primary_key_description
     INTO audit.merge_log_details;
 
-    DELETE FROM Fact.Corsi
-    WHERE IsDeleted = CAST(1 AS BIT);
+    --DELETE FROM Fact.Corsi
+    --WHERE IsDeleted = CAST(1 AS BIT);
 
     UPDATE audit.tables
     SET lastupdated_local = lastupdated_staging
@@ -413,7 +420,4 @@ BEGIN
     COMMIT TRANSACTION;
 
 END;
-GO
-
-EXEC Fact.usp_Merge_Corsi;
 GO

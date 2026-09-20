@@ -754,8 +754,11 @@ BEGIN
         SRC.IDDocumentoRinnovato
       )
 
-    WHEN NOT MATCHED BY SOURCE THEN UPDATE
-        SET TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+    WHEN NOT MATCHED BY SOURCE
+      THEN UPDATE
+        SET TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+            TGT.ChangeHashKeyASCII = '',
+            TGT.UpdateDatetime = CURRENT_TIMESTAMP,
             TGT.IsDeleted = CAST(1 AS BIT)
 
     OUTPUT

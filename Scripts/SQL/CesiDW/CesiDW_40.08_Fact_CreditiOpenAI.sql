@@ -485,9 +485,9 @@ BEGIN
         AS primary_key_description
     INTO audit.merge_log_details;
 
-    DELETE FROM Fact.CreditiOpenAIDettaglio
-    WHERE IsDeleted = CAST(1 AS BIT);
-
+    --DELETE FROM Fact.CreditiOpenAIDettaglio
+    --WHERE IsDeleted = CAST(1 AS BIT);
+    
     UPDATE audit.tables
     SET lastupdated_local = lastupdated_staging
     WHERE provider_name = @provider_name

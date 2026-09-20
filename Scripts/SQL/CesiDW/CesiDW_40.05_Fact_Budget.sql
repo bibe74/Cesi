@@ -297,6 +297,13 @@ BEGIN
         SRC.ImportoBudget
       )
 
+    WHEN NOT MATCHED BY SOURCE
+      THEN UPDATE
+        SET TGT.ChangeHashKey = CONVERT(VARBINARY(20), ''),
+            TGT.ChangeHashKeyASCII = '',
+            TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+            TGT.IsDeleted = CAST(1 AS BIT)
+
     OUTPUT
         CURRENT_TIMESTAMP AS merge_datetime,
         $action AS merge_action,
