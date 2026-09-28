@@ -1,0 +1,5 @@
+CREATE SYNONYM [GPT].[OpenAIPartita] FOR [MYSOLUTIONPRODUZIONE2].[dbGPT].[dbo].[OpenAIPartita];
+
+
+GO
+

@@ -1,0 +1,72 @@
+CREATE TABLE [Staging].[Documenti] (
+    [IDDocumento_Riga]                                INT             NOT NULL,
+    [HistoricalHashKey]                               VARBINARY (20)  NULL,
+    [ChangeHashKey]                                   VARBINARY (20)  NULL,
+    [HistoricalHashKeyASCII]                          VARCHAR (34)    NULL,
+    [ChangeHashKeyASCII]                              VARCHAR (34)    NULL,
+    [InsertDatetime]                                  DATETIME        NOT NULL,
+    [UpdateDatetime]                                  DATETIME        NOT NULL,
+    [IsDeleted]                                       INT             NOT NULL,
+    [IDDocumento]                                     INT             NOT NULL,
+    [IDProfilo]                                       NVARCHAR (10)   NOT NULL,
+    [Profilo]                                         NVARCHAR (60)   NOT NULL,
+    [TipoRegistro]                                    CHAR (2)        NOT NULL,
+    [NumeroRegistro]                                  INT             NOT NULL,
+    [Registro]                                        NVARCHAR (60)   NOT NULL,
+    [CodiceEsercizio]                                 CHAR (4)        NOT NULL,
+    [PKDataInizioEsercizio]                           DATE            NOT NULL,
+    [PKDataFineEsercizio]                             DATE            NOT NULL,
+    [PKDataRegistrazione]                             DATE            NOT NULL,
+    [NumeroDocumento]                                 NVARCHAR (20)   NOT NULL,
+    [PKDataDocumento]                                 DATE            NOT NULL,
+    [PKDataCompetenza]                                DATE            NOT NULL,
+    [TipoSoggettoCommerciale]                         NVARCHAR (10)   NOT NULL,
+    [PKCliente]                                       INT             NOT NULL,
+    [TipoSoggettoCommercialeFattura]                  NVARCHAR (10)   NOT NULL,
+    [PKClienteFattura]                                INT             NOT NULL,
+    [PKGruppoAgenti]                                  INT             NOT NULL,
+    [PKCapoArea]                                      INT             NOT NULL,
+    [PKDataFineContratto]                             DATE            NOT NULL,
+    [Libero4]                                         NVARCHAR (200)  NOT NULL,
+    [PKDataInizioContratto]                           DATE            NOT NULL,
+    [IDLibero1]                                       NVARCHAR (10)   NOT NULL,
+    [Libero1]                                         NVARCHAR (60)   NOT NULL,
+    [IDLibero2]                                       NVARCHAR (10)   NOT NULL,
+    [Libero2]                                         NVARCHAR (60)   NOT NULL,
+    [IDLibero3]                                       NVARCHAR (10)   NOT NULL,
+    [Libero3]                                         NVARCHAR (60)   NOT NULL,
+    [IDTipoFatturazione]                              NVARCHAR (10)   NOT NULL,
+    [TipoFatturazione]                                NVARCHAR (60)   NOT NULL,
+    [PKGruppoAgenti_Riga]                             INT             NOT NULL,
+    [PKCapoArea_Riga]                                 INT             NOT NULL,
+    [NumeroRiga]                                      INT             NOT NULL,
+    [PKArticolo]                                      INT             NOT NULL,
+    [CodiceCondizioniPagamento]                       NVARCHAR (10)   NULL,
+    [CondizioniPagamento]                             NVARCHAR (60)   NULL,
+    [RinnovoAutomatico]                               CHAR (1)        NOT NULL,
+    [NoteIntestazione]                                NVARCHAR (1000) NOT NULL,
+    [IsProfiloValidoPerStatisticaFatturato]           BIT             NOT NULL,
+    [IsProfiloValidoPerStatisticaFatturatoFormazione] BIT             NOT NULL,
+    [PKMacroTipologia]                                INT             NOT NULL,
+    [ImportoTotale]                                   DECIMAL (10, 2) NOT NULL,
+    [ImportoProvvigioneCapoArea]                      DECIMAL (10, 2) NOT NULL,
+    [ImportoProvvigioneAgente]                        DECIMAL (10, 2) NOT NULL,
+    [ImportoProvvigioneSubagente]                     DECIMAL (10, 2) NOT NULL,
+    [Progressivo]                                     INT             NOT NULL,
+    [Quote]                                           INT             NOT NULL,
+    [IDDocumento_Riga_Provenienza]                    INT             NULL,
+    [NoteDecisionali]                                 NVARCHAR (1000) NOT NULL,
+    [PKDataDisdetta]                                  DATE            NOT NULL,
+    [IDDocumentoRinnovato]                            INT             NULL,
+    CONSTRAINT [PK_Staging_Documenti] PRIMARY KEY CLUSTERED ([UpdateDatetime] ASC, [IDDocumento_Riga] ASC)
+);
+
+
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Staging_Documenti_BusinessKey]
+    ON [Staging].[Documenti]([IDDocumento_Riga] ASC);
+
+
+GO
+

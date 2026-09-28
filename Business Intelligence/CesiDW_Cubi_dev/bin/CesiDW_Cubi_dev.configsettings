@@ -3,10 +3,11 @@
     <DataSources>
       <DataSource>
         <ID>CesiDW</ID>
-        <ConnectionString>Provider=SQLNCLI11.1;Data Source=EPISQL2021;Persist Security Info=True;Password=;User ID=;Initial Catalog=CesiDW</ConnectionString>
+        <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=EPISQL2021;Integrated Security=SSPI;Initial Catalog=CesiDW</ConnectionString>
         <ImpersonationInfo>
-          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
-          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">CESI\sadmin</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>

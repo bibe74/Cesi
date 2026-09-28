@@ -1,0 +1,6 @@
+CREATE SCHEMA [Landing]
+    AUTHORIZATION [dbo];
+
+
+GO
+

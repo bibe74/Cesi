@@ -1174,7 +1174,7 @@ BEGIN
         Telefono NVARCHAR(60) NOT NULL,
         Cellulare NVARCHAR(60) NOT NULL,
         Fax NVARCHAR(60) NOT NULL,
-        TipoCliente NVARCHAR(10) NOT NULL,
+        TipoCliente NVARCHAR(20) NOT NULL,
         Agente NVARCHAR(60) NOT NULL,
         PKDataInizioContratto DATE NOT NULL CONSTRAINT FK_Dim_Cliente_PKDataInizioContratto REFERENCES Dim.Data (PKData),
         PKDataFineContratto DATE NOT NULL CONSTRAINT FK_Dim_Cliente_PKDataFineContratto REFERENCES Dim.Data (PKData),
@@ -1280,7 +1280,7 @@ BEGIN
         N'',       -- Telefono - nvarchar(60)
         N'',       -- Cellulare - nvarchar(60)
         N'',       -- Fax - nvarchar(60)
-        N'',       -- TipoCliente - nvarchar(10)
+        N'',       -- TipoCliente - nvarchar(20)
         N'',       -- Agente - nvarchar(60)
         N'',       -- MotivoDisdetta - nvarchar(120)
         N'',       -- Cognome - nvarchar(60)
@@ -1306,7 +1306,7 @@ BEGIN
         N'',       -- Telefono - nvarchar(60)
         N'',       -- Cellulare - nvarchar(60)
         N'',       -- Fax - nvarchar(60)
-        N'',       -- TipoCliente - nvarchar(10)
+        N'',       -- TipoCliente - nvarchar(20)
         N'',       -- Agente - nvarchar(60)
         N'',       -- MotivoDisdetta - nvarchar(120)
         N'',       -- Cognome - nvarchar(60)
@@ -2158,7 +2158,7 @@ BEGIN
         Telefono NVARCHAR(60) NOT NULL,
         Cellulare NVARCHAR(60) NOT NULL,
         Fax NVARCHAR(60) NOT NULL,
-        TipoCliente NVARCHAR(10) NOT NULL,
+        TipoCliente NVARCHAR(20) NOT NULL,
         Agente NVARCHAR(60) NOT NULL,
         PKDataInizioContratto DATE NOT NULL CONSTRAINT FK_Dim_ClienteAccessi_PKDataInizioContratto REFERENCES Dim.Data (PKData),
         PKDataFineContratto DATE NOT NULL CONSTRAINT FK_Dim_ClienteAccessi_PKDataFineContratto REFERENCES Dim.Data (PKData),

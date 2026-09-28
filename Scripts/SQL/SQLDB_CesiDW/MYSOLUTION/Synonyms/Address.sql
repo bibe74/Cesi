@@ -1,0 +1,5 @@
+CREATE SYNONYM [MYSOLUTION].[Address] FOR [MYSOLUTIONPRODUZIONE2].[Nop_MySolution].[dbo].[Address];
+
+
+GO
+

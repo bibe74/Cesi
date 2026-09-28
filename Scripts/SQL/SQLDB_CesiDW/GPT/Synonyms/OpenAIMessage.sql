@@ -1,0 +1,5 @@
+CREATE SYNONYM [GPT].[OpenAIMessage] FOR [MYSOLUTIONPRODUZIONE2].[dbGPT].[dbo].[OpenAIMessage];
+
+
+GO
+

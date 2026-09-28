@@ -1,0 +1,44 @@
+
+CREATE PROCEDURE Staging.usp_Reload_Crediti
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    DECLARE @lastupdated_staging DATETIME;
+    DECLARE @provider_name NVARCHAR(60) = N'Webinars';
+    DECLARE @full_table_name sysname = N'Landing.WEBINARS_CreditoAutocertificazione';
+
+    SELECT TOP 1 @lastupdated_staging = lastupdated_staging
+    FROM audit.tables
+    WHERE provider_name = @provider_name
+        AND full_table_name = @full_table_name;
+
+    IF (@lastupdated_staging IS NULL) SET @lastupdated_staging = CAST('19000101' AS DATETIME);
+
+    BEGIN TRANSACTION
+
+    TRUNCATE TABLE Staging.Crediti;
+
+    INSERT INTO Staging.Crediti
+    SELECT * FROM Staging.CreditiView
+    WHERE UpdateDatetime > @lastupdated_staging;
+
+    SELECT @lastupdated_staging = MAX(UpdateDatetime) FROM Staging.Crediti;
+
+    IF (@lastupdated_staging IS NOT NULL)
+    BEGIN
+
+    UPDATE audit.tables
+    SET lastupdated_staging = @lastupdated_staging
+    WHERE provider_name = @provider_name
+        AND full_table_name = @full_table_name;
+
+    END;
+
+    COMMIT
+
+END;
+
+GO
+

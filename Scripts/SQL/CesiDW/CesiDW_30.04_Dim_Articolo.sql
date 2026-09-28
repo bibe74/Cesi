@@ -303,7 +303,18 @@ AS (
         COALESCE(ABID.Data4, N'') AS Data4,
         COALESCE(ABID.Data5, N'') AS Data5,
         COALESCE(ABID.Data6, N'') AS Data6,
-        CASE WHEN DA.Codice LIKE N'MIA%L' THEN LEFT(RIGHT(DA.Codice, 2), 1) ELSE N'' END AS LivelloMIA
+        CASE WHEN DA.Codice LIKE N'MIA%L' THEN LEFT(RIGHT(DA.Codice, 2), 1) ELSE N'' END AS LivelloMIA,
+        CASE
+          WHEN DA.Tipo = N'FISCO' THEN 'MYS'
+          WHEN DA.Tipo = N'FULL' THEN 'MYS'
+          WHEN DA.Tipo = N'LAVORO' THEN 'MYS'
+          WHEN DA.Tipo = N'MIAFISCO' THEN 'MIA'
+          WHEN DA.Tipo = N'MIAFULL' THEN 'MIA'
+          WHEN DA.Tipo = N'MIALAVORO' THEN 'MIA'
+          WHEN DA.Codice LIKE N'MS-AB%' THEN 'B&C'
+          WHEN DA.Codice LIKE N'MS-CDI%' THEN 'B&C'
+          ELSE N''
+        END AS MacroTipoAbbonamento
 
     FROM DatiArticolo DA
     LEFT JOIN Landing.COMETAINTEGRATION_ArticleBIData ABID ON ABID.ArticleID = DA.id_articolo
@@ -339,7 +350,8 @@ SELECT
     TD.Data4,
     TD.Data5,
     TD.Data6,
-    TD.LivelloMIA
+    TD.LivelloMIA,
+    TD.MacroTipoAbbonamento
 
 FROM TableData TD;
 GO
@@ -371,6 +383,7 @@ BEGIN
     ALTER TABLE Staging.Articolo ALTER COLUMN Data6 NVARCHAR(40) NOT NULL;
     ALTER TABLE Staging.Articolo ALTER COLUMN Data6 NVARCHAR(40) NOT NULL;
     ALTER TABLE Staging.Articolo ALTER COLUMN LivelloMIA NVARCHAR(1) NOT NULL;
+    ALTER TABLE Staging.Articolo ALTER COLUMN MacroTipoArticolo NVARCHAR(3) NOT NULL;
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_COMETA_Articolo_BusinessKey ON Staging.Articolo (id_articolo);
 END;
@@ -467,7 +480,8 @@ BEGIN
         Data4 NVARCHAR(40) NOT NULL,
         Data5 NVARCHAR(40) NOT NULL,
         Data6 NVARCHAR(40) NOT NULL,
-        LivelloMIA NVARCHAR(1) NOT NULL
+        LivelloMIA NVARCHAR(1) NOT NULL,
+        MacroTipoArticolo NVARCHAR(3) NOT NULL
     );
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Dim_Articolo_id_articolo ON Dim.Articolo (id_articolo);
@@ -496,7 +510,8 @@ BEGIN
         Data4,
         Data5,
         Data6,
-        LivelloMIA
+        LivelloMIA,
+        MacroTipoArticolo
     )
     VALUES
     (   -1,         -- PKArticolo - int
@@ -518,7 +533,8 @@ BEGIN
         N'',       -- Data4 - nvarchar(40)
         N'',       -- Data5 - nvarchar(40)
         N'',       -- Data6 - nvarchar(40)
-        N''        -- LivelloMIA - nvarchar(1)
+        N'',       -- LivelloMIA - nvarchar(1)
+        N''        -- MacroTipoArticolo - nvarchar(3)
     ),
     (   -101,         -- PKArticolo - int
         -101,         -- id_articolo - int
@@ -539,7 +555,8 @@ BEGIN
         N'',       -- Data4 - nvarchar(40)
         N'',       -- Data5 - nvarchar(40)
         N'',       -- Data6 - nvarchar(40)
-        N''        -- LivelloMIA - nvarchar(1)
+        N'',       -- LivelloMIA - nvarchar(1)
+        N''        -- MacroTipoArticolo - nvarchar(3)
     );
 
     ALTER SEQUENCE dbo.seq_Dim_Articolo RESTART WITH 1;
@@ -590,7 +607,8 @@ BEGIN
         TGT.Data4 = SRC.Data4,
         TGT.Data5 = SRC.Data5,
         TGT.Data6 = SRC.Data6,
-        TGT.LivelloMIA = SRC.LivelloMIA
+        TGT.LivelloMIA = SRC.LivelloMIA,
+        TGT.MacroTipoArticolo = SRC.MacroTipoArticolo
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -619,7 +637,8 @@ BEGIN
         Data4,
         Data5,
         Data6,
-        LivelloMIA
+        LivelloMIA,
+        MacroTipoArticolo
       )
       VALUES (
         SRC.id_articolo,
@@ -647,7 +666,8 @@ BEGIN
         SRC.Data4,
         SRC.Data5,
         SRC.Data6,
-        SRC.LivelloMIA
+        SRC.LivelloMIA,
+        SRC.MacroTipoArticolo
       )
 
     OUTPUT

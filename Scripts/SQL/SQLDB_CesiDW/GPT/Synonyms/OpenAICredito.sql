@@ -1,0 +1,5 @@
+CREATE SYNONYM [GPT].[OpenAICredito] FOR [MYSOLUTIONPRODUZIONE2].[dbGPT].[dbo].[OpenAICredito];
+
+
+GO
+

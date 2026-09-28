@@ -3382,15 +3382,7 @@ AS (
 
         -- Abbonamento MySolution
         A.Tipo AS TipoAbbonamento,
-        CASE A.Tipo
-          WHEN N'FISCO' THEN 'MYS'
-          WHEN N'FULL' THEN 'MYS'
-          WHEN N'LAVORO' THEN 'MYS'
-          WHEN N'MIAFISCO' THEN 'MIA'
-          WHEN N'MIAFULL' THEN 'MIA'
-          WHEN N'MIALAVORO' THEN 'MIA'
-          ELSE N''
-        END AS MacroTipoAbbonamento,
+        A.MacroTipoAbbonamento,
 		SUM(CASE WHEN D.NumeroRiga = 1 THEN D.Quote ELSE NULL END) AS QuoteFormazione,
         D.Libero1 AS Azione,
         D.RinnovoAutomatico AS ClausolaRinnovoAutomatico,
@@ -3429,15 +3421,7 @@ AS (
         C.PKCliente,
         CASE WHEN D.NoteDecisionali LIKE @AgenteProprietarioPrefix + N'%)' THEN SUBSTRING(D.NoteDecisionali, LEN(@AgenteProprietarioPrefix)+1, LEN(D.NoteDecisionali) - LEN(@AgenteProprietarioPrefix) - 1) ELSE GA.CapoArea END,
         A.Tipo,
-        CASE A.Tipo
-          WHEN N'FISCO' THEN 'MYS'
-          WHEN N'FULL' THEN 'MYS'
-          WHEN N'LAVORO' THEN 'MYS'
-          WHEN N'MIAFISCO' THEN 'MIA'
-          WHEN N'MIAFULL' THEN 'MIA'
-          WHEN N'MIALAVORO' THEN 'MIA'
-          ELSE N''
-        END,
+        A.MacroTipoAbbonamento,
         D.Libero1,
         D.RinnovoAutomatico,
         D.PKDataInizioContratto,
@@ -3665,7 +3649,7 @@ DECLARE @GruppoAgenti NVARCHAR(60);
 DECLARE @CapoArea NVARCHAR(60);
 
 EXEC Fact.usp_ReportCruscottoClienti
-    @PKDataFinePeriodo = '20251231',
+    @PKDataFinePeriodo = NULL,
     --@GruppoAgenti = @GruppoAgenti,
     @CapoArea = @CapoArea,
     @HasAbbonamentoMySolution = NULL,

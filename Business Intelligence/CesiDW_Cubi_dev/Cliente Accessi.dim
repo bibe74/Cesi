@@ -706,7 +706,7 @@
       <KeyColumns>
         <KeyColumn dwd:design-time-name="6dcf2923-9006-48f5-ba4b-aa3467dbb445">
           <DataType>WChar</DataType>
-          <DataSize>10</DataSize>
+          <DataSize>20</DataSize>
           <Source xsi:type="ColumnBinding" dwd:design-time-name="3d670d22-3bba-4509-8e80-82a5434837e5">
             <TableID>Dim_ClienteAccessi</TableID>
             <ColumnID>TipoCliente</ColumnID>

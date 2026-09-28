@@ -1,0 +1,5 @@
+CREATE SYNONYM [GPT].[OpenAICliente] FOR [MYSOLUTIONPRODUZIONE2].[dbGPT].[dbo].[OpenAICliente];
+
+
+GO
+

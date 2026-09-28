@@ -9,15 +9,33 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "CesiDW_Trash", "CesiDW_Tras
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DB2021", "DB2021\DB2021.ssmssqlproj", "{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}"
 EndProject
+Project("{42EA0DBD-9CF1-443E-919E-BE9C484E4577}") = "SQLDB_CesiDW", "SQLDB_CesiDW\SQLDB_CesiDW.sqlproj", "{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Default|Default = Default|Default
+		Debug|Any CPU = Debug|Any CPU
+		Default|Any CPU = Default|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3898426A-60F0-4D36-AC20-73174FE87C2B}.Default|Default.ActiveCfg = Default
-		{87412656-9D5F-45B1-81E5-0BEC37EDA920}.Default|Default.ActiveCfg = Default
-		{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}.Default|Default.ActiveCfg = Default
-		{0B61E3F8-F05E-4DD5-8455-807757F57CB0}.Default|Default.ActiveCfg = Default
+		{3898426A-60F0-4D36-AC20-73174FE87C2B}.Debug|Any CPU.ActiveCfg = Default
+		{3898426A-60F0-4D36-AC20-73174FE87C2B}.Default|Any CPU.ActiveCfg = Default
+		{3898426A-60F0-4D36-AC20-73174FE87C2B}.Release|Any CPU.ActiveCfg = Default
+		{87412656-9D5F-45B1-81E5-0BEC37EDA920}.Debug|Any CPU.ActiveCfg = Default
+		{87412656-9D5F-45B1-81E5-0BEC37EDA920}.Default|Any CPU.ActiveCfg = Default
+		{87412656-9D5F-45B1-81E5-0BEC37EDA920}.Release|Any CPU.ActiveCfg = Default
+		{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}.Debug|Any CPU.ActiveCfg = Default
+		{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}.Default|Any CPU.ActiveCfg = Default
+		{5CED9C88-A1FD-4B8A-B418-8C284C31CF3B}.Release|Any CPU.ActiveCfg = Default
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Default|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Default|Any CPU.Build.0 = Release|Any CPU
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F09DBC-3FBA-4629-91C8-8E6EA9214F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF6499B-991E-403C-902B-A9DB2A5ADEB7}.Debug|Any CPU.ActiveCfg = Default
+		{DCF6499B-991E-403C-902B-A9DB2A5ADEB7}.Default|Any CPU.ActiveCfg = Default
+		{DCF6499B-991E-403C-902B-A9DB2A5ADEB7}.Release|Any CPU.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

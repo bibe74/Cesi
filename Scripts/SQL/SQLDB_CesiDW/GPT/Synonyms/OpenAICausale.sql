@@ -1,0 +1,5 @@
+CREATE SYNONYM [GPT].[OpenAICausale] FOR [MYSOLUTIONPRODUZIONE2].[dbGPT].[dbo].[OpenAICausale];
+
+
+GO
+

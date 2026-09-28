@@ -1,0 +1,6 @@
+CREATE SCHEMA [WEBINARS]
+    AUTHORIZATION [dbo];
+
+
+GO
+

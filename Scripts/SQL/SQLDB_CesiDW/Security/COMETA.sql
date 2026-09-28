@@ -1,0 +1,6 @@
+CREATE SCHEMA [COMETA]
+    AUTHORIZATION [dbo];
+
+
+GO
+

@@ -1,0 +1,5 @@
+CREATE SYNONYM [COMETAINTEGRATION].[ArticleBIData] FOR [MYSOLUTIONPRODUZIONE2].[CometaIntegration].[dbo].[ArticleBIData];
+
+
+GO
+
