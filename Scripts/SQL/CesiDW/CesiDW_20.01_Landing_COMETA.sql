@@ -3637,11 +3637,13 @@ AS (
         ))) AS HistoricalHashKey,
         CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
             tipo,
+            macrotipo,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
         CURRENT_TIMESTAMP AS UpdateDatetime,
-        tipo
+        tipo,
+        macrotipo
 
     FROM COMETA.MySolutionTrascodifica
 )
@@ -3659,7 +3661,8 @@ SELECT
     CAST(0 AS BIT) AS IsDeleted,
 
     -- Attributi
-    TD.tipo COLLATE DATABASE_DEFAULT AS tipo
+    TD.tipo COLLATE DATABASE_DEFAULT AS tipo,
+    COALESCE(TD.macrotipo, '') COLLATE DATABASE_DEFAULT AS macrotipo
 
 FROM TableData TD;
 GO
@@ -3676,6 +3679,7 @@ BEGIN
     ALTER TABLE Landing.COMETA_MySolutionTrascodifica ADD CONSTRAINT PK_Landing_COMETA_MySolutionTrascodifica PRIMARY KEY CLUSTERED (UpdateDatetime, codice);
 
     ALTER TABLE Landing.COMETA_MySolutionTrascodifica ALTER COLUMN tipo NVARCHAR(20) NOT NULL;
+    ALTER TABLE Landing.COMETA_MySolutionTrascodifica ALTER COLUMN macrotipo NVARCHAR(50) NOT NULL;
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_COMETA_MySolutionTrascodifica_BusinessKey ON Landing.COMETA_MySolutionTrascodifica (codice);
 END;
@@ -3706,7 +3710,8 @@ BEGIN
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
         TGT.IsDeleted = SRC.IsDeleted,
-        TGT.tipo = SRC.tipo
+        TGT.tipo = SRC.tipo,
+        TGT.macrotipo = SRC.macrotipo
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
@@ -3720,7 +3725,8 @@ BEGIN
         UpdateDatetime,
         IsDeleted,
     
-        tipo
+        tipo,
+        macrotipo
       )
 
     WHEN NOT MATCHED BY SOURCE

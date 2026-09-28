@@ -3315,7 +3315,8 @@ CREATE OR ALTER PROCEDURE Fact.usp_ReportCruscottoClienti (
     --@GruppoAgenti NVARCHAR(60) = NULL,
     @CapoArea NVARCHAR(60) = NULL,
     @HasAbbonamentoMySolution BIT = NULL,
-    @HasAbbonamentoMIA BIT = NULL
+    @HasAbbonamentoMIA BIT = NULL,
+    @HasAbbonamentoBEC BIT = NULL
 )
 AS
 BEGIN
@@ -3382,7 +3383,7 @@ AS (
 
         -- Abbonamento MySolution
         A.Tipo AS TipoAbbonamento,
-        A.MacroTipoAbbonamento,
+        A.MacroTipo AS MacroTipoAbbonamento,
 		SUM(CASE WHEN D.NumeroRiga = 1 THEN D.Quote ELSE NULL END) AS QuoteFormazione,
         D.Libero1 AS Azione,
         D.RinnovoAutomatico AS ClausolaRinnovoAutomatico,
@@ -3421,7 +3422,7 @@ AS (
         C.PKCliente,
         CASE WHEN D.NoteDecisionali LIKE @AgenteProprietarioPrefix + N'%)' THEN SUBSTRING(D.NoteDecisionali, LEN(@AgenteProprietarioPrefix)+1, LEN(D.NoteDecisionali) - LEN(@AgenteProprietarioPrefix) - 1) ELSE GA.CapoArea END,
         A.Tipo,
-        A.MacroTipoAbbonamento,
+        A.MacroTipo,
         D.Libero1,
         D.RinnovoAutomatico,
         D.PKDataInizioContratto,
@@ -3559,6 +3560,10 @@ AS (
             @HasAbbonamentoMIA IS NULL
             OR C.HasAbbonamentoMIA = @HasAbbonamentoMIA
         )
+        AND (
+            @HasAbbonamentoBEC IS NULL
+            OR C.HasAbbonamentoBEC = @HasAbbonamentoBEC
+        )
         AND GA.IsDeleted = CAST(0 AS BIT)
     WHERE C.IsDeleted = CAST(0 AS BIT)
         AND EXISTS(SELECT DO.IDDocumento FROM #DettaglioOrdini DO WHERE DO.PKCliente = C.PKCliente)
@@ -3609,13 +3614,20 @@ SELECT
     IMAC.NumeroIscritti AS NumeroIscrittiAnnoCorrente,
     IMAC.ImportoTotale AS ImportoTotaleAnnoCorrente,
     IMMAC.NumeroIscritti AS NumeroIscrittiMiniMasterAnnoCorrente,
-    IMMAC.ImportoTotale AS ImportoTotaleMiniMasterAnnoCorrente
+    IMMAC.ImportoTotale AS ImportoTotaleMiniMasterAnnoCorrente,
+    DOBEC.PKDataInizioContratto AS PKDataInizioContrattoBEC,
+    DOBEC.DataInizioContratto AS DataInizioContrattoBEC,
+    DOBEC.PKDataFineContratto AS PKDataFineContrattoBEC,
+    DOBEC.DataFineContratto AS DataFineContrattoBEC,
+    DOBEC.TotaleDocumento AS TotaleDocumentoBEC
 
 FROM Clienti C
 LEFT JOIN #DettaglioOrdini DOMYS ON DOMYS.PKCliente = C.PKCliente
     AND DOMYS.MacroTipoAbbonamento = N'MYS'
 LEFT JOIN #DettaglioOrdini DOMIA ON DOMIA.PKCliente = C.PKCliente
     AND DOMIA.MacroTipoAbbonamento = N'MIA'
+LEFT JOIN #DettaglioOrdini DOBEC ON DOBEC.PKCliente = C.PKCliente
+    AND DOBEC.MacroTipoAbbonamento = N'B&C'
 INNER JOIN Dim.Data DC ON DC.PKData = DOMYS.PKDataCompetenza
 LEFT JOIN Accessi A ON A.PKCliente = C.PKCliente
 LEFT JOIN CreditiMIA CMIA ON CMIA.PKCliente = C.PKCliente
