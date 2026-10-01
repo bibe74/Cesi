@@ -26,14 +26,14 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>CBrB21sDbLPSJZOdJ/0enB3QR34=9/27/2026 19:47:579/21/2026 7:40:58</TimeStamp>
+        <TimeStamp>e4ncgwFLLnzDQhcTTCM3u52u+hw=9/28/2026 16:52:359/21/2026 7:40:58</TimeStamp>
         <ID>
           <String>CesiDW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>xsvdEBbWbD3JeIqNEXbFSB5t27I=9/27/2026 19:48:049/21/2026 7:40:58</TimeStamp>
+        <TimeStamp>z6mC8yVUleSeRBtfhVW0g23Q00U=9/28/2026 16:53:089/21/2026 7:40:58</TimeStamp>
         <ID>
           <String>Articolo</String>
         </ID>
@@ -152,7 +152,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>YBxRaNV2A/ew0H7jw1lkBfC/Izw=9/27/2026 19:47:589/21/2026 7:40:587EME/BYbHqutAv7hFpAVGtOfMes=4/6/2026 7:40:329/21/2026 7:40:58</TimeStamp>
+        <TimeStamp>UVuF+m9jMuRp74ApCJqoGWOnd/g=9/28/2026 16:53:089/21/2026 7:40:587EME/BYbHqutAv7hFpAVGtOfMes=4/6/2026 7:40:329/21/2026 7:40:58</TimeStamp>
         <ID>
           <String>Documenti</String>
         </ID>
@@ -183,5 +183,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-09-28T06:45:19.196667Z</LastDeployed>
+  <LastDeployed>2026-09-28T14:53:34.536667Z</LastDeployed>
 </DeploymentSnapshot>
