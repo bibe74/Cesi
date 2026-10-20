@@ -23,6 +23,8 @@ BEGIN
         TGT.IsDeleted = SRC.IsDeleted,
         TGT.NumeroAccessi = SRC.NumeroAccessi,
         TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate,
+        TGT.NumeroAccessiBilancioCrisi = SRC.NumeroAccessiBilancioCrisi,
+        TGT.NumeroPagineVisitateBilancioCrisi = SRC.NumeroPagineVisitateBilancioCrisi,
         TGT.PKCapoArea = SRC.PKCapoArea
 
     WHEN NOT MATCHED
@@ -38,6 +40,8 @@ BEGIN
         IsDeleted,
         NumeroAccessi,
         NumeroPagineVisitate,
+        NumeroAccessiBilancioCrisi,
+        NumeroPagineVisitateBilancioCrisi,
         PKCapoArea
       )
       VALUES (
@@ -52,6 +56,8 @@ BEGIN
         SRC.IsDeleted,
         SRC.NumeroAccessi,
         SRC.NumeroPagineVisitate,
+        SRC.NumeroAccessiBilancioCrisi,
+        SRC.NumeroPagineVisitateBilancioCrisi,
         SRC.PKCapoArea
       )
 

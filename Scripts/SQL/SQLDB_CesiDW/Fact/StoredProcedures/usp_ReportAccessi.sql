@@ -48,6 +48,8 @@ BEGIN
             SN.DescrizioneSettimana,
             SUM(A.NumeroAccessi) AS NumeroAccessi,
             SUM(A.NumeroPagineVisitate) AS NumeroPagineVisitate,
+            SUM(A.NumeroAccessiBilancioCrisi) AS NumeroAccessiBilancioCrisi,
+            SUM(A.NumeroPagineVisitateBilancioCrisi) AS NumeroPagineVisitateBilancioCrisi,
             COUNT(DISTINCT A.PKData) AS NumeroGiorniAccesso
 
         FROM Fact.Accessi A
@@ -129,6 +131,8 @@ BEGIN
         SN.DescrizioneSettimana,
         COALESCE(ASN.NumeroAccessi, 0) AS NumeroAccessi,
         COALESCE(ASN.NumeroPagineVisitate, 0) AS NumeroPagineVisitate,
+        COALESCE(ASN.NumeroAccessiBilancioCrisi, 0) AS NumeroAccessiBilancioCrisi,
+        COALESCE(ASN.NumeroPagineVisitateBilancioCrisi, 0) AS NumeroPagineVisitateBilancioCrisi,
         COALESCE(ASN.NumeroGiorniAccesso, 0) AS NumeroGiorniAccesso,
         CASE WHEN ROW_NUMBER() OVER (PARTITION BY C.PKCliente ORDER BY SN.rn) = 1 THEN COALESCE(AU3M.NumeroGiorniAccesso, 0) ELSE 0 END AS NumeroGiorniAccessoUltimiTreMesi
 
@@ -145,5 +149,11 @@ BEGIN
 
 END;
 
+GO
+
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportAccessi] TO [cesidw_reader]
+    AS [dbo];
 GO
 

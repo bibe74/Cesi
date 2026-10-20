@@ -90,3 +90,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportFatturatoFormazioneTipologiaDettaglio] TO [cesidw_reader]
+    AS [dbo];
+GO
+

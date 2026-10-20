@@ -90,7 +90,9 @@ AS (
         --LFR.IDUser,
         COALESCE(UCAC.PKCliente, -101) AS PKCliente,
         LFR.NumeroAccessi,
-        LFR.NumeroPagineVisitate
+        LFR.NumeroPagineVisitate,
+        LFR.NumeroAccessiBC,
+        LFR.NumeroPagineVisitateBC
 
     FROM Landing.MYSOLUTION_LogsForReport LFR
     LEFT JOIN Dim.Data D ON D.PKData = LFR.Data
@@ -113,6 +115,8 @@ AS (
             GA.PKCapoArea,
             SUM(AD.NumeroAccessi),
             SUM(AD.NumeroPagineVisitate),
+            SUM(AD.NumeroAccessiBC),
+            SUM(AD.NumeroPagineVisitateBC),
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -120,7 +124,9 @@ AS (
 
         GA.PKCapoArea,
         SUM(AD.NumeroAccessi) AS NumeroAccessi,
-        SUM(AD.NumeroPagineVisitate) AS NumeroPagineVisitate
+        SUM(AD.NumeroPagineVisitate) AS NumeroPagineVisitate,
+        SUM(AD.NumeroAccessiBC) AS NumeroAccessiBilancioCrisi,
+        SUM(AD.NumeroPagineVisitateBC) AS NumeroPagineVisitateBilancioCrisi
 
     FROM AccessiDettaglio AD
     INNER JOIN Dim.Cliente C ON C.PKCliente = AD.PKCliente
@@ -148,7 +154,9 @@ SELECT
 
     -- Misure
     TD.NumeroAccessi,
-    TD.NumeroPagineVisitate
+    TD.NumeroPagineVisitate,
+    TD.NumeroAccessiBilancioCrisi,
+    TD.NumeroPagineVisitateBilancioCrisi
 
 FROM TableData TD;
 GO
@@ -167,6 +175,8 @@ BEGIN
 
     ALTER TABLE Staging.Accessi ALTER COLUMN NumeroAccessi INT NOT NULL;
     ALTER TABLE Staging.Accessi ALTER COLUMN NumeroPagineVisitate INT NOT NULL;
+    ALTER TABLE Staging.Accessi ALTER COLUMN NumeroAccessiBilancioCrisi INT NOT NULL;
+    ALTER TABLE Staging.Accessi ALTER COLUMN NumeroPagineVisitateBilancioCrisi INT NOT NULL;
 
     CREATE UNIQUE NONCLUSTERED INDEX IX_Staging_Accessi_PKCliente_PKData ON Staging.Accessi (PKCliente, PKData);
 END;
@@ -256,6 +266,16 @@ BEGIN
 
     ALTER SEQUENCE dbo.seq_Fact_Accessi RESTART WITH 1;
 
+    ALTER TABLE Fact.Accessi ADD NumeroAccessiBilancioCrisi INT NULL;
+    ALTER TABLE Fact.Accessi ADD NumeroPagineVisitateBilancioCrisi INT NULL;
+
+    UPDATE Fact.Accessi
+    SET NumeroAccessiBilancioCrisi = 0,
+        NumeroPagineVisitateBilancioCrisi = 0;
+
+    ALTER TABLE Fact.Accessi ALTER COLUMN NumeroAccessiBilancioCrisi INT NOT NULL;
+    ALTER TABLE Fact.Accessi ALTER COLUMN NumeroPagineVisitateBilancioCrisi INT NOT NULL;
+
 END;
 GO
 
@@ -286,6 +306,8 @@ BEGIN
         TGT.IsDeleted = SRC.IsDeleted,
         TGT.NumeroAccessi = SRC.NumeroAccessi,
         TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate,
+        TGT.NumeroAccessiBilancioCrisi = SRC.NumeroAccessiBilancioCrisi,
+        TGT.NumeroPagineVisitateBilancioCrisi = SRC.NumeroPagineVisitateBilancioCrisi,
         TGT.PKCapoArea = SRC.PKCapoArea
 
     WHEN NOT MATCHED
@@ -301,6 +323,8 @@ BEGIN
         IsDeleted,
         NumeroAccessi,
         NumeroPagineVisitate,
+        NumeroAccessiBilancioCrisi,
+        NumeroPagineVisitateBilancioCrisi,
         PKCapoArea
       )
       VALUES (
@@ -315,6 +339,8 @@ BEGIN
         SRC.IsDeleted,
         SRC.NumeroAccessi,
         SRC.NumeroPagineVisitate,
+        SRC.NumeroAccessiBilancioCrisi,
+        SRC.NumeroPagineVisitateBilancioCrisi,
         SRC.PKCapoArea
       )
 

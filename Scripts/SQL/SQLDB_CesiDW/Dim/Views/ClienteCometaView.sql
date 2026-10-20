@@ -196,7 +196,8 @@ SELECT
     CAST(0 AS BIT) AS HasAbbonamentoMIA,
     TD.AgenteZoho,
     TD.IDProfessione,
-    TD.Professione
+    TD.Professione,
+    CAST(0 AS BIT) AS HasAbbonamentoBEC
 
 FROM TableData TD;
 

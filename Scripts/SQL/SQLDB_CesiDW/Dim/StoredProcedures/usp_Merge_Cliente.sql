@@ -152,7 +152,8 @@ BEGIN
         TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA,
         TGT.AgenteZoho = SRC.AgenteZoho,
         TGT.IDProfessione = SRC.IDProfessione,
-        TGT.Professione = SRC.Professione
+        TGT.Professione = SRC.Professione,
+        TGT.HasAbbonamentoBEC = SRC.HasAbbonamentoBEC
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -206,7 +207,8 @@ BEGIN
         HasAbbonamentoMIA,
         AgenteZoho,
         IDProfessione,
-        Professione
+        Professione,
+        HasAbbonamentoBEC
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -259,7 +261,8 @@ BEGIN
         SRC.HasAbbonamentoMIA,
         SRC.AgenteZoho,
         SRC.IDProfessione,
-        SRC.Professione
+        SRC.Professione,
+        SRC.HasAbbonamentoBEC
       )
 
     OUTPUT
@@ -330,7 +333,8 @@ BEGIN
         TGT.HasAbbonamentoMySolution = SRC.HasAbbonamentoMySolution,
         TGT.HasAbbonamentoMIA = SRC.HasAbbonamentoMIA,
         TGT.IDProfessione = SRC.IDProfessione,
-        TGT.Professione = SRC.Professione
+        TGT.Professione = SRC.Professione,
+        TGT.HasAbbonamentoBEC = SRC.HasAbbonamentoBEC
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -383,7 +387,8 @@ BEGIN
         HasAbbonamentoMySolution,
         HasAbbonamentoMIA,
         IDProfessione,
-        Professione
+        Professione,
+        HasAbbonamentoBEC
       )
       VALUES (
         SRC.IDSoggettoCommerciale,
@@ -435,7 +440,8 @@ BEGIN
         SRC.HasAbbonamentoMySolution,
         SRC.HasAbbonamentoMIA,
         SRC.IDProfessione,
-        SRC.Professione
+        SRC.Professione,
+        SRC.HasAbbonamentoBEC
       )
 
     OUTPUT
@@ -570,8 +576,9 @@ BEGIN
     AS (
         SELECT
             C.PKCliente,
-            CAST(MAX(CASE WHEN A.Tipo IN (N'FISCO', N'FULL', N'LAVORO') THEN 1 ELSE 0 END) AS BIT) AS HasAbbonamentoMySolution,
-            CAST(MAX(CASE WHEN A.Tipo IN (N'MIAFISCO', N'MIAFULL', N'MIALAVORO') THEN 1 ELSE 0 END) AS BIT) AS HasAbbonamentoMIA
+            CAST(MAX(CASE WHEN A.MacroTipo = N'MYS' THEN 1 ELSE 0 END) AS BIT) AS HasAbbonamentoMySolution,
+            CAST(MAX(CASE WHEN A.MacroTipo = N'MIA' THEN 1 ELSE 0 END) AS BIT) AS HasAbbonamentoMIA,
+            CAST(MAX(CASE WHEN A.MacroTipo = N'BEC' THEN 1 ELSE 0 END) AS BIT) AS HasAbbonamentoBEC
 
         FROM Fact.Documenti D
         INNER JOIN AnnoCorrente AC ON D.PKDataFineContratto >= AC.PKDataInizioPeriodo AND D.PKDataInizioContratto <= AC.PKDataFinePeriodo
@@ -585,7 +592,8 @@ BEGIN
     )
     UPDATE C
     SET C.HasAbbonamentoMySolution = COALESCE(CHA.HasAbbonamentoMySolution, 0),
-        C.HasAbbonamentoMIA = COALESCE(CHA.HasAbbonamentoMIA, 0)
+        C.HasAbbonamentoMIA = COALESCE(CHA.HasAbbonamentoMIA, 0),
+        C.HasAbbonamentoBEC = COALESCE(CHA.HasAbbonamentoBEC, 0)
 
     FROM Dim.Cliente C
     LEFT JOIN ClienteHasAbbonamento CHA ON CHA.PKCliente = C.PKCliente;

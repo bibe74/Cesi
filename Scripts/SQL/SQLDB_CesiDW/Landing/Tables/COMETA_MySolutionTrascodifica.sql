@@ -8,6 +8,7 @@ CREATE TABLE [Landing].[COMETA_MySolutionTrascodifica] (
     [UpdateDatetime]         DATETIME       NOT NULL,
     [IsDeleted]              BIT            NULL,
     [tipo]                   NVARCHAR (20)  NOT NULL,
+    [macrotipo]              NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Landing_COMETA_MySolutionTrascodifica] PRIMARY KEY CLUSTERED ([UpdateDatetime] ASC, [codice] ASC)
 );
 

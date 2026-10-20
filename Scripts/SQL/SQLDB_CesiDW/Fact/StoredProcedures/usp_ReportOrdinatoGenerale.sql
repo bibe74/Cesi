@@ -257,3 +257,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportOrdinatoGenerale] TO [cesidw_reader]
+    AS [dbo];
+GO
+

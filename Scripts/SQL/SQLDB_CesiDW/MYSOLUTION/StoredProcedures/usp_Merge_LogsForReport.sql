@@ -15,7 +15,9 @@ BEGIN
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
         TGT.NumeroAccessi = SRC.NumeroAccessi,
-        TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate
+        TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate,
+        TGT.NumeroAccessiBC = SRC.NumeroAccessiBC,
+        TGT.NumeroPagineVisitateBC = SRC.NumeroPagineVisitateBC
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
@@ -31,7 +33,9 @@ BEGIN
         IsDeleted,
     
         NumeroAccessi,
-        NumeroPagineVisitate
+        NumeroPagineVisitate,
+        NumeroAccessiBC,
+        NumeroPagineVisitateBC
       )
 
     WHEN NOT MATCHED BY SOURCE

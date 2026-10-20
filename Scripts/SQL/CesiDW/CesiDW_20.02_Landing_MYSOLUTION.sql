@@ -1276,7 +1276,9 @@ AS (
         CAST(DataOra AS DATE) AS Data,
         Username,
         SUM(CASE WHEN PageType = N'Login' THEN 1 ELSE 0 END) AS NumeroAccessi,
-        COUNT(1) AS NumeroPagineVisitate
+        COUNT(1) AS NumeroPagineVisitate,
+        SUM(CASE WHEN PageType = N'Login' AND Url LIKE N'%BILANCIOCRISI%' THEN 1 ELSE 0 END) AS NumeroAccessiBC,
+        SUM(CASE WHEN Url LIKE N'%BILANCIOCRISI%' THEN 1 ELSE 0 END) AS NumeroPagineVisitateBC
 
     FROM MYSOLUTION.LogsEpiServer
     WHERE COALESCE(Username, N'') <> N''
@@ -1296,12 +1298,16 @@ AS (
         CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
             AD.NumeroAccessi,
             AD.NumeroPagineVisitate,
+            AD.NumeroAccessiBC,
+            AD.NumeroPagineVisitateBC,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
         CURRENT_TIMESTAMP AS UpdateDatetime,
         AD.NumeroAccessi,
-        AD.NumeroPagineVisitate
+        AD.NumeroPagineVisitate,
+        AD.NumeroAccessiBC,
+        AD.NumeroPagineVisitateBC
 
     FROM AggregatedData AD
     WHERE AD.Data > CAST('19000101' AS DATE)
@@ -1322,7 +1328,9 @@ SELECT
 
     -- Altri campi
     TD.NumeroAccessi,
-    TD.NumeroPagineVisitate
+    TD.NumeroPagineVisitate,
+    TD.NumeroAccessiBC,
+    TD.NumeroPagineVisitateBC
 
 FROM TableData TD;
 GO
@@ -1362,7 +1370,9 @@ BEGIN
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
         TGT.NumeroAccessi = SRC.NumeroAccessi,
-        TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate
+        TGT.NumeroPagineVisitate = SRC.NumeroPagineVisitate,
+        TGT.NumeroAccessiBC = SRC.NumeroAccessiBC,
+        TGT.NumeroPagineVisitateBC = SRC.NumeroPagineVisitateBC
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
@@ -1378,7 +1388,9 @@ BEGIN
         IsDeleted,
     
         NumeroAccessi,
-        NumeroPagineVisitate
+        NumeroPagineVisitate,
+        NumeroAccessiBC,
+        NumeroPagineVisitateBC
       )
 
     WHEN NOT MATCHED BY SOURCE

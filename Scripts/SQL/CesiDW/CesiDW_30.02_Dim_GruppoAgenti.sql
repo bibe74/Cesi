@@ -89,6 +89,33 @@ AS (
     LEFT JOIN Landing.COMETA_Anagrafica AA ON AA.id_anagrafica = SCA.id_anagrafica
     LEFT JOIN Landing.COMETA_SoggettoCommerciale SCSA ON SCSA.id_sog_commerciale = GA.id_sog_com_sub_agente
     LEFT JOIN Landing.COMETA_Anagrafica ASA ON ASA.id_anagrafica = SCSA.id_anagrafica
+
+    UNION ALL
+
+    SELECT
+        9999,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            9999,
+            ' '
+        ))) AS HistoricalHashKey,
+        CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
+            'AG009999',
+            CA.CapoArea,
+            ' '
+        ))) AS ChangeHashKey,
+        CURRENT_TIMESTAMP AS InsertDatetime,
+        CURRENT_TIMESTAMP AS UpdateDatetime,
+        'AG009999',
+        CA.CapoArea,
+        -1,
+        CA.CapoArea,
+        -1,
+        CA.CapoArea,
+        -1,
+        CA.CapoArea
+
+    FROM Import.CapiArea CA
+    WHERE CA.CapoArea = 'MASTROPIETRO NICOLA'
 )
 SELECT
     -- Chiavi

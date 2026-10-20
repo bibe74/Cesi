@@ -4,7 +4,7 @@ AS
 WITH UtentiConPagineVisitate
 AS (
     SELECT DISTINCT Username
-    FROM Landing.MYSOLUTION_LogsForReport LFR
+    FROM Landing.MYSOLUTION_LogsForReport
 ),
 UtentiConPagineVisitateClienti
 AS (
@@ -40,7 +40,9 @@ AS (
         --LFR.IDUser,
         COALESCE(UCAC.PKCliente, -101) AS PKCliente,
         LFR.NumeroAccessi,
-        LFR.NumeroPagineVisitate
+        LFR.NumeroPagineVisitate,
+        LFR.NumeroAccessiBC,
+        LFR.NumeroPagineVisitateBC
 
     FROM Landing.MYSOLUTION_LogsForReport LFR
     LEFT JOIN Dim.Data D ON D.PKData = LFR.Data
@@ -63,6 +65,8 @@ AS (
             GA.PKCapoArea,
             SUM(AD.NumeroAccessi),
             SUM(AD.NumeroPagineVisitate),
+            SUM(AD.NumeroAccessiBC),
+            SUM(AD.NumeroPagineVisitateBC),
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -70,7 +74,9 @@ AS (
 
         GA.PKCapoArea,
         SUM(AD.NumeroAccessi) AS NumeroAccessi,
-        SUM(AD.NumeroPagineVisitate) AS NumeroPagineVisitate
+        SUM(AD.NumeroPagineVisitate) AS NumeroPagineVisitate,
+        SUM(AD.NumeroAccessiBC) AS NumeroAccessiBilancioCrisi,
+        SUM(AD.NumeroPagineVisitateBC) AS NumeroPagineVisitateBilancioCrisi
 
     FROM AccessiDettaglio AD
     INNER JOIN Dim.Cliente C ON C.PKCliente = AD.PKCliente
@@ -98,7 +104,9 @@ SELECT
 
     -- Misure
     TD.NumeroAccessi,
-    TD.NumeroPagineVisitate
+    TD.NumeroPagineVisitate,
+    TD.NumeroAccessiBilancioCrisi,
+    TD.NumeroPagineVisitateBilancioCrisi
 
 FROM TableData TD;
 

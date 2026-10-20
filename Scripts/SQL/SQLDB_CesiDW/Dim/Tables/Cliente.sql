@@ -53,6 +53,7 @@ CREATE TABLE [Dim].[Cliente] (
     [AgenteZoho]                           NVARCHAR (60)  CONSTRAINT [DFT_Dim_Cliente_AgenteZoho] DEFAULT (N'') NOT NULL,
     [IDProfessione]                        INT            CONSTRAINT [DFT_Dim_Cliente_IDProfessione] DEFAULT ((-1)) NOT NULL,
     [Professione]                          NVARCHAR (60)  CONSTRAINT [DFT_Dim_Cliente_Professione] DEFAULT (N'') NOT NULL,
+    [HasAbbonamentoBEC]                    BIT            CONSTRAINT [DFT_Dim_Cliente_HasAbbonamentoBEC] DEFAULT ((0)) NOT NULL,
     CONSTRAINT [PK_Dim_Cliente] PRIMARY KEY CLUSTERED ([PKCliente] ASC),
     CONSTRAINT [FK_Dim_Cliente_PKDataDisdetta] FOREIGN KEY ([PKDataDisdetta]) REFERENCES [Dim].[Data] ([PKData]),
     CONSTRAINT [FK_Dim_Cliente_PKDataFineContratto] FOREIGN KEY ([PKDataFineContratto]) REFERENCES [Dim].[Data] ([PKData]),

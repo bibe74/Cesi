@@ -76,3 +76,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportFatturatoFormazioneDettaglioCorsi] TO [cesidw_reader]
+    AS [dbo];
+GO
+

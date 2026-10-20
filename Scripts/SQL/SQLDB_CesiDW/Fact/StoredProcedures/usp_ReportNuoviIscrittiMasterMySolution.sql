@@ -79,3 +79,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportNuoviIscrittiMasterMySolution] TO [cesidw_reader]
+    AS [dbo];
+GO
+

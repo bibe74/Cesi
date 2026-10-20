@@ -39,7 +39,7 @@ BEGIN
         TGT.Data5 = SRC.Data5,
         TGT.Data6 = SRC.Data6,
         TGT.LivelloMIA = SRC.LivelloMIA,
-        TGT.MacroTipoAbbonamento = SRC.MacroTipoAbbonamento
+        TGT.MacroTipo = SRC.MacroTipo
 
     WHEN NOT MATCHED
       THEN INSERT (
@@ -69,7 +69,7 @@ BEGIN
         Data5,
         Data6,
         LivelloMIA,
-        MacroTipoAbbonamento
+        MacroTipo
       )
       VALUES (
         SRC.id_articolo,
@@ -98,7 +98,7 @@ BEGIN
         SRC.Data5,
         SRC.Data6,
         SRC.LivelloMIA,
-        SRC.MacroTipoAbbonamento
+        SRC.MacroTipo
       )
 
     OUTPUT

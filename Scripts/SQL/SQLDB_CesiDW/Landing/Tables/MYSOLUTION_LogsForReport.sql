@@ -10,6 +10,8 @@ CREATE TABLE [Landing].[MYSOLUTION_LogsForReport] (
     [IsDeleted]              BIT            NULL,
     [NumeroAccessi]          INT            NULL,
     [NumeroPagineVisitate]   INT            NULL,
+    [NumeroAccessiBC]        INT            NULL,
+    [NumeroPagineVisitateBC] INT            NULL,
     CONSTRAINT [PK_Landing_MYSOLUTION_LogsForReport] PRIMARY KEY CLUSTERED ([UpdateDatetime] ASC, [Data] ASC, [Username] ASC)
 );
 

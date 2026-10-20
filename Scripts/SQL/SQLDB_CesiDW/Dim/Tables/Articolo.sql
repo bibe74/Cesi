@@ -26,7 +26,7 @@ CREATE TABLE [Dim].[Articolo] (
     [Data5]                       NVARCHAR (40)  NOT NULL,
     [Data6]                       NVARCHAR (40)  NOT NULL,
     [LivelloMIA]                  NVARCHAR (1)   NOT NULL,
-    [MacroTipoAbbonamento]        NVARCHAR (3)   NOT NULL,
+    [MacroTipo]                   NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Dim_Articolo] PRIMARY KEY CLUSTERED ([PKArticolo] ASC)
 );
 

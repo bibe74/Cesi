@@ -31,7 +31,7 @@ CREATE TABLE [Dim].[ClienteAccessi] (
     [Telefono]                             NVARCHAR (60)  NOT NULL,
     [Cellulare]                            NVARCHAR (60)  NOT NULL,
     [Fax]                                  NVARCHAR (60)  NOT NULL,
-    [TipoCliente]                          NVARCHAR (10)  NOT NULL,
+    [TipoCliente]                          NVARCHAR (20)  NOT NULL,
     [Agente]                               NVARCHAR (60)  NOT NULL,
     [PKDataInizioContratto]                DATE           CONSTRAINT [DFT_Dim_ClienteAccessi_PKInizioContratto] DEFAULT (CONVERT([date],'19000101')) NOT NULL,
     [PKDataFineContratto]                  DATE           CONSTRAINT [DFT_Dim_ClienteAccessi_PKFineContratto] DEFAULT (CONVERT([date],'19000101')) NOT NULL,

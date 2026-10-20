@@ -26,7 +26,8 @@ AS (
         COALESCE(T.des_breve, N'') AS DescrizioneBreve,
         COALESCE(ACMD.CategoriaMaster, N'') AS CategoriaMaster,
         COALESCE(ACMD.CodiceEsercizioMaster, N'') AS CodiceEsercizioMaster,
-        COALESCE(MST.tipo, N'') AS Tipo
+        COALESCE(MST.tipo, N'') AS Tipo,
+        COALESCE(MST.macrotipo, N'') AS MacroTipo
 
     FROM Landing.COMETA_Articolo T
     LEFT JOIN Landing.COMETA_CategoriaCommercialeArticolo CCA ON CCA.id_cat_com_articolo = T.id_cat_com_articolo
@@ -60,6 +61,7 @@ AS (
             ABID.Data4,
             ABID.Data5,
             ABID.Data6,
+            DA.MacroTipo,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
@@ -98,17 +100,7 @@ AS (
         COALESCE(ABID.Data5, N'') AS Data5,
         COALESCE(ABID.Data6, N'') AS Data6,
         CASE WHEN DA.Codice LIKE N'MIA%L' THEN LEFT(RIGHT(DA.Codice, 2), 1) ELSE N'' END AS LivelloMIA,
-        CASE
-          WHEN DA.Tipo = N'FISCO' THEN 'MYS'
-          WHEN DA.Tipo = N'FULL' THEN 'MYS'
-          WHEN DA.Tipo = N'LAVORO' THEN 'MYS'
-          WHEN DA.Tipo = N'MIAFISCO' THEN 'MIA'
-          WHEN DA.Tipo = N'MIAFULL' THEN 'MIA'
-          WHEN DA.Tipo = N'MIALAVORO' THEN 'MIA'
-          WHEN DA.Codice LIKE N'MS-AB%' THEN 'B&C'
-          WHEN DA.Codice LIKE N'MS-CDI%' THEN 'B&C'
-          ELSE N''
-        END AS MacroTipoAbbonamento
+        DA.MacroTipo
 
     FROM DatiArticolo DA
     LEFT JOIN Landing.COMETAINTEGRATION_ArticleBIData ABID ON ABID.ArticleID = DA.id_articolo
@@ -145,7 +137,7 @@ SELECT
     TD.Data5,
     TD.Data6,
     TD.LivelloMIA,
-    TD.MacroTipoAbbonamento
+    TD.MacroTipo
 
 FROM TableData TD;
 

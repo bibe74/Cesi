@@ -11,11 +11,13 @@ AS (
         ))) AS HistoricalHashKey,
         CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
             tipo,
+            macrotipo,
             ' '
         ))) AS ChangeHashKey,
         CURRENT_TIMESTAMP AS InsertDatetime,
         CURRENT_TIMESTAMP AS UpdateDatetime,
-        tipo
+        tipo,
+        macrotipo
 
     FROM COMETA.MySolutionTrascodifica
 )
@@ -33,7 +35,8 @@ SELECT
     CAST(0 AS BIT) AS IsDeleted,
 
     -- Attributi
-    TD.tipo COLLATE DATABASE_DEFAULT AS tipo
+    TD.tipo COLLATE DATABASE_DEFAULT AS tipo,
+    COALESCE(TD.macrotipo, '') COLLATE DATABASE_DEFAULT AS macrotipo
 
 FROM TableData TD;
 

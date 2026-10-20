@@ -55,7 +55,32 @@ GO
 
 CREATE OR ALTER VIEW Staging.CreditiView
 AS
-WITH TableData
+WITH CodiceFiscaleNomeCognome
+AS (
+    SELECT
+        A.CodiceFiscale,
+        A.Nome,
+        A.Cognome,
+        COUNT(1) AS Conteggio
+
+    FROM Landing.WEBINARS_WeAutocertificazioni A
+    WHERE A.IsDeleted = CAST(0 AS BIT)
+        --AND A.CodiceFiscale <> ''
+    GROUP BY A.CodiceFiscale,
+        A.Nome,
+        A.Cognome
+),
+CodiceFiscaleNomeCognomeDettaglio
+AS (
+    SELECT
+        ENC.CodiceFiscale,
+        ENC.Nome,
+        ENC.Cognome,
+        ROW_NUMBER() OVER (PARTITION BY ENC.CodiceFiscale ORDER BY ENC.Conteggio DESC, ENC.Nome, ENC.Cognome) AS rn
+
+    FROM CodiceFiscaleNomeCognome ENC
+),
+TableData
 AS (
     SELECT
         CA.ID,
@@ -67,8 +92,8 @@ AS (
         CONVERT(VARBINARY(20), HASHBYTES('MD5', CONCAT(
             A.Corso,
             W.PKCorso,
-            A.Nome,
-            A.Cognome,
+            UPPER(COALESCE(CFNCD.Nome, A.Nome)),
+            UPPER(COALESCE(CFNCD.Cognome, A.Cognome)),
             A.CodiceFiscale,
             A.Professione,
             A.Ordine,
@@ -89,8 +114,8 @@ AS (
         --A.ID,
         A.Corso AS IDCorso,
         COALESCE(W.PKCorso, CASE WHEN A.Corso = N'' THEN -1 ELSE -101 END) AS PKCorso,
-        UPPER(A.Nome) AS Nome,
-        UPPER(A.Cognome) AS Cognome,
+        UPPER(COALESCE(CFNCD.Nome, A.Nome)) AS Nome,
+        UPPER(COALESCE(CFNCD.Cognome, A.Cognome)) AS Cognome,
         UPPER(A.CodiceFiscale) AS CodiceFiscale,
         COALESCE(A.Professione, N'') AS Professione,
         COALESCE(A.Ordine, N'') AS Ordine,
@@ -122,6 +147,8 @@ AS (
     LEFT JOIN Dim.Data DC ON DC.PKData = A.DataCreazione
     LEFT JOIN Import.Decod_StatoCrediti DSC ON DSC.IDStatoCrediti = CA.Stato
     LEFT JOIN Import.Decod_TipoCrediti DTC ON DTC.IDTipoCrediti = CT.Tipo
+    LEFT JOIN CodiceFiscaleNomeCognomeDettaglio CFNCD ON CFNCD.CodiceFiscale = A.CodiceFiscale
+        AND CFNCD.rn = 1
     WHERE CA.IsDeleted = CAST(0 AS BIT)
 )
 SELECT

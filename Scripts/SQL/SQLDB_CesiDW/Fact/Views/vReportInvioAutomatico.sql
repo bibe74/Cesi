@@ -20,7 +20,7 @@ AS (
 
     SELECT
         N'Accessi',
-        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;paolo.dosi@cesimultimedia.it;valentina.cipriani@cesimultimedia.it',
+        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;paolo.dosi@cesimultimedia.it;valentina.cipriani@cesimultimedia.it;francesco.semeraro@cesimultimedia.it',
         N'Report Accessi',
         NULL
 
@@ -96,7 +96,7 @@ AS (
 
     SELECT
         N'Accessi Demo',
-        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;paolo.dosi@cesimultimedia.it;valentina.cipriani@cesimultimedia.it',
+        N'gabriella.mottica@cesimultimedia.it;cipriani@cesimultimedia.it;paola.turolla@cesimultimedia.it;andrea.giuggioli@cesimultimedia.it;giada.lidonnici@cesimultimedia.it;serena.leso@cesimultimedia.it;nicola.mastropietro@cesimultimedia.it;paolo.dosi@cesimultimedia.it;valentina.cipriani@cesimultimedia.it;francesco.semeraro@cesimultimedia.it',
         N'Report Accessi Demo',
         NULL
 )

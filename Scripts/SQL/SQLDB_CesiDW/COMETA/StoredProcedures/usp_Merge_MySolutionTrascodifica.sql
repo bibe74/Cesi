@@ -21,7 +21,8 @@ BEGIN
         --TGT.InsertDatetime = SRC.InsertDatetime,
         TGT.UpdateDatetime = SRC.UpdateDatetime,
         TGT.IsDeleted = SRC.IsDeleted,
-        TGT.tipo = SRC.tipo
+        TGT.tipo = SRC.tipo,
+        TGT.macrotipo = SRC.macrotipo
 
     WHEN NOT MATCHED AND SRC.IsDeleted = CAST(0 AS BIT)
       THEN INSERT VALUES (
@@ -35,7 +36,8 @@ BEGIN
         UpdateDatetime,
         IsDeleted,
     
-        tipo
+        tipo,
+        macrotipo
       )
 
     WHEN NOT MATCHED BY SOURCE

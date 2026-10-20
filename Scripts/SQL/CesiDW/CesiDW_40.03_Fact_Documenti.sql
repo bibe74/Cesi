@@ -302,8 +302,10 @@ SELECT
     TD.PKCliente,
     TD.TipoSoggettoCommercialeFattura,
     TD.PKClienteFattura,
-    TD.PKGruppoAgenti,
-    TD.PKCapoArea,
+    --TD.PKGruppoAgenti,
+    COALESCE(TGA.PKGruppoAgentiNew, TD.PKGruppoAgenti) AS PKGruppoAgenti,
+    --TD.PKCapoArea,
+    COALESCE(TCA.PKCapoAreaNew, TD.PKCapoArea) AS PKCapoArea,
     TD.PKDataFineContratto,
     TD.Libero4,
     TD.PKDataInizioContratto,
@@ -315,8 +317,10 @@ SELECT
     TD.Libero3,
     TD.IDTipoFatturazione,
     TD.TipoFatturazione,
-    TD.PKGruppoAgenti_Riga,
-    TD.PKCapoArea_Riga,
+    --TD.PKGruppoAgenti_Riga,
+    COALESCE(TGAR.PKGruppoAgentiNew, TD.PKGruppoAgenti_Riga) AS PKGruppoAgenti_Riga,
+    --TD.PKCapoArea_Riga,
+    COALESCE(TCAR.PKCapoAreaNew, TD.PKCapoArea_Riga) AS PKCapoArea_Riga,
     TD.NumeroRiga,
     TD.PKArticolo,
     TD.CodiceCondizioniPagamento,
@@ -342,6 +346,14 @@ SELECT
 
 FROM TableData TD
 LEFT JOIN Landing.COMETA_Documento DR ON DR.id_documento = TD.IDDocumentoRinnovato
+LEFT JOIN Import.TrascodificaCapoArea TCA ON TCA.PKCapoArea = TD.PKCapoArea
+    AND TD.PKDataDocumento BETWEEN TCA.PKDataInizio AND TCA.PKDataFine
+LEFT JOIN Import.TrascodificaCapoArea TCAR ON TCAR.PKCapoArea = TD.PKCapoArea_Riga
+    AND TD.PKDataDocumento BETWEEN TCAR.PKDataInizio AND TCAR.PKDataFine
+LEFT JOIN Import.TrascodificaGruppoAgenti TGA ON TGA.PKGruppoAgenti = TD.PKGruppoAgenti
+    AND TD.PKDataDocumento BETWEEN TGA.PKDataInizio AND TGA.PKDataFine
+LEFT JOIN Import.TrascodificaGruppoAgenti TGAR ON TGAR.PKGruppoAgenti = TD.PKGruppoAgenti
+    AND TD.PKDataDocumento BETWEEN TGAR.PKDataInizio AND TGAR.PKDataFine
 WHERE TD.rn = 1;
 GO
 

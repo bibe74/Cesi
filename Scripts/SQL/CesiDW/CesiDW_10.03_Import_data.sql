@@ -125,6 +125,31 @@ BEGIN
         N'Pavanello Gianluca'
     );
 
+    -- Richiesta di Valentina del 16/10/2026
+    INSERT INTO Import.CapiArea
+    (
+        CapoArea,
+        Agente,
+        ADUser,
+        Email,
+        InvioEmail,
+        AgenteBudget,
+        Prefisso,
+        ProvvigioneNuovo,
+        ProvvigioneRinnovo
+    )
+    VALUES
+    (   N'MASTROPIETRO NICOLA',  -- CapoArea - nvarchar(60)
+        N'',  -- Agente - nvarchar(60)
+        N'',  -- ADUser - nvarchar(60)
+        N'',  -- Email - nvarchar(100)
+        0, -- InvioEmail - bit
+        N'MASTROPIETRO',  -- AgenteBudget - nvarchar(60)
+        N'MAS',  -- Prefisso - nvarchar(3)
+        NULL, -- ProvvigioneNuovo - decimal(18, 2)
+        NULL  -- ProvvigioneRinnovo - decimal(18, 2)
+    );
+
 END;
 GO
 
@@ -1265,6 +1290,78 @@ BEGIN
     LEFT JOIN Dim.Articolo A ON A.Codice = AM2526.Codice
     LEFT JOIN Import.ArticoloCategoriaMaster ACM ON ACM.Codice = AM2526.Codice
     WHERE ACM.id_articolo IS NULL;
+
+END;
+GO
+
+/**
+ * @table Import.TrascodificaCapoArea
+ * @description Tabella di trascodifica capo area
+
+*/
+
+--DROP TABLE IF EXISTS Import.TrascodificaCapoArea;
+GO
+
+IF OBJECT_ID('Import.TrascodificaCapoArea', 'U') IS NULL
+BEGIN
+
+    SELECT
+        CAST('20260201' AS DATE) AS PKDataInizio,
+        CAST('20261016' AS DATE) AS PKDataFine,
+        CA.PKCapoArea,
+        CA.CapoArea,
+        CAN.PKCapoArea AS PKCapoAreaNew,
+        CAN.CapoArea AS CapoAreaNew
+
+    INTO Import.TrascodificaCapoArea
+
+    FROM Dim.CapoArea CA
+    INNER JOIN Dim.CapoArea CAN ON CAN.PKCapoArea = 103 -- 103: MASTROPIETRO NICOLA
+    WHERE CA.PKCapoArea = 35; -- 35: DIREZIONALI
+
+    ALTER TABLE Import.TrascodificaCapoArea ALTER COLUMN PKDataInizio DATE NOT NULL;
+    ALTER TABLE Import.TrascodificaCapoArea ALTER COLUMN PKDataFine DATE NOT NULL;
+
+    ALTER TABLE Import.TrascodificaCapoArea ADD CONSTRAINT PK_Import_TrascodificaCapoArea PRIMARY KEY CLUSTERED (PKDataInizio, PKDataFine, PKCapoArea);
+
+END;
+GO
+
+/**
+ * @table Import.TrascodificaGruppoAgenti
+ * @description Tabella di trascodifica capo area
+
+*/
+
+--DROP TABLE IF EXISTS Import.TrascodificaGruppoAgenti;
+GO
+
+IF OBJECT_ID('Import.TrascodificaGruppoAgenti', 'U') IS NULL
+BEGIN
+
+    SELECT
+        TCA.PKDataInizio,
+        TCA.PKDataFine,
+        GA.PKGruppoAgenti,
+        GA.IDGruppoAgenti,
+        GA.GruppoAgenti,
+        GA.CapoArea,
+        GAN.PKGruppoAgenti AS PKGruppoAgentiNew,
+        GAN.IDGruppoAgenti AS IDGruppoAgentiNew,
+        GAN.GruppoAgenti AS GruppoAgentiNew,
+        GAN.CapoArea AS CapoAreaNew
+
+    INTO Import.TrascodificaGruppoAgenti
+
+    FROM Import.TrascodificaCapoArea TCA
+    INNER JOIN Dim.GruppoAgenti GA ON GA.PKCapoArea = TCA.PKCapoArea
+    INNER JOIN Dim.GruppoAgenti GAN ON GAN.PKGruppoAgenti = 253; -- 253: MASTROPIETRO NICOLA
+
+    ALTER TABLE Import.TrascodificaGruppoAgenti ALTER COLUMN PKDataInizio DATE NOT NULL;
+    ALTER TABLE Import.TrascodificaGruppoAgenti ALTER COLUMN PKDataFine DATE NOT NULL;
+
+    ALTER TABLE Import.TrascodificaGruppoAgenti ADD CONSTRAINT PK_Import_TrascodificaGruppoAgenti PRIMARY KEY CLUSTERED (PKDataInizio, PKDataFine, PKGruppoAgenti);
 
 END;
 GO

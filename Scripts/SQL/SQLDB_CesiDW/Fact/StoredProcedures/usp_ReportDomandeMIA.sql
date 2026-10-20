@@ -38,3 +38,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportDomandeMIA] TO [cesidw_reader]
+    AS [dbo];
+GO
+

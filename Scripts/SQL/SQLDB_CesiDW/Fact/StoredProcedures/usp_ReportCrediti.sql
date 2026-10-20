@@ -51,3 +51,9 @@ END;
 
 GO
 
+
+GRANT EXECUTE
+    ON OBJECT::[Fact].[usp_ReportCrediti] TO [cesidw_reader]
+    AS [dbo];
+GO
+
