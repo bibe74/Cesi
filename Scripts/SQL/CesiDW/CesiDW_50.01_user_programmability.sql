@@ -561,7 +561,8 @@ AS (
         COALESCE(CASE WHEN DATEDIFF(MONTH, D.PKDataInizioContratto, D.PKDataFineContratto) >= 24 THEN LPTP.LiquidazioneProvvigioneTeorica ELSE LPTA.LiquidazioneProvvigioneTeorica END, N'') AS LiquidazioneProvvigioneTeorica,
         D.IDDocumentoRinnovato,
         D.PKDataCompetenza,
-        A.LivelloMIA
+        A.LivelloMIA,
+        A.MacroTipo AS MacroTipoCliente
 
     FROM Fact.Documenti D
     INNER JOIN Dim.Cliente C ON C.PKCliente = D.PKCliente
@@ -666,7 +667,8 @@ AS (
         COALESCE(CASE WHEN DATEDIFF(MONTH, D.PKDataInizioContratto, D.PKDataFineContratto) >= 24 THEN LPTP.LiquidazioneProvvigioneTeorica ELSE LPTA.LiquidazioneProvvigioneTeorica END, N''),
         D.IDDocumentoRinnovato,
         D.PKDataCompetenza,
-        A.LivelloMIA
+        A.LivelloMIA,
+        A.MacroTipo
 ),
 DettaglioOrdini
 AS (
@@ -716,7 +718,8 @@ AS (
         O.AgenteProprietario,
         O.IDDocumentoRinnovato,
         O.PKDataCompetenza,
-        O.LivelloMIA
+        O.LivelloMIA,
+        O.MacroTipoCliente
 
     FROM Ordini O
 )
@@ -769,7 +772,8 @@ SELECT
     DOR.DataDocumento AS DataRinnovo,
     DOR.TipoFatturazione AS TipoFatturazioneRinnovo,
     DATEDIFF(MONTH, DOR.PKDataInizioContratto, DATEADD(DAY, 1, DOR.PKDataFineContratto)) AS DurataMesiRinnovo,
-    DO.LivelloMIA
+    DO.LivelloMIA,
+    DO.MacroTipoCliente
 
 INTO #ReportData
 
@@ -835,7 +839,7 @@ SELECT
     RD.Quote,
     RD.TipoCliente,
     RD.TipoFatturazione,
-    RD.PKDataFattura,
+    NULLIF(RD.PKDataFattura, CAST('19000101' AS DATE)) AS PKDataFattura,
     RD.NoteIntestazione,
     RD.Email,
     RD.ProvvigioneTeorica,
@@ -845,7 +849,8 @@ SELECT
     RD.DataRinnovo,
     RD.TipoFatturazioneRinnovo,
     RD.DurataMesiRinnovo,
-    RD.LivelloMIA
+    RD.LivelloMIA,
+    RD.MacroTipoCliente
 
 FROM #ReportData RD
 GROUP BY RD.CodiceCliente,
@@ -891,7 +896,8 @@ GROUP BY RD.CodiceCliente,
     RD.DataRinnovo,
     RD.TipoFatturazioneRinnovo,
     RD.DurataMesiRinnovo,
-    RD.LivelloMIA
+    RD.LivelloMIA,
+    RD.MacroTipoCliente
 ORDER BY RD.AgenteAssegnato,
     RD.CodiceCliente,
     RD.NumeroDocumento;
@@ -2594,7 +2600,7 @@ GO
 GRANT EXECUTE ON Fact.usp_ReportOrdinatoGenerale TO cesidw_reader;
 GO
 
-DECLARE @AnnoCorrente INT = 2022;
+DECLARE @AnnoCorrente INT = 2026;
 DECLARE @CapoArea NVARCHAR(60) = NULL;
 
 EXEC Fact.usp_ReportOrdinatoGenerale @AnnoCorrente = @AnnoCorrente,
