@@ -75,6 +75,10 @@
     <Report Include="Ordinato Generale Budget.rdl" />
     <Report Include="Ordinato Generale.rdl" />
     <Report Include="_Dettaglio Ordini_OLD.rdl" />
+    <Report Include="_Fatturato Generale OLD.rdl" />
+    <Report Include="_Fatturato Generale orig.rdl" />
+    <Report Include="_Ordinato Generale OLD.rdl" />
+    <Report Include="_Ordinato Generale orig.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

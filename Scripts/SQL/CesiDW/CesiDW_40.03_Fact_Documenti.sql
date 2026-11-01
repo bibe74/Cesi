@@ -354,7 +354,8 @@ LEFT JOIN Import.TrascodificaGruppoAgenti TGA ON TGA.PKGruppoAgenti = TD.PKGrupp
     AND TD.PKDataDocumento BETWEEN TGA.PKDataInizio AND TGA.PKDataFine
 LEFT JOIN Import.TrascodificaGruppoAgenti TGAR ON TGAR.PKGruppoAgenti = TD.PKGruppoAgenti
     AND TD.PKDataDocumento BETWEEN TGAR.PKDataInizio AND TGAR.PKDataFine
-WHERE TD.rn = 1;
+WHERE TD.rn = 1
+    AND NOT COALESCE(TD.IDLibero1, 0) = 7;
 GO
 
 --IF OBJECT_ID(N'Staging.Documenti', N'U') IS NOT NULL DROP TABLE Staging.Documenti; UPDATE audit.tables SET lastupdated_staging = NULL, lastupdated_local = NULL WHERE provider_name = N'MyDatamartReporting' AND full_table_name = N'Landing.COMETA_Documento_Riga';

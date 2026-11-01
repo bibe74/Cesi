@@ -1,27 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>SSDTRS</am:Name>
+      <am:Version>18.11.12315.225</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>SSDTRS</am:Name>
+      <am:Version>18.11.12315.225</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2026-10-26T11:45:40.5898607Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="CesiDW">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=EPISQL2021;Initial Catalog=CesiDW</ConnectString>
-        <Prompt>Specify a user name and password for data source CesiDW:</Prompt>
-      </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>621ff57e-65a4-47ba-88ae-f9820d706c3b</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="DataSource1">
+    <DataSource Name="CesiDW_ds">
       <DataSourceReference>CesiDW_ds</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>d89b77b0-7609-42f6-9941-c59f910e692d</rd:DataSourceID>
+      <rd:DataSourceID>018f8a4e-51ce-47ab-a166-87b96f0fdb0c</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="usp_ReportOrdinatoGenerale">
+    <DataSet Name="usp_ReportFatturatoGenerale">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@AnnoCorrente">
             <Value>=Parameters!AnnoCorrente.Value</Value>
@@ -55,13 +57,13 @@
           <DataField>QuoteTotaliEsercizioCorrente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ImportoTotaleEsercizioCorrente">
-          <DataField>ImportoTotaleEsercizioCorrente</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="QuoteTotaliEsercizioPrecedente">
           <DataField>QuoteTotaliEsercizioPrecedente</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ImportoTotaleEsercizioCorrente">
+          <DataField>ImportoTotaleEsercizioCorrente</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ImportoTotaleEsercizioPrecedente">
           <DataField>ImportoTotaleEsercizioPrecedente</DataField>
@@ -75,11 +77,15 @@
           <DataField>rnCapoArea</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="SortOrder">
+          <DataField>SortOrder</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="pAnno">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <CommandText>SELECT DISTINCT
     D.Anno
 FROM Dim.Data D
@@ -96,15 +102,13 @@ ORDER BY D.Anno DESC;</CommandText>
     </DataSet>
     <DataSet Name="pCapoArea">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@AnnoCorrente">
-            <Value>=Parameters!AnnoCorrente.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
           <QueryParameter Name="@ADUser">
             <Value>=Parameters!ADUser.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@AnnoCorrente">
+            <Value>=Parameters!AnnoCorrente.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT DISTINCT
@@ -176,7 +180,7 @@ ORDER BY CapoArea;</CommandText>
                 <TablixCornerRow>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="textbox5">
+                      <Textbox Name="textbox4">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -192,7 +196,7 @@ ORDER BY CapoArea;</CommandText>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>textbox5</rd:DefaultName>
+                        <rd:DefaultName>textbox4</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -203,15 +207,13 @@ ORDER BY CapoArea;</CommandText>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <ColSpan>3</ColSpan>
+                      <ColSpan>2</ColSpan>
                       <RowSpan>2</RowSpan>
                     </CellContents>
                   </TablixCornerCell>
                   <TablixCornerCell />
-                  <TablixCornerCell />
                 </TablixCornerRow>
                 <TablixCornerRow>
-                  <TablixCornerCell />
                   <TablixCornerCell />
                   <TablixCornerCell />
                 </TablixCornerRow>
@@ -244,8 +246,6 @@ ORDER BY CapoArea;</CommandText>
                                 <TextRun>
                                   <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value)</Value>
                                   <Style>
-                                    <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
-                                    <Format>n2</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -257,16 +257,10 @@ ORDER BY CapoArea;</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
-                              <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -287,8 +281,6 @@ ORDER BY CapoArea;</CommandText>
                                 <TextRun>
                                   <Value>=Sum(Fields!ImportoTotaleEsercizioPrecedente.Value)</Value>
                                   <Style>
-                                    <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
-                                    <Format>n2</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -300,10 +292,9 @@ ORDER BY CapoArea;</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
-                              <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -316,14 +307,14 @@ ORDER BY CapoArea;</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox4">
+                        <Textbox Name="textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value) / Sum(Fields!ImportoTotaleEsercizioPrecedente.Value) - 1.0</Value>
+                                  <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value) / Sum(Fields!ImportoTotaleEsercizioPrecedente.Value) - 1</Value>
                                   <Style>
                                     <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
                                     <Format>p2</Format>
@@ -387,7 +378,7 @@ ORDER BY CapoArea;</CommandText>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Left</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -395,19 +386,14 @@ ORDER BY CapoArea;</CommandText>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
-                            <Style>None</Style>
                           </Border>
-                          <LeftBorder>
-                            <Color>Black</Color>
-                            <Style>Solid</Style>
-                            <Width>1pt</Width>
-                          </LeftBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -415,14 +401,14 @@ ORDER BY CapoArea;</CommandText>
                       <TablixHeader>
                         <Size>0.22in</Size>
                         <CellContents>
-                          <Textbox Name="textbox6">
+                          <Textbox Name="textbox5">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Esercizio Corrente</Value>
+                                    <Value>Importo Totale Esercizio Corrente</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -435,20 +421,14 @@ ORDER BY CapoArea;</CommandText>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>textbox6</rd:DefaultName>
+                            <rd:DefaultName>textbox5</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
-                                <Style>None</Style>
                               </Border>
                               <BottomBorder>
                                 <Style>Solid</Style>
                               </BottomBorder>
-                              <LeftBorder>
-                                <Color>Black</Color>
-                                <Style>Solid</Style>
-                                <Width>1pt</Width>
-                              </LeftBorder>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -463,14 +443,14 @@ ORDER BY CapoArea;</CommandText>
                       <TablixHeader>
                         <Size>0.22in</Size>
                         <CellContents>
-                          <Textbox Name="textbox7">
+                          <Textbox Name="textbox6">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Esercizio Precedente</Value>
+                                    <Value>Importo Totale Esercizio Precedente</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -483,7 +463,7 @@ ORDER BY CapoArea;</CommandText>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>textbox7</rd:DefaultName>
+                            <rd:DefaultName>textbox6</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
@@ -541,7 +521,6 @@ ORDER BY CapoArea;</CommandText>
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
-                      <KeepTogether>true</KeepTogether>
                     </TablixMember>
                   </TablixMembers>
                   <DataElementOutput>Output</DataElementOutput>
@@ -559,14 +538,11 @@ ORDER BY CapoArea;</CommandText>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!rnCapoArea.Value</Value>
-                    </SortExpression>
-                    <SortExpression>
                       <Value>=Fields!CapoArea.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.1in</Size>
+                    <Size>3in</Size>
                     <CellContents>
                       <Textbox Name="CapoArea">
                         <CanGrow>true</CanGrow>
@@ -576,9 +552,7 @@ ORDER BY CapoArea;</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!CapoArea.Value</Value>
-                                <Style>
-                                  <FontWeight>=IIf(Fields!CapoArea.Value="Totale","Bold","Default")</FontWeight>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style>
@@ -587,20 +561,10 @@ ORDER BY CapoArea;</CommandText>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>CapoArea</rd:DefaultName>
-                        <Visibility>
-                          <Hidden>true</Hidden>
-                        </Visibility>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
-                            <Style>None</Style>
                           </Border>
-                          <TopBorder>
-                            <Style>Solid</Style>
-                          </TopBorder>
-                          <BottomBorder>
-                            <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
-                          </BottomBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -611,118 +575,55 @@ ORDER BY CapoArea;</CommandText>
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="CapoArea">
+                      <Group Name="matrix1_Tipologia">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!CapoArea.Value</GroupExpression>
+                          <GroupExpression>=Fields!Tipologia.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!CapoArea.Value</Value>
+                          <Value>=Fields!SortOrder.Value</Value>
+                        </SortExpression>
+                        <SortExpression>
+                          <Value>=Fields!Tipologia.Value</Value>
                         </SortExpression>
                       </SortExpressions>
-                      <TablixMembers>
-                        <TablixMember>
-                          <Group Name="matrix1_Tipologia">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!Tipologia.Value</GroupExpression>
-                            </GroupExpressions>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!Tipologia.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
-                          <TablixMembers>
-                            <TablixMember>
-                              <TablixHeader>
-                                <Size>3in</Size>
-                                <CellContents>
-                                  <Textbox Name="Textbox11">
-                                    <CanGrow>true</CanGrow>
-                                    <KeepTogether>true</KeepTogether>
-                                    <Paragraphs>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value>=Fields!CapoArea.Value</Value>
-                                            <Style>
-                                              <FontWeight>=IIf(Fields!CapoArea.Value="Totale","Bold","Default")</FontWeight>
-                                            </Style>
-                                          </TextRun>
-                                        </TextRuns>
-                                        <Style>
-                                          <TextAlign>Right</TextAlign>
-                                        </Style>
-                                      </Paragraph>
-                                    </Paragraphs>
-                                    <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <TablixHeader>
+                        <Size>3in</Size>
+                        <CellContents>
+                          <Textbox Name="Tipologia2">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Replace(Fields!Tipologia.Value, "  ", " ")</Value>
                                     <Style>
-                                      <Border>
-                                        <Color>LightGrey</Color>
-                                        <Style>None</Style>
-                                      </Border>
-                                      <BottomBorder>
-                                        <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
-                                        <Width>=IIf(Fields!Tipologia.Value="Totale complessivo", "2pt", "1pt")</Width>
-                                      </BottomBorder>
-                                      <PaddingLeft>2pt</PaddingLeft>
-                                      <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>
-                                      <PaddingBottom>2pt</PaddingBottom>
+                                      <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
                                     </Style>
-                                  </Textbox>
-                                </CellContents>
-                              </TablixHeader>
-                              <TablixMembers>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>3in</Size>
-                                    <CellContents>
-                                      <Textbox Name="Tipologia">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=Replace(Fields!Tipologia.Value, "  ", " ")</Value>
-                                                <Style>
-                                                  <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style>
-                                              <TextAlign>Right</TextAlign>
-                                            </Style>
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Tipologia</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>None</Style>
-                                          </Border>
-                                          <BottomBorder>
-                                            <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
-                                            <Width>=IIf(Fields!Tipologia.Value="Totale complessivo", "2pt", "1pt")</Width>
-                                          </BottomBorder>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                </TablixMember>
-                              </TablixMembers>
-                            </TablixMember>
-                          </TablixMembers>
-                          <DataElementOutput>Output</DataElementOutput>
-                          <KeepTogether>true</KeepTogether>
-                        </TablixMember>
-                      </TablixMembers>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Right</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Tipologia</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
                     </TablixMember>
                   </TablixMembers>
                   <DataElementOutput>Output</DataElementOutput>
@@ -731,10 +632,10 @@ ORDER BY CapoArea;</CommandText>
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
-            <DataSetName>usp_ReportOrdinatoGenerale</DataSetName>
+            <DataSetName>usp_ReportFatturatoGenerale</DataSetName>
             <Top>0.43in</Top>
             <Height>0.64in</Height>
-            <Width>9.1in</Width>
+            <Width>9in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -742,7 +643,7 @@ ORDER BY CapoArea;</CommandText>
         <Height>1.07in</Height>
         <Style />
       </Body>
-      <Width>12in</Width>
+      <Width>9in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -764,7 +665,7 @@ ORDER BY CapoArea;</CommandText>
       <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="AnnoCorrente">
-      <DataType>Integer</DataType>
+      <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>pAnno</DataSetName>
@@ -825,5 +726,5 @@ ORDER BY CapoArea;</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>ae5a631f-a4a2-4230-b941-53f8ad1098a1</rd:ReportID>
+  <rd:ReportID>17d95099-c487-47c0-9cc7-c5618c83dd00</rd:ReportID>
 </Report>

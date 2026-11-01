@@ -2067,15 +2067,32 @@ BEGIN
 
     --SELECT @AnnoCorrente, @AnnoPrecedente, @CodiceEsercizioCorrente, @CodiceEsercizioPrecedente;
 
+    DROP TABLE IF EXISTS #ReportData;
+
     WITH DataDetail
     AS (
         SELECT
             GAR.CapoArea,
-            D.Libero2 AS Tipologia,
-            CASE MT.MacroTipologia
-              WHEN N'Nuova vendita' THEN N'nuove vendite'
-              WHEN N'Rinnovo' THEN N'rinnovi'
-              ELSE MT.MacroTipologia
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'B&C' THEN 'UPGRADE BILANCIO&CRISI'
+                WHEN 'MIA' THEN 'UPGRADE MIA'
+                WHEN 'MYS' THEN 'NUOVO'
+                ELSE 'ALTRO'
+              END
+              ELSE D.Libero2
+            END AS Tipologia,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'MYS' THEN 'nuove vendite'
+                ELSE 'upgrade'
+              END
+              ELSE CASE MT.MacroTipologia
+                  WHEN N'Nuova vendita' THEN N'nuove vendite'
+                  WHEN N'Rinnovo' THEN N'rinnovi'
+                  WHEN N'Upgrade' THEN N'upgrade'
+                  ELSE MT.MacroTipologia
+              END
             END AS MacroTipologia,
             DR.Mese,
             DR.Mese_IT,
@@ -2091,13 +2108,33 @@ BEGIN
                 OR GAR.CapoArea = @CapoArea
             )
         INNER JOIN Dim.MacroTipologia MT ON MT.PKMacroTipologia = D.PKMacroTipologia
+        INNER JOIN Dim.Articolo A ON A.PKArticolo = D.PKArticolo
         WHERE D.CodiceEsercizio IN (@CodiceEsercizioCorrente, @CodiceEsercizioPrecedente)
             AND D.IsProfiloValidoPerStatisticaFatturato = CAST(1 AS BIT)
             AND D.IsDeleted = CAST(0 AS BIT)
    
         GROUP BY GAR.CapoArea,
-            D.Libero2,
-            MT.MacroTipologia,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'B&C' THEN 'UPGRADE BILANCIO&CRISI'
+                WHEN 'MIA' THEN 'UPGRADE MIA'
+                WHEN 'MYS' THEN 'NUOVO'
+                ELSE 'ALTRO'
+              END
+              ELSE D.Libero2
+            END,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'MYS' THEN 'nuove vendite'
+                ELSE 'upgrade'
+              END
+              ELSE CASE MT.MacroTipologia
+                  WHEN N'Nuova vendita' THEN N'nuove vendite'
+                  WHEN N'Rinnovo' THEN N'rinnovi'
+                  WHEN N'Upgrade' THEN N'upgrade'
+                  ELSE MT.MacroTipologia
+              END
+            END,
             DR.Mese,
             DR.Mese_IT,
             D.CodiceEsercizio
@@ -2249,7 +2286,10 @@ BEGIN
         T.ImportoTotaleEsercizioCorrente,
         T.ImportoTotaleEsercizioPrecedente,
         T.DeltaVsEsercizioPrecedente,
-        T.rnCapoArea
+        T.rnCapoArea,
+        CASE WHEN T.Tipologia LIKE 'Totale%' THEN 1 ELSE 0 END AS SortOrder
+
+    INTO #ReportData
 
     FROM (
         SELECT
@@ -2286,10 +2326,44 @@ BEGIN
             DR.Mese,
             DR.Mese_IT
 
-    ) T
-    ORDER BY T.rnCapoArea,
+    ) T;
+
+    WITH CapiArea
+    AS (
+        SELECT DISTINCT
+            RD.rnCapoArea,
+            RD.CapoArea
+
+        FROM #ReportData RD
+    ),
+    Tipologie
+    AS (
+        SELECT DISTINCT
+            RD.SortOrder,
+            RD.Tipologia
+
+        FROM #ReportData RD
+    )
+    SELECT
+        CA.CapoArea,
         T.Tipologia,
-        T.Mese;
+        RD.Mese,
+        RD.Mese_IT,
+        RD.QuoteTotaliEsercizioCorrente,
+        RD.QuoteTotaliEsercizioPrecedente,
+        RD.ImportoTotaleEsercizioCorrente,
+        RD.ImportoTotaleEsercizioPrecedente,
+        RD.DeltaVsEsercizioPrecedente,
+        CA.rnCapoArea,
+        T.SortOrder
+
+    FROM CapiArea CA
+    CROSS JOIN Tipologie T
+    LEFT JOIN #ReportData RD ON RD.rnCapoArea = CA.rnCapoArea AND RD.Tipologia = T.Tipologia
+    ORDER BY CA.rnCapoArea,
+        T.SortOrder,
+        T.Tipologia,
+        RD.Mese;
 
 END;
 GO
@@ -2297,7 +2371,7 @@ GO
 GRANT EXECUTE ON Fact.usp_ReportFatturatoGenerale TO cesidw_reader;
 GO
 
-DECLARE @AnnoCorrente INT = 2022;
+DECLARE @AnnoCorrente INT = 2026;
 DECLARE @CapoArea NVARCHAR(60) = NULL;
 
 EXEC Fact.usp_ReportFatturatoGenerale @AnnoCorrente = @AnnoCorrente,
@@ -2359,16 +2433,33 @@ BEGIN
     DECLARE @CodiceEsercizioPrecedente CHAR(4) = CONVERT(CHAR(4), @AnnoPrecedente);
 
     --SELECT @AnnoCorrente, @AnnoPrecedente, @CodiceEsercizioCorrente, @CodiceEsercizioPrecedente;
+    
+    DROP TABLE IF EXISTS #ReportData;
 
     WITH DataDetail
     AS (
         SELECT
             GAR.CapoArea,
-            D.Libero2 AS Tipologia,
-            CASE MT.MacroTipologia
-              WHEN N'Nuova vendita' THEN N'nuove vendite'
-              WHEN N'Rinnovo' THEN N'rinnovi'
-              ELSE MT.MacroTipologia
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'B&C' THEN 'UPGRADE BILANCIO&CRISI'
+                WHEN 'MIA' THEN 'UPGRADE MIA'
+                WHEN 'MYS' THEN 'NUOVO'
+                ELSE 'ALTRO'
+              END
+              ELSE D.Libero2
+            END AS Tipologia,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'MYS' THEN 'nuove vendite'
+                ELSE 'upgrade'
+              END
+              ELSE CASE MT.MacroTipologia
+                  WHEN N'Nuova vendita' THEN N'nuove vendite'
+                  WHEN N'Rinnovo' THEN N'rinnovi'
+                  WHEN N'Upgrade' THEN N'upgrade'
+                  ELSE MT.MacroTipologia
+              END
             END AS MacroTipologia,
             DR.Mese,
             DR.Mese_IT,
@@ -2384,7 +2475,7 @@ BEGIN
                 OR GAR.CapoArea = @CapoArea
             )
         INNER JOIN Dim.MacroTipologia MT ON MT.PKMacroTipologia = D.PKMacroTipologia
-
+        INNER JOIN Dim.Articolo A ON A.PKArticolo = D.PKArticolo
         WHERE D.CodiceEsercizio IN (@CodiceEsercizioCorrente, @CodiceEsercizioPrecedente)
             AND D.Profilo = N'ORDINE CLIENTE'
             --AND D.TipoSoggettoCommerciale = N'C'
@@ -2399,8 +2490,27 @@ BEGIN
             AND D.IsDeleted = CAST(0 AS BIT)
    
         GROUP BY GAR.CapoArea,
-            D.Libero2,
-            MT.MacroTipologia,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'B&C' THEN 'UPGRADE BILANCIO&CRISI'
+                WHEN 'MIA' THEN 'UPGRADE MIA'
+                WHEN 'MYS' THEN 'NUOVO'
+                ELSE 'ALTRO'
+              END
+              ELSE D.Libero2
+            END,
+            CASE WHEN D.IDLibero2 IN ('UPG', 'UPG F.P.') -- UPG: Upgrade A.MacroTipo = 'UPGRADE'
+              THEN CASE A.MacroTipo
+                WHEN 'MYS' THEN 'nuove vendite'
+                ELSE 'upgrade'
+              END
+              ELSE CASE MT.MacroTipologia
+                  WHEN N'Nuova vendita' THEN N'nuove vendite'
+                  WHEN N'Rinnovo' THEN N'rinnovi'
+                  WHEN N'Upgrade' THEN N'upgrade'
+                  ELSE MT.MacroTipologia
+              END
+            END,
             DR.Mese,
             DR.Mese_IT,
             D.CodiceEsercizio
@@ -2552,7 +2662,10 @@ BEGIN
         T.ImportoTotaleEsercizioCorrente,
         T.ImportoTotaleEsercizioPrecedente,
         T.DeltaVsEsercizioPrecedente,
-        T.rnCapoArea
+        T.rnCapoArea,
+        CASE WHEN T.Tipologia LIKE 'Totale%' THEN 1 ELSE 0 END AS SortOrder
+
+    INTO #ReportData
 
     FROM (
         SELECT
@@ -2589,10 +2702,44 @@ BEGIN
             DR.Mese,
             DR.Mese_IT
 
-    ) T
-    ORDER BY T.rnCapoArea,
+    ) T;
+
+    WITH CapiArea
+    AS (
+        SELECT DISTINCT
+            RD.rnCapoArea,
+            RD.CapoArea
+
+        FROM #ReportData RD
+    ),
+    Tipologie
+    AS (
+        SELECT DISTINCT
+            RD.SortOrder,
+            RD.Tipologia
+
+        FROM #ReportData RD
+    )
+    SELECT
+        CA.CapoArea,
         T.Tipologia,
-        T.Mese;
+        RD.Mese,
+        RD.Mese_IT,
+        RD.QuoteTotaliEsercizioCorrente,
+        RD.QuoteTotaliEsercizioPrecedente,
+        RD.ImportoTotaleEsercizioCorrente,
+        RD.ImportoTotaleEsercizioPrecedente,
+        RD.DeltaVsEsercizioPrecedente,
+        CA.rnCapoArea,
+        T.SortOrder
+
+    FROM CapiArea CA
+    CROSS JOIN Tipologie T
+    LEFT JOIN #ReportData RD ON RD.rnCapoArea = CA.rnCapoArea AND RD.Tipologia = T.Tipologia
+    ORDER BY CA.rnCapoArea,
+        T.SortOrder,
+        T.Tipologia,
+        RD.Mese;
 
 END;
 GO
@@ -3508,9 +3655,9 @@ AS (
     FROM Fact.Accessi A
     INNER JOIN Dim.Data D ON D.PKData = A.PKData
         AND A.PKData BETWEEN @PKDataInizioUltimoSemestre AND @PKDataFinePeriodo
-    INNER JOIN Dim.ClienteAccessi CA ON CA.PKClienteAccessi = A.PKCliente
-        AND CA.IsDeleted = CAST(0 AS BIT)
-    INNER JOIN Dim.Cliente C ON C.PKCliente = CA.PKCliente
+    --INNER JOIN Dim.ClienteAccessi CA ON CA.PKClienteAccessi = A.PKCliente
+    --    AND CA.IsDeleted = CAST(0 AS BIT)
+    INNER JOIN Dim.Cliente C ON C.PKCliente = A.PKCliente
         AND C.IsDeleted = CAST(0 AS BIT)
     WHERE A.IsDeleted = CAST(0 AS BIT)
     GROUP BY C.PKCliente --, C.Email

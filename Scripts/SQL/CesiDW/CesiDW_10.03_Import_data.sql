@@ -862,6 +862,19 @@ BEGIN
     )
     VALUES (N'REC', N'RECUPERO', N'Nuova vendita', 1, 0);
 
+    DELETE FROM Import.Libero2MacroTipologia WHERE IDLibero2 LIKE N'UPG%'
+
+    INSERT INTO Import.Libero2MacroTipologia
+    (
+        IDLibero2,
+        Libero2,
+        MacroTipologia,
+        IsValidaPerBudgetNuoveVendite,
+        IsValidaPerBudgetRinnovi
+    )
+    VALUES (N'UPG', N'UPGRADE', N'Upgrade', 0, 0),
+        (N'UPG F.P.', N'UPGRADE CON FATTURA POSTICIPATA', N'Upgrade', 0, 0);
+
 END;
 GO
 

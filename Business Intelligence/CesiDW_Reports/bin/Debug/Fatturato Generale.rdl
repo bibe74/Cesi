@@ -1,22 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>SSDTRS</am:Name>
+      <am:Version>18.11.12315.225</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>SSDTRS</am:Name>
+      <am:Version>18.11.12315.225</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2026-10-26T11:45:44.1212850Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="CesiDW">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=EPISQL2021;Initial Catalog=CesiDW</ConnectString>
-        <Prompt>Specify a user name and password for data source CesiDW:</Prompt>
-      </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>621ff57e-65a4-47ba-88ae-f9820d706c3b</rd:DataSourceID>
+    <DataSource Name="CesiDW_ds">
+      <DataSourceReference>CesiDW_ds</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>9be5bd41-a67f-46bf-af42-edf59aab4687</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="usp_ReportFatturatoGenerale">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@AnnoCorrente">
             <Value>=Parameters!AnnoCorrente.Value</Value>
@@ -70,11 +77,15 @@
           <DataField>rnCapoArea</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
+        <Field Name="SortOrder">
+          <DataField>SortOrder</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="pAnno">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <CommandText>SELECT DISTINCT
     D.Anno
 FROM Dim.Data D
@@ -91,15 +102,13 @@ ORDER BY D.Anno DESC;</CommandText>
     </DataSet>
     <DataSet Name="pCapoArea">
       <Query>
-        <DataSourceName>CesiDW</DataSourceName>
+        <DataSourceName>CesiDW_ds</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@AnnoCorrente">
-            <Value>=Parameters!AnnoCorrente.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
           <QueryParameter Name="@ADUser">
             <Value>=Parameters!ADUser.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@AnnoCorrente">
+            <Value>=Parameters!AnnoCorrente.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT DISTINCT
@@ -171,7 +180,7 @@ ORDER BY CapoArea;</CommandText>
                 <TablixCornerRow>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="textbox5">
+                      <Textbox Name="textbox4">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -187,7 +196,7 @@ ORDER BY CapoArea;</CommandText>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>textbox5</rd:DefaultName>
+                        <rd:DefaultName>textbox4</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -237,8 +246,6 @@ ORDER BY CapoArea;</CommandText>
                                 <TextRun>
                                   <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value)</Value>
                                   <Style>
-                                    <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
-                                    <Format>n2</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -250,16 +257,10 @@ ORDER BY CapoArea;</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
-                              <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -280,8 +281,6 @@ ORDER BY CapoArea;</CommandText>
                                 <TextRun>
                                   <Value>=Sum(Fields!ImportoTotaleEsercizioPrecedente.Value)</Value>
                                   <Style>
-                                    <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
-                                    <Format>n2</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -293,10 +292,9 @@ ORDER BY CapoArea;</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
-                              <Style>=IIf(Fields!Tipologia.Value="Totale complessivo", "Double", "Solid")</Style>
+                              <Style>Solid</Style>
                             </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -309,14 +307,14 @@ ORDER BY CapoArea;</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox4">
+                        <Textbox Name="textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value) / Sum(Fields!ImportoTotaleEsercizioPrecedente.Value) - 1.0</Value>
+                                  <Value>=Sum(Fields!ImportoTotaleEsercizioCorrente.Value) / Sum(Fields!ImportoTotaleEsercizioPrecedente.Value) - 1</Value>
                                   <Style>
                                     <FontWeight>=IIf(Fields!Tipologia.Value="Totale complessivo","Bold","Default")</FontWeight>
                                     <Format>p2</Format>
@@ -380,7 +378,7 @@ ORDER BY CapoArea;</CommandText>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Left</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -388,19 +386,14 @@ ORDER BY CapoArea;</CommandText>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
-                            <Style>None</Style>
                           </Border>
-                          <LeftBorder>
-                            <Color>Black</Color>
-                            <Style>Solid</Style>
-                            <Width>1pt</Width>
-                          </LeftBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -408,14 +401,14 @@ ORDER BY CapoArea;</CommandText>
                       <TablixHeader>
                         <Size>0.22in</Size>
                         <CellContents>
-                          <Textbox Name="textbox6">
+                          <Textbox Name="textbox5">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Esercizio Corrente</Value>
+                                    <Value>Importo Totale Esercizio Corrente</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -428,20 +421,14 @@ ORDER BY CapoArea;</CommandText>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>textbox6</rd:DefaultName>
+                            <rd:DefaultName>textbox5</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
-                                <Style>None</Style>
                               </Border>
                               <BottomBorder>
                                 <Style>Solid</Style>
                               </BottomBorder>
-                              <LeftBorder>
-                                <Color>Black</Color>
-                                <Style>Solid</Style>
-                                <Width>1pt</Width>
-                              </LeftBorder>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -456,14 +443,14 @@ ORDER BY CapoArea;</CommandText>
                       <TablixHeader>
                         <Size>0.22in</Size>
                         <CellContents>
-                          <Textbox Name="textbox7">
+                          <Textbox Name="textbox6">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Esercizio Precedente</Value>
+                                    <Value>Importo Totale Esercizio Precedente</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -476,7 +463,7 @@ ORDER BY CapoArea;</CommandText>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>textbox7</rd:DefaultName>
+                            <rd:DefaultName>textbox6</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
@@ -534,7 +521,6 @@ ORDER BY CapoArea;</CommandText>
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
-                      <KeepTogether>true</KeepTogether>
                     </TablixMember>
                   </TablixMembers>
                   <DataElementOutput>Output</DataElementOutput>
@@ -552,9 +538,6 @@ ORDER BY CapoArea;</CommandText>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!rnCapoArea.Value</Value>
-                    </SortExpression>
-                    <SortExpression>
                       <Value>=Fields!CapoArea.Value</Value>
                     </SortExpression>
                   </SortExpressions>
@@ -569,9 +552,7 @@ ORDER BY CapoArea;</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!CapoArea.Value</Value>
-                                <Style>
-                                  <FontWeight>=IIf(Fields!CapoArea.Value="Totale","Bold","Default")</FontWeight>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style>
@@ -583,11 +564,7 @@ ORDER BY CapoArea;</CommandText>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
-                            <Style>None</Style>
                           </Border>
-                          <TopBorder>
-                            <Style>Solid</Style>
-                          </TopBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -605,13 +582,16 @@ ORDER BY CapoArea;</CommandText>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
+                          <Value>=Fields!SortOrder.Value</Value>
+                        </SortExpression>
+                        <SortExpression>
                           <Value>=Fields!Tipologia.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
                         <Size>3in</Size>
                         <CellContents>
-                          <Textbox Name="Tipologia">
+                          <Textbox Name="Tipologia2">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -685,7 +665,7 @@ ORDER BY CapoArea;</CommandText>
       <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="AnnoCorrente">
-      <DataType>Integer</DataType>
+      <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>pAnno</DataSetName>
@@ -746,5 +726,5 @@ ORDER BY CapoArea;</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>ae5a631f-a4a2-4230-b941-53f8ad1098a1</rd:ReportID>
+  <rd:ReportID>5f5e1b35-5250-41e7-92eb-a6da929e405b</rd:ReportID>
 </Report>
